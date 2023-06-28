@@ -3,7 +3,7 @@
 // Buttons for login/sign up
 
 export default function Home() {
-  return <>
+  return <div>
     PLACEHOLDER Home
-  </>
+  </div>
 }
