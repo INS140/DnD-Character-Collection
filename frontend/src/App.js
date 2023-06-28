@@ -3,7 +3,7 @@
 import CharacterGrid from "./components/CharacterGrid";
 
 export default function App() {
-  return <div>
+  return <div className="app" >
     <CharacterGrid />
   </div>
 }
