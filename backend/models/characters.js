@@ -2,8 +2,6 @@
 const mongoose = require('mongoose')
 //creating shorthand for the schema contructor 
 const { Schema } = mongoose;
-const User = require("./users.js")
-
 
 // schema
 const characterSchema = new Schema({

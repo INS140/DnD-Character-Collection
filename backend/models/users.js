@@ -49,5 +49,4 @@ const Character = require('./character.js');
     })
          
 const User = mongoose.model('user', userSchema);
-
 module.exports = User;
