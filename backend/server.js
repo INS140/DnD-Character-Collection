@@ -24,6 +24,9 @@ try {
 }
 
 //controllers and routes
+const characterController = require('./controllers/character')
+app.use('/character', characterController)
+
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Welcome to the Dungeon!'})
 })
