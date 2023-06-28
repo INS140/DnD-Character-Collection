@@ -1,5 +1,6 @@
 const users = require("express").Router()
 const UserData = require('../Models/user.js')
+const bcrypt = require('bcrypt')
 
 //FIND ALL USERS
 users.get('/', async (req, res) => {
@@ -41,22 +42,18 @@ users.post('/', async (req, res) => {
 })
 
 //USER ERROR
-user.post('/', (req, res) => {
-    try {
-        res.redirect("/")
-    }
-    catch (err) {
-        if (err && err.name == 'ValidationError') {
-          for (var field in err.errors) {
-            message += `${field} was ${err.errors[field].value}.`
-            message += `${err.errors[field].message}`
-          }
-          res.render('users/new', ({ message: 'Validation error' }))
-        }
-        else {
-            res.status(500).json({ message: 'Server error' })
-        }   
-    }
+const { User } = db
+
+users.post('/', async (req, res) => {
+    const { password, ...rest } = req.body
+    const passHash = await bcrypt.hash(password, 10)
+    console.log(password, passHash)
+    const user = await User.create({
+        ...rest,
+        role: 'reviewer',
+        passwordDigest: passHash
+    })
+    res.json(user)
 })
 
 
@@ -92,4 +89,4 @@ users.delete('/:id', async (req, res) => {
     }
 })
 
-module.exports = user
+module.exports = users

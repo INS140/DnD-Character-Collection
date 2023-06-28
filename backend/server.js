@@ -27,7 +27,7 @@ try {
 const characterController = require('./controllers/character')
 app.use('/character', characterController)
 
-const userController = require('./controllers/user')
+const userController = require('./controllers/users')
 app.use('/user', userController)
 
 app.get('/', (req, res) => {

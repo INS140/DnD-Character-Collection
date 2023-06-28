@@ -7,4 +7,5 @@ const Character = require('./character.js');
 //Schema
 const userSchema = new Schema({
     userName: { type: String, required: true}
+    password
 })
