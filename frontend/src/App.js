@@ -1,9 +1,9 @@
 // add router and needed components
 
-import CharacterView from "./components/CharacterView";
+import CharacterGrid from "./components/CharacterGrid";
 
 export default function App() {
   return <div>
-    <CharacterView />
+    <CharacterGrid />
   </div>
 }
