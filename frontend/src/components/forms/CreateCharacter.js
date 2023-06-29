@@ -1,11 +1,15 @@
 import Input from '../ui-kit/Input'
 import TextArea from '../ui-kit/TextArea'
+import Button from '../ui-kit/Button'
+import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from '../custom-hooks/useFormHandler'
 
 // inputs for list on lucid chart
 // seperate fieldsets for base stats/skills
 
 export default function CreateCharacter() {
+  const { post } = useFetch('') // still need url
+
   const {inputs, handleChange, handleCheckboxChange} = useFormHandler({
     name: '',
     race: '',
@@ -15,12 +19,12 @@ export default function CreateCharacter() {
     hp: 0,
     ac: 0,
     speed: 0,
-    str: 0,
-    dex: 0,
-    con: 0,
-    int: 0,
-    wis: 0,
-    cha: 0,
+    str: 1,
+    dex: 1,
+    con: 1,
+    int: 1,
+    wis: 1,
+    cha: 1,
     savingThrows: {
       str: false,
       dex: false,
@@ -57,97 +61,140 @@ export default function CreateCharacter() {
     return str.split(/(?=[A-Z])/).map(w => w.split('').map((c, i) => i === 0 ? c.toUpperCase() : c.toLowerCase()).join('')).join(' ')
   }
 
-  return <div>
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    console.log(inputs)
+
+    // post('characters', {
+    //   ...inputs,
+    //   user: user.id
+    // })
+  }
+
+  return <div className='form-container'>
     <h1>Create Your Character</h1>
-    <form>
-      <Input
-        label='Name'
-        name='name'
-        value={inputs.name}
-        onChange={handleChange}
-      />
-      <Input
-        label='Race'
-        name='race'
-        value={inputs.race}
-        onChange={handleChange}
-      />
-      <Input
-        label='Class'
-        name='class'
-        value={inputs.class}
-        onChange={handleChange}
-      />
-      <Input
-        label='Level'
-        name='level'
-        value={inputs.level}
-        onChange={handleChange}
-      />
-      <Input
-        label='Hit Dice'
-        name='hitDice'
-        value={inputs.hitDice}
-        onChange={handleChange}
-      />
-      <Input
-        label='Health Points'
-        name='hp'
-        value={inputs.hp}
-        onChange={handleChange}
-      />
-      <Input
-        label='Armor Class'
-        name='ac'
-        value={inputs.ac}
-        onChange={handleChange}
-      />
-      <Input
-        label='Speed'
-        name='speed'
-        value={inputs.speed}
-        onChange={handleChange}
-      />
-      <fieldset>
+    <form className='form' onSubmit={handleSubmit}>
+      <div className='traits'>
+        <Input
+          label='Name'
+          labelClass='name'
+          name='name'
+          value={inputs.name}
+          onChange={handleChange}
+        />
+        <Input
+          label='Race'
+          labelClass='race'
+          name='race'
+          value={inputs.race}
+          onChange={handleChange}
+        />
+        <Input
+          label='Level'
+          labelClass='level'
+          name='level'
+          type='number'
+          value={inputs.level}
+          onChange={handleChange}
+        />
+        <Input
+          label='Class'
+          labelClass='class'
+          name='class'
+          value={inputs.class}
+          onChange={handleChange}
+        />
+        <Input
+          label='Armor Class'
+          labelClass='ac'
+          name='ac'
+          type='number'
+          value={inputs.ac}
+          onChange={handleChange}
+        />
+        <Input
+          label='Health Points'
+          labelClass='hp'
+          name='hp'
+          type='number'
+          value={inputs.hp}
+          onChange={handleChange}
+        />
+        <Input
+          label='Speed'
+          labelClass='speed'
+          name='speed'
+          type='number'
+          value={inputs.speed}
+          onChange={handleChange}
+        />
+        <Input
+          label='Hit Dice'
+          labelClass='hit'
+          name='hitDice'
+          value={inputs.hitDice}
+          onChange={handleChange}
+        />
+      </div>
+      <fieldset className='base-stats'>
         <legend>Base Stats</legend>
         <Input
           label='Strength'
           name='str'
+          type='number'
+          min={1}
+          max={20}
           value={inputs.str}
           onChange={handleChange}
         />
         <Input
           label='Dexterity'
           name='dex'
+          type='number'
+          min={1}
+          max={20}
           value={inputs.dex}
           onChange={handleChange}
         />
         <Input
           label='Constitution'
           name='con'
+          type='number'
+          min={1}
+          max={20}
           value={inputs.con}
           onChange={handleChange}
         />
         <Input
           label='Intelligence'
           name='int'
+          type='number'
+          min={1}
+          max={20}
           value={inputs.int}
           onChange={handleChange}
         />
         <Input
           label='Wisdom'
           name='wis'
+          type='number'
+          min={1}
+          max={20}
           value={inputs.wis}
           onChange={handleChange}
         />
         <Input
           label='Charisma'
           name='cha'
+          type='number'
+          min={1}
+          max={20}
           value={inputs.cha}
           onChange={handleChange}
         />
       </fieldset>
-      <fieldset>
+      <fieldset className='saving-throws'>
         <legend>Saving Throws</legend>
         {Object.keys(inputs.savingThrows).map((stat, i) => {
           return <Input
@@ -160,7 +207,7 @@ export default function CreateCharacter() {
           />
         })}
       </fieldset>
-      <fieldset>
+      <fieldset className='skills'>
         <legend>Skills</legend>
         {Object.keys(inputs.skills).map((skill, i) => {
           return <Input
@@ -173,18 +220,24 @@ export default function CreateCharacter() {
           />
         })}
       </fieldset>
-      <Input
-        label='Image'
-        name='image'
-        value={inputs.image}
-        onChange={handleChange}
-      />
-      <TextArea
-        label='Desciption'
-        name='description'
-        value={inputs.description}
-        onChange={handleChange}
-      />
+      <fieldset className='optional'>
+        <legend>Optional Info</legend>
+        <Input
+          label='Image'
+          name='image'
+          value={inputs.image}
+          onChange={handleChange}
+        />
+        <TextArea
+          label='Desciption'
+          name='description'
+          rows='5'
+          cols='50'
+          value={inputs.description}
+          onChange={handleChange}
+        />
+      </fieldset>
+      <Button type='submit'>Create Character</Button>
     </form>
   </div>
 }

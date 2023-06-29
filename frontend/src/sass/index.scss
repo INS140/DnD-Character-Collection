@@ -1,0 +1,38 @@
+@use 'variables';
+@use 'forms';
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app {
+  background-color: variables.$primary-color;
+  padding: 1rem;
+}
+
+.grid {
+  margin: auto;
+  background-color: variables.$secondary-color;
+  border: 1rem black solid;
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  justify-content: center;
+
+  .charGridItem {
+    min-width: 20rem;
+    max-width: 15rem;
+    min-height: 25rem;
+    max-height: 25rem;
+    border: 1rem black solid;
+
+    .itemImage {
+      max-width: 100%;
+      max-height: 75%;
+      min-height: 25%;
+    }
+  }
+}
