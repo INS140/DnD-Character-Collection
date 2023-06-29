@@ -1,62 +1,32 @@
 // input for email and password
 // submit button
 // container for form
-import React, { Component } from "react";
 
-export default class SignInForm extends Component {
-  constructor(props) {
-    super(props);
+import React from "react";
+import Input from "./Input";
 
-    this.state = {
-      username: "",
-      password: "",
-    };
-  }
+export default function LoginForm({ formData, handleChange, handleSubmit }) {
+  return (
+    <form className="login-form" onSubmit={handleSubmit}>
+      <Input
+        label="Username"
+        type="text"
+        name="userName"
+        value={formData.userName}
+        onChange={handleChange}
+        required
+      />
 
-  onSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-  };
+      <Input
+        label="Password"
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        required
+      />
 
-  changeHandle = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  render() {
-    const { username, password } = this.state;
-    return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <h1>Join Us</h1>
-          <div className="form-group">
-            <label className="control-label">Username</label>
-            <input
-              className="form-control"
-              type="text"
-              name="username"
-              value={username}
-              onChange={this.changeHandle}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label className="control-label">PassWord</label>
-            <input
-              className="form-control"
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.changeHandle}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <button className="btn btn-primary btn-lg">Submit</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
+      <button type="submit">Login</button>
+    </form>
+  );
 }
