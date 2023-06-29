@@ -12,15 +12,11 @@ const characterSchema = new Schema({
     class: { type: String, required: true },
     level: { type: Number, required: true },
     spells: [
-        { type: strings }
+        { type: String }
     ],
     inventory: [
-        { type: strings }
+        { type: String }
     ],
-    stats: {type: Schema.Types.ObjectId,
-        required: true,
-        ref: 'Stats'
-    },
     name: { type: String, required: true },
     image: String,
     race: { type: String, required: true },
@@ -28,13 +24,13 @@ const characterSchema = new Schema({
     }, {toJSON: { virtuals: true }})
 
     characterSchema.virtual('stats', {
-        ref: Stats,
+        ref: 'Stats',
         localField: '_id',
         foreignField: 'stat'
     })
 
     characterSchema.virtual('notes', {
-        ref: Notes,
+        ref: 'Notes',
         localField: '_id',
         foreignField: 'note'
     })

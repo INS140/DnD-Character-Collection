@@ -1,5 +1,5 @@
 const users = require("express").Router()
-const UserData = require('../Models/user.js')
+const UserData = require('../models/users.js')
 const bcrypt = require('bcrypt')
 
 //FIND ALL USERS
@@ -37,12 +37,11 @@ users.post('/', async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.status(500).json({ message: 'Server error' })
+        res.status(500).json({ message: 'Server error,' })
     }
 })
 
 //USER ERROR
-const { User } = db
 
 users.post('/', async (req, res) => {
     const { password, ...rest } = req.body

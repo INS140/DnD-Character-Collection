@@ -1,6 +1,7 @@
 // Require mongoose
 const mongoose = require('mongoose');
 
+
 // Schema
 const statSchema = new mongoose.Schema({
     healthPoints: { type: Number, required: true },   
@@ -16,12 +17,12 @@ const statSchema = new mongoose.Schema({
     wisdom: { type: Number, required: true},
     charisma: { type: Number, required: true},
     skills: [
-        { type: object, default: 0}
+        { type: Object, default: 0}
     ],
     savingThrows: [
-        { type: object, default: 0}
+        { type: Object, default: 0}
     ],
-}, {toJSON: { virtuals: true }})
+})
 
 module.exports = mongoose.model('Stats', statSchema);
 

@@ -11,7 +11,7 @@ const noteSchema = new Schema({
         required: true,
         ref: 'Character'
     }
-}, {toJSON: { virtuals: true }})
+})
 
 //model and export
 const Notes = mongoose.model('Notes', noteSchema)

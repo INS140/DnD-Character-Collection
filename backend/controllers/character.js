@@ -1,12 +1,12 @@
 const characters = require("express").Router()
-const Character = require('../Models/character.js')
+const Character = require('../models/characters.js')
 //const characterSeedData = require('../Seeders')
 
 //FIND ALL CHARACTERS
 characters.get('/', async (req, res) => {
     try {
         const foundChars = await Character.find()
-        return res.status(200).json(foundChars)
+        res.status(200).json(foundChars)
     }
     catch (err) {
         console.log(err)
@@ -85,4 +85,4 @@ characters.delete('/:id', async (req, res) => {
     }
 })
 
-module.exports = character
+module.exports = characters

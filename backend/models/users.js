@@ -4,16 +4,13 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt')
 SALT_WORK_FACTOR = 10
-const Character = require('./character.js');
+const Character = require('./characters.js');
 
 
 // Schema
     const userSchema = new Schema({
         userName: { type: String, required: true, index: { unique: true } },   
         password: { type: String, required: true },
-        characters: [
-            { type: object, default: 0}
-        ]
     }, {toJSON: { virtuals: true }})
 
     userSchema.pre('save', function(next) {
@@ -44,7 +41,7 @@ const Character = require('./character.js');
 
     userSchema.virtual('characters', {
         ref: Character,
-        localfield: '_id',
+        localField: '_id',
         foreignField: 'character'
     })
          
