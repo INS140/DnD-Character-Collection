@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 
 export default function CharacterGrid() {
 
-  const [ data, setData ] = useState([])
+  const [data, setData] = useState([])
 
   const mock = [{
     id: 1,
@@ -16,13 +16,13 @@ export default function CharacterGrid() {
     class: "High Elf Wizard",
     level: 1000000
   }, {
-    id: 1,
+    id: 2,
     name: "Marth",
     image: "https://t4.ftcdn.net/jpg/03/95/07/45/360_F_395074522_KDR8Luffl4Rqh1I1ElQAV9e9W1EL1EJB.jpg",
     class: "Ogre Brute",
     level: 93
   }, {
-    id: 1,
+    id: 3,
     name: "Kennikith The Cunning",
     image: "https://assetsio.reedpopcdn.com/the-modern-day-thief-reboot-that-never-was-1440764496721.jpg?width=1200&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
     class: "Thief Pick-Pocketer",
@@ -30,14 +30,18 @@ export default function CharacterGrid() {
   }]
 
   useEffect(() => {
-  setData(mock)
+    setData(mock)
   }, [])
 
   return (
     <div>
-      <NavBar/>
-      <h1><Link to="/create-character" className="btn btn-primary">+ Create New Character</Link></h1>
-      {!data.length ? <p>Loading...</p> : data.map(character => <CharGridItem key={character.id} character={character}/>)}
+      <NavBar />
+      <div class="grid">
+        {!data.length ? <p>Loading...</p> : data.map(character => <CharGridItem key={character.id} character={character} />)}
+        <div class="charGridItem">
+          <h1><Link to="/create-character">+ Create New Character</Link></h1>
+        </div>
+      </div>
     </div>
   )
 }
