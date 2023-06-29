@@ -1,11 +1,11 @@
 const characters = require("express").Router()
-const CharData = require('../Models/character.js')
+const Character = require('../Models/character.js')
 //const characterSeedData = require('../Seeders')
 
 //FIND ALL CHARACTERS
 characters.get('/', async (req, res) => {
     try {
-        const foundChars = await CharData.find()
+        const foundChars = await Character.find()
         return res.status(200).json(foundChars)
     }
     catch (err) {
@@ -18,7 +18,7 @@ characters.get('/', async (req, res) => {
 //will be removed for final implementation
 characters.get('/seed', async (req, res) => {
     try {
-        await CharData.insertMany(charSeedData)
+        await Character.insertMany(charSeedData)
         res.status(201).json({ message: 'Seeded data successfully' })
     } catch (err) {
         console.log(err)
@@ -29,7 +29,7 @@ characters.get('/seed', async (req, res) => {
 //FIND SPECIFIC CHARACTER
 characters.get('/:id', async (req, res) => {
     try {
-        const foundChar = await CharData.findById(req.params.id)
+        const foundChar = await Character.findById(req.params.id)
         return res.status(200).json(foundChar)
     }
     catch (err) {
@@ -41,7 +41,7 @@ characters.get('/:id', async (req, res) => {
 //CREATE CHARACTER
 characters.post('/', async (req, res) => {
     try {
-        const newChar = await CharData.create(req.body)
+        const newChar = await Character.create(req.body)
         return res.status(201).json({
             message: 'Successfully inserted a new character',
             data: newChar
@@ -56,7 +56,7 @@ characters.post('/', async (req, res) => {
 //UPDATE CHARACTER INFORMATION
 characters.put('/:id', async (req, res) => {
     try {
-        const updatedChar = await CharData.findByIdAndUpdate(req.params.id, req.body, {
+        const updatedChar = await Character.findByIdAndUpdate(req.params.id, req.body, {
             new: true
         })
         return res.status(200).json({ 
@@ -73,7 +73,7 @@ characters.put('/:id', async (req, res) => {
 //DELETE CHARACTER
 characters.delete('/:id', async (req, res) => {
     try {
-        const deletedChar = await CharData.findByIdAndDelete(req.params.id)
+        const deletedChar = await Character.findByIdAndDelete(req.params.id)
         return res.status(200).json({
             message: `Successfully deleted character(s)`,
             data: deletedChar
