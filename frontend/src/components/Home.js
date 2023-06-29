@@ -2,8 +2,8 @@
 // About Us with app summary
 // Buttons for login/sign up
 import React from "react"
-import About from "./about/About"
 import Header from "./header/Header"
+import About from "./about/About"
 
 export default function Home() {
   return <>
