@@ -31,6 +31,9 @@ app.use('/characters', characterController)
 const userController = require('./controllers/users')
 app.use('/users', userController)
 
+const authController = require('./controllers/authentication')
+app.use('/authentication', authController)
+
 const notesController = require('./controllers/notes')
 app.use('/notes', notesController)
 

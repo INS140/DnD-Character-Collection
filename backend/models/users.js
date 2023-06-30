@@ -9,7 +9,7 @@ const Character = require('./characters.js');
 
 // Schema
     const userSchema = new Schema({
-        userName: { type: String, required: true, index: { unique: true } },   
+        username: { type: String, required: true, index: { unique: true } },   
         password: { type: String, required: true },
     }, {toJSON: { virtuals: true }})
 
@@ -42,7 +42,7 @@ const Character = require('./characters.js');
     userSchema.virtual('characters', {
         ref: Character,
         localField: '_id',
-        foreignField: 'character'
+        foreignField: 'user'
     })
          
 const User = mongoose.model('user', userSchema);
