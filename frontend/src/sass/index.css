@@ -222,12 +222,22 @@
 
 .primary {
   background-color: #8B728E;
+  text-shadow: 0.25rem 0.25rem 0.25rem #694873;
+  font-family: "Luminari";
+}
+.primary:hover {
+  text-shadow: 0.25rem 0.25rem 0.25rem #8B728E;
 }
 
 .secondary {
+  font-family: "Luminari";
   background-color: #694873;
 }
 
 .tertiary {
-  background-color: #6c757d;
+  font-family: "Luminari";
+  color: white;
+  background-color: #3a2540;
+  margin: 0rem 3rem 0rem 3rem;
+  text-shadow: 0.25rem 0.25rem 0.25rem #8B728E;
 }/*# sourceMappingURL=index.css.map */
