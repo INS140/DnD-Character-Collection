@@ -14,6 +14,8 @@ import Notes from './components/Notes'
 
 // add router and needed components
 
+import CharacterGrid from "./components/CharacterGrid";
+
 export default function App() {
   return <div className='app'>
     <Routes>
