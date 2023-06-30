@@ -41,8 +41,10 @@ characters.get('/:id', async (req, res) => {
 //CREATE CHARACTER
 characters.post('/', async (req, res) => {
     try {
-        const newChar = await Character.create(req.body)
-        return res.status(201).json({
+        const { hp } =  req.body
+        const newChar = await Character.create({ ...req.body, maxHp: hp })
+        
+        res.status(201).json({
             message: 'Successfully inserted a new character',
             data: newChar
         })
