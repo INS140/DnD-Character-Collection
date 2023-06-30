@@ -1,5 +1,7 @@
 export default function NavBar() {
-    return <>
+  return (
+    <div class="navbar">
       PLACEHOLDER NavBar
-    </>
-  }
+    </div>
+  )
+}
