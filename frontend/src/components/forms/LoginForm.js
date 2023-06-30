@@ -5,9 +5,13 @@ import Input from "../ui-kit/Input";
 import Button from '../ui-kit/Button'
 import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from "../custom-hooks/useFormHandler";
+import { CurrentUser } from "../context/currentUser";
+import { useContext } from "react";
 
 export default function LoginForm() {
   const { post } = useFetch() // need url
+
+  const { setCurrentUser } = useContext(CurrentUser)
 
   const { inputs, handleChange } = useFormHandler({
     username: "",
@@ -16,6 +20,16 @@ export default function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+
+  const data = await response.json()
+
+    if (response.status === 200) {
+      setCurrentUser(data.user)
+      history.push(`/`)
+    } else {
+      setErrorMessage(data.message)
+    }
 
     // try {
     //   const response = await post("/user", {

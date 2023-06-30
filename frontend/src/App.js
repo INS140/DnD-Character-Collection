@@ -11,13 +11,16 @@ import Combat from './components/Combat'
 import Inventory from './components/Inventory'
 import Spells from './components/Spells'
 import Notes from './components/Notes'
+import CurrentUserProvider from '.components/contexts/CurrentUser'
 
 // add router and needed components
 
 export default function App() {
   return <div className='app'>
+    <CurrentUserProvider >
     <Routes>
       <Route path="/" element={<Home />} />
+      {/* <Route path="/profile" element={<CurrentUserProvider />} /> */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/characters" element={<CharacterGrid />} />
@@ -31,5 +34,6 @@ export default function App() {
         <Route path="notes" element={<Notes />} />
       </Route>
     </Routes>
+    </CurrentUserProvider>
   </div>
 }
