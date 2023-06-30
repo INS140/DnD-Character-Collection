@@ -20,7 +20,7 @@ body {
     padding: 1rem;
     width: 90%;
     height: 100%;
-    box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
+    box-shadow: 0 0 0.5rem 0.5rem variables.$shadow inset;
 
     .charGridItem {
         display: flex;
@@ -32,8 +32,8 @@ body {
         padding: 1rem;
         margin: 1rem 1.75rem 0.5rem 1.75rem;
         background-color: variables.$primary-color;
-        box-shadow: 0 0 0.5rem 0.5rem #3a2540;
-        text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+        box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
         font-size: large;
         font-family: "Luminari";
 
