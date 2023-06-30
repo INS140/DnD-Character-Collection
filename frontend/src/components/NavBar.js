@@ -9,12 +9,12 @@ export default function Navbar() {
         <div className="secondary">
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <NavLink className="navbar-brand" href="#">
+                    <Link className="navbar-brand" to="/">
                         <img src = "https://www.nicepng.com/png/detail/14-147008_d-d-5th-edition-logo-latest-dd-logo.png"
                             alt="logo"
                             className="logo"
                         />
-                    </NavLink>
+                    </Link>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" data-bs-theme="dark" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
