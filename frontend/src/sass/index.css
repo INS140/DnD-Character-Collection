@@ -3,8 +3,10 @@
 }
 
 .form {
+  width: 100%;
   display: grid;
-  gap: 0.5rem;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 .form fieldset {
   display: grid;
@@ -12,7 +14,6 @@
   border-bottom: none;
   border-left: none;
   border-right: none;
-  padding: auto;
   gap: 1rem;
 }
 .form fieldset legend {
@@ -20,6 +21,7 @@
 }
 .form label {
   display: grid;
+  grid: 1fr/1fr;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -49,35 +51,11 @@
 .form .traits {
   width: 100%;
   display: grid;
-  grid: repeat(4, 1fr)/repeat(12, 1fr);
+  grid: repeat(8, 1fr)/1fr;
   gap: 1rem;
 }
-.form .traits .name {
-  grid-column: 1/7;
-}
-.form .traits .race {
-  grid-column: 7/13;
-}
-.form .traits .level {
-  grid-column: 1/4;
-}
-.form .traits .class {
-  grid-column: 4/13;
-}
-.form .traits .ac {
-  grid-column: 3/6;
-}
-.form .traits .hp {
-  grid-column: 8/11;
-}
-.form .traits .speed {
-  grid-column: 3/6;
-}
-.form .traits .hit {
-  grid-column: 8/11;
-}
 .form .base-stats, .form .saving-throws {
-  grid: 1fr/1fr 1fr 1fr;
+  grid: 1fr/1fr 1fr;
 }
 .form input[type=checkbox] {
   display: inline;
@@ -88,21 +66,59 @@
   text-align: center;
 }
 .form .skills {
-  grid: auto/1fr 1fr;
+  grid: 1fr/1fr;
 }
 .form .optional .input {
-  width: 20rem;
+  width: 100%;
   height: 1.5rem;
   font-size: 1rem;
 }
 .form button[type=submit] {
   width: 75%;
   margin: auto;
-  height: 4rem;
+  padding: 1rem;
   font-size: 2rem;
   background-color: #694873;
 }
+.form .textarea {
+  width: 100%;
+}
 
+@media screen and (min-width: 550px) {
+  .form .traits {
+    grid: repeat(4, 1fr)/repeat(12, 1fr);
+  }
+  .form .traits .name {
+    grid-column: 1/7;
+  }
+  .form .traits .race {
+    grid-column: 7/13;
+  }
+  .form .traits .level {
+    grid-column: 1/4;
+  }
+  .form .traits .class {
+    grid-column: 4/13;
+  }
+  .form .traits .ac {
+    grid-column: 3/6;
+  }
+  .form .traits .hp {
+    grid-column: 8/11;
+  }
+  .form .traits .speed {
+    grid-column: 3/6;
+  }
+  .form .traits .hit {
+    grid-column: 8/11;
+  }
+  .form .base-stats, .form .saving-throws {
+    grid: 1fr/1fr 1fr 1fr;
+  }
+  .form .skills {
+    grid: 1fr/1fr 1fr;
+  }
+}
 body {
   min-height: 100vh;
   margin: 0;

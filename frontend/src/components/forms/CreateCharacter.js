@@ -232,7 +232,6 @@ export default function CreateCharacter() {
           label='Desciption'
           name='description'
           rows='5'
-          cols='50'
           value={inputs.description}
           onChange={handleChange}
         />
