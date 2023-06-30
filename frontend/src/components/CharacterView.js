@@ -4,9 +4,10 @@
 
 import { Outlet } from "react-router-dom";
 
-export default function CharacterView() {
-  return <div>
-    PLACEHOLDER CharacterView
+export default function CharacterView({ character }) {
+  return (
+  <div>
     <Outlet />
   </div>
+  )
 }
