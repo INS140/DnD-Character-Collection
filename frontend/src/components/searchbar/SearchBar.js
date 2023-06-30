@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Input from "../ui-kit/Input";
 
 export default function SearchBar({ onSearch }) {
   const [searchText, setSearchText] = useState("");
@@ -14,7 +15,7 @@ export default function SearchBar({ onSearch }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <Input
         type="text"
         value={searchText}
         onChange={handleChange}

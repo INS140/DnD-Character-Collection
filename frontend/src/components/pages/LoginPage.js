@@ -37,7 +37,6 @@ export default function LoginPage() {
 
       history.push("/profile");
     } catch (error) {
-      // Handle login failure
       console.error(error);
     }
   };
