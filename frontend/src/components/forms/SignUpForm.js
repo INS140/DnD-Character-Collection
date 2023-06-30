@@ -1,31 +1,29 @@
 // Inputfor email and password
 // submit button
 // container for form
-
 import Input from "../ui-kit/Input";
-
+import Button from "../ui-kit/Button";
 import useFormHandler from "../custom-hooks/useFormHandler";
 
-export default function SignUpForm(props) {
-  const { legend, onSubmit, formInputs } = props;
+export default function SignUpForm() {
+  const { inputs, handleChange } = useFormHandler({
+    username: '',
+    password: '',
+  });
 
-  const { inputs, handleChange } = useFormHandler(formInputs);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // await post("/", inputs);
+    // navigate("/home"); //to home page or profile page?
+  };
 
   return (
-    <form className="signup-form" onSubmit={onSubmit}>
-      <legend>{legend}</legend>
+    <form className="signup-form" onSubmit={handleSubmit}>
       <Input
-        label="Name"
+        label="Username"
         type="text"
-        name="name"
-        value={inputs.name}
-        onChange={handleChange}
-        required
-      />
-      <input
-        label="Email"
-        type="email"
-        name="email"
+        name="username"
         value={inputs.name}
         onChange={handleChange}
         required
@@ -38,7 +36,7 @@ export default function SignUpForm(props) {
         onChange={handleChange}
         required
       />
-      <button type="submit">Sign Up</button>
+      <Button type="submit">Sign Up</Button>
     </form>
   );
 }

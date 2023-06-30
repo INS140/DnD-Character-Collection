@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
-import Login from './components/forms/LoginForm'
-import Signup from './components/forms/SignUpForm'
+import LoginPage from './components/pages/LoginPage'
+import SignUpPage from './components/pages/SignUpPage'
 import CharacterGrid from './components/CharacterGrid'
 import CreateCharacter from './components/forms/CreateCharacter'
 import CharacterView from './components/CharacterView'
@@ -18,8 +18,8 @@ export default function App() {
   return <div className='app'>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignUpPage />} />
       <Route path="/characters" element={<CharacterGrid />} />
       <Route path="/create-character" element={<CreateCharacter />} />
       <Route path="/characters/:id/" element={<CharacterView />} >
