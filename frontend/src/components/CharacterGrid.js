@@ -24,6 +24,12 @@ export default function CharacterGrid() {
     image: "https://assetsio.reedpopcdn.com/the-modern-day-thief-reboot-that-never-was-1440764496721.jpg?width=1200&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
     classType: "Thief Pick-Pocketer",
     level: 7021
+  }, {
+    id: 4,
+    name: "Shaun",
+    image: "https://t3.ftcdn.net/jpg/05/73/92/02/360_F_573920251_veCkGPsuqXwZ8pXOl1WulBjho09F3g7u.jpg",
+    classType: "Great Knight",
+    level: 487
   }]
 
   useEffect(() => {

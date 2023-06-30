@@ -3,10 +3,12 @@
 // fetch individual character data
 
 import { Outlet } from "react-router-dom";
+import useFetch from './custom-hooks/useFetch'
 
 export default function CharacterView() {
+  const { get } = useFetch() // need url
+
   return <div>
-    PLACEHOLDER CharacterView
     <Outlet />
   </div>
 }

@@ -15,13 +15,15 @@
 .grid {
     margin: auto;
     background-color: variables.$secondary-color;
+    justify-content: center;
+    flex-wrap: wrap;
     display: flex;
     padding: 2rem;
     width: 90%;
     height: 100%;
     justify-content: center;
     gap: 2rem;
-    box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
+    box-shadow: 0 0 0.5rem 0.5rem variables.$shadow inset;
     flex-wrap: wrap;
 
     .newCharItem{
@@ -38,8 +40,10 @@
         max-height: 25rem;
         padding: 1rem;
         background-color: variables.$primary-color;
-        box-shadow: 0 0 0.5rem 0.5rem #3a2540;
-        font-family: 'Bookman', 'URW Bookman L', 'Serif';
+        box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+        font-size: large;
+        font-family: "Luminari";
         
         .newCharItemText{
             text-align: center;
@@ -64,6 +68,22 @@
     }
 }
 
+.stats {
+    font-size: large;
+    font-family: "Luminari";
+    color: white;
+    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+
+    h1 {
+        text-align: center;
+    }
+
+    hr {
+        margin-top: -1rem;
+        align-self: center;
+        width: 15%;
+    }
+}
 .logo {
     width: 100%;
     height: 50px;

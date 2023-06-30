@@ -148,6 +148,8 @@
 .grid {
   margin: auto;
   background-color: #694873;
+  justify-content: center;
+  flex-wrap: wrap;
   display: flex;
   padding: 2rem;
   width: 90%;
@@ -171,7 +173,9 @@
   padding: 1rem;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
-  font-family: "Bookman", "URW Bookman L", "Serif";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+  font-size: large;
+  font-family: "Luminari";
 }
 .grid .charGridItem .newCharItemText {
   text-align: center;
@@ -189,6 +193,21 @@
 .grid .charGridItem .itemLink .itemText {
   text-align: center;
   color: lightgrey;
+}
+
+.stats {
+  font-size: large;
+  font-family: "Luminari";
+  color: white;
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+.stats h1 {
+  text-align: center;
+}
+.stats hr {
+  margin-top: -1rem;
+  align-self: center;
+  width: 15%;
 }
 
 .logo {
