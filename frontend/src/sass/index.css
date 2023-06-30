@@ -181,4 +181,12 @@ body {
   font-family: "Luminari";
   color: white;
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+.stats h1 {
+  text-align: center;
+}
+.stats hr {
+  margin-top: -1rem;
+  align-self: center;
+  width: 15%;
 }/*# sourceMappingURL=index.css.map */

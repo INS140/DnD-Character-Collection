@@ -69,4 +69,14 @@ body {
     font-family: "Luminari";
     color: white;
     text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+
+    h1 {
+        text-align: center;
+    }
+
+    hr {
+        margin-top: -1rem;
+        align-self: center;
+        width: 15%;
+    }
 }
