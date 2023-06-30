@@ -1,4 +1,10 @@
 @use 'variables';
+@use 'forms';
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
 
 .app {
     background-color: variables.$primary-color;
