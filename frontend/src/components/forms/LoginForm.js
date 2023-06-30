@@ -3,7 +3,7 @@
 // container for form
 
 import React from "react";
-import Input from "./Input";
+import Input from "../ui-kit/Input";
 
 export default function LoginForm({ formData, handleChange, handleSubmit }) {
   return (
