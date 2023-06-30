@@ -9,7 +9,6 @@ export default function Input(props) {
 
   return <label className={labelClasses}>
     {label}
-    {required && <span className='required'> * </span>}
     <input
       type={inputType}
       className={classes}

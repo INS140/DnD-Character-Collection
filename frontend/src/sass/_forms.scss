@@ -2,6 +2,7 @@
 
 .form-container {
   text-align: center;
+  padding: 1rem;
 }
 
 .form {
@@ -12,13 +13,18 @@
 
   fieldset {
     display: grid;
-    border-top: v.$border;
+    border-top: 1px solid white;
     border-bottom: none;
     border-left: none;
     border-right: none;
     gap: 1rem;
 
-    legend { font-size: 2rem; }
+    legend {
+      float: none;
+      font-size: 2rem;
+      width: auto;
+      padding: 1rem;
+    }
   }
 
   label {
@@ -43,7 +49,7 @@
       display: block;
       height: 2.5rem;
       width: 75%;
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-align: center;
       padding: 0;
       margin: auto;
@@ -89,11 +95,19 @@
     padding: 1rem;
     font-size: 2rem;
     background-color: v.$secondary-color;
+    color: white;
   }
 
   .textarea {
     width: 100%;
   }
+}
+
+.grid-2 {
+  grid: repeat(2, 1fr) / repeat(6, 1fr);
+
+  .username, .password { grid-column: span 3; }
+  .submit { grid-column: 2 / 6; }
 }
 
 @media screen and (min-width: 550px) {

@@ -11,11 +11,11 @@ import Combat from './components/Combat'
 import Inventory from './components/Inventory'
 import Spells from './components/Spells'
 import Notes from './components/Notes'
-
-// add router and needed components
+import Navbar from './components/Navbar'
 
 export default function App() {
   return <div className='app'>
+    <Navbar /> 
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />

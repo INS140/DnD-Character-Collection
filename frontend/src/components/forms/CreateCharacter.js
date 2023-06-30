@@ -13,8 +13,8 @@ export default function CreateCharacter() {
   const {inputs, handleChange, handleCheckboxChange} = useFormHandler({
     name: '',
     race: '',
-    class: '',
-    level: 0,
+    classType: '',
+    level: 1,
     hitDice: '',
     hp: 0,
     ac: 0,
@@ -66,7 +66,7 @@ export default function CreateCharacter() {
 
     console.log(inputs)
 
-    // post('characters', {
+    // post('/characters', {
     //   ...inputs,
     //   user: user.id
     // })
@@ -80,6 +80,7 @@ export default function CreateCharacter() {
           label='Name'
           labelClass='name'
           name='name'
+          required
           value={inputs.name}
           onChange={handleChange}
         />
@@ -87,6 +88,7 @@ export default function CreateCharacter() {
           label='Race'
           labelClass='race'
           name='race'
+          required
           value={inputs.race}
           onChange={handleChange}
         />
@@ -95,14 +97,18 @@ export default function CreateCharacter() {
           labelClass='level'
           name='level'
           type='number'
+          min={1}
+          max={20}
+          required
           value={inputs.level}
           onChange={handleChange}
         />
         <Input
           label='Class'
           labelClass='class'
-          name='class'
-          value={inputs.class}
+          name='classType'
+          required
+          value={inputs.classType}
           onChange={handleChange}
         />
         <Input
@@ -110,6 +116,7 @@ export default function CreateCharacter() {
           labelClass='ac'
           name='ac'
           type='number'
+          required
           value={inputs.ac}
           onChange={handleChange}
         />
@@ -118,6 +125,7 @@ export default function CreateCharacter() {
           labelClass='hp'
           name='hp'
           type='number'
+          required
           value={inputs.hp}
           onChange={handleChange}
         />
@@ -126,6 +134,7 @@ export default function CreateCharacter() {
           labelClass='speed'
           name='speed'
           type='number'
+          required
           value={inputs.speed}
           onChange={handleChange}
         />
@@ -133,6 +142,7 @@ export default function CreateCharacter() {
           label='Hit Dice'
           labelClass='hit'
           name='hitDice'
+          required
           value={inputs.hitDice}
           onChange={handleChange}
         />
@@ -145,6 +155,7 @@ export default function CreateCharacter() {
           type='number'
           min={1}
           max={20}
+          required
           value={inputs.str}
           onChange={handleChange}
         />
@@ -154,6 +165,7 @@ export default function CreateCharacter() {
           type='number'
           min={1}
           max={20}
+          required
           value={inputs.dex}
           onChange={handleChange}
         />
@@ -163,6 +175,7 @@ export default function CreateCharacter() {
           type='number'
           min={1}
           max={20}
+          required
           value={inputs.con}
           onChange={handleChange}
         />
@@ -172,6 +185,7 @@ export default function CreateCharacter() {
           type='number'
           min={1}
           max={20}
+          required
           value={inputs.int}
           onChange={handleChange}
         />
@@ -181,6 +195,7 @@ export default function CreateCharacter() {
           type='number'
           min={1}
           max={20}
+          required
           value={inputs.wis}
           onChange={handleChange}
         />
@@ -190,6 +205,7 @@ export default function CreateCharacter() {
           type='number'
           min={1}
           max={20}
+          required
           value={inputs.cha}
           onChange={handleChange}
         />

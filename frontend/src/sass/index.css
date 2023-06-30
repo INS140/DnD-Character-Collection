@@ -1,5 +1,6 @@
 .form-container {
   text-align: center;
+  padding: 1rem;
 }
 
 .form {
@@ -10,14 +11,17 @@
 }
 .form fieldset {
   display: grid;
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   border-bottom: none;
   border-left: none;
   border-right: none;
   gap: 1rem;
 }
 .form fieldset legend {
+  float: none;
   font-size: 2rem;
+  width: auto;
+  padding: 1rem;
 }
 .form label {
   display: grid;
@@ -40,7 +44,7 @@
   display: block;
   height: 2.5rem;
   width: 75%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 0;
   margin: auto;
@@ -79,9 +83,20 @@
   padding: 1rem;
   font-size: 2rem;
   background-color: #694873;
+  color: white;
 }
 .form .textarea {
   width: 100%;
+}
+
+.grid-2 {
+  grid: repeat(2, 1fr)/repeat(6, 1fr);
+}
+.grid-2 .username, .grid-2 .password {
+  grid-column: span 3;
+}
+.grid-2 .submit {
+  grid-column: 2/6;
 }
 
 @media screen and (min-width: 550px) {
@@ -119,13 +134,14 @@
     grid: 1fr/1fr 1fr;
   }
 }
-body {
-  min-height: 100vh;
-  margin: 0;
-}
-
 .app {
   background-color: #8B728E;
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.grid-container {
   padding: 1rem;
 }
 
@@ -133,34 +149,34 @@ body {
   margin: auto;
   background-color: #694873;
   display: flex;
-  padding: 1rem;
+  padding: 2rem;
   width: 90%;
   height: 100%;
   justify-content: center;
+  gap: 2rem;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
   flex-wrap: wrap;
-  justify-content: flex-start;
+}
+.grid .newCharItem {
+  text-decoration: none;
+  color: lightgrey;
 }
 .grid .charGridItem {
   display: flex;
   justify-content: center;
-  min-width: 20rem;
-  max-width: 15rem;
+  min-width: 10rem;
+  max-width: 20rem;
   min-height: 25rem;
   max-height: 25rem;
   padding: 1rem;
-  margin: 1rem 0 0.5rem 3.5rem;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   font-family: "Bookman", "URW Bookman L", "Serif";
 }
-.grid .charGridItem .newCharItem {
-  text-decoration: none;
-  color: lightgrey;
-}
 .grid .charGridItem .newCharItemText {
   text-align: center;
   margin: auto;
+  font-size: 2.5rem;
 }
 .grid .charGridItem .itemLink {
   text-decoration: none;
@@ -173,4 +189,27 @@ body {
 .grid .charGridItem .itemLink .itemText {
   text-align: center;
   color: lightgrey;
+}
+
+.logo {
+  width: 100%;
+  height: 50px;
+  mix-blend-mode: darken;
+}
+
+.list-borders li {
+  border-top: 1px solid #8B728E;
+  border-bottom: 1px solid #8B728E;
+}
+
+.primary {
+  background-color: #8B728E;
+}
+
+.secondary {
+  background-color: #694873;
+}
+
+.tertiary {
+  background-color: #6c757d;
 }/*# sourceMappingURL=index.css.map */

@@ -36,9 +36,10 @@ export default function LoginForm() {
   }
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="form grid-2" onSubmit={handleSubmit}>
       <Input
         label="Username"
+        labelClass='username'
         type="text"
         name="username"
         value={inputs.username}
@@ -47,13 +48,14 @@ export default function LoginForm() {
       />
       <Input
         label="Password"
+        labelClass='password'
         type="password"
         name="password"
         value={inputs.password}
         onChange={handleChange}
         required
       />
-      <Button type="submit">Login</Button>
+      <Button className="submit" type="submit">Login</Button>
     </form>
   );
 }

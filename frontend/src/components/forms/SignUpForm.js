@@ -19,9 +19,10 @@ export default function SignUpForm() {
   };
 
   return (
-    <form className="signup-form" onSubmit={handleSubmit}>
+    <form className="form grid-2" onSubmit={handleSubmit}>
       <Input
         label="Username"
+        labelClass="username"
         type="text"
         name="username"
         value={inputs.name}
@@ -30,13 +31,14 @@ export default function SignUpForm() {
       />
       <Input
         label="Password"
+        labelClass="password"
         type="password"
         name="password"
         value={inputs.name}
         onChange={handleChange}
         required
       />
-      <Button type="submit">Sign Up</Button>
+      <Button className="submit" type="submit">Sign Up</Button>
     </form>
   );
 }

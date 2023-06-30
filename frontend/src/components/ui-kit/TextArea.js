@@ -5,7 +5,6 @@ export default function TextArea(props) {
   
     return <label className='label'>
       {label}
-      {required && <span className='required'> * </span>}
       <textarea
         className={classes}
         required={required}
