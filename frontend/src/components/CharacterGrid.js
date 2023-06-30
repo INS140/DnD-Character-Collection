@@ -39,7 +39,7 @@ export default function CharacterGrid() {
       <div class="grid">
         {!data.length ? <p>Loading...</p> : data.map(character => <CharGridItem key={character.id} character={character} />)}
         <div class="charGridItem">
-          <h1><Link to="/create-character">+ Create New Character</Link></h1>
+          <h1 class="newCharItemText"><Link class="newCharItem" to="/create-character">+ Create New Character</Link></h1>
         </div>
       </div>
     </div>
