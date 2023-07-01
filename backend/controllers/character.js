@@ -5,15 +5,18 @@ const jwt = require('json-web-token')
 //FIND ALL CHARACTERS FOR A USER
 characters.get('/', async (req, res) => {
     try {
-        const [authenticationMethod, token] = req.headers.authorization.split(' ')
+        if (req.headers.authorization !== undefined) {
+            console.log(req.headers.authorization)
+            const [authenticationMethod, token] = req.headers.authorization.split(' ')
 
-        if (authenticationMethod == 'Bearer') {
-            const result = await jwt.decode(process.env.JWT_SECRET, token)
-            const { id } = result.value
-            const foundChars = await Character.find({
-                user: id
-            })
-            res.status(200).json(foundChars)
+            if (authenticationMethod == 'Bearer') {
+                const result = await jwt.decode(process.env.JWT_SECRET, token)
+                const { id } = result.value
+                const foundChars = await Character.find({
+                    user: id
+                })
+                res.status(200).json(foundChars)
+            }
         }
     }
     catch (err) {

@@ -11,14 +11,13 @@ export default function CurrentUserProvider({ children }) {
   useEffect(() => {
     (async () => {
       try {
-        const user = await get('/authorization/profile', {
+        const user = await get('/authentication/profile', {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
         })
         setCurrentUser(user)
       } catch (err) {
-        console.log(err)
         return
       }
     })()

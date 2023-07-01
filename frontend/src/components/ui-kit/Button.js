@@ -3,5 +3,5 @@ export default function Button(props) {
 
   const classes = `button ${className}`
 
-  return <button className={classes} {...rest}>{ children }</button>
+  return <button className={classes} onClick={onClick} {...rest}>{ children }</button>
 }

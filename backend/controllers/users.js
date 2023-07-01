@@ -1,6 +1,5 @@
 const users = require("express").Router()
 const UserData = require('../models/users.js')
-const bcrypt = require('bcrypt')
 
 //FIND ALL USERS
 users.get('/', async (req, res) => {
@@ -41,21 +40,6 @@ users.post('/', async (req, res) => {
         res.status(500).json({ message: 'Server error,' })
     }
 })
-
-//CREATE USER
-
-users.post('/', async (req, res) => {
-    const { password, ...rest } = req.body
-    const passHash = await bcrypt.hash(password, 10)
-    console.log(password, passHash)
-    const user = await User.create({
-        ...rest,
-        role: 'reviewer',
-        passwordDigest: passHash
-    })
-    res.json(user)
-})
-
 
 //UPDATE USER INFORMATION
 users.put('/:id', async (req, res) => {

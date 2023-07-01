@@ -1,15 +1,15 @@
-// input for email and password
-// submit button
-// container for form
 import Input from "../ui-kit/Input";
 import Button from '../ui-kit/Button'
 import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from "../custom-hooks/useFormHandler";
 import { CurrentUser } from "../context/currentUser";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom"
 
 export default function LoginForm() {
-  const { post } = useFetch() // need url
+  const { post } = useFetch('http://localhost:5000')
+
+  const navigate = useNavigate()
 
   const { setCurrentUser } = useContext(CurrentUser)
 
@@ -21,6 +21,14 @@ export default function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    const data = await post('/authentication', inputs)
+
+    if (data !== null) {
+      setCurrentUser(data.user)
+      localStorage.setItem('token', data.token)
+
+      navigate('/characters')
+    }
   }
 
   return (

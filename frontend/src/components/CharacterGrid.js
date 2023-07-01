@@ -1,10 +1,30 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import CharGridItem from "./CharGridItem";
+import useFetch from "./custom-hooks/useFetch";
 
 export default function CharacterGrid() {
+  const { get } = useFetch('http://localhost:5000')
 
-  const [data, setData] = useState([])
+  const [characters, setCharacters] = useState([])
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const foundCharacters = await get('/characters', {
+          headers: {
+            "Authorization": `Bearer ${localStorage.getItem('token')}`
+          }
+        })
+
+        console.log(foundCharacters)
+  
+        setCharacters(!foundCharacters ? mock : foundCharacters)
+      } catch (err) {
+        console.log(err)
+      }
+    })()
+  }, [])
 
   const mock = [{
     id: 1,
@@ -32,13 +52,9 @@ export default function CharacterGrid() {
     level: 487
   }]
 
-  useEffect(() => {
-    setData(mock)
-  }, [])
-
   return <div className="grid-container">
     <div className="grid">
-      {!data.length ? <p>Loading...</p> : data.map(character => <CharGridItem key={character.id} character={character} />)}
+      {!characters.length ? <p>Loading...</p> : characters.map(character => <CharGridItem key={character.id} character={character} />)}
       <Link className="newCharItem" to="/create-character">
         <div className="charGridItem">
           <h2 className="newCharItemText">+ Create New Character</h2>
