@@ -1,12 +1,20 @@
 const characters = require("express").Router()
 const Character = require('../models/characters.js')
-//const characterSeedData = require('../Seeders')
+const jwt = require('json-web-token')
 
-//FIND ALL CHARACTERS
+//FIND ALL CHARACTERS FOR A USER
 characters.get('/', async (req, res) => {
     try {
-        const foundChars = await Character.find()
-        res.status(200).json(foundChars)
+        const [authenticationMethod, token] = req.headers.authorization.split(' ')
+
+        if (authenticationMethod == 'Bearer') {
+            const result = await jwt.decode(process.env.JWT_SECRET, token)
+            const { id } = result.value
+            const foundChars = await Character.find({
+                user: id
+            })
+            res.status(200).json(foundChars)
+        }
     }
     catch (err) {
         console.log(err)

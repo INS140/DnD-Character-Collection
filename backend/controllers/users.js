@@ -42,7 +42,7 @@ users.post('/', async (req, res) => {
     }
 })
 
-//USER ERROR
+//CREATE USER
 
 users.post('/', async (req, res) => {
     const { password, ...rest } = req.body
