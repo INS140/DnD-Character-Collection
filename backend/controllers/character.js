@@ -6,7 +6,6 @@ const jwt = require('json-web-token')
 characters.get('/', async (req, res) => {
     try {
         if (req.headers.authorization !== undefined) {
-            console.log(req.headers.authorization)
             const [authenticationMethod, token] = req.headers.authorization.split(' ')
 
             if (authenticationMethod == 'Bearer') {

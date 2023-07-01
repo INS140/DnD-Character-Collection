@@ -24,7 +24,8 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src = "https://www.nicepng.com/png/detail/14-147008_d-d-5th-edition-logo-latest-dd-logo.png"
+          {/* Will need to be updated to actual backend url */}
+          <img src="http://localhost:5000/logo.png"
             alt="logo"
             className="logo"
           />

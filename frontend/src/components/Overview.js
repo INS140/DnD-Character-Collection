@@ -1,10 +1,17 @@
-// character image
-// base stats
-// description
-// name
+import { useOutletContext } from "react-router-dom"
 
 export default function Overview() {
+  const { character } = useOutletContext()
+
   return <>
-    PLACEHOLDER Overview
+    { !character
+      ? <>Loading ...</>
+      : <div className="overview">
+        <p>{character.name}</p>
+        <p>{character.image}</p>
+        <p>{character.classType}</p>
+        <p>{character.level}</p>
+      </div>
+    }
   </>
 }

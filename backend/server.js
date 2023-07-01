@@ -12,6 +12,7 @@ app.use(cors({
     credentials: true,
     optionSuccessStatus: 200,
 }))
+app.use(express.static('assets'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 const PORT = process.env.PORT

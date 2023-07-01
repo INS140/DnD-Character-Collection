@@ -10,7 +10,7 @@ import Stats from './components/Stats'
 import Combat from './components/Combat'
 import Inventory from './components/Inventory'
 import Spells from './components/Spells'
-import Notes from './components/Notes'
+import Notes from './components/NotesGallery'
 import Navbar from './components/Navbar'
 
 export default function App() {

@@ -43,7 +43,7 @@
         box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
         text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
         font-size: large;
-        font-family: "Luminari";
+        font-family: variables.$font;
         
         .newCharItemText{
             text-align: center;
@@ -70,7 +70,7 @@
 
 .stats {
     font-size: large;
-    font-family: "Luminari";
+    font-family: variables.$font;
     color: white;
     text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
 
@@ -88,7 +88,6 @@
 .logo {
     width: 100%;
     height: 50px;
-    mix-blend-mode: darken;
 }
 
 .list-borders {
@@ -99,13 +98,19 @@
 
 .primary {
     background-color: variables.$primary-color;
-}
+    text-shadow: 0.25rem 0.25rem 0.25rem variables.$secondary-color;
+    font-family: variables.$font;
 
+    &:hover {
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
+    }
+}
 .primary-color {
     color: variables.$primary-color;
 }
 
 .secondary {
+    font-family: variables.$font;
     background-color: variables.$secondary-color;
 }
 
@@ -114,7 +119,11 @@
 }
 
 .tertiary {
-    background-color: variables.$tertiary-color;
+    font-family: variables.$font;
+    color: white;
+    background-color: variables.$shadow;
+    margin: 0rem 3rem 0rem 3rem;
+    text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
 }
 
 .tertiary-color {
