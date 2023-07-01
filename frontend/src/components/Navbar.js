@@ -27,7 +27,7 @@ export default function Navbar() {
                                 <NavLink className={getClassName} to="/characters">Characters</NavLink>
                             </li>
                         </ul>
-                    <div className="d-flex justify-content-sm-around gap-3">
+                    <div className="d-flex justify-content-around gap-3">
                       <Link className="text-light text-decoration-none" to="/login">
                         <button className="btn btn-md primary px-5">Login</button>
                       </Link>

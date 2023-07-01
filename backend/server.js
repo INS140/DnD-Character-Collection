@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const app = express()
+const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
 //configuration and middleware
@@ -25,10 +26,13 @@ try {
 
 //controllers and routes
 const characterController = require('./controllers/character')
-app.use('/character', characterController)
+app.use('/characters', characterController)
 
-const userController = require('./controllers/user')
-app.use('/user', userController)
+const userController = require('./controllers/users')
+app.use('/users', userController)
+
+const notesController = require('./controllers/notes')
+app.use('/notes', notesController)
 
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Welcome to the Dungeon!'})
