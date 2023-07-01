@@ -1,10 +1,10 @@
 export default function useFetch(baseUrl) { // this hook now requires that a baseurl be input as an arguemnet when called
   return {
-    get: async (endpoint, headers) => {
+    get: async (endpoint, token) => {
       try {
         const res = await fetch(baseUrl+endpoint, {
           headers: {
-            ...headers
+            "Authorization": `Bearer ${token}`
           }
         })
         return await res.json()
@@ -12,13 +12,13 @@ export default function useFetch(baseUrl) { // this hook now requires that a bas
         return err
       }
     },
-    post: async (endpoint, body, headers) => {
+    post: async (endpoint, body, token) => {
       try {
         const res = await fetch(baseUrl+endpoint, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            ...headers
+            "Authorization": `Bearer ${token}`
           },
           body: JSON.stringify(body)
         })
@@ -27,13 +27,13 @@ export default function useFetch(baseUrl) { // this hook now requires that a bas
         return err
       }
     },
-    put: async (endpoint, body, headers) => {
+    put: async (endpoint, body, token) => {
       try {
         const res = await fetch(baseUrl+endpoint, {
           method: 'PUT',
           headers: {
             "Content-Type": "application/json",
-            ...headers
+            "Authorization": `Bearer ${token}`
           },
           body: JSON.stringify(body)
         })
@@ -42,12 +42,12 @@ export default function useFetch(baseUrl) { // this hook now requires that a bas
         return err
       }
     },
-    remove: async (endpoint, headers) => {
+    remove: async (endpoint, token) => {
       try {
         const res = await fetch(baseUrl+endpoint, {
           method: 'DELETE',
           headers: {
-            ...headers
+            "Authorization": `Bearer ${token}`
           }
         })
         return await res.json()

@@ -101,10 +101,22 @@
     background-color: variables.$primary-color;
 }
 
+.primary-color {
+    color: variables.$primary-color;
+}
+
 .secondary {
     background-color: variables.$secondary-color;
 }
 
+.secondary-color {
+    color: variables.$secondary-color;
+}
+
 .tertiary {
     background-color: variables.$tertiary-color;
+}
+
+.tertiary-color {
+    color: variables.$tertiary-color;
 }

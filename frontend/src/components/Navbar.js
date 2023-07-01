@@ -44,8 +44,8 @@ export default function Navbar() {
           <div className="d-flex justify-content-around gap-3">
           { !currentUser
                 ? <>
-                    <Link className="text-light text-decoration-none" to="/login">
-                        <Button className="btn btn-md primary px-5">Login</Button>
+                    <Link className="text-decoration-none" to="/login">
+                        <Button className="btn btn-md primary px-5 text-light">Login</Button>
                     </Link>
                     <Link className="text-decoration-none" to='/signup'>
                         <Button className="btn btn-md tertiary px-5 text-light">Signup</Button>

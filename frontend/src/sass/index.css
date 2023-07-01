@@ -224,10 +224,22 @@
   background-color: #8B728E;
 }
 
+.primary-color {
+  color: #8B728E;
+}
+
 .secondary {
   background-color: #694873;
 }
 
+.secondary-color {
+  color: #694873;
+}
+
 .tertiary {
   background-color: #6c757d;
+}
+
+.tertiary-color {
+  color: #6c757d;
 }/*# sourceMappingURL=index.css.map */

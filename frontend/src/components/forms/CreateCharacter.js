@@ -1,14 +1,18 @@
+import { useContext } from 'react'
 import Input from '../ui-kit/Input'
 import TextArea from '../ui-kit/TextArea'
 import Button from '../ui-kit/Button'
 import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from '../custom-hooks/useFormHandler'
-
-// inputs for list on lucid chart
-// seperate fieldsets for base stats/skills
+import { CurrentUser } from '../context/currentUser'
+import { useNavigate } from 'react-router-dom'
 
 export default function CreateCharacter() {
-  const { post } = useFetch('') // still need url
+  const { post } = useFetch('http://localhost:5000')
+
+  const { currentUser } = useContext(CurrentUser)
+
+  const navigate = useNavigate()
 
   const {inputs, handleChange, handleCheckboxChange} = useFormHandler({
     name: '',
@@ -61,15 +65,19 @@ export default function CreateCharacter() {
     return str.split(/(?=[A-Z])/).map(w => w.split('').map((c, i) => i === 0 ? c.toUpperCase() : c.toLowerCase()).join('')).join(' ')
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
 
-    console.log(inputs)
+    try {
+      await post('/characters', {
+        ...inputs,
+        user: currentUser.id
+      })
 
-    // post('/characters', {
-    //   ...inputs,
-    //   user: user.id
-    // })
+      navigate('/characters')
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return <div className='form-container'>

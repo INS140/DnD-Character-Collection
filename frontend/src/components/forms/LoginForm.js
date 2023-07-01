@@ -21,13 +21,17 @@ export default function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const data = await post('/authentication', inputs)
+    try {
+      const data = await post('/authentication', inputs)
 
-    if (data !== null) {
-      setCurrentUser(data.user)
-      localStorage.setItem('token', data.token)
+      if (data !== null) {
+        setCurrentUser(data.user)
+        localStorage.setItem('token', data.token)
 
-      navigate('/characters')
+        navigate('/characters')
+      }
+    } catch (err) {
+      console.log(err)
     }
   }
 
