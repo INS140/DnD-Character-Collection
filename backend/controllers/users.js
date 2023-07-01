@@ -18,6 +18,7 @@ users.get('/', async (req, res) => {
 users.get('/:id', async (req, res) => {
     try {
         const foundUser = await UserData.findById(req.params.id)
+            .populate('characters')
         return res.status(200).json(foundUser)
     }
     catch (err) {
@@ -41,7 +42,7 @@ users.post('/', async (req, res) => {
     }
 })
 
-//USER ERROR
+//CREATE USER
 
 users.post('/', async (req, res) => {
     const { password, ...rest } = req.body
