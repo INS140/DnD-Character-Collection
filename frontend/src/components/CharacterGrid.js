@@ -21,7 +21,6 @@ export default function CharacterGrid() {
       }
     })()
   }, [])
- */
   return <div className="grid-container">
     { !currentUser
       ? <h2 className="text-center">

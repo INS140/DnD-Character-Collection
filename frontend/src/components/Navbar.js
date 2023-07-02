@@ -7,18 +7,6 @@ import { useNavigate } from "react-router-dom"
 export default function Navbar() {
   const { currentUser, setCurrentUser } = useContext(CurrentUser)
 
-<<<<<<< HEAD
-    return (
-        <div className="secondary">
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">
-                        <img src = "https://cdn.discordapp.com/attachments/1097211576370593917/1124468449192706078/IMG_1208.png"
-                            alt="logo"
-                            className="logo"
-                            color="white"
-                        />
-=======
   const navigate = useNavigate()
 
   const getClassName = ({ isActive }) => {
@@ -59,7 +47,6 @@ export default function Navbar() {
                 ? <>
                     <Link className="text-decoration-none" to="/login">
                         <Button className="btn btn-md primary px-5 text-light">Login</Button>
->>>>>>> eccf296149360f79070c8ac2ada5a7141721d23b
                     </Link>
                     <Link className="text-decoration-none" to='/signup'>
                         <Button className="btn btn-md tertiary px-5 text-light">Signup</Button>
