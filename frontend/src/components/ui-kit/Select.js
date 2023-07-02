@@ -5,7 +5,6 @@ export default function Select(props) {
 
   return <label className='label'>
     {label}
-    {required && <span className='required'> * </span>}
     <select
       className={classes}
       onChange={onChange}

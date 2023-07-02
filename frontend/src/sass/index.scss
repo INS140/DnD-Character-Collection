@@ -130,6 +130,19 @@
     color: variables.$tertiary-color;
 }
 
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+    min-width: 75%;
+}
+
+.spell-desc {
+    max-height: 10rem;
+    overflow: hidden scroll;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -141,11 +154,8 @@ a {
 }
 
 .characterView  {
-
     nav {
     background-color: variables.$secondary-color;
     justify-content : space-around;
     }
-
-
 }

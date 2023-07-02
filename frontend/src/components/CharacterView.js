@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Outlet, useParams } from "react-router-dom";
 import useFetch from "./custom-hooks/useFetch";
+import { getProficiency } from "../helper-functions";
 
 export default function CharacterView() {
   const { get } = useFetch("http://localhost:5000");
@@ -14,15 +15,19 @@ export default function CharacterView() {
 
   useEffect(() => {
     (async () => {
-      const data = await get(`/characters/${id}`);
-      console.log(data);
-      setCharacter(data);
-    })();
-  }, [get, id]);
+      const data = await get(`/characters/${id}`)
+      setCharacter({
+        ...data,
+        prof: getProficiency(data.level)
+      })
+    })()
+  }, [])
 
-  return (
-  <div class="characterView">
-    <Outlet context={{ character: character }} />
+  return <div class="characterView">
+    { !character
+      ? <>Loading ...</>
+      : <Outlet context={{character: character}} />
+    }
     <nav class="charNav" className="navbar fixed-bottom" style= { { display : "flex" } }>
       <NavLink to={`/characters/${id}/`}>
         Overview
@@ -44,5 +49,4 @@ export default function CharacterView() {
       </NavLink>
     </nav>
   </div>
-  )
 }
