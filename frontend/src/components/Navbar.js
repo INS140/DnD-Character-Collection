@@ -10,9 +10,10 @@ export default function Navbar() {
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">
-                        <img src = "https://www.nicepng.com/png/detail/14-147008_d-d-5th-edition-logo-latest-dd-logo.png"
+                        <img src = "https://cdn.discordapp.com/attachments/1097211576370593917/1124468449192706078/IMG_1208.png"
                             alt="logo"
                             className="logo"
+                            color="white"
                         />
                     </Link>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" data-bs-theme="dark" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

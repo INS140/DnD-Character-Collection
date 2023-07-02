@@ -6,7 +6,7 @@ export default function CharacterGrid() {
 
   const [data, setData] = useState([])
 
-  /* const mock = [{
+  const mock = [{
     id: 1,
     name: "Milguaar",
     image: "https://as2.ftcdn.net/v2/jpg/05/62/86/97/1000_F_562869742_exRn1yPPpH3LQ7QQ4bReEpcNZTfIQerj.jpg",
@@ -35,7 +35,7 @@ export default function CharacterGrid() {
   useEffect(() => {
     setData(mock)
   }, [])
- */
+ 
   return <div className="grid-container">
     <div className="grid">
       {!data.length ? <></> : data.map(character => <CharGridItem key={character.id} character={character} />)}
