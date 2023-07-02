@@ -17,15 +17,16 @@ export default function Combat() {
 
   useEffect(() => {
     (async () => {
-      const data = await get(`/characters/inventory`);
-      console.log(data);
-      for (let i = 0; i < data.length; i++) {
-        if (`equipment/${i}/equipment_category/index` === "weapon")
-          addWeapon(i);
-          console.log(i)
+      for (const item of character.inventory) {
+        const data = await get(`/equipment/${item}`);
+        console.log(data);
+        if (data.equipment_category.index === "weapon")
+          addWeapon(prev => [
+            ...prev, data
+          ]);
       }
     })();
-  }, [get]);
+  }, []);
   
   return (
     <div class="stats">
