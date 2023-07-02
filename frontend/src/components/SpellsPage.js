@@ -3,7 +3,6 @@ import { useOutletContext } from 'react-router-dom'
 import useFetch from "./custom-hooks/useFetch"
 import Input from './ui-kit/Input'
 import Select from './ui-kit/Select'
-import Button from "./ui-kit/Button"
 import Modal from "./ui-kit/Modal"
 import { scoreToMod, getTag } from "../helper-functions"
 import SpellDisplay from "./SpellDisplay"
