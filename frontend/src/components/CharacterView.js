@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import useFetch from './custom-hooks/useFetch'
+import { getProficiency } from "../helper-functions";
 
 export default function CharacterView() {
   const { get } = useFetch('http://localhost:5000')
@@ -15,11 +16,17 @@ export default function CharacterView() {
   useEffect(() => {
     (async () => {
       const data = await get(`/characters/${id}`)
-      setCharacter(data)
+      setCharacter({
+        ...data,
+        prof: getProficiency(data.level)
+      })
     })()
   }, [])
 
   return <div>
-    <Outlet context={{character: character}} />
+    { !character
+      ? <>Loading ...</>
+      : <Outlet context={{character: character}} />
+    }
   </div>
 }

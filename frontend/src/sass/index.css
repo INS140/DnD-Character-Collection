@@ -251,4 +251,17 @@
 
 .tertiary-color {
   color: #6c757d;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+  min-width: 75%;
+}
+
+.spell-desc {
+  max-height: 10rem;
+  overflow: hidden scroll;
 }/*# sourceMappingURL=index.css.map */

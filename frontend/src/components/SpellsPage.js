@@ -4,74 +4,64 @@ import useFetch from "./custom-hooks/useFetch"
 import Input from './ui-kit/Input'
 import Select from './ui-kit/Select'
 import Button from "./ui-kit/Button"
+import Modal from "./ui-kit/Modal"
+import { scoreToMod, getTag } from "../helper-functions"
+import SpellDisplay from "./SpellDisplay"
+import Spell from "./Spell"
+import { useNavigate } from "react-router-dom"
 
 export default function SpellsPage() {
   const { character } = useOutletContext()
 
+  const navigate = useNavigate()
+
   const { get } = useFetch('https://www.dnd5eapi.co/api')
+  const { put } = useFetch('http://localhost:5000')
 
   const [spells, setSpells] = useState([])
+  const [availableSpells, setAvailableSpells] = useState([])
 
   const [selectedLevel, setSelectedLevel] = useState("Cantrip");
   const [selectedSpell, setSelectedSpell] = useState('-----');
 
-  const [showSaveDCModal, setShowSaveDCModal] = useState(false);
-  const [showAttackBonusModal, setShowAttackBonusModal] = useState(false);
   const [spellDC, setSpellDC] = useState({
-    miscBonus: 0,
-    spellcastingAbility: "strength",
-  });
+    misc: 0,
+    stat: "str",
+  })
+
   const [attackBonus, setAttackBonus] = useState({
-    miscBonus: 0,
-    spellcastingAbility: "strength",
-  });
+    misc: 0,
+    stat: "str",
+  })
 
   useEffect(() => {
-    if (character !== null && character.spells.length !== 0) {
+    if (character.spells.length !== 0) {
       for (const spell of character.spells) {
         (async () => {
+          const level = selectedLevel === 'Cantrip' ? 0 : Number(selectedLevel)
           const data = await get(`/spells/${spell}`)
-          setSpells(prev => [...prev, data])
+          if (data.level === level) {
+            setSpells(prev => [...prev, data])
+          }
         })()
       }
     }
-  }, [])
+  }, [selectedLevel])
 
-  useEffect(() => {
-    console.log(spells)
-  }, [spells])
+  useEffect(()=>{console.log(spells)}, [spells])
 
-  const handleLevelChange = (event) => {
-    setSelectedLevel(event.target.value);
+  const handleLevelChange = e => {
+    setSpells([])
+    setSelectedLevel(e.target.value);
   }
 
   const handleSpellSelection = e => {
     const { value } = e.target
-    const spell = spells.find(s => s.index === value)
-    setSelectedSpell(spell)
+    const spell = availableSpells.find(s => s.index === value)
+    setSelectedSpell(spell.index)
   }
 
-  const handleModalClose = () => {
-    setSelectedSpell('-----')
-  }
-
-  const openSaveDCModal = () => {
-    setShowSaveDCModal(true)
-  }
-
-  const closeSaveDCModal = () => {
-    setShowSaveDCModal(false)
-  }
-
-  const openAttackBonusModal = () => {
-    setShowAttackBonusModal(true)
-  }
-
-  const closeAttackBonusModal = () => {
-    setShowAttackBonusModal(false)
-  }
-
-  const handleSaveDCChange = (e) => {
+  const handleSaveDCChange = e => {
     const { name, value } = e.target;
     setSpellDC((prevSpellDC) => ({
       ...prevSpellDC,
@@ -79,22 +69,30 @@ export default function SpellsPage() {
     }))
   }
 
-  const handleAttackBonusChange = (e) => {
+  const handleAttackBonusChange = e => {
     const { name, value } = e.target;
-    setAttackBonus((prevAttackBonus) => ({
-      ...prevAttackBonus,
+    setAttackBonus((prev) => ({
+      ...prev,
       [name]: value,
     }))
   }
 
-  const handleSaveDCSave = () => {
-    console.log("Saving Spell DC:", spellDC);
-    closeSaveDCModal();
+  const handleAddSpell = async () => {
+    const { prof, ...charData } = character
+
+    const data = await put(`/characters/${character.id}`, {
+      ...charData,
+      spells: [...character.spells, selectedSpell]
+    })
+
+    console.log(data)
+
+    navigate(0)
   }
 
-  const handleAttackBonusSave = () => {
-    console.log("Saving Attack Bonus:", attackBonus);
-    closeAttackBonusModal();
+  const fetchSpells = async () => {
+    const data = await get(`/spells?level=${selectedLevel === 'Cantrip' ? '0' : selectedLevel}`)
+    setAvailableSpells(data.results)
   }
 
   return <div>
@@ -102,27 +100,33 @@ export default function SpellsPage() {
     <div>
       <h2>Save DC</h2>
       <p>
-        Spell DC: {spellDC.profBonus + spellDC.dexterity + spellDC.miscBonus}
+        Spell DC: {8 + character.prof + scoreToMod(character[spellDC.stat]) + Number(spellDC.misc)}
       </p>
-      <Button onClick={openSaveDCModal}>Edit</Button>
-    </div>
-
-    {showSaveDCModal && (
-      <div>
-        <h3>Spell DC</h3>
-        Prof Bonus
-        Variable Stat
+      <Modal
+        modalId="spellSaveDC"
+        header="Spell Save DC"
+        openModalText="Edit"
+        closeModalText="Save Changes"
+      >
+        <div>
+          <h4>Prof Bonus</h4>
+          <p>{character.prof}</p>
+        </div>
+        <div>
+          <h4>Stat Mod</h4>
+          <p>{scoreToMod(character[spellDC.stat])}</p>
+        </div>
         <Input
           label="Misc Bonus"
           type="number"
-          name="miscBonus"
-          value={spellDC.miscBonus}
+          name="misc"
+          value={spellDC.misc}
           onChange={handleSaveDCChange}
         />
         <Select
           label="Spellcasting Ability"
-          name="spellcastingAbility"
-          value={spellDC.spellcastingAbility}
+          name="stat"
+          value={spellDC.stat}
           onChange={handleSaveDCChange}
         >
           <option value="str">Strength</option>
@@ -132,49 +136,49 @@ export default function SpellsPage() {
           <option value="wis">Wisdom</option>
           <option value="cha">Charisma</option>
         </Select>
-        <Button onClick={handleSaveDCSave}>Save</Button>
-      </div>
-    )}
-
+      </Modal>
+    </div>
     <div>
       <h2>Attack Bonus</h2>
       <p>
-        Attack Bonus:{" "}
-        {attackBonus.profBonus +
-          attackBonus.dexterity +
-          attackBonus.miscBonus}
+        Attack Bonus: {character.prof + scoreToMod(character[attackBonus.stat]) + Number(attackBonus.misc)}
       </p>
-      <button onClick={openAttackBonusModal}>Edit</button>
-    </div>
-
-    {showAttackBonusModal && (
-      <div>
-        <h3>Attack Bonus</h3>
-        Prof Bonus
-        Variable Stat
+      <Modal
+        modalId="atkBonus"
+        header="Attack Bonus"
+        openModalText="Edit"
+        closeModalText="Save Changes"
+      >
+        <div>
+          <h4>Prof Bonus</h4>
+          <p>{character.prof}</p>
+        </div>
+        <div>
+          <h4>Stat Mod</h4>
+          <p>{scoreToMod(character[attackBonus.stat])}</p>
+        </div>
         <Input
           label="Misc Bonus"
           type="number"
-          name="miscBonus"
-          value={attackBonus.miscBonus}
+          name="misc"
+          value={attackBonus.misc}
           onChange={handleAttackBonusChange}
         />
         <Select
           label="Spellcasting Ability"
-          name="spellcastingAbility"
-          value={attackBonus.spellcastingAbility}
+          name="stat"
+          value={attackBonus.stat}
           onChange={handleAttackBonusChange}
         >
-          <option value="strength">Strength</option>
-          <option value="dexterity">Dexterity</option>
-          <option value="constitution">Constitution</option>
-          <option value="intelligence">Intelligence</option>
-          <option value="wisdom">Wisdom</option>
-          <option value="charisma">Charisma</option>
+          <option value="str">Strength</option>
+          <option value="dex">Dexterity</option>
+          <option value="con">Constitution</option>
+          <option value="int">Intelligence</option>
+          <option value="wis">Wisdom</option>
+          <option value="cha">Charisma</option>
         </Select>
-        <Button onClick={handleAttackBonusSave}>Save</Button>
-      </div>
-    )}
+      </Modal>
+    </div>
     <div>
       <Select
         label="Select Level"
@@ -194,28 +198,48 @@ export default function SpellsPage() {
         <option value="9">9th Level</option>
       </Select>
     </div>
-    { !spells
-      ? <>Loading ...</>
-      : <Select
-        label="Spell Select"
-        name="selectedSpell"
-        value={selectedSpell}
-        onChange={handleSpellSelection}
-      >
-        <option value="-----">-----</option>
-        {spells.map((spell) => (
-          <option key={spell.index} value={spell.index}>
-            {spell.name}
-          </option>
-        ))}
-      </Select>
-    }
-
-    {selectedSpell !== '-----' && <div>
-        <h3>{selectedSpell.name}</h3>
-        <p>{selectedSpell.description}</p>
-        <button onClick={handleModalClose}>Close</button>
+    <Modal
+      modalId="addSpell"
+      header={`Add A ${selectedLevel === 'Cantrip' ? 'Cantrip': `${selectedLevel}${getTag(selectedLevel)} Level Spell`}`}
+      openModalText="Add A Spell"
+      closeModalText="Add Spell"
+      onOpenClick={fetchSpells}
+      onCloseClick={handleAddSpell}
+    >
+      <div>
+        { !availableSpells
+          ? <>Loading ...</>
+          : <Select
+            label="Spell Select"
+            name="selectedSpell"
+            value={selectedSpell}
+            onChange={handleSpellSelection}
+          >
+            <option value="-----">-----</option>
+            {availableSpells.map((spell) => (
+              <option key={spell.index} value={spell.index}>
+                {spell.name}
+              </option>
+            ))}
+          </Select>
+        }
+        { selectedSpell !== '-----' && <SpellDisplay spell={selectedSpell} /> }
       </div>
-    }
+    </Modal>
+    <div>
+      <h2>
+        { selectedLevel === 'Cantrip'
+          ? 'Cantrips'
+          : `${selectedLevel}${getTag(selectedLevel)} Level`
+        }
+      </h2>
+      <hr />
+      { !spells.length
+        ? <>Loading ...</>
+        : spells.map((spell, i) => {
+          return <Spell key={`${spell}${i}`} spell={spell} />
+        })
+      }
+    </div>
   </div>
 }
