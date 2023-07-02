@@ -24,7 +24,7 @@ export default function CharacterView() {
   <div class="characterView">
     <Outlet context={{ character: character }} />
     <nav class="charNav" className="navbar fixed-bottom" style= { { display : "flex" } }>
-      <NavLink to={`/characters/${id}/`}>
+      <NavLink to={`/characters/${id}`}>
         Overview
       </NavLink>
       <NavLink to={`/characters/${id}/stats`}>
