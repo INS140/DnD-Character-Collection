@@ -129,3 +129,23 @@
 .tertiary-color {
     color: variables.$tertiary-color;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: variables.$font;
+
+    &.active {
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
+    }
+}
+
+.characterView  {
+
+    nav {
+    background-color: variables.$secondary-color;
+    justify-content : space-around;
+    }
+
+
+}

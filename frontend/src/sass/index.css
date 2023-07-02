@@ -251,4 +251,18 @@
 
 .tertiary-color {
   color: #6c757d;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: "Luminari";
+}
+a.active {
+  text-shadow: 0.25rem 0.25rem 0.25rem #8B728E;
+}
+
+.characterView nav {
+  background-color: #694873;
+  justify-content: space-around;
 }/*# sourceMappingURL=index.css.map */
