@@ -4,8 +4,18 @@
 import Input from "../ui-kit/Input";
 import Button from "../ui-kit/Button";
 import useFormHandler from "../custom-hooks/useFormHandler";
+import useFetch from "../custom-hooks/useFetch"
+import { CurrentUser } from "../context/currentUser";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUpForm() {
+  const { post } = useFetch('http://localhost:5000')
+
+  const { setCurrentUser } = useContext(CurrentUser)
+
+  const navigate = useNavigate()
+
   const { inputs, handleChange } = useFormHandler({
     username: '',
     password: '',
@@ -14,8 +24,15 @@ export default function SignUpForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // await post("/", inputs);
-    // navigate("/home"); //to home page or profile page?
+    const user = await post('/users', inputs)
+
+    if (user !== null) {
+      const data = await post('/authentication', inputs)
+      setCurrentUser(data.user)
+      localStorage.setItem('token', data.token)
+
+      navigate('/characters')
+    }
   };
 
   return (

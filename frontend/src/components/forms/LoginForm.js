@@ -1,13 +1,17 @@
-// input for email and password
-// submit button
-// container for form
 import Input from "../ui-kit/Input";
 import Button from '../ui-kit/Button'
 import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from "../custom-hooks/useFormHandler";
+import { CurrentUser } from "../context/currentUser";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom"
 
 export default function LoginForm() {
-  const { post } = useFetch() // need url
+  const { post } = useFetch('http://localhost:5000')
+
+  const navigate = useNavigate()
+
+  const { setCurrentUser } = useContext(CurrentUser)
 
   const { inputs, handleChange } = useFormHandler({
     username: "",
@@ -16,23 +20,19 @@ export default function LoginForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    try {
+      const data = await post('/authentication', inputs)
 
-    // try {
-    //   const response = await post("/user", {
-    //     email: formData.email,
-    //     password: formData.password,
-    //   });
+      if (data !== null) {
+        setCurrentUser(data.user)
+        localStorage.setItem('token', data.token)
 
-    //   const { user, token } = response;
-
-    //   console.log("User data:", user);
-    //   console.log("Token:", token);
-    //   console.log("Welcome back {userName}!");
-
-    //   history.push("/profile");
-    // } catch (error) {
-    //   console.error(error);
-    // }
+        navigate('/characters')
+      }
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (

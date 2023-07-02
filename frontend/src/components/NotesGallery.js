@@ -1,6 +1,3 @@
-// display for character traits, background
-// notes section
-// add new note button
 import Note from "./Note"
 
 export default function NotesGallery({ character, notes }) {

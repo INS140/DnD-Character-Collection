@@ -88,7 +88,6 @@
 .logo {
     width: 100%;
     height: 50px;
-    mix-blend-mode: darken;
 }
 
 .list-borders {
@@ -106,11 +105,17 @@
         text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
     }
 }
-
+.primary-color {
+    color: variables.$primary-color;
+}
 
 .secondary {
     font-family: variables.$font;
     background-color: variables.$secondary-color;
+}
+
+.secondary-color {
+    color: variables.$secondary-color;
 }
 
 .tertiary {
@@ -119,4 +124,8 @@
     background-color: variables.$shadow;
     margin: 0rem 3rem 0rem 3rem;
     text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
+}
+
+.tertiary-color {
+    color: variables.$tertiary-color;
 }

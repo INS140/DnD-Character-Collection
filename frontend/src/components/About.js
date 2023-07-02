@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function About() {
-  return <div class="tertiary p-3 text-center">
+  return <div className="tertiary p-3 text-center">
     <hr />
     <h2 className="card-title">About</h2>
       <p className="card-text">Our vision is to develop a mighty tool tailored to the avid and new collectors of DND Characters, and to digitize many of the traditional DND components, such as character creation, stat and skills management, equipment inventory and notes. This tool has the potential to establish an online database with its fully implementation.</p>
