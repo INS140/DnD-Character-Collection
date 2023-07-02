@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import useFetch from "./custom-hooks/useFetch";
+import Weapon from './Weapon';
 
 export default function Combat() {
 
@@ -38,12 +39,13 @@ export default function Combat() {
         <p>Speed: {character.speed}</p>
         <p>Initiative: {character.initiative}</p>
         <p>Proficiency: {character.proficiency}</p>
+        <h1>Weapons:</h1>
       </div>
       <div class="weapons">
         {!weapons?.length
           ? <h3>This character currently has no weapons.</h3>
           : weapons.map(weapon => {
-            return <>{weapon}</>
+            return <Weapon weapon={weapon} />
           })}
       </div>
     </div>
