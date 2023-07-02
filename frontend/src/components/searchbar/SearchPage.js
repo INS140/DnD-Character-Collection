@@ -11,7 +11,9 @@ export default function SearchPage() {
 
   const performSearch = async (searchText) => {
     try {
-      const response = await fetch();
+      const response = await fetch(
+        `https://www.dnd5eapi.co/api?q=${searchText}`
+      );
       const data = await response.json();
 
       const results = data.results.map((result) => ({
