@@ -15,7 +15,6 @@ export default function CharacterView() {
   useEffect(() => {
     (async () => {
       const data = await get(`/characters/${id}`)
-      console.log(data)
       setCharacter(data)
     })()
   }, [])

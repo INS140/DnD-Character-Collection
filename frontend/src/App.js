@@ -9,7 +9,7 @@ import Overview from './components/Overview'
 import Stats from './components/Stats'
 import Combat from './components/Combat'
 import Inventory from './components/Inventory'
-import Spells from './components/Spells'
+import SpellsPage from './components/SpellsPage'
 import Notes from './components/NotesGallery'
 import Navbar from './components/Navbar'
 
@@ -27,7 +27,7 @@ export default function App() {
         <Route path="stats" element={<Stats />} />
         <Route path="combat" element={<Combat />} />
         <Route path="inventory" element={<Inventory />} />
-        <Route path="spells" element={<Spells />} />
+        <Route path="spells" element={<SpellsPage />} />
         <Route path="notes" element={<Notes />} />
       </Route>
     </Routes>
