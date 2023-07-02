@@ -1,10 +1,8 @@
-// individual character page
-// will have a react-router outlet for displaying the different character pages (ie overview, stats, inventory, etc)
-// fetch individual character data
 import { useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import useFetch from "./custom-hooks/useFetch";
 import { getProficiency } from "../helper-functions";
+import CharacterNavbar from "./CharacterNavbar";
 
 export default function CharacterView() {
   const { get } = useFetch("http://localhost:5000");
@@ -28,25 +26,6 @@ export default function CharacterView() {
       ? <>Loading ...</>
       : <Outlet context={{character: character}} />
     }
-    <nav class="charNav" className="navbar fixed-bottom" style= { { display : "flex" } }>
-      <NavLink to={`/characters/${id}/`}>
-        Overview
-      </NavLink>
-      <NavLink to={`/characters/${id}/stats`}>
-        Stats
-      </NavLink>
-      <NavLink to={`/characters/${id}/combat`}>
-        Combat
-      </NavLink>
-      <NavLink to={`/characters/${id}/inventory`}>
-        Inventory
-      </NavLink>
-      <NavLink to={`/characters/${id}/spells`}>
-        Spells
-      </NavLink>
-      <NavLink to={`/characters/${id}/notes`}>
-        Notes
-      </NavLink>
-    </nav>
+    <CharacterNavbar charId={character.id} />
   </div>
 }
