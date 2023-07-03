@@ -149,3 +149,17 @@ a {
 
 
 }
+
+.overview {
+    font-family: variables.$font;
+    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    
+    h1 {
+        text-align: center;
+    }
+}
+
+.noteGallery {
+    font-family: variables.$font;
+    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+}
