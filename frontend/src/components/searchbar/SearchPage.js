@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 export default function SearchPage() {
   const [searchResults, setSearchResults] = useState([]);
@@ -12,7 +13,7 @@ export default function SearchPage() {
   const performSearch = async (searchText) => {
     try {
       const response = await fetch(
-        `https://www.dnd5eapi.co/api?q=${searchText}`
+        `https://www.dnd5eapi.co/api/search?q=${searchText}`
       );
       const data = await response.json();
 
@@ -41,7 +42,10 @@ export default function SearchPage() {
       <SearchBar onSearch={handleSearch} />
       <ul>
         {searchResults.map((result) => (
-          <li key={result.id}>{result.name}</li>
+          <li key={result.index}>
+            <Link to={`/result/${result.index}`}>{result.name}</Link>
+            {result.name}
+          </li>
         ))}
       </ul>
     </div>
