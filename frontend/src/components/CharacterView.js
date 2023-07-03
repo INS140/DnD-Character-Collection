@@ -21,28 +21,11 @@ export default function CharacterView() {
     })()
   }, [])
 
-  return (
-  <div class="characterView">
-    <Outlet context={{ character: character }} />
-    <nav class="charNav" className="navbar fixed-bottom" style= { { display : "flex" } }>
-      <NavLink to={`/characters/${id}`}>
-        Overview
-      </NavLink>
-      <NavLink to={`/characters/${id}/stats`}>
-        Stats
-      </NavLink>
-      <NavLink to={`/characters/${id}/combat`}>
-        Combat
-      </NavLink>
-      <NavLink to={`/characters/${id}/inventory`}>
-        Inventory
-      </NavLink>
-      <NavLink to={`/characters/${id}/spells`}>
-        Spells
-      </NavLink>
-      <NavLink to={`/characters/${id}/notes`}>
-        Notes
-      </NavLink>
-    </nav>
-  </div>
+  return <div class="characterView">
+    { !character
+      ? <>Loading ...</>
+      : <Outlet context={{character: character}} />
+    }
+    <CharacterNavbar charId={character.id} />
+    </div>
 }
