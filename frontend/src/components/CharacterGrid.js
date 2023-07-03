@@ -21,6 +21,7 @@ export default function CharacterGrid() {
       }
     })()
   }, [])
+
   return <div className="grid-container">
     { !currentUser
       ? <h2 className="text-center">
@@ -30,8 +31,8 @@ export default function CharacterGrid() {
       </h2>
       : <>
         { !characters.length
-          ? <p className="text-center">Whoops! Seems you don't have any characters yet! &nbsp;
-            <Link className="text-decoration-none secondary-color" to="/create-character">Create your first character now!</Link>
+          ? <p className="text-center secondary-color">Whoops! Seems you don't have any characters yet! &nbsp;
+            <Link className="text-decoration-none" to="/create-character">Create your first character now!</Link>
           </p>
           : <div className="grid">
             {characters.map(character => <CharGridItem key={character.id} character={character} />)}
