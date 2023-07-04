@@ -45,7 +45,7 @@ export default function SpellsPage() {
         })();
       }
     }
-  }, [selectedLevel]);
+  }, [character.spells, get, selectedLevel]);
 
   useEffect(() => {
     console.log(spells);
