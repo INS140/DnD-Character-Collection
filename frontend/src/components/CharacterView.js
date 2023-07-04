@@ -27,5 +27,5 @@ export default function CharacterView() {
       : <Outlet context={{character: character}} />
     }
     <CharacterNavbar charId={character.id} />
-  </div>
+    </div>
 }

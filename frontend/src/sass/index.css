@@ -278,4 +278,17 @@ a.active {
 .characterView nav {
   background-color: #694873;
   justify-content: space-around;
+}
+
+.overview {
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+.overview h1 {
+  text-align: center;
+}
+
+.noteGallery {
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }/*# sourceMappingURL=index.css.map */
