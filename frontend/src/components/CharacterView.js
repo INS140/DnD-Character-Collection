@@ -11,6 +11,8 @@ export default function CharacterView() {
 
   const { id } = useParams();
 
+  useEffect(() => {console.log(character)}, [character])
+
   useEffect(() => {
     (async () => {
       const data = await get(`/characters/${id}`)
@@ -21,11 +23,13 @@ export default function CharacterView() {
     })()
   }, [])
 
-  return <div class="characterView">
+  return <div className="characterView">
     { !character
       ? <>Loading ...</>
-      : <Outlet context={{character: character}} />
+      : <>
+        <Outlet context={{character: character}} />
+        <CharacterNavbar charId={character.id} />
+      </>
     }
-    <CharacterNavbar charId={character.id} />
     </div>
 }

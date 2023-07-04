@@ -45,11 +45,7 @@ export default function SpellsPage() {
         })();
       }
     }
-  }, [character.spells, get, selectedLevel]);
-
-  useEffect(() => {
-    console.log(spells);
-  }, [spells]);
+  }, [character.spells])
 
   const handleLevelChange = (e) => {
     setSpells([]);
@@ -85,8 +81,6 @@ export default function SpellsPage() {
       ...charData,
       spells: [...character.spells, selectedSpell],
     });
-
-    console.log(data);
 
     navigate(0);
   };

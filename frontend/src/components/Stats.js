@@ -13,17 +13,17 @@ export default function Stats() {
   return <>
   { !character
     ? <>Loading ...</>
-    : <div class="stats">
+    : <div className="stats">
       <h1>General</h1>
       <hr/>
       <h3>Health Points: {character.hp}</h3>
       <h3>Armor Class: {character.ac}</h3>
       <h3>Max Health Points: {character.maxHp}</h3>
       <h3>Hit Dice: {character.hitDice}</h3>
-      <h1>Base Stats</h1>
+      <h1>Ability Scores</h1>
       <hr/>
       <h3>Speed: {character.speed}</h3>
-      {/* <h3>Proficiency: {character.proficiency}</h3> */}
+      <h3>Proficiency: {character.prof}</h3>
       <h3>Strength: {character.str}</h3>
       <h3>Dexterity: {character.dex}</h3>
       <h3>Constitution: {character.con}</h3>

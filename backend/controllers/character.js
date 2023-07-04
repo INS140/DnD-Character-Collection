@@ -40,6 +40,7 @@ characters.get('/seed', async (req, res) => {
 characters.get('/:id', async (req, res) => {
     try {
         const foundChar = await Character.findById(req.params.id)
+            .populate('notes')
         return res.status(200).json(foundChar)
     }
     catch (err) {
