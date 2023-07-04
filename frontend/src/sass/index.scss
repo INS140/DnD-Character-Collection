@@ -154,10 +154,11 @@ a {
 }
 
 .characterView  {
-    
+    padding: 1rem 1rem 3.5rem;
+
     nav {
-    background-color: variables.$secondary-color;
-    justify-content : space-around;
+        background-color: variables.$secondary-color;
+        justify-content : space-around;
     }
 }
 

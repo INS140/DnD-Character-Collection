@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import useFetch from "./custom-hooks/useFetch";
-import { getProficiency } from "../helper-functions";
+import { getProficiency, scoreToMod } from "../helper-functions";
 import CharacterNavbar from "./CharacterNavbar";
 
 export default function CharacterView() {
@@ -18,7 +18,8 @@ export default function CharacterView() {
       const data = await get(`/characters/${id}`)
       setCharacter({
         ...data,
-        prof: getProficiency(data.level)
+        prof: getProficiency(data.level),
+        init: scoreToMod(data.dex)
       })
     })()
   }, [])
@@ -27,7 +28,9 @@ export default function CharacterView() {
     { !character
       ? <>Loading ...</>
       : <>
-        <Outlet context={{character: character}} />
+        <div className="view">
+          <Outlet context={{character: character}} />
+        </div>
         <CharacterNavbar charId={character.id} />
       </>
     }

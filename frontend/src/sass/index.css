@@ -275,9 +275,25 @@ a.active {
   text-shadow: 0.25rem 0.25rem 0.25rem #8B728E;
 }
 
+.characterView {
+  padding: 1rem 1rem 3.5rem;
+}
 .characterView nav {
   background-color: #694873;
   justify-content: space-around;
+}
+
+.overview {
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+.overview h1 {
+  text-align: center;
+}
+
+.noteGallery {
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
 
 .overview {

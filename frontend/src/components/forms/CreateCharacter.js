@@ -6,6 +6,7 @@ import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from '../custom-hooks/useFormHandler'
 import { CurrentUser } from '../context/currentUser'
 import { useNavigate } from 'react-router-dom'
+import { toTitleCase } from '../../helper-functions'
 
 export default function CreateCharacter() {
   const { post } = useFetch('http://localhost:5000')
@@ -60,10 +61,6 @@ export default function CreateCharacter() {
     image: '',
     description: ''
   })
-
-  const toTitleCase = str => {
-    return str.split(/(?=[A-Z])/).map(w => w.split('').map((c, i) => i === 0 ? c.toUpperCase() : c.toLowerCase()).join('')).join(' ')
-  }
 
   const handleSubmit = async e => {
     e.preventDefault()

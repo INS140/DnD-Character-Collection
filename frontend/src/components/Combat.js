@@ -9,7 +9,7 @@ import Weapon from './Weapon';
 export default function Combat() {
   const { character } = useOutletContext()
 
-  const [weapons, setWeapons] = useState([{}]);
+  const [weapons, setWeapons] = useState([]);
 
   const { get } = useFetch("https://www.dnd5eapi.co/api");
 
@@ -17,11 +17,9 @@ export default function Combat() {
     (async () => {
       for (const item of character.inventory) {
         const data = await get(`/equipment/${item}`);
-        console.log(data);
-        if (data.equipment_category.index === "weapon")
-          setWeapons(prev => [
-            ...prev, data
-          ]);
+        if (data.equipment_category.index === "weapon") {
+          setWeapons(prev => [ ...prev, data ]);
+        }
       }
     })();
   }, []);
@@ -34,15 +32,14 @@ export default function Combat() {
         <p>Health Points:{character.hp}</p>
         <p>Max Health Points:{character.maxHp}</p>
         <p>Speed: {character.speed}</p>
-        <p>Initiative: {character.initiative}</p>
-        <p>Proficiency: {character.proficiency}</p>
+        <p>Initiative: {character.init}</p>
+        <p>Proficiency: {character.prof}</p>
         <h1>Weapons:</h1>
       </div>
       <div className="weapons">
-        {!weapons?.length
+        {!weapons.length
           ? <h3>This character currently has no weapons.</h3>
           : weapons.map((weapon, i) => {
-            console.log(weapon)
             return <Weapon key={`${weapon.index}${i}`} weapon={weapon} />
           })}
       </div>

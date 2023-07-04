@@ -1,7 +1,7 @@
 import Button from "./Button"
 
 export default function Modal(props) {
-  const { children, header, openModalText, onOpenClick, closeModalText, onCloseClick, modalId } = props
+  const { children, header, openModalText, onOpenClick, closeModalText, onCloseClick, disableSubmit, modalId } = props
 
   return <div>
     <Button
@@ -27,6 +27,7 @@ export default function Modal(props) {
               className="btn tertiary"
               data-bs-dismiss="modal"
               onClick={onCloseClick}
+              disabled={disableSubmit}
             >
               {closeModalText}
             </Button>

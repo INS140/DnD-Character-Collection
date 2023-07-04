@@ -1,23 +1,27 @@
 import { NavLink } from "react-router-dom"
 
 export default function CharacterNavbar({ charId }) {
+  const getClassName = ({ isActive }) => {
+    return `nav-link text-light px-3 ${isActive ? 'primary active' : ''}`
+  }
+
   return <nav className="charNav navbar fixed-bottom d-flex">
-    <NavLink to={`/characters/${charId}/`}>
+    <NavLink className={getClassName} to={`/characters/${charId}/`}>
       Overview
     </NavLink>
-    <NavLink to={`/characters/${charId}/stats`}>
+    <NavLink className={getClassName} to={`/characters/${charId}/stats`}>
       Stats
     </NavLink>
-    <NavLink to={`/characters/${charId}/combat`}>
+    <NavLink className={getClassName} to={`/characters/${charId}/combat`}>
       Combat
     </NavLink>
-    <NavLink to={`/characters/${charId}/inventory`}>
+    <NavLink className={getClassName} to={`/characters/${charId}/inventory`}>
       Inventory
     </NavLink>
-    <NavLink to={`/characters/${charId}/spells`}>
+    <NavLink className={getClassName} to={`/characters/${charId}/spells`}>
       Spells
     </NavLink>
-    <NavLink to={`/characters/${charId}/notes`}>
+    <NavLink className={getClassName} to={`/characters/${charId}/notes`}>
       Notes
     </NavLink>
   </nav>
