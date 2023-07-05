@@ -1,13 +1,14 @@
 export default function Input(props) {
-  const { label, className, type, value, onChange, required, ...rest } = props
+  const { label, labelClass, className, type, value, onChange, required, ...rest } = props
+
+  const labelClasses = `label ${labelClass}`
 
   const classes = `input ${className}`
 
   const inputType = type ? type : 'text'
 
-  return <label className='label'>
+  return <label className={labelClasses}>
     {label}
-    {required && <span className='required'> * </span>}
     <input
       type={inputType}
       className={classes}
