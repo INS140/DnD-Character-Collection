@@ -13,49 +13,49 @@ Our plan is to create a powerful tool specifically designed for both experienced
 
 ### Home
 
-A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img>
+A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src=>
 
 ### About
 
 A webpage that provides information about DND Character Collection and the collaborators behind the web application. 
+<img src=>
 
 #### Collaborators
 
-* Isaac Saettel 
-* Mal Martin 
-* Zane Matero 
-* Annie Lam 
-* Lorraine Ortiz
-
-<img>
+* [Annie Lam](https://github.com/annielam0623/)
+* [Isaac Saettel](https://github.com/INS140/)
+* [Lorraine Ortiz](https://github.com/leslieportiz/)
+* [Mal Martin](https://github.com/MalMWare/)
+* [Zane Matero](https://github.com/zanematero/)
 
 ### Login
 
-A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. <img>
+A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. 
+<img src=>
 
 ### Signup
 
-A process of creating a new account for web application to gain access to its features and functionalities. <img>
+A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/signup.png">
 
 ### Create Character
 
-You are creating your new adventure by providing the details in the form. <img>
+You are creating your new adventure by providing the details in the form. <img src=>
 
 ### Current User
 
-It refers to user who is currently logged in for access control, personalized experiences and tracking of user-specific settings. <img>
+It refers to user who is currently logged in for access control, personalized experiences and tracking of user-specific settings. <img src=>
 
 ### Character Grid
 
-A structured layout that displays various stats, attibutes and information about a player's character.  <img>
+A structured layout that displays various stats, attibutes and information about a player's character.  <img src=>
 
 ### Character Nav Bar
 
-It is a user interface element that provides convenient access to various features related to a player's character. <img>
+It is a user interface element that provides convenient access to various features related to a player's character. <img src=>
 
 ### Character View
 
-It refers to the interface in a application where a player can see visuals of their characters. <img>
+It refers to the interface in a application where a player can see visuals of their characters. <img src=>
 
 
 <!-- Demo
