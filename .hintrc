@@ -10,6 +10,14 @@
           "meta[name=theme-color]"
         ]
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "border-color: hsl(from color h s l)"
+        ]
+      }
     ]
   }
 }
