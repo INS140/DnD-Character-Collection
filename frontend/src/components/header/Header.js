@@ -1,4 +1,5 @@
 import React from "react"
+import logo from "../images/IMG_1208.png"
 
 export default function Header() {
     return (
@@ -6,7 +7,7 @@ export default function Header() {
             <nav className="navbar navbar-expand-lg bg-light">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
-                        <img src = "https://wallpapers.com/images/featured-small/dragon-tbrh9smwrlaa1cr9.jpg"
+                        <img src = {logo}
                             alt="logo"
                             style={{
                                 height: '50px',
@@ -23,7 +24,7 @@ export default function Header() {
                             <a className="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">About Us</a>
+                                <a className="nav-link" href="#">About</a>
                             </li>
                         </ul>
                     <form className="d-flex" role="search">
