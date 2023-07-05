@@ -5,6 +5,7 @@ css for h1 alignment
 css logo, add correctr size and boarder (logo saved in de3sctop img_1208
 
  */
+<<<<<<< Updated upstream
 
 .bg-text-secondary {
     background-color: purple; 
@@ -99,3 +100,8 @@ body{
   margin-top: 50px;
   display: flex;
 } */ 
+=======
+body{
+    background-color: rgb(105, 68, 139);
+}
+>>>>>>> Stashed changes
