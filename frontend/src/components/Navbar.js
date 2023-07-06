@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom"
 import Button from './ui-kit/Button'
 import { CurrentUser } from "./context/currentUser"
 import { useNavigate } from "react-router-dom"
+import logo from "./images/white_dragon.png"
 
 export default function Navbar() {
   const { currentUser, setCurrentUser } = useContext(CurrentUser)
@@ -25,7 +26,7 @@ export default function Navbar() {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           {/* Will need to be updated to actual backend url */}
-          <img src="http://localhost:5000/logo.png"
+          <img src={logo}
             alt="logo"
             className="logo"
           />
