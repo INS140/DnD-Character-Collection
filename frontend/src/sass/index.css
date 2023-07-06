@@ -99,6 +99,12 @@
   grid-column: 2/6;
 }
 
+.error {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #8f5260;
+}
+
 @media screen and (min-width: 550px) {
   .form .traits {
     grid: repeat(4, 1fr)/repeat(12, 1fr);

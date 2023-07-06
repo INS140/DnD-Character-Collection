@@ -6,7 +6,7 @@ import { CurrentUser } from "../context/currentUser";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 
-export default function LoginForm() {
+export default function LoginForm({ setError }) {
   const { post } = useFetch('http://localhost:5000')
 
   const navigate = useNavigate()
@@ -23,13 +23,17 @@ export default function LoginForm() {
     
     try {
       const data = await post('/authentication', inputs)
-
-      if (data !== null) {
-        setCurrentUser(data.user)
-        localStorage.setItem('token', data.token)
-
-        navigate('/characters')
+      
+      if (data.error !== null) {
+        setError(data)
       }
+
+      // if (data !== null) {
+      //   setCurrentUser(data.user)
+      //   localStorage.setItem('token', data.token)
+
+      //   navigate('/characters')
+      // }
     } catch (err) {
       console.log(err)
     }
