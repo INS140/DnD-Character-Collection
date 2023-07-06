@@ -12,5 +12,13 @@ export default function About() {
         To learn more about our vision and stay updated with our progress, we invite you to visit our blog. If you have any specific questions or require additional information, please feel free to ask. </p>
       <p>Thanks,</p>
       <p>The DND Character Collection Team</p>
+      <p>Collaborators: </p>
+      <p>
+        <a class="link-opacity-100" href="https://github.com/annielam0623">Annie, </a>
+        <a class="link-opacity-100" href="https://github.com/INS140">Isaac, </a>
+        <a class="link-opacity-100" href="https://github.com/leslieportiz">Lorraine, </a>
+        <a class="link-opacity-100" href="https://github.com/MalMWare">Mal, </a>
+        <a class="link-opacity-100" href="https://github.com/zanematero">Zane</a>
+        </p>
   </div>
 }

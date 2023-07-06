@@ -12,6 +12,7 @@ import Inventory from './components/Inventory'
 import SpellsPage from './components/SpellsPage'
 import Notes from './components/NotesGallery'
 import Navbar from './components/Navbar'
+import About from './components/About'
 
 export default function App() {
   return <div className='app'>
@@ -21,6 +22,7 @@ export default function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/characters" element={<CharacterGrid />} />
+      <Route path="/about" element={<About />} />
       <Route path="/create-character" element={<CreateCharacter />} />
       <Route path="/characters/:id/" element={<CharacterView />} >
         <Route path="" element={<Overview />} />
