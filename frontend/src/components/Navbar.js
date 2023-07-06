@@ -1,12 +1,13 @@
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 import { NavLink, Link } from "react-router-dom"
 import Button from './ui-kit/Button'
 import { CurrentUser } from "./context/currentUser"
 import { useNavigate } from "react-router-dom"
-import logo from "./images/white_dragon.png"
 
 export default function Navbar() {
   const { currentUser, setCurrentUser } = useContext(CurrentUser)
+
+  const collapse = useRef(null)
 
   const navigate = useNavigate()
 
@@ -14,9 +15,14 @@ export default function Navbar() {
     return `nav-link text-light px-3 ${isActive ? 'primary active' : ''}`
   }
 
+  const hideNav = () => {
+    collapse.current.setAttribute('class', 'navbar-collapse collapse')
+  }
+
   const handleLogout = () => {
     setCurrentUser(null)
     localStorage.removeItem('token')
+    hideNav()
     
     navigate('/')
   }
@@ -26,30 +32,51 @@ export default function Navbar() {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           {/* Will need to be updated to actual backend url */}
-          <img src={logo}
+          <img
+            src="http://localhost:5000/logo.png"
             alt="logo"
             className="logo"
           />
         </Link>
-        <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" data-bs-theme="dark" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+          data-bs-theme="dark"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbar" ref={collapse}>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 list-borders">
             <li className="nav-item text-center">
-              <NavLink className={getClassName} to="/">Home</NavLink>
+              <NavLink
+                className={getClassName}
+                to="/"
+                onClick={hideNav}
+              >
+                Home
+              </NavLink>
             </li>
             <li className="nav-item text-center">
-              <NavLink className={getClassName} to="/characters">Characters</NavLink>
+              <NavLink
+                className={getClassName}
+                to="/characters"
+                onClick={hideNav}
+              >
+                Characters
+              </NavLink>
             </li>
           </ul>
           <div className="d-flex justify-content-around gap-3">
           { !currentUser
                 ? <>
-                    <Link className="text-decoration-none" to="/login">
+                    <Link className="text-decoration-none" to="/login" onClick={hideNav}>
                         <Button className="btn btn-md primary px-5 text-light">Login</Button>
                     </Link>
-                    <Link className="text-decoration-none" to='/signup'>
+                    <Link className="text-decoration-none" to='/signup' onClick={hideNav}>
                         <Button className="btn btn-md tertiary px-5 text-light">Signup</Button>
                     </Link>
                 </>

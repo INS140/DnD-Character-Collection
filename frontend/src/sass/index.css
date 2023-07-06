@@ -217,7 +217,6 @@
 }
 
 .logo {
-  width: 100%;
   height: 50px;
 }
 
@@ -302,15 +301,33 @@ a.active {
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
 
-.overview {
-  font-family: "Luminari";
-  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+.portraits {
+  width: 100%;
+  display: grid;
+  grid: repeat(3, 1fr)/repeat(3, 1fr);
+  gap: 1rem;
 }
-.overview h1 {
-  text-align: center;
+.portraits img {
+  width: 100%;
 }
 
-.noteGallery {
-  font-family: "Luminari";
-  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+.home {
+  display: grid;
+  gap: 1rem;
+  grid: "logo" "portraits" "text";
+}
+.home-logo {
+  grid-area: logo;
+}
+.home-text {
+  grid-area: text;
+}
+.home .portraits {
+  grid-area: portraits;
+}
+
+@media screen and (min-width: 850px) {
+  .home {
+    grid: "logo logo" "text portraits" "text .";
+  }
 }/*# sourceMappingURL=index.css.map */

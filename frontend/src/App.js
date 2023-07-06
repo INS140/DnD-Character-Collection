@@ -13,16 +13,19 @@ import SpellsPage from './components/SpellsPage'
 import Notes from './components/NotesGallery'
 import Navbar from './components/Navbar'
 import About from './components/About'
+import Intro from './components/Intro'
 
 export default function App() {
   return <div className='app'>
     <Navbar /> 
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />}>
+        <Route path="/" element={<Intro />} />
+        <Route path="/about" element={<About />} />
+      </Route>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/characters" element={<CharacterGrid />} />
-      <Route path="/about" element={<About />} />
       <Route path="/create-character" element={<CreateCharacter />} />
       <Route path="/characters/:id/" element={<CharacterView />} >
         <Route path="" element={<Overview />} />

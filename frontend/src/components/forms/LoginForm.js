@@ -28,12 +28,12 @@ export default function LoginForm({ setError }) {
         setError(data)
       }
 
-      // if (data !== null) {
-      //   setCurrentUser(data.user)
-      //   localStorage.setItem('token', data.token)
+      if (data !== null) {
+        setCurrentUser(data.user)
+        localStorage.setItem('token', data.token)
 
-      //   navigate('/characters')
-      // }
+        navigate('/characters')
+      }
     } catch (err) {
       console.log(err)
     }
