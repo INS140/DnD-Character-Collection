@@ -239,19 +239,22 @@ export default function SpellsPage() {
         {selectedSpell !== "-----" && <SpellDisplay spell={selectedSpell} />}
       </div>
     </Modal>
-    <div>
-      <h2>
-        {selectedLevel === "Cantrip"
-          ? "Cantrips"
-          : `${selectedLevel}${getTag(selectedLevel)} Level`}
-      </h2>
-      <hr />
-      {!spells.length
-        ? <>Loading ...</>
-        :spells.map((spell, i) => {
-          return <Spell key={`${spell}${i}`} spell={spell} />;
-        })
-      }
-    </div>
+    { !character.spells.length
+      ? <h2>This character has no spells</h2>
+      : <div>
+        <h2>
+          {selectedLevel === "Cantrip"
+            ? "Cantrips"
+            : `${selectedLevel}${getTag(selectedLevel)} Level`}
+        </h2>
+        <hr />
+        { !spells.length
+          ? <p>No {selectedLevel !== 'Cantrip' ? `${selectedLevel}${getTag(selectedLevel)} level spells` : selectedLevel}</p>
+          :spells.map((spell, i) => {
+            return <Spell key={`${spell}${i}`} spell={spell} />;
+          })
+        }
+      </div>
+    }
   </div>
 }

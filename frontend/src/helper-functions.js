@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
 export function scoreToMod(score) {
   return Math.floor(score/2-5)
 }
@@ -13,4 +16,14 @@ export function getTag(num) {
 
 export function toTitleCase(str) {
   return str.split(/(?=[A-Z])/).map(w => w.split('').map((c, i) => i === 0 ? c.toUpperCase() : c.toLowerCase()).join('')).join(' ')
+}
+
+export function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return
 }

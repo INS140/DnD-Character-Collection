@@ -110,6 +110,12 @@
   .submit { grid-column: 2 / 6; }
 }
 
+.error {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: v.$error;
+}
+
 @media screen and (min-width: 550px) {
   .form {
     .traits {

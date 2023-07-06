@@ -99,6 +99,12 @@
   grid-column: 2/6;
 }
 
+.error {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #8f5260;
+}
+
 @media screen and (min-width: 550px) {
   .form .traits {
     grid: repeat(4, 1fr)/repeat(12, 1fr);
@@ -211,7 +217,6 @@
 }
 
 .logo {
-  width: 100%;
   height: 50px;
 }
 
@@ -290,23 +295,26 @@ a.active {
 .overview h1 {
   text-align: center;
 }
+.overview h2 {
+  text-align: center;
+  margin: 1rem;
+}
+.overview span {
+  display: block;
+}
 .overview .genStats {
   display: grid;
   grid: 1fr/repeat(4, 1fr);
   gap: 2rem;
-  flex-wrap: wrap;
   text-align: center;
 }
 .overview .genStats h3 {
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
-.overview .genStats span {
-  display: block;
-}
 .overview .baseStats {
   display: grid;
-  grid: 1fr/repeat(4, 1fr);
+  grid: repeat(2, 1fr)/repeat(3, 1fr);
   gap: 1.5rem;
   flex-wrap: wrap;
   text-align: center;
@@ -315,28 +323,49 @@ a.active {
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
-.overview .baseStats span {
-  display: block;
+
+.noteGallery {
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
 
+.portraits {
+  width: 100%;
+  display: grid;
+  grid: repeat(3, 1fr)/repeat(3, 1fr);
+  gap: 1rem;
+}
+.portraits img {
+  width: 100%;
+}
+
+.home {
+  display: grid;
+  gap: 1rem;
+  grid: "logo" "portraits" "text";
+}
+.home-logo {
+  grid-area: logo;
+}
+.home-text {
+  grid-area: text;
+}
+.home .portraits {
+  grid-area: portraits;
+}
+
+@media screen and (min-width: 850px) {
+  .home {
+    grid: "logo logo" "text portraits" "text .";
+  }
+}
 @media screen and (max-width: 550px) {
   .overview .genStats {
     grid: repeat(2, 1fr)/repeat(2, 1fr);
     gap: 1rem;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
   }
   .overview .baseStats {
-    display: grid;
-    grid: repeat(2, 1fr)/repeat(2, 1fr);
+    grid: repeat(3, 1fr)/repeat(2, 1fr);
     gap: 1rem;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
   }
-}
-.noteGallery {
-  font-family: "Luminari";
-  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }/*# sourceMappingURL=index.css.map */
