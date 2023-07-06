@@ -169,19 +169,59 @@ a {
     h1 {
         text-align: center;
     }
-}
 
-.noteGallery {
-    font-family: variables.$font;
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
-}
-
-.overview {
-    font-family: variables.$font;
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
-    
-    h1 {
+    .genStats {
+        display: grid;
+        grid: 1fr / repeat(4, 1fr);
+        gap: 2rem;
+        flex-wrap: wrap;
         text-align: center;
+
+        h3 {
+            box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
+            text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    .baseStats {
+        display: grid;
+        grid: 1fr / repeat(4, 1fr);
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        text-align: center;
+
+        h3 {
+            box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
+            text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+        }
+
+        span {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .overview {
+        .genStats {
+            grid: repeat(2, 1fr) / repeat(2, 1fr);
+            gap: 1rem;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
+        .baseStats {
+            display: grid;
+            grid: repeat(2, 1fr) / repeat(2, 1fr);
+            gap: 1rem;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
     }
 }
 
