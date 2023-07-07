@@ -19,12 +19,10 @@ export default function NoteForm() {
 
   const handleSubmit = async () => {
     try {
-      const data = await post("/notes  ", {
+      await post("/notes  ", {
         ...inputs,
         character: character.id,
       });
-
-      console.log(data)
 
       navigate(0);
     } catch (err) {
