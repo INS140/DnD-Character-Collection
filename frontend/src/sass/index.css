@@ -141,6 +141,7 @@
   }
 }
 .app {
+  font-family: "Luminari";
   background-color: #8B728E;
   min-height: 100vh;
   margin: 0;
@@ -168,25 +169,25 @@
 .grid .newCharItem {
   text-decoration: none;
   color: lightgrey;
+  width: 100%;
 }
 .grid .charGridItem {
   display: flex;
   justify-content: center;
-  min-width: 10rem;
-  max-width: 20rem;
+  width: 100%;
   min-height: 25rem;
   max-height: 25rem;
   padding: 1rem;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
-  font-size: large;
-  font-family: "Luminari";
+  font-size: 2rem;
 }
 .grid .charGridItem .newCharItemText {
   text-align: center;
   margin: auto;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  width: 100%;
 }
 .grid .charGridItem .itemLink {
   text-decoration: none;
@@ -202,18 +203,9 @@
 }
 
 .stats {
-  font-size: large;
-  font-family: "Luminari";
   color: white;
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
-}
-.stats h1 {
   text-align: center;
-}
-.stats hr {
-  margin-top: -1rem;
-  align-self: center;
-  width: 15%;
 }
 
 .logo {
@@ -247,10 +239,8 @@
 }
 
 .tertiary {
-  font-family: "Luminari";
   color: white;
   background-color: #3a2540;
-  margin: 0rem 3rem 0rem 3rem;
   text-shadow: 0.25rem 0.25rem 0.25rem #8B728E;
 }
 
@@ -289,16 +279,37 @@ a.active {
 }
 
 .overview {
-  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+  text-align: center;
+}
+.overview h2 {
+  margin: 1rem;
+}
+.overview span {
+  display: block;
+}
+.overview .genStats {
+  display: grid;
+  grid: 1fr/repeat(4, 1fr);
+  gap: 2rem;
+}
+.overview .genStats h3 {
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
-.overview h1 {
-  text-align: center;
+.overview .baseStats {
+  display: grid;
+  grid: repeat(2, 1fr)/repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.overview .baseStats h3 {
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
 
 .noteGallery {
-  font-family: "Luminari";
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+  text-align: center;
 }
 
 .portraits {
@@ -337,37 +348,30 @@ a.active {
   background-color: #3a2540;
 }
 
-@media screen and (min-width: 850px) {
-  .home {
-    grid: "logo logo" "text portraits" "text .";
-  }
-}
-.noteTitle {
+.inventoryContainer {
   text-align: center;
 }
-
-.inventoryContainer .inventoryText {
-  font-family: "Luminari";
-  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
-}
-.inventoryContainer .inventoryTitle {
-  font-family: "Luminari";
-  text-align: center;
+.inventoryContainer .inventoryText, .inventoryContainer .inventoryTitle {
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
 
 .item {
   background-color: #694873;
-  margin-left: 20rem;
-  margin-right: 20rem;
-}
-.item .itemText {
-  font-family: "Luminari";
-  text-align: center;
   text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
-.item .itemName {
-  font-family: "Luminari";
-  text-align: center;
-  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+
+@media screen and (min-width: 850px) {
+  .home {
+    grid: "logo logo" "text portraits" "text .";
+  }
+}
+@media screen and (max-width: 550px) {
+  .overview .genStats {
+    grid: repeat(2, 1fr)/repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .overview .baseStats {
+    grid: repeat(3, 1fr)/repeat(2, 1fr);
+    gap: 1rem;
+  }
 }/*# sourceMappingURL=index.css.map */
