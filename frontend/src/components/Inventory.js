@@ -9,7 +9,7 @@ import Item from "./Item";
 
 export default function Inventory() {
   const { get } = useFetch("https://www.dnd5eapi.co/api")
-  const { put } = useFetch("http://localhost:5000")
+  const { put } = useFetch("https://dnd-character-collection-backend.vercel.app")
 
   const { character } = useOutletContext()
 

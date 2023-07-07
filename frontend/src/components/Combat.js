@@ -1,6 +1,3 @@
-// display combat stats
-// weapons
-// conditions (stretch goal)
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import useFetch from "./custom-hooks/useFetch";

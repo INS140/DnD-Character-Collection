@@ -5,7 +5,7 @@ import useFetch from "./custom-hooks/useFetch";
 import { CurrentUser } from "./context/currentUser";
 
 export default function CharacterGrid() {
-  const { get } = useFetch('http://localhost:5000')
+  const { get } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const { currentUser } = useContext(CurrentUser)
 

@@ -18,7 +18,7 @@ export default function Intro() {
     <div className="home-logo">
 			<img
 				className="logo"
-				src="http://localhost:5000/logo.png"
+				src="https://dnd-character-collection-backend.vercel.app/public/logo.png"
 				alt="logo"
 			/>
 			<h1>Character Collections</h1>
@@ -35,7 +35,7 @@ export default function Intro() {
 			{portraits.map((portrait, i) => {
 				return <img
 					key={`${portrait}${i}`}
-					src={`http://localhost:5000/portraits/${portrait}.png`}
+					src={`https://dnd-character-collection-backend.vercel.app/public/portraits/${portrait}.png`}
 					alt={portrait}
 				/>
 			})}

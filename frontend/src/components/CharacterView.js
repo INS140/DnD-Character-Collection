@@ -5,13 +5,11 @@ import { getProficiency, scoreToMod } from "../helper-functions";
 import CharacterNavbar from "./CharacterNavbar";
 
 export default function CharacterView() {
-  const { get } = useFetch("http://localhost:5000");
+  const { get } = useFetch("https://dnd-character-collection-backend.vercel.app");
 
   const [character, setCharacter] = useState(null);
 
   const { id } = useParams();
-
-  useEffect(() => {console.log(character)}, [character])
 
   useEffect(() => {
     (async () => {
@@ -34,5 +32,5 @@ export default function CharacterView() {
         <CharacterNavbar charId={character.id} />
       </>
     }
-    </div>
+  </div>
 }

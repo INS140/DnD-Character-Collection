@@ -31,9 +31,8 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          {/* Will need to be updated to actual backend url */}
           <img
-            src="http://localhost:5000/logo.png"
+            src="https://dnd-character-collection-backend.vercel.app/public/logo.png"
             alt="logo"
             className="logo"
           />

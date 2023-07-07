@@ -15,7 +15,7 @@ export default function SpellsPage() {
   const navigate = useNavigate();
 
   const { get } = useFetch("https://www.dnd5eapi.co/api");
-  const { put } = useFetch("http://localhost:5000");
+  const { put } = useFetch("https://dnd-character-collection-backend.vercel.app");
 
   const [spells, setSpells] = useState([]);
   const [availableSpells, setAvailableSpells] = useState([]);
