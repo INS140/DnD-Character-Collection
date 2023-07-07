@@ -14,7 +14,7 @@ export default function Intro() {
 		'rogue'
 	]
 
-  return <>
+  return <div className="home">
     <div className="home-logo">
 			<img
 				className="logo"
@@ -40,5 +40,5 @@ export default function Intro() {
 				/>
 			})}
 		</div>
-  </>
+  </div>
 }
