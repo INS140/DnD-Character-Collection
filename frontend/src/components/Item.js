@@ -1,6 +1,6 @@
 export default function Item({ item }) {
-  return <div>
-    <h3>{item.name}</h3>
-    <p>{item.desc}</p>
+  return <div className="item">
+    <h3 className="itemName">{item.name}</h3>
+    <p className="itemDesc">{item.desc}</p>
   </div>
 }

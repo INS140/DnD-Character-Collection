@@ -218,3 +218,38 @@ a {
     }
 }
 
+.noteTitle {
+    text-align: center;
+}
+
+.inventoryContainer {
+
+    .inventoryText {
+        font-family: variables.$font;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    }
+
+    .inventoryTitle {
+        font-family: variables.$font;
+        text-align: center;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    }
+}
+
+.item {
+    background-color: variables.$secondary-color;
+    margin-left: 20rem;
+    margin-right: 20rem;
+
+    .itemText {
+        font-family: variables.$font;
+        text-align: center;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    }
+
+    .itemName {
+        font-family: variables.$font;
+        text-align: center;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    }
+}

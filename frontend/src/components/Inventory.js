@@ -106,24 +106,21 @@ export default function Inventory() {
   //   setGoldAmount(selectedMagicalItem?.goldAmount || 0);
   // }, [selectedMagicalItem]);
     
-  return <div className="container">
-    <h1>Inventory</h1>
+  return <div className="inventoryContainer">
+    <h1 className="inventoryTitle">Inventory</h1>
     <hr />
     <div>
       <div>
-        <h2>Gold</h2>
-        {character.gold}
+        <h2 className="inventoryText">Gold: {!character.gold ? 0 : character.gold}</h2>
       </div>
       <div>
-        <h2>Max Carry Weight</h2>
-        {character.str * 15}
+        <h2 className="inventoryText">Max Carry Weight: {character.str * 15}</h2>
       </div>
       <div>
-        <h2>Current Carry Weight</h2>
-        {items.length && items.reduce((s, item) => s + item.weight, 0)}
+        <h2 className="inventoryText">Current Carry Weight: {items.length && items.reduce((s, item) => s + item.weight, 0)}</h2>
       </div>
     </div>
-    <h2>Items</h2>
+    <h2 className="inventoryTitle">Items</h2>
     <Modal
       modalId="addItem"
       header="Add An Inventory Item"
