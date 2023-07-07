@@ -17,14 +17,14 @@ export default function Modal(props) {
         <div className="modal-content primary">
           <div className="modal-header secondary">
             <h1 className="modal-title fs-5" id="exampleModalLabel">{header}</h1>
-            <Button className="btn-close" data-bs-dismiss="modal" aria-label="Close"></Button>
+            <Button className="btn-close tertiary" data-bs-dismiss="modal" aria-label="Close"></Button>
           </div>
           <div className="modal-body">
             {children}
           </div>
           <div className="modal-footer secondary">
             <Button
-              className="btn tertiary"
+              className="tertiary"
               data-bs-dismiss="modal"
               onClick={onCloseClick}
               disabled={disableSubmit}

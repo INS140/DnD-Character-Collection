@@ -1,33 +1,34 @@
-@use 'variables';
+@use 'variables' as v;
 @use 'forms';
 
 .app {
-    font-family: variables.$font;
-    background-color: variables.$primary-color;
+    font-family: v.$font;
+    background-color: v.$primary-color;
     min-height: 100vh;
     margin: 0;
-    color: white;
 }
 
-.grid-container { padding: 1rem; }
+.grid-container {
+    padding: 1rem;
+
+    h1 {
+        text-shadow: v.$dark-shadow;
+    }
+}
 
 .grid {
     margin: auto;
-    background-color: variables.$secondary-color;
+    background-color: v.$secondary-color;
     justify-content: center;
     flex-wrap: wrap;
     display: flex;
     padding: 2rem;
     width: 90%;
     height: 100%;
-    justify-content: center;
     gap: 2rem;
-    box-shadow: 0 0 0.5rem 0.5rem variables.$shadow inset;
-    flex-wrap: wrap;
+    box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color inset;
 
     .newCharItem{
-        text-decoration: none;
-        color: lightgrey;
         width: 100%;
     }
 
@@ -38,73 +39,51 @@
         min-height: 25rem;
         max-height: 25rem;
         padding: 1rem;
-        background-color: variables.$primary-color;
-        box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
-        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+        background-color: v.$primary-color;
+        box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+        text-shadow: v.$dark-shadow;
         font-size: 2rem;
-        
-        .newCharItemText{
+
+        .newCharItemText {
             text-align: center;
             margin: auto;
             font-size: 2rem;
-            width: 100%;
         }
 
         .itemLink{
-            text-decoration: none;
+            width: 100%;
 
             .itemImage {
                 max-width: 100%;
                 max-height: 50%;
                 min-height: 25%;
             }
-    
-            .itemText {
-                text-align: center;
-                color: lightgrey;
-            }
         }
     }
 }
 
 .stats {
-    color: white;
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    text-shadow: v.$dark-shadow;
     text-align: center;
 }
 
 .logo { height: 50px; }
 
 .list-borders {
-    li { border-bottom: 1px solid variables.$primary-color; }
+    li { border-bottom: 1px solid v.$primary-color; }
 }
 
-.primary {
-    background-color: variables.$primary-color;
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$secondary-color;
-    font-family: variables.$font;
+.primary { background-color: v.$primary-color; }
 
-    &:hover {
-        text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
-    }
-}
+.primary-color { color: v.$primary-color; }
 
-.primary-color { color: variables.$primary-color; }
+.secondary { background-color: v.$secondary-color; }
 
-.secondary {
-    font-family: variables.$font;
-    background-color: variables.$secondary-color;
-}
+.secondary-color { color: v.$secondary-color; }
 
-.secondary-color { color: variables.$secondary-color; }
+.tertiary { background-color: v.$tertiary-color; }
 
-.tertiary {
-    color: white;
-    background-color: variables.$shadow;
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
-}
-
-.tertiary-color { color: variables.$tertiary-color; }
+.tertiary-color { color: v.$tertiary-color; }
 
 .center {
     position: absolute;
@@ -122,24 +101,21 @@
 a {
     text-decoration: none;
     color: white;
-    font-family: variables.$font;
 
-    &.active {
-        text-shadow: 0.25rem 0.25rem 0.25rem variables.$primary-color;
-    }
+    &.active { text-shadow: v.$light-shadow; }
 }
 
 .characterView  {
     padding: 1rem 1rem 3.5rem;
 
     nav {
-        background-color: variables.$secondary-color;
+        background-color: v.$secondary-color;
         justify-content : space-around;
     }
 }
 
 .overview {
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    text-shadow: v.$dark-shadow;
     text-align: center;
 
     h2 { margin: 1rem; }
@@ -152,8 +128,8 @@ a {
         gap: 2rem;
 
         h3 {
-            box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
-            text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            text-shadow: v.$dark-shadow;
         }
     }
 
@@ -163,14 +139,14 @@ a {
         gap: 1.5rem;
 
         h3 {
-            box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
-            text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            text-shadow: v.$dark-shadow;
         }
     }
 }
 
 .noteGallery {
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    text-shadow: v.$dark-shadow;
     text-align: center;
 }
 
@@ -193,37 +169,24 @@ a {
     &-logo { grid-area: logo; }
     &-text { grid-area: text; }
     .portraits { grid-area: portraits; }
-    &-button {
-        align-self: flex-start;
-    }
+    &-button { align-self: flex-start; }
 }
 
 .flex {
     display: flex;
     flex-direction: column;
-}
-
-.deleteButton {
-    font-family: variables.$font;
-    background-color: variables.$secondary-color;
-    color: white;
-    border-radius: 2rem;
-    border-style: none;
-
-    &:hover { background-color: variables.$shadow; }
+    text-shadow: v.$light-shadow;
 }
 
 .inventoryContainer {
     text-align: center;
 
-    .inventoryText, .inventoryTitle {
-        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
-    }
+    .inventoryText, .inventoryTitle { text-shadow: v.$dark-shadow; }
 }
 
 .item {
-    background-color: variables.$secondary-color;
-    text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    background-color: v.$secondary-color;
+    text-shadow: v.$dark-shadow;
 }
 
 @media screen and (min-width: 850px) {

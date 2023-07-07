@@ -12,7 +12,7 @@ export default function About() {
 
   return <>
     <Link className="home-button" to="/">
-      <Button className="btn primary text-light">Home</Button>
+      <Button className="primary">Home</Button>
     </Link>
     <div>
       <h2>About</h2>
