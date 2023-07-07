@@ -198,10 +198,58 @@ a {
     .portraits { grid-area: portraits; }
 }
 
+.deleteButton {
+    font-family: variables.$font;
+    background-color: variables.$secondary-color;
+    color: white;
+    border-radius: 2rem;
+    border-style: none;
+
+    &:hover {
+        background-color: variables.$shadow;
+    }
+}
+
 @media screen and (min-width: 850px) {
     .home {
         grid: 'logo logo'
         'text portraits'
         'text .';
+    }
+}
+
+.noteTitle {
+    text-align: center;
+}
+
+.inventoryContainer {
+
+    .inventoryText {
+        font-family: variables.$font;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    }
+
+    .inventoryTitle {
+        font-family: variables.$font;
+        text-align: center;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    }
+}
+
+.item {
+    background-color: variables.$secondary-color;
+    margin-left: 20rem;
+    margin-right: 20rem;
+
+    .itemText {
+        font-family: variables.$font;
+        text-align: center;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+    }
+
+    .itemName {
+        font-family: variables.$font;
+        text-align: center;
+        text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
     }
 }

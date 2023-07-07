@@ -326,8 +326,48 @@ a.active {
   grid-area: portraits;
 }
 
+.deleteButton {
+  font-family: "Luminari";
+  background-color: #694873;
+  color: white;
+  border-radius: 2rem;
+  border-style: none;
+}
+.deleteButton:hover {
+  background-color: #3a2540;
+}
+
 @media screen and (min-width: 850px) {
   .home {
     grid: "logo logo" "text portraits" "text .";
   }
+}
+.noteTitle {
+  text-align: center;
+}
+
+.inventoryContainer .inventoryText {
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+.inventoryContainer .inventoryTitle {
+  font-family: "Luminari";
+  text-align: center;
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+
+.item {
+  background-color: #694873;
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+.item .itemText {
+  font-family: "Luminari";
+  text-align: center;
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+.item .itemName {
+  font-family: "Luminari";
+  text-align: center;
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }/*# sourceMappingURL=index.css.map */

@@ -1,15 +1,22 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import CharGridItem from "./CharGridItem";
 import useFetch from "./custom-hooks/useFetch";
 import { CurrentUser } from "./context/currentUser";
 
 export default function CharacterGrid() {
-  const { get } = useFetch('https://dnd-character-collection-backend.vercel.app')
+  const { get, remove } = useFetch('http://localhost:5000')
 
   const { currentUser } = useContext(CurrentUser)
 
   const [characters, setCharacters] = useState([])
+
+  const navigate = useNavigate()
+
+  const handleDelete = async (id) => {
+    await remove(`/characters/${id}`)
+    navigate('/characters')
+  }
 
   useEffect(() => {
     (async () => {
@@ -35,7 +42,7 @@ export default function CharacterGrid() {
             <Link className="text-decoration-none" to="/create-character">Create your first character now!</Link>
           </p>
           : <div className="grid">
-            {characters.map(character => <CharGridItem key={character.id} character={character} />)}
+            {characters.map(character => <CharGridItem key={character.id} character={character} handleDelete={handleDelete}/>)}
             <Link className="newCharItem" to="/create-character">
             <div className="charGridItem">
               <h2 className="newCharItemText">+ Create New Character</h2>

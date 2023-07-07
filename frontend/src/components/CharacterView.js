@@ -14,6 +14,9 @@ export default function CharacterView() {
   useEffect(() => {
     (async () => {
       const data = await get(`/characters/${id}`)
+      
+      if (!data) return // prevents bug when deleting character
+      
       setCharacter({
         ...data,
         prof: getProficiency(data.level),
