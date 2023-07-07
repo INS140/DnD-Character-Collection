@@ -29,26 +29,27 @@
     .newCharItem{
         text-decoration: none;
         color: lightgrey;
+        width: 100%;
     }
 
     .charGridItem {
         display: flex;
         justify-content: center;
-        min-width: 10rem;
-        max-width: 20rem;
+        width: 100%;
         min-height: 25rem;
         max-height: 25rem;
         padding: 1rem;
         background-color: variables.$primary-color;
         box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
         text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
-        font-size: large;
+        font-size: 2rem;
         font-family: variables.$font;
         
         .newCharItemText{
             text-align: center;
             margin: auto;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            width: 100%;
         }
 
         .itemLink{
