@@ -193,6 +193,14 @@ a {
     &-logo { grid-area: logo; }
     &-text { grid-area: text; }
     .portraits { grid-area: portraits; }
+    &-button {
+        align-self: flex-start;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
 }
 
 .deleteButton {

@@ -6,7 +6,7 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import useFormHandler from "../custom-hooks/useFormHandler";
 
 export default function NoteForm() {
-  const { post } = useFetch("http://localhost:5000");
+  const { post } = useFetch("https://dnd-character-collection-backend.vercel.app");
 
   const { character } = useOutletContext()
 
