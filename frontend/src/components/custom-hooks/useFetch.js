@@ -48,6 +48,7 @@ export default function useFetch(baseUrl) {
         const res = await fetch(baseUrl+endpoint, {
           method: 'DELETE',
           headers: {
+            "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
           }
         })
