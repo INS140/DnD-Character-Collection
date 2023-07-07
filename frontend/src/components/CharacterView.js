@@ -11,11 +11,16 @@ export default function CharacterView() {
 
   const { id } = useParams();
 
-  useEffect(() => {console.log(character)}, [character])
-
   useEffect(() => {
     (async () => {
       const data = await get(`/characters/${id}`)
+      console.log(data)
+      if (!data) {
+        return
+      }
+      if (data.message !== null) {
+        console.log(data)
+      }
       setCharacter({
         ...data,
         prof: getProficiency(data.level),

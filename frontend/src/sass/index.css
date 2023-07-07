@@ -326,6 +326,17 @@ a.active {
   grid-area: portraits;
 }
 
+.deleteButton {
+  font-family: "Luminari";
+  background-color: #694873;
+  color: white;
+  border-radius: 2rem;
+  border-style: none;
+}
+.deleteButton:hover {
+  background-color: #3a2540;
+}
+
 @media screen and (min-width: 850px) {
   .home {
     grid: "logo logo" "text portraits" "text .";

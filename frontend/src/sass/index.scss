@@ -198,6 +198,18 @@ a {
     .portraits { grid-area: portraits; }
 }
 
+.deleteButton {
+    font-family: variables.$font;
+    background-color: variables.$secondary-color;
+    color: white;
+    border-radius: 2rem;
+    border-style: none;
+
+    &:hover {
+        background-color: variables.$shadow;
+    }
+}
+
 @media screen and (min-width: 850px) {
     .home {
         grid: 'logo logo'
@@ -205,3 +217,4 @@ a {
         'text .';
     }
 }
+
