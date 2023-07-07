@@ -1,16 +1,14 @@
-import React, { useContext } from "react";
 import Input from "../ui-kit/Input";
 import TextArea from "../ui-kit/TextArea";
-import Button from "../ui-kit/Button";
+import Modal from "../ui-kit/Modal"
 import useFetch from "../custom-hooks/useFetch";
-import { useNavigate } from "react-router-dom";
-import { CurrentUser } from "../context/currentUser";
-import useFormHandler from "./useFormHandler";
+import { useNavigate, useOutletContext } from "react-router-dom";
+import useFormHandler from "../custom-hooks/useFormHandler";
 
 export default function NoteForm() {
   const { post } = useFetch("http://localhost:5000");
 
-  const { currentUser } = useContext(CurrentUser);
+  const { character } = useOutletContext()
 
   const navigate = useNavigate();
 
@@ -19,25 +17,35 @@ export default function NoteForm() {
     description: "",
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     try {
-      await post("/notes  ", {
+      const data = await post("/notes  ", {
         ...inputs,
-        user: currentUser.id,
+        character: character.id,
       });
 
-      navigate("/notes");
+      console.log(data)
+
+      navigate(0);
     } catch (err) {
       console.log(err);
     }
   };
 
-  return (
+  const handleDisable = () => {
+    return !inputs.title || !inputs.description ? true : false
+  }
+
+  return <Modal
+    modalId="newNote"
+    header="Add A New Character Note"
+    openModalText="Add New Note"
+    closeModalText="Add Note"
+    disableSubmit={handleDisable()}
+    onCloseClick={handleSubmit}
+  >
     <div className="form-container">
-      <h1>Create Note</h1>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form">
         <Input
           label="Title"
           name="title"
@@ -45,17 +53,15 @@ export default function NoteForm() {
           onChange={handleChange}
           required
         />
-
         <TextArea
           label="Description"
           name="description"
           rows="5"
           value={inputs.description}
           onChange={handleChange}
+          required
         />
-
-        <Button type="submit">Save Note</Button>
       </form>
     </div>
-  );
+  </Modal>
 }

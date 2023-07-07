@@ -1,4 +1,5 @@
 import Note from "./Note"
+import NoteForm from "./forms/AddNotes"
 import { useOutletContext } from "react-router-dom"
 
 export default function NotesGallery() {
@@ -6,7 +7,8 @@ export default function NotesGallery() {
 
   return (
     <div className="noteGallery">
-      <h1 className="noteTitle">Notes:</h1>
+      <h1 className="noteTitle">Notes</h1>
+      <NoteForm />
       <div className="noteContainer">
         {!character.notes.length
           ? <h3>This character currently has no notes.</h3> 
