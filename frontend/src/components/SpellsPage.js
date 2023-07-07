@@ -96,101 +96,107 @@ export default function SpellsPage() {
     setAvailableSpells(data.results);
   };
 
-  return <div>
+  return <div className="spells">
     <h1>Spells</h1>
-    <div>
-      <h2>Save DC</h2>
-      <p>
-        Spell DC:{" "}
-        {8 +
-          character.prof +
-          scoreToMod(character[spellDC.stat]) +
-          Number(spellDC.misc)}
-      </p>
-      <Modal
-        modalId="spellSaveDC"
-        header="Spell Save DC"
-        openModalText="Edit"
-        closeModalText="Save Changes"
-      >
-        <div>
-          <h4>Prof Bonus</h4>
-          <p>{character.prof}</p>
-        </div>
-        <div>
-          <h4>Stat Mod</h4>
-          <p>{scoreToMod(character[spellDC.stat])}</p>
-        </div>
-        <Input
-          label="Misc Bonus"
-          type="number"
-          name="misc"
-          value={spellDC.misc}
-          onChange={handleSaveDCChange}
-        />
-        <Select
-          label="Spellcasting Ability"
-          name="stat"
-          value={spellDC.stat}
-          onChange={handleSaveDCChange}
+    <div className="saveAttack">
+      <div>
+        <hr />
+        <h2>Save DC</h2>
+        <p className="secondary">
+          Spell DC:<span>
+          {8 +
+            character.prof +
+            scoreToMod(character[spellDC.stat]) +
+            Number(spellDC.misc)} </span>
+        </p>
+        <Modal
+          modalId="spellSaveDC"
+          header="Spell Save DC"
+          openModalText="Edit"
+          closeModalText="Save Changes"
         >
-          <option value="str">Strength</option>
-          <option value="dex">Dexterity</option>
-          <option value="con">Constitution</option>
-          <option value="int">Intelligence</option>
-          <option value="wis">Wisdom</option>
-          <option value="cha">Charisma</option>
-        </Select>
-      </Modal>
+          <div>
+            <h4>Prof Bonus</h4>
+            <p>{character.prof}</p>
+          </div>
+          <div>
+            <h4>Stat Mod</h4>
+            <p>{scoreToMod(character[spellDC.stat])}</p>
+          </div>
+          <Input
+            label="Misc Bonus"
+            type="number"
+            name="misc"
+            value={spellDC.misc}
+            onChange={handleSaveDCChange}
+          />
+          <Select
+            label="Spellcasting Ability"
+            name="stat"
+            value={spellDC.stat}
+            onChange={handleSaveDCChange}
+          >
+            <option value="str">Strength</option>
+            <option value="dex">Dexterity</option>
+            <option value="con">Constitution</option>
+            <option value="int">Intelligence</option>
+            <option value="wis">Wisdom</option>
+            <option value="cha">Charisma</option>
+          </Select>
+        </Modal>
+      </div>
+      <div>
+      <hr />
+        <h2>Attack Bonus</h2>
+        <p className="secondary">
+          Attack Bonus:<span>
+          {character.prof +
+            scoreToMod(character[attackBonus.stat]) +
+            Number(attackBonus.misc)}</span>
+        </p>
+        <Modal
+          modalId="atkBonus"
+          header="Attack Bonus"
+          openModalText="Edit"
+          closeModalText="Save Changes"
+        >
+          <div>
+            <h4>Prof Bonus</h4>
+            <p>{character.prof}</p>
+          </div>
+          <div>
+            <h4>Stat Mod</h4>
+            <p>{scoreToMod(character[attackBonus.stat])}</p>
+          </div>
+          <Input
+            label="Misc Bonus"
+            type="number"
+            name="misc"
+            value={attackBonus.misc}
+            onChange={handleAttackBonusChange}
+          />
+          <Select
+            label="Spellcasting Ability"
+            name="stat"
+            value={attackBonus.stat}
+            onChange={handleAttackBonusChange}
+          >
+            <option value="str">Strength</option>
+            <option value="dex">Dexterity</option>
+            <option value="con">Constitution</option>
+            <option value="int">Intelligence</option>
+            <option value="wis">Wisdom</option>
+            <option value="cha">Charisma</option>
+          </Select>
+        </Modal>
+      </div>
     </div>
     <div>
-      <h2>Attack Bonus</h2>
-      <p>
-        Attack Bonus:{" "}
-        {character.prof +
-          scoreToMod(character[attackBonus.stat]) +
-          Number(attackBonus.misc)}
-      </p>
-      <Modal
-        modalId="atkBonus"
-        header="Attack Bonus"
-        openModalText="Edit"
-        closeModalText="Save Changes"
-      >
-        <div>
-          <h4>Prof Bonus</h4>
-          <p>{character.prof}</p>
-        </div>
-        <div>
-          <h4>Stat Mod</h4>
-          <p>{scoreToMod(character[attackBonus.stat])}</p>
-        </div>
-        <Input
-          label="Misc Bonus"
-          type="number"
-          name="misc"
-          value={attackBonus.misc}
-          onChange={handleAttackBonusChange}
-        />
-        <Select
-          label="Spellcasting Ability"
-          name="stat"
-          value={attackBonus.stat}
-          onChange={handleAttackBonusChange}
-        >
-          <option value="str">Strength</option>
-          <option value="dex">Dexterity</option>
-          <option value="con">Constitution</option>
-          <option value="int">Intelligence</option>
-          <option value="wis">Wisdom</option>
-          <option value="cha">Charisma</option>
-        </Select>
-      </Modal>
-    </div>
-    <div>
+    <hr />
+    <h2>Spells List</h2>
       <Select
         label="Select Level"
-        name="levelSelect"
+        name="levelSelect" className="secondary text-light"
         value={selectedLevel}
         onChange={handleLevelChange}
       >

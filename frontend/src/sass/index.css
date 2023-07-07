@@ -267,9 +267,39 @@
   min-width: 75%;
 }
 
-.spell-desc {
+.spells {
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+  text-align: center;
+}
+.spells label {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.spells label select {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.spells .saveAttack {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.spells .saveAttack p {
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
+}
+.spells .saveAttack span {
+  display: block;
+}
+.spells .spell-desc {
   max-height: 10rem;
   overflow: hidden scroll;
+  font-family: "Luminari";
+  text-shadow: 0.25rem 0.25rem 0.25rem #3a2540;
 }
 
 a {
