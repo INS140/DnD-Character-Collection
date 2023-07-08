@@ -13,12 +13,11 @@ Our plan is to create a powerful tool specifically designed for both experienced
 
 ### Home
 
-A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. !<img src= "frontend/public>
+A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/home.png">
 
 ### About
 
-A webpage that provides information about DND Character Collection and the collaborators behind the web application.!<img src="https://github.com/DNDCharcterCollection/frontend/readmeimages/about.png">
-
+A webpage that provides information about DND Character Collection and the collaborators behind the web application.<img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/about.png">
 #### Collaborators
 
 * [Annie Lam](https://github.com/annielam0623/)
@@ -30,7 +29,7 @@ A webpage that provides information about DND Character Collection and the colla
 ### Login
 
 A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. 
-<img src=>
+<img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/login.png">>
 
 ### Signup
 
