@@ -31,16 +31,16 @@ export default function CharacterGrid() {
 
   return <div className="grid-container">
     { !currentUser
-      ? <h2 className="text-center">
-        <Link className="text-decoration-none secondary-color" to="/login">Login</Link>
+      ? <h2 className="text-center secondary-color">
+        <Link className="text-decoration-none white" to="/login">Login</Link>
         &nbsp;to see your characters, or sign up &nbsp;
-        <Link className="text-decoration-none secondary-color" to="/signup">here</Link>!
+        <Link className="text-decoration-none white" to="/signup">here</Link>!
       </h2>
       : <>
         { !characters.length
-          ? <p className="text-center secondary-color">Whoops! Seems you don't have any characters yet! &nbsp;
+          ? <h2 className="text-center secondary-color">Seems you don't have any characters yet! &nbsp;
             <Link className="text-decoration-none" to="/create-character">Create your first character now!</Link>
-          </p>
+          </h2>
           : <div className="grid">
             {characters.map(character => <CharGridItem key={character.id} character={character} handleDelete={handleDelete}/>)}
             <Link className="newCharItem" to="/create-character">
