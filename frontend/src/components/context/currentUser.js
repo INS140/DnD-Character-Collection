@@ -4,7 +4,7 @@ import useFetch from "../custom-hooks/useFetch";
 export const CurrentUser = createContext()
 
 export default function CurrentUserProvider({ children }) {
-  const { get } = useFetch('http://localhost:5000')
+  const { get } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const [currentUser, setCurrentUser] = useState(null)
 

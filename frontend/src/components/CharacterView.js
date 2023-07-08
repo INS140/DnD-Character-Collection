@@ -5,17 +5,18 @@ import { getProficiency, scoreToMod } from "../helper-functions";
 import CharacterNavbar from "./CharacterNavbar";
 
 export default function CharacterView() {
-  const { get } = useFetch("http://localhost:5000");
+  const { get } = useFetch("https://dnd-character-collection-backend.vercel.app");
 
   const [character, setCharacter] = useState(null);
 
   const { id } = useParams();
 
-  useEffect(() => {console.log(character)}, [character])
-
   useEffect(() => {
     (async () => {
       const data = await get(`/characters/${id}`)
+      
+      if (!data) return // prevents bug when deleting character
+      
       setCharacter({
         ...data,
         prof: getProficiency(data.level),
@@ -34,5 +35,5 @@ export default function CharacterView() {
         <CharacterNavbar charId={character.id} />
       </>
     }
-    </div>
+  </div>
 }

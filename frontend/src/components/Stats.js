@@ -1,14 +1,7 @@
-// all character stats seperated into groups
-// group 1 general stats
-// group 2 base stats (ie STR, DEX, etc)
-// group 3 skills
-import { useEffect } from "react"
 import { useOutletContext } from "react-router-dom"
 
 export default function Stats() {
   const { character } = useOutletContext()
-
-  useEffect(() => {console.log(character)}, [])
 
   return <div className="stats">
     <h1>General</h1>

@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUpForm() {
-  const { post } = useFetch('http://localhost:5000')
+  const { post } = useFetch('http://dnd-character-collection-backend.vercel.app')
 
   const { setCurrentUser } = useContext(CurrentUser)
 

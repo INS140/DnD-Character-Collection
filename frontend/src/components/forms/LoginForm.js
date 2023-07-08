@@ -6,8 +6,8 @@ import { CurrentUser } from "../context/currentUser";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 
-export default function LoginForm() {
-  const { post } = useFetch('http://localhost:5000')
+export default function LoginForm({ setError }) {
+  const { post } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const navigate = useNavigate()
 
@@ -23,6 +23,10 @@ export default function LoginForm() {
     
     try {
       const data = await post('/authentication', inputs)
+      
+      if (data.error !== null) {
+        setError(data)
+      }
 
       if (data !== null) {
         setCurrentUser(data.user)

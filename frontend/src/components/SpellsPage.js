@@ -15,7 +15,7 @@ export default function SpellsPage() {
   const navigate = useNavigate();
 
   const { get } = useFetch("https://www.dnd5eapi.co/api");
-  const { put } = useFetch("http://localhost:5000");
+  const { put } = useFetch("https://dnd-character-collection-backend.vercel.app");
 
   const [spells, setSpells] = useState([]);
   const [availableSpells, setAvailableSpells] = useState([]);
@@ -96,7 +96,7 @@ export default function SpellsPage() {
     setAvailableSpells(data.results);
   };
 
-  return <div>
+  return <div className="spellsText">
     <h1>Spells</h1>
     <div>
       <h2>Save DC</h2>
@@ -239,19 +239,22 @@ export default function SpellsPage() {
         {selectedSpell !== "-----" && <SpellDisplay spell={selectedSpell} />}
       </div>
     </Modal>
-    <div>
-      <h2>
-        {selectedLevel === "Cantrip"
-          ? "Cantrips"
-          : `${selectedLevel}${getTag(selectedLevel)} Level`}
-      </h2>
-      <hr />
-      {!spells.length
-        ? <>Loading ...</>
-        :spells.map((spell, i) => {
-          return <Spell key={`${spell}${i}`} spell={spell} />;
-        })
-      }
-    </div>
+    { !character.spells.length
+      ? <h2>This character has no spells</h2>
+      : <div>
+        <h2>
+          {selectedLevel === "Cantrip"
+            ? "Cantrips"
+            : `${selectedLevel}${getTag(selectedLevel)} Level`}
+        </h2>
+        <hr />
+        { !spells.length
+          ? <p>No {selectedLevel !== 'Cantrip' ? `${selectedLevel}${getTag(selectedLevel)} level spells` : selectedLevel}</p>
+          :spells.map((spell, i) => {
+            return <Spell key={`${spell}${i}`} spell={spell} />;
+          })
+        }
+      </div>
+    }
   </div>
 }

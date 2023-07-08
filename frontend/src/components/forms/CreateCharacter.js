@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { toTitleCase } from '../../helper-functions'
 
 export default function CreateCharacter() {
-  const { post } = useFetch('http://localhost:5000')
+  const { post } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const { currentUser } = useContext(CurrentUser)
 
