@@ -13,12 +13,11 @@ Our plan is to create a powerful tool specifically designed for both experienced
 
 ### Home
 
-A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src=>
+A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. !<img src= "frontend/public>
 
 ### About
 
-A webpage that provides information about DND Character Collection and the collaborators behind the web application. 
-<img src=>
+A webpage that provides information about DND Character Collection and the collaborators behind the web application.!<img src="https://github.com/DNDCharcterCollection/frontend/readmeimages/about.png">
 
 #### Collaborators
 
