@@ -1,0 +1,107 @@
+/* *write a code for backgroud css,/
+css for image
+css for buttom color 
+css for h1 alignment 
+css logo, add correctr size and boarder (logo saved in de3sctop img_1208
+
+ */
+<<<<<<< Updated upstream
+
+.bg-text-secondary {
+    background-color: purple; 
+    color: white;
+}
+/* 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; 
+    background-color: #FFFFFF; 
+}
+  
+.logo {
+    font-size: 100px;
+    color: #FFFFFF; 
+    /* margin: 100%;  */
+/* }
+
+h1 {
+    text-align: center;
+    margin-top: 100px; 
+    margin-bottom: 100px;
+    color: #FFFFFF;
+}
+
+body{
+    background-color: #FAD6EB;
+}
+  
+.card{
+    background-color: #A45CB9;
+    width: 400px;
+    border:none;
+ }
+
+.btr{
+    border-top-right-radius: 5px !important;
+}
+  
+  
+.btl{
+    border-top-left-radius: 5px !important;
+}
+  
+.btn-dark { 
+      color: #FFFFFF; 
+      background-color: #3F1651;
+      border-color: #653780;
+}
+  
+.btn-dark:hover {
+      color: #e4dfef;
+      background-color:#653780;
+      border-color: #3F1651;
+}
+
+.nav-pills{
+    display:table !important;
+    width:100%;
+}
+  
+.nav-pills .nav-link {
+    border-radius: 0px;
+    border-bottom: 2px solid #9C3587; 
+} 
+  
+.nav-item{
+    display: table-cell;
+    color: #FFFFFF; 
+      border-color: #FAD6EB;
+      background:  #A45CB9;
+} 
+  
+  
+.form{
+    padding: 10px;
+    height: 300px;
+}
+  
+.form input{
+    margin-bottom: 12px;
+    border-radius: 3px;
+}
+  
+.form input:focus{
+  box-shadow: none;
+}
+  
+.form button{
+  margin-top: 50px;
+  display: flex;
+} */ 
+=======
+body{
+    background-color: rgb(105, 68, 139);
+}
+>>>>>>> Stashed changes
