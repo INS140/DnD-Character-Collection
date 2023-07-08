@@ -251,11 +251,52 @@ a {
     text-align: center;
 
     .inventoryText, .inventoryTitle { text-shadow: v.$dark-shadow; }
+
+    .items {
+        display: grid;
+        grid: 1fr / 1fr;
+        gap: 1rem;
+    }
 }
 
 .item {
+    display: grid;
+    grid: 'Name . Delete'
+        'Desc Desc Desc';
+    padding: 1rem;
+    justify-content: space-between;
+    gap: 1rem;
     background-color: v.$secondary-color;
     text-shadow: v.$dark-shadow;
+
+    &Name { grid-area: Name; }
+
+    &Desc {
+        grid-area: Desc;
+        text-align: left;
+
+        hr { margin-top: 0; }
+
+        p {
+            padding: 1rem;
+            max-height: 15rem;
+            overflow-y: scroll;
+        }
+    }
+
+    &Props {
+        display: grid;
+        grid: 1fr / repeat(3, 1fr);
+        gap: 1rem;
+
+        .type { grid-column: span 2; }
+    }
+
+    &Delete {
+        grid-area: Delete;
+        width: 5rem;
+        height: fit-content;
+    }
 }
 
 @media screen and (min-width: 850px) {

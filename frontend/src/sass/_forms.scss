@@ -38,7 +38,7 @@
     box-sizing: border-box;
     background-color: v.$secondary-color;
     font-size: 1.5rem;
-    text-shadow: v.$light-shadow;
+    text-shadow: v.$dark-shadow;
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -113,6 +113,31 @@
   padding: 1rem;
   margin: 1rem 0;
   background-color: v.$error;
+}
+
+.modal-form {
+  display: grid;
+  grid: 1fr / repeat(4, 1fr);
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
+
+  label {
+    padding: 1rem;
+    grid-column: span 3;
+    gap: 1rem;
+
+    input {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  button {
+    height: fit-content;
+    width: 5rem;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 550px) {

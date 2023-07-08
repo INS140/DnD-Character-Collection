@@ -5,7 +5,7 @@ export default function Overview() {
 
   return <div className="overview">
     <h1>Overview</h1>
-    <img src={`${character.image}`} />
+    { character.image && <img src={`${character.image}`} />}
     <h2>Name: {character.name}</h2>
     <h2>Class: {character.classType}</h2>
     <h2>Level: {character.level}</h2>

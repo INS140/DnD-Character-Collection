@@ -28,6 +28,7 @@ export default function Inventory() {
       if (character.inventory.length !== 0) {
         for (const item of character.inventory) {
           const data = await get(`/equipment/${item}`)
+          
           setItems(prev => [...prev, data])
         }
       }
@@ -49,13 +50,26 @@ export default function Inventory() {
     if (foundItem !== null) {
       const { prof, init, ...charData } = character;
 
-      const data = await put(`/characters/${character.id}`, {
+      await put(`/characters/${character.id}`, {
         ...charData,
         inventory: [...character.inventory, foundItem.index],
       });
 
       navigate(0);
     }
+  }
+
+  const handleDeleteItem = async (index) => {
+    const { prof, init, inventory, ...charData } = character
+
+    const updatedInventory = [...inventory.slice(0, index), ...inventory.slice(index+1, inventory.length)]
+
+    const data = await put(`/characters/${character.id}`, {
+      ...charData,
+      inventory: updatedInventory
+    })
+
+    navigate(0)
   }
     
   return <div className="inventoryContainer">
@@ -81,26 +95,37 @@ export default function Inventory() {
       disableSubmit={!foundItem}
       onCloseClick={handleAddItem}
     >
-      <form onSubmit={handleSearchItems}>
+      <form className="modal-form" onSubmit={handleSearchItems}>
         <Input
           label="Search for an Item"
+          labelClass="secondary"
           name="item"
           value={inputs.item}
           onChange={handleChange}
         />
-        <Button className="secondary" type="submit">Search</Button>
+        <Button
+          className="secondary"
+          type="submit"
+          disabled={inputs.item === ''}
+        >Search</Button>
       </form>
       { error !== null
-        ? <h2>{error.error}</h2>
-        : foundItem && <Item item={foundItem} />
+        ? <>
+          <hr />
+          <h2>{error.error}</h2>
+        </>
+        : foundItem && <>
+          <hr />
+          <Item item={foundItem} />
+        </>
       }
     </Modal>
     <hr />
-    <div>
+    <div className="items">
       {!items.length
         ? <>Loading ...</>
         : items.map((item, i) => {
-          return <Item key={`${item.index}${i}`} item={item} />
+          return <Item key={`${item.index}${i}`} item={item} handleDelete={() => handleDeleteItem(i)} />
         })
       }
     </div>

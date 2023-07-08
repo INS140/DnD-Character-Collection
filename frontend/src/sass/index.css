@@ -34,7 +34,7 @@
   box-sizing: border-box;
   background-color: #694873;
   font-size: 1.5rem;
-  text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
 .form label input::-webkit-outer-spin-button,
 .form label input::-webkit-inner-spin-button {
@@ -102,6 +102,29 @@
   padding: 1rem;
   margin: 1rem 0;
   background-color: #8f5260;
+}
+
+.modal-form {
+  display: grid;
+  grid: 1fr/repeat(4, 1fr);
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
+}
+.modal-form label {
+  padding: 1rem;
+  grid-column: span 3;
+  gap: 1rem;
+}
+.modal-form label input {
+  display: block;
+  width: 100%;
+}
+.modal-form button {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 5rem;
+  margin: auto;
 }
 
 @media screen and (min-width: 550px) {
@@ -395,10 +418,49 @@ a.active {
 .inventoryContainer .inventoryText, .inventoryContainer .inventoryTitle {
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
+.inventoryContainer .items {
+  display: grid;
+  grid: 1fr/1fr;
+  gap: 1rem;
+}
 
 .item {
+  display: grid;
+  grid: "Name . Delete" "Desc Desc Desc";
+  padding: 1rem;
+  justify-content: space-between;
+  gap: 1rem;
   background-color: #694873;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.itemName {
+  grid-area: Name;
+}
+.itemDesc {
+  grid-area: Desc;
+  text-align: left;
+}
+.itemDesc hr {
+  margin-top: 0;
+}
+.itemDesc p {
+  padding: 1rem;
+  max-height: 15rem;
+  overflow-y: scroll;
+}
+.itemProps {
+  display: grid;
+  grid: 1fr/repeat(3, 1fr);
+  gap: 1rem;
+}
+.itemProps .type {
+  grid-column: span 2;
+}
+.itemDelete {
+  grid-area: Delete;
+  width: 5rem;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 @media screen and (min-width: 850px) {
