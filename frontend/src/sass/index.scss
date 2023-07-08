@@ -77,12 +77,46 @@
 
     h1 {
         text-align: center;
+        margin-bottom: 20px;
     }
 
-    hr {
-        margin-top: -1rem;
-        align-self: center;
-        width: 15%;
+    // hr {
+    //     margin-top: -1rem;
+    //     align-self: center;
+    //     width: 15%;
+    // }
+
+    .genStats {
+        display: grid;
+        grid: 1fr / repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+
+        h3 {
+            box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
+            text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    .baseStats {
+        display: grid;
+        grid: repeat(2, 1fr) / repeat(3, 1fr);
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        text-align: center;
+
+        h3 {
+            box-shadow: 0 0 0.5rem 0.5rem variables.$shadow;
+            text-shadow: 0.25rem 0.25rem 0.25rem variables.$shadow;
+
+            span {
+                display: block;
+            }
+        }
     }
 }
 
@@ -280,6 +314,19 @@ a {
             grid: repeat(2, 1fr) / repeat(2, 1fr);
             gap: 1rem;
         }
+
+        .baseStats {
+            grid: repeat(3, 1fr) / repeat(2, 1fr);
+            gap: 1rem;
+        }
+    }
+
+    .stats {
+        .genStats {
+            grid: repeat(2, 1fr) / repeat(2, 1fr);
+            gap: 1rem;
+        }
+
         .baseStats {
             grid: repeat(3, 1fr) / repeat(2, 1fr);
             gap: 1rem;
