@@ -13,11 +13,11 @@ Our plan is to create a powerful tool specifically designed for both experienced
 
 ### Home
 
-A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/home.png">
+A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/home.png">
 
 ### About
 
-A webpage that provides information about DND Character Collection and the collaborators behind the web application.<img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/about.png">
+A webpage that provides information about DND Character Collection and the collaborators behind the web application.<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/about.png">
 
 #### Collaborators
 
@@ -30,11 +30,11 @@ A webpage that provides information about DND Character Collection and the colla
 ### Login
 
 A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. 
-<img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/login.png">>
+<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/login.PNG">
 
 ### Signup
 
-A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/signup.png">
+A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/signup.png">
 
 ### Create Character
 
@@ -134,11 +134,11 @@ ODM/ORM libraries for working with databases.
 
 ### Diagram for the DND Character Collection Project
 
-<img src= "https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/diagramformsp3.png">
+<img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/diagramformsp3.png">
 
 ### Team Collaboration
 
-<img src= "https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/trello.png">
+<img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/trello.png">
 
 
 ## Issues
