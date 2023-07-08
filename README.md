@@ -56,7 +56,6 @@ It refers to the interface in a application where a player can see visuals of th
 
 The character statistics hold immense significance in shaping a character's abilities and traits that serve as quantifiable indicators that encompass different facets of a character's proficiencies and prowess. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterstats.png">
 
-
 #### Combat
 
 It aims to simulate strategic and exciting battles. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/charactercombat.png">
@@ -64,7 +63,6 @@ It aims to simulate strategic and exciting battles. <img src="https://github.com
 #### Inventory
 
 The system allows players to manage and track the character's items, equipment and belongings. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterinventory.png">
-
 
 #### Spells
 
