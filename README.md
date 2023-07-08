@@ -134,18 +134,18 @@ ODM/ORM libraries for working with databases.
 #### Frontend Setup
 
 1. Clone the repository from [DND Character Collection](https://github.com/INS140/DnD-Character-Collection.git/).
-2. Navigate to the front-end directory: cd frontend.
-3. Install dependencies: npm install.
+2. Navigate to the frontend directory: 'cd frontend'.
+3. Install dependencies: 'npm install'.
 4. Configure the API endpoint in the project's configuration file.
-5. Start the development server: npm start.
+5. Start the development server: 'npm start'.
 
 #### Backend Setup:
 
 1. Clone the repository from [DND Character Collection](https://github.com/INS140/DnD-Character-Collection.git/).
-2. Navigate to the back-end directory: cd back-end.
-3. Install dependencies: npm install.
+2. Navigate to the backend directory: 'cd backend'.
+3. Install dependencies: 'npm install'.
 4. Set up the database connection and credentials in the project's configuration file.
-5. Start the back-end server: npm start.
+5. Start the backend server: 'node server.js'.
 
 ### Guidelines for collaborators
 
