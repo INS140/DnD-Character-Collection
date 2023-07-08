@@ -14,6 +14,7 @@ export default function Combat() {
     (async () => {
       for (const item of character.inventory) {
         const data = await get(`/equipment/${item}`);
+
         if (data.equipment_category.index === "weapon") {
           setWeapons(prev => [ ...prev, data ]);
         }
@@ -21,25 +22,24 @@ export default function Combat() {
     })();
   }, []);
   
-  return (
-    <div className="stats">
-      <div className="combatStats">
-        <h1>Combat Stats:</h1>
-        <p>Armor Class:{character.ac}</p>
-        <p>Health Points:{character.hp}</p>
-        <p>Max Health Points:{character.maxHp}</p>
-        <p>Speed: {character.speed}</p>
-        <p>Initiative: {character.init}</p>
-        <p>Proficiency: {character.prof}</p>
-        <h1>Weapons:</h1>
-      </div>
-      <div className="weapons">
-        {!weapons.length
-          ? <h3>This character currently has no weapons.</h3>
-          : weapons.map((weapon, i) => {
-            return <Weapon key={`${weapon.index}${i}`} weapon={weapon} />
-          })}
-      </div>
+  return <div >
+    <h1 className='text-center'>Combat Stats</h1>
+    <div className="combatStats">
+      <h3 className="secondary">Armor Class<span>{character.ac}</span></h3>
+      <h3 className="secondary">Health Points<span>{character.hp}</span></h3>
+      <h3 className="secondary">Max Health Points<span>{character.maxHp}</span></h3>
+      <h3 className="secondary">Speed<span>{character.speed}</span></h3>
+      <h3 className="secondary">Initiative<span>{character.init}</span></h3>
+      <h3 className="secondary">Proficiency<span>{character.prof}</span></h3>
     </div>
-  )
+    <h2 className='text-center pt-3'>Weapons</h2>
+    <hr />
+    <div className="weapons">
+      {!weapons.length
+        ? <h3>This character currently has no weapons.</h3>
+        : weapons.map((weapon, i) => {
+          return <Weapon key={`${weapon.index}${i}`} weapon={weapon} />
+        })}
+    </div>
+  </div>
 }

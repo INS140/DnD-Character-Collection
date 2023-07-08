@@ -5,7 +5,7 @@ import useFetch from "./custom-hooks/useFetch";
 import { CurrentUser } from "./context/currentUser";
 
 export default function CharacterGrid() {
-  const { get, remove } = useFetch('http://localhost:5000')
+  const { get, remove } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const { currentUser } = useContext(CurrentUser)
 
@@ -30,23 +30,24 @@ export default function CharacterGrid() {
   }, [])
 
   return <div className="grid-container">
+    <h1 className="text-center">Characters</h1>
     { !currentUser
-      ? <h2 className="text-center secondary-color">
-        <Link className="text-decoration-none white" to="/login">Login</Link>
+      ? <h2>
+        <Link className="secondary-color" to="/login">Login</Link>
         &nbsp;to see your characters, or sign up &nbsp;
-        <Link className="text-decoration-none white" to="/signup">here</Link>!
+        <Link className="secondary-color" to="/signup">here</Link>!
       </h2>
       : <>
         { !characters.length
-          ? <h2 className="text-center secondary-color">Seems you don't have any characters yet! &nbsp;
-            <Link className="text-decoration-none" to="/create-character">Create your first character now!</Link>
+          ? <h2 className="text-center">Whoops! Seems you don't have any characters yet! &nbsp;
+            <Link className="tertiary-color" to="/create-character">Create your first character now!</Link>
           </h2>
           : <div className="grid">
             {characters.map(character => <CharGridItem key={character.id} character={character} handleDelete={handleDelete}/>)}
             <Link className="newCharItem" to="/create-character">
-            <div className="charGridItem">
-              <h2 className="newCharItemText">+ Create New Character</h2>
-            </div>
+              <div className="charGridItem">
+                <h2 className="newCharItemText">+ Create New Character</h2>
+              </div>
             </Link>
           </div>
         }

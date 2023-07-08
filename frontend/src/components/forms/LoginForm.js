@@ -59,7 +59,7 @@ export default function LoginForm({ setError }) {
         onChange={handleChange}
         required
       />
-      <Button className="submit" type="submit">Login</Button>
+      <Button className="submit secondary" type="submit">Login</Button>
     </form>
   );
 }

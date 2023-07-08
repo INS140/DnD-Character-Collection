@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUpForm() {
-  const { post } = useFetch('http://dnd-character-collection-backend.vercel.app')
+  const { post } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const { setCurrentUser } = useContext(CurrentUser)
 
@@ -55,7 +55,7 @@ export default function SignUpForm() {
         onChange={handleChange}
         required
       />
-      <Button className="submit" type="submit">Sign Up</Button>
+      <Button className="submit secondary" type="submit">Sign Up</Button>
     </form>
   );
 }

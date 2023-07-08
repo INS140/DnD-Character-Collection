@@ -257,7 +257,7 @@ export default function CreateCharacter() {
           onChange={handleChange}
         />
       </fieldset>
-      <Button type='submit'>Create Character</Button>
+      <Button className="secondary" type='submit'>Create Character</Button>
     </form>
   </div>
 }

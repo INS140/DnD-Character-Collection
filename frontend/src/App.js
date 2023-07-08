@@ -16,7 +16,7 @@ import About from './components/About'
 import Intro from './components/Intro'
 
 export default function App() {
-  return <div className='app'>
+  return <div className='app text-light'>
     <Navbar /> 
     <Routes>
       <Route path="/" element={<Home />}>
