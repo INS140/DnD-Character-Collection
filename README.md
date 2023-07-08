@@ -11,15 +11,17 @@ Dungeons & Dragons (DND) is a tabletop role-playing game where players create an
 
 Our plan is to create a powerful tool specifically designed for both experienced and novice DND character collectors and to digitize various traditional DND elements, including character creation, stat and skills management, equipment inventory, and note-taking. By doing so, we aim to develop a comprehensive online database that provides users with a complete solution for managing and organizing their DND character collection from anywhere, at any time.
 
-### Home
+### Application
+
+#### Home
 
 A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/home.png">
 
-### About
+#### About
 
-A webpage that provides information about DND Character Collection and the collaborators behind the web application.<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/about.png">
+This provides information about DND Character Collection and the collaborators behind the web application.<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/about.png">
 
-#### Collaborators
+##### Collaborators
 
 * [Annie Lam](https://github.com/annielam0623/)
 * [Isaac Saettel](https://github.com/INS140/)
@@ -27,26 +29,50 @@ A webpage that provides information about DND Character Collection and the colla
 * [Mal Martin](https://github.com/MalMWare/)
 * [Zane Matero](https://github.com/zanematero/)
 
-### Login
+#### Login
 
 A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. 
 <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/login.PNG">
 
-### Signup
+#### Signup
 
 A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/signup.png">
 
-### Create Character
+#### Create Character
 
-You are creating your new adventure by providing the details in the form. 
+You are creating your new adventure by providing the details in the form. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/createcharacter1.png">
 
-### Character Grid
+<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/createcharacter2.png">
 
-A structured layout that displays various stats, attibutes and information about a player's character.  
+#### Character Grid
 
-### Character View
+A structured layout that displays various stats, attibutes and information about a player's character. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/charactergrid.png">
 
-It refers to the interface in a application where a player can see visuals of their characters. 
+#### Character View
+
+It refers to the interface in a application where a player can see visuals of their characters. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterview.png">
+
+#### Stats
+
+The character statistics hold immense significance in shaping a character's abilities and traits that serve as quantifiable indicators that encompass different facets of a character's proficiencies and prowess. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterstats.png">
+
+
+#### Combat
+
+It aims to simulate strategic and exciting battles. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/charactercombat.png">
+
+#### Inventory
+
+The system allows players to manage and track the character's items, equipment and belongings. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterinventory.png">
+
+
+#### Spells
+
+The spells feature allows players to manage and view character's magical abilities and spells available. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterspells.png">
+
+#### Notes
+
+The feature provides a valuable tool for players to manage and keep additional information related to their characters and related significant data. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characternotes.png">
 
 <!-- Demo
     Obviously, this is only possible if a working demo of the project is already hosted somewhere.
@@ -140,6 +166,11 @@ ODM/ORM libraries for working with databases.
 
 <img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/trello.png">
 
+### Credits
+
+* [Reroll](https://reroll.co/)
+* [D&D 5e API](https://www.dnd5eapi.co/docs/#overview)
+* [Gary Gygax](https://en.wikipedia.org/wiki/Gary_Gygax) and [Dave Arneson](https://en.wikipedia.org/wiki/Dave_Arneson)
 
 ## Issues
 

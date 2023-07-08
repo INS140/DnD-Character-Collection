@@ -29,7 +29,7 @@ export default function About() {
       <p>Our vision is to develop a mighty tool tailored to the avid and new collectors of DND Characters, and to digitize many of the traditional DND components, such as character creation, stat and skills management, equipment inventory and notes. This tool has the potential to establish an online database with its fully implementation.</p>
     </div>
     <div class="col mt-5">
-      <img src={"https://dnd-character-collection-backend.vercel.app/public/logo.png"} alt="logo" style={{width:"80%"}}/>
+      <img src={"https://dnd-character-collection-backend.vercel.app/public/portraits/logo.png"} alt="logo" style={{width:"80%"}}/>
     </div>
     <div class="w-100"></div>
     <div class="col mt-5">
