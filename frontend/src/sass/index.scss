@@ -106,7 +106,6 @@
         display: grid;
         grid: repeat(2, 1fr) / repeat(3, 1fr);
         gap: 1.5rem;
-        flex-wrap: wrap;
         text-align: center;
 
         h3 {
@@ -262,7 +261,6 @@ a {
         display: grid;
         grid: repeat(2, 1fr) / repeat(3, 1fr);
         gap: 1.5rem;
-        flex-wrap: wrap;
         text-align: center;
 
         h3 {
@@ -319,7 +317,11 @@ a {
             grid: repeat(3, 1fr) / repeat(2, 1fr);
             gap: 1rem;
         }
+        hr {
+            margin-top: 20px;
+        }
     }
+    
 
     .stats {
         .genStats {
@@ -330,6 +332,10 @@ a {
         .baseStats {
             grid: repeat(3, 1fr) / repeat(2, 1fr);
             gap: 1rem;
+        }
+
+        hr {
+            margin-top: 20px;
         }
     }
 }

@@ -229,7 +229,6 @@
   display: grid;
   grid: repeat(2, 1fr)/repeat(3, 1fr);
   gap: 1.5rem;
-  flex-wrap: wrap;
   text-align: center;
 }
 .stats .baseStats h3 {
@@ -370,7 +369,6 @@ a.active {
   display: grid;
   grid: repeat(2, 1fr)/repeat(3, 1fr);
   gap: 1.5rem;
-  flex-wrap: wrap;
   text-align: center;
 }
 .overview .baseStats h3 {
@@ -422,6 +420,9 @@ a.active {
     grid: repeat(3, 1fr)/repeat(2, 1fr);
     gap: 1rem;
   }
+  .overview hr {
+    margin-top: 20px;
+  }
   .stats .genStats {
     grid: repeat(2, 1fr)/repeat(2, 1fr);
     gap: 1rem;
@@ -429,5 +430,8 @@ a.active {
   .stats .baseStats {
     grid: repeat(3, 1fr)/repeat(2, 1fr);
     gap: 1rem;
+  }
+  .stats hr {
+    margin-top: 20px;
   }
 }/*# sourceMappingURL=index.css.map */
