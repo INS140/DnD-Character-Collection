@@ -39,9 +39,9 @@ export default function CharacterGrid() {
       </h2>
       : <>
         { !characters.length
-          ? <p className="text-center">Whoops! Seems you don't have any characters yet! &nbsp;
+          ? <h2 className="text-center">Whoops! Seems you don't have any characters yet! &nbsp;
             <Link className="tertiary-color" to="/create-character">Create your first character now!</Link>
-          </p>
+          </h2>
           : <div className="grid">
             {characters.map(character => <CharGridItem key={character.id} character={character} handleDelete={handleDelete}/>)}
             <Link className="newCharItem" to="/create-character">

@@ -96,7 +96,7 @@ export default function SpellsPage() {
     setAvailableSpells(data.results);
   };
 
-  return <div>
+  return <div className="spellsText">
     <h1>Spells</h1>
     <div>
       <h2>Save DC</h2>

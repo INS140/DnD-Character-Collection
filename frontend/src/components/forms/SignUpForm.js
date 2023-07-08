@@ -55,7 +55,7 @@ export default function SignUpForm() {
         onChange={handleChange}
         required
       />
-      <Button className="submit" type="submit">Sign Up</Button>
+      <Button className="submit secondary" type="submit">Sign Up</Button>
     </form>
   );
 }
