@@ -65,7 +65,7 @@ We extend our heartfelt gratitude for your keen interest in the DND Character Co
 
 <!-- Technologies
     Be sure to include all dependencies when listing the stack. -->
-## Technologies & Technical Information
+## Technologies
 
 The project leverages an array of technologies and dependencies to bring its functionalities to life. The technology stack includes:
 
