@@ -5,22 +5,24 @@ export default function Stats() {
 
   return <div className="stats">
     <h1>General</h1>
-    <hr/>
-    <h3>Health Points: {character.hp}</h3>
-    <h3>Armor Class: {character.ac}</h3>
-    <h3>Max Health Points: {character.maxHp}</h3>
-    <h3>Hit Dice: {character.hitDice}</h3>
+    <div className="genStats">
+      <h3 className="secondary">Health Points<span>{character.hp}</span></h3>
+      <h3 className="secondary">Armor Class<span>{character.ac}</span></h3>
+      <h3 className="secondary">Max HP<span>{character.maxHp}</span></h3>
+      <h3 className="secondary">Hit Dice<span>{character.hitDice}</span></h3>
+    </div>
+  <hr />
     <h1>Ability Scores</h1>
-    <hr/>
-    <h3>Speed: {character.speed}</h3>
-    <h3>Initiative: {character.init}</h3>
-    <h3>Proficiency: {character.prof}</h3>
-    <h3>Strength: {character.str}</h3>
-    <h3>Dexterity: {character.dex}</h3>
-    <h3>Constitution: {character.con}</h3>
-    <h3>Intelligence: {character.int}</h3>
-    <h3>Wisdom: {character.wis}</h3>
-    <h3>Charisma: {character.cha}</h3>
-    <hr/>
+    <div className="baseStats">
+      <h3 className="secondary">Speed<span>{character.speed}</span></h3>
+      <h3 className="secondary">Initiative<span>{character.init}</span></h3>
+      <h3 className="secondary">Proficiency<span>{character.prof}</span></h3>
+      <h3 className="secondary">Strength<span>{character.str}</span></h3>
+      <h3 className="secondary">Dexterity<span>{character.dex}</span></h3>
+      <h3 className="secondary">Constitution<span>{character.con}</span></h3>
+      <h3 className="secondary">Intelligence<span>{character.int}</span></h3>
+      <h3 className="secondary">Wisdom<span>{character.wis}</span></h3>
+      <h3 className="secondary">Charisma<span>{character.cha}</span></h3>
+    </div>
   </div>
 }

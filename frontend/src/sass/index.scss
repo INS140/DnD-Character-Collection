@@ -63,8 +63,44 @@
 }
 
 .stats {
+    font-size: large;
+    color: white;
     text-shadow: v.$dark-shadow;
-    text-align: center;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .genStats {
+        display: grid;
+        grid: 1fr / repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+
+        h3 {
+            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            text-shadow: v.$dark-shadow;
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    .baseStats {
+        display: grid;
+        grid: repeat(2, 1fr) / repeat(3, 1fr);
+        gap: 1.5rem;
+        text-align: center;
+
+        h3 {
+            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            text-shadow: v.$dark-shadow;
+
+            span { display: block; }
+        }
+    }
 }
 
 .logo { height: 50px; }
@@ -93,9 +129,41 @@
     min-width: 75%;
 }
 
-.spell-desc {
-    max-height: 10rem;
-    overflow: hidden scroll;
+.spells {
+    text-shadow: v.$dark-shadow;
+    text-align: center;
+
+    label {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        select {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    .saveAttack{
+        display: grid;
+        grid: 1fr / repeat(2, 1fr);
+        gap: 2rem;
+        text-align: center;
+
+        p {
+            font-size: 1.5rem;
+            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            text-shadow: v.$dark-shadow;
+        }
+
+        span { display: block; }
+    }
+    .spell-desc {
+        max-height: 10rem;
+        overflow: hidden scroll;
+        text-shadow: v.$dark-shadow;
+    }
 }
 
 a {
@@ -137,6 +205,7 @@ a {
         display: grid;
         grid: repeat(2, 1fr) / repeat(3, 1fr);
         gap: 1.5rem;
+        text-align: center;
 
         h3 {
             box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
@@ -203,13 +272,30 @@ a {
             grid: repeat(2, 1fr) / repeat(2, 1fr);
             gap: 1rem;
         }
+
         .baseStats {
             grid: repeat(3, 1fr) / repeat(2, 1fr);
             gap: 1rem;
         }
+        hr {
+            margin-top: 20px;
+        }
     }
-}
+    
 
-.spellsText {
-    text-shadow: v.$dark-shadow;
+    .stats {
+        .genStats {
+            grid: repeat(2, 1fr) / repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .baseStats {
+            grid: repeat(3, 1fr) / repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        hr {
+            margin-top: 20px;
+        }
+    }
 }
