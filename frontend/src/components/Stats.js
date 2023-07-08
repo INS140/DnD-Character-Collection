@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom"
+import { toTitleCase } from "../helper-functions"
 
 export default function Stats() {
   const { character } = useOutletContext()
@@ -11,12 +12,14 @@ export default function Stats() {
       <h3 className="secondary">Max HP<span>{character.maxHp}</span></h3>
       <h3 className="secondary">Hit Dice<span>{character.hitDice}</span></h3>
     </div>
-  <hr />
-    <h1>Ability Scores</h1>
-    <div className="baseStats">
+    <div className="other">
       <h3 className="secondary">Speed<span>{character.speed}</span></h3>
       <h3 className="secondary">Initiative<span>{character.init}</span></h3>
       <h3 className="secondary">Proficiency<span>{character.prof}</span></h3>
+    </div>
+    <hr />
+    <h1>Ability Scores</h1>
+    <div className="baseStats">
       <h3 className="secondary">Strength<span>{character.str}</span></h3>
       <h3 className="secondary">Dexterity<span>{character.dex}</span></h3>
       <h3 className="secondary">Constitution<span>{character.con}</span></h3>

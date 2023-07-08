@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import useFetch from "./custom-hooks/useFetch"
+import Spell from "./Spell"
 
 export default function SpellDisplay({ spell }) {
   const { get } = useFetch('https://www.dnd5eapi.co/api')
@@ -16,13 +17,8 @@ export default function SpellDisplay({ spell }) {
   return <>
     { !spellInfo
       ? <>Loading ...</>
-      : <div>
-        <h3>{spellInfo.name}</h3>
-        <div className="spell-desc">
-          { spellInfo.desc.map((d, i) => {
-            return <p key={`${d[0]}${i}`}>{d}</p>
-          })}
-        </div>
+      : <div className="addSpellDisplay">
+        <Spell spell={spellInfo} />
       </div>
     }
   </>

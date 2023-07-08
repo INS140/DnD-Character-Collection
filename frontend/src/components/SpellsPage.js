@@ -39,6 +39,7 @@ export default function SpellsPage() {
         for (const spell of character.spells) {
             const level = selectedLevel === "Cantrip" ? 0 : Number(selectedLevel);
             const data = await get(`/spells/${spell}`);
+            
             if (data.level === level) {
               setSpells(prev => [...prev, data]);
             }
@@ -79,15 +80,28 @@ export default function SpellsPage() {
   };
 
   const handleAddSpell = async () => {
-    const { prof, init, ...charData } = character;
+    const { prof, init, spells, ...charData } = character;
 
-    const data = await put(`/characters/${character.id}`, {
+    await put(`/characters/${character.id}`, {
       ...charData,
-      spells: [...character.spells, selectedSpell],
+      spells: [...spells, selectedSpell],
     });
 
     navigate(0);
   };
+
+  const handleDeleteSpell = async (index) => {
+    const { prof, init, spells, ...charData } = character
+
+    const updatedSpells = spells.filter(spell => spell !== index)
+
+    await put(`/characters/${character.id}`, {
+      ...charData,
+      spells: updatedSpells
+    })
+
+    navigate(0)
+  }
 
   const fetchSpells = async () => {
     const data = await get(
@@ -116,16 +130,17 @@ export default function SpellsPage() {
         >
           <div>
             <h4>Prof Bonus</h4>
-            <p>{character.prof}</p>
+            <p className="secondary">{character.prof}</p>
           </div>
           <div>
             <h4>Stat Mod</h4>
-            <p>{scoreToMod(character[spellDC.stat])}</p>
+            <p className="secondary">{scoreToMod(character[spellDC.stat])}</p>
           </div>
           <Input
             label="Misc Bonus"
             type="number"
             name="misc"
+            className="text-center"
             value={spellDC.misc}
             onChange={handleSaveDCChange}
           />
@@ -160,16 +175,17 @@ export default function SpellsPage() {
         >
           <div>
             <h4>Prof Bonus</h4>
-            <p>{character.prof}</p>
+            <p className="secondary">{character.prof}</p>
           </div>
           <div>
             <h4>Stat Mod</h4>
-            <p>{scoreToMod(character[attackBonus.stat])}</p>
+            <p className="secondary">{scoreToMod(character[attackBonus.stat])}</p>
           </div>
           <Input
             label="Misc Bonus"
             type="number"
             name="misc"
+            className="text-center"
             value={attackBonus.misc}
             onChange={handleAttackBonusChange}
           />
@@ -249,17 +265,19 @@ export default function SpellsPage() {
     </Modal>
     { !character.spells.length
       ? <h2>This character has no spells</h2>
-      : <div>
-        <h2>
-          {selectedLevel === "Cantrip"
-            ? "Cantrips"
-            : `${selectedLevel}${getTag(selectedLevel)} Level`}
-        </h2>
-        <hr />
+      : <div className="spellsDisplay">
+        <div>
+          <h2>
+            {selectedLevel === "Cantrip"
+              ? "Cantrips"
+              : `${selectedLevel}${getTag(selectedLevel)} Level`}
+          </h2>
+        <hr /> 
+        </div>
         { !spells.length
-          ? <p>No {selectedLevel !== 'Cantrip' ? `${selectedLevel}${getTag(selectedLevel)} level spells` : selectedLevel}</p>
-          :spells.map((spell, i) => {
-            return <Spell key={`${spell}${i}`} spell={spell} />;
+          ? <p>No {selectedLevel !== 'Cantrip' ? `${selectedLevel}${getTag(selectedLevel)} level spells` : 'Cantrips'}</p>
+          : spells.map((spell, i) => {
+            return <Spell key={`${spell.index}${i}`} spell={spell} handleDelete={() => handleDeleteSpell(spell.index)} />;
           })
         }
       </div>

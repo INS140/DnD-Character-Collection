@@ -11,9 +11,6 @@ export default function About() {
   ]
 
   return <>
-    <Link className="home-button" to="/">
-      <Button className="primary">Home</Button>
-    </Link>
     <div>
       <h2>About</h2>
       <p>Our vision is to develop a mighty tool tailored to the avid and new collectors of DND Characters, and to digitize many of the traditional DND components, such as character creation, stat and skills management, equipment inventory and notes. This tool has the potential to establish an online database with its fully implementation.</p>
@@ -46,5 +43,8 @@ export default function About() {
         })}
       </p>
     </div>
+    <Link className="home-button" to="/">
+      <Button className="primary">Home</Button>
+    </Link>
   </>
 }

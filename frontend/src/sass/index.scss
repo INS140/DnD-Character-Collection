@@ -26,7 +26,7 @@
     width: 90%;
     height: 100%;
     gap: 2rem;
-    box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color inset;
+    box-shadow: v.$box-shadow inset;
 
     .newCharItem{
         width: 100%;
@@ -40,7 +40,7 @@
         max-height: 25rem;
         padding: 1rem;
         background-color: v.$primary-color;
-        box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+        box-shadow: v.$box-shadow;
         text-shadow: v.$dark-shadow;
         font-size: 2rem;
 
@@ -66,40 +66,35 @@
     font-size: large;
     color: white;
     text-shadow: v.$dark-shadow;
+    text-align: center;
 
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
+    h1 { margin-bottom: 20px; }
+
+    h3 {
+        padding: 0.5rem;
+        box-shadow: v.$box-shadow;
+        text-shadow: v.$dark-shadow;
+
+        span { display: block; }
     }
 
     .genStats {
         display: grid;
         grid: 1fr / repeat(4, 1fr);
         gap: 2rem;
-        text-align: center;
+    }
 
-        h3 {
-            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
-            text-shadow: v.$dark-shadow;
-
-            span {
-                display: block;
-            }
-        }
+    .other {
+        display: grid;
+        grid: 1fr / repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 1rem;
     }
 
     .baseStats {
         display: grid;
         grid: repeat(2, 1fr) / repeat(3, 1fr);
         gap: 1.5rem;
-        text-align: center;
-
-        h3 {
-            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
-            text-shadow: v.$dark-shadow;
-
-            span { display: block; }
-        }
     }
 }
 
@@ -153,17 +148,23 @@
 
         p {
             font-size: 1.5rem;
-            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            box-shadow: v.$box-shadow;
             text-shadow: v.$dark-shadow;
         }
 
         span { display: block; }
     }
-    .spell-desc {
-        max-height: 10rem;
-        overflow: hidden scroll;
-        text-shadow: v.$dark-shadow;
+
+    &Display {
+        display: grid;
+        grid: auto;
+        gap: 1.5rem;
     }
+}
+
+.addSpellDisplay {
+    max-height: 20rem;
+    overflow-y: scroll;
 }
 
 a {
@@ -174,12 +175,16 @@ a {
 }
 
 .characterView  {
-    padding: 1rem 1rem 3.5rem;
+    padding: 1rem 1rem 4.5rem;
 
     nav {
         background-color: v.$secondary-color;
         justify-content : space-around;
     }
+}
+
+.charNav {
+    border-top: 1px solid v.$primary-color;
 }
 
 .overview {
@@ -196,7 +201,8 @@ a {
         gap: 2rem;
 
         h3 {
-            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            padding: 0.5rem;
+            box-shadow: v.$box-shadow;
             text-shadow: v.$dark-shadow;
         }
     }
@@ -208,7 +214,8 @@ a {
         text-align: center;
 
         h3 {
-            box-shadow: 0 0 0.5rem 0.5rem v.$tertiary-color;
+            padding: 0.5rem;
+            box-shadow: v.$box-shadow;
             text-shadow: v.$dark-shadow;
         }
     }
@@ -217,6 +224,47 @@ a {
 .noteGallery {
     text-shadow: v.$dark-shadow;
     text-align: center;
+}
+
+.noteContainer {
+    display: grid;
+    gap: 1.5rem;
+
+    .note {
+        display: grid;
+        grid: 'title . options'
+        'desc desc desc';
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        box-shadow: v.$box-shadow;
+        text-align: left;
+
+        hr { margin-top: 0; }
+
+        .title { grid-area: title; }
+        .desc {
+            grid-area: desc;
+
+            pre {
+                box-shadow: v.$box-shadow inset;
+                padding: 1rem;
+                font-family: v.$font;
+            }
+        }
+        .options {
+            grid-area: options;
+            display: grid;
+            grid: 1fr / repeat(2, 1fr);
+            align-items: center;
+
+            .button {
+                width: 5rem;
+                height: 2.5rem;
+            }
+        }
+    }
 }
 
 .portraits {
@@ -238,7 +286,6 @@ a {
     &-logo { grid-area: logo; }
     &-text { grid-area: text; }
     .portraits { grid-area: portraits; }
-    &-button { align-self: flex-start; }
 }
 
 .flex {
@@ -255,24 +302,25 @@ a {
     .items {
         display: grid;
         grid: 1fr / 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 }
 
 .item {
     display: grid;
-    grid: 'Name . Delete'
-        'Desc Desc Desc';
+    grid: 'name . delete'
+        'desc desc desc';
     padding: 1rem;
     justify-content: space-between;
     gap: 1rem;
     background-color: v.$secondary-color;
     text-shadow: v.$dark-shadow;
+    box-shadow: v.$box-shadow;
 
-    &Name { grid-area: Name; }
+    &Name { grid-area: name; }
 
     &Desc {
-        grid-area: Desc;
+        grid-area: desc;
         text-align: left;
 
         hr { margin-top: 0; }
@@ -293,7 +341,102 @@ a {
     }
 
     &Delete {
-        grid-area: Delete;
+        grid-area: delete;
+        width: 5rem;
+        height: fit-content;
+    }
+}
+
+.combatStats {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+
+    h3 {
+        padding: 0.5rem;
+        box-shadow: v.$box-shadow;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.weapons {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.weapon {
+    display: grid;
+    grid: 'name name . damage'
+    'props props props props';
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: v.$box-shadow;
+
+    .name { grid-area: name; }
+    .damage { grid-area: damage; }
+    .props {
+        grid-area: props;
+
+        hr { margin-top: 0; }
+        
+        &Display {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    }
+}
+
+.spell {
+    display: grid;
+    grid: 'name . delete'
+    'info info info'
+    'desc desc desc';
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: v.$box-shadow;
+    align-items: center;
+
+    hr { margin-top: 0; }
+
+    .name { grid-area: name; }
+
+    .info {
+        grid-area: info;
+        
+        .text {
+            display: grid;
+            grid: repeat(2, 1fr) / repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        h4 {
+            padding: 1rem;
+            box-shadow: v.$box-shadow inset;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            justify-content: space-between;
+        }
+    }
+
+    .desc {
+        grid-area: desc;
+
+        .text {
+            overflow-y: scroll;
+            max-height: 15rem;
+            padding: 1rem;
+            text-align: left;
+        }
+    }
+
+    .delete {
+        grid-area: delete;
         width: 5rem;
         height: fit-content;
     }
