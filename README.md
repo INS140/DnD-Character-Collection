@@ -13,12 +13,11 @@ Our plan is to create a powerful tool specifically designed for both experienced
 
 ### Home
 
-A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src=>
+A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/home.png">
 
 ### About
 
-A webpage that provides information about DND Character Collection and the collaborators behind the web application. 
-<img src=>
+A webpage that provides information about DND Character Collection and the collaborators behind the web application.<img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/about.png">
 
 #### Collaborators
 
@@ -31,44 +30,72 @@ A webpage that provides information about DND Character Collection and the colla
 ### Login
 
 A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. 
-<img src=>
+<img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/login.png">>
 
 ### Signup
 
-A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://dnd-character-collection-backend.vercel.app/public/signup.png">
+A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/signup.png">
 
 ### Create Character
 
-You are creating your new adventure by providing the details in the form. <img src=>
-
-### Current User
-
-It refers to user who is currently logged in for access control, personalized experiences and tracking of user-specific settings. <img src=>
+You are creating your new adventure by providing the details in the form. 
 
 ### Character Grid
 
-A structured layout that displays various stats, attibutes and information about a player's character.  <img src=>
-
-### Character Nav Bar
-
-It is a user interface element that provides convenient access to various features related to a player's character. <img src=>
+A structured layout that displays various stats, attibutes and information about a player's character.  
 
 ### Character View
 
-It refers to the interface in a application where a player can see visuals of their characters. <img src=>
-
+It refers to the interface in a application where a player can see visuals of their characters. 
 
 <!-- Demo
     Obviously, this is only possible if a working demo of the project is already hosted somewhere.
     Including a demo of a project may make all the difference when attracting collaborators. -->
 ## Demo
 
+### Getting Started 
+
+To immerse yourself in the demonstration, kindly navigate to [DND Character Collection](https://github.com/INS140/DnD-Character-Collection/). The demo presents an interactive realm where you can access various features, including character creation, stat tracking, equipment management, campaign notes, and much more. Feel free to interact with the demo and familiarize yourself with the functionalities it offers.
+
+### Collaboration Opportunities
+
+Should the DND Character Collection project captivate your interest, and you yearn to collaborate or contribute, we eagerly await your reach-out. Kindly contact [Isaac Saettel](https://github.com/INS140/). We warmly welcome collaborators who share our fervor for enhancing the DND experience and pushing the boundaries of character collection and campaign management.
+
+We extend our heartfelt gratitude for your keen interest in the DND Character Collection project. May the demo ignite your imagination and enthusiasm as we embark on a collaborative journey together.
 
 <!-- Technologies
     Be sure to include all dependencies when listing the stack. -->
 ## Technologies
 
-### Instalation and set up
+The project leverages an array of technologies and dependencies to bring its functionalities to life. The technology stack includes:
+
+### Frontend
+
+[React](https://react.dev/)
+JavaScript frameworks for building user interfaces.
+
+[SASS](https://sass-lang.com/)
+CSS frameworks for styling.
+
+[Bootstrap](https://getbootstrap.com/)
+CSS frameworks for styling.
+
+[Fetch API](https://www.javascripttutorial.net/javascript-fetch-api/)
+Fetch API is a built-in JavaScript API that provides a simple and native way to make HTTP requests. 
+
+### Backend
+
+[Node.js](https://nodejs.org/en)
+JavaScript runtime environment
+
+[Express.js](https://expressjs.com/)
+Web application frameworks for Node.js.
+
+[MongoDB](https://www.mongodb.com/)
+Databases for storing character and campaign data.
+
+[Mongoose](https://mongoosejs.com/)
+ODM/ORM libraries for working with databases.
 
 <!-- Technical Information
     This is the place to list all installation and setup instructions. It is quite common to have separate directions for separate parts of a project (front end, back end, etc)
@@ -76,7 +103,25 @@ It refers to the interface in a application where a player can see visuals of th
     Include directions concerning how to contribute to the project. -->
 ## Technical Information
 
-### Guidelines for contributions
+### Installation and Setup 
+
+#### Frontend Setup
+
+1. Clone the repository from [DND Character Collection](https://github.com/INS140/DnD-Character-Collection.git/).
+2. Navigate to the front-end directory: cd frontend.
+3. Install dependencies: npm install.
+4. Configure the API endpoint in the project's configuration file.
+5. Start the development server: npm start.
+
+#### Backend Setup:
+
+1. Clone the repository from [DND Character Collection](https://github.com/INS140/DnD-Character-Collection.git/).
+2. Navigate to the back-end directory: cd back-end.
+3. Install dependencies: npm install.
+4. Set up the database connection and credentials in the project's configuration file.
+5. Start the back-end server: npm start.
+
+### Guidelines for collaborators
 
 1. Start by forking the DND Character Collection to your GitHub account.
 2. By using the git clone command, clone the forked repository to your local machine. 
@@ -87,18 +132,24 @@ It refers to the interface in a application where a player can see visuals of th
 7. Get involve in the pull request analysis, consolidation and code review.
 8. Once the changes pass and issues are resolved, your pull request will be merged into the main DND Character Collection and will be part of the deployment. 
 
+### Diagram for the DND Character Collection Project
+
+<img src= "https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/diagramformsp3.png">
+
+### Team Collaboration
+
+<img src= "https://github.com/test/DND- Character-Collection/DND Character Collection/frontend/readmeImages/trello.png">
+
 ## Issues
 
 1. List of issues: 
-    * Data synchronization.
     * Performance optimization.
     * Data integrity and validation.
     * Accesibility to users with different abilities. 
-    * User support for error reporting and handling.
+    
 
 2. Future features:
-    * Social interaction and collaboration.
-    * Achievement tracking.
-    * Integration with DND Rules and Resources. 
-    * Analytics and insights.
-    * Mobile application.
+    * Add dice roll.
+    * Add parties and combat tracker.
+    * Dark mode/light mode.
+    
