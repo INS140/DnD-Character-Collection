@@ -1,0 +1,75 @@
+@use 'variables' as v;
+
+@media screen and (min-width: 550px) {
+  .form {
+    .traits {
+      grid: repeat(4, 1fr) / repeat(12, 1fr);
+  
+      .name { grid-column: 1 / 7; }
+      .race { grid-column: 7 / 13; }
+      .level { grid-column: 1 / 4; }
+      .class { grid-column: 4 / 13; }
+      .ac { grid-column: 3 / 6; }
+      .hp { grid-column: 8 / 11; }
+      .speed { grid-column: 3 / 6; }
+      .hit { grid-column: 8 / 11; }
+    }
+
+    .base-stats, .saving-throws { grid: 1fr / 1fr 1fr 1fr; }
+
+    .skills { grid: 1fr / 1fr 1fr; }
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .home {
+    grid: 'logo logo'
+      'text portraits'
+      'text .';
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .overview {
+    .genStats {
+      grid: repeat(2, 1fr) / repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .baseStats {
+      grid: repeat(3, 1fr) / repeat(2, 1fr);
+      gap: 1rem;
+    }
+    hr {
+      margin-top: 20px;
+    }
+  }
+  
+
+  .stats {
+    .genStats {
+      grid: repeat(2, 1fr) / repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .baseStats {
+      grid: repeat(3, 1fr) / repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    hr {
+      margin-top: 20px;
+    }
+  }
+
+  .aboutGrid {
+    grid: 'logo'
+      'game'
+      'hr'
+      'portraits'
+      'players'
+      'about';
+
+    .about-logo { height: 50px; }
+  }
+}

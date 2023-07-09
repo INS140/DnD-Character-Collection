@@ -1,0 +1,37 @@
+@use 'variables' as v;
+
+.stats {
+  font-size: large;
+  color: white;
+  text-shadow: v.$dark-shadow;
+  text-align: center;
+
+  h1 { margin-bottom: 20px; }
+
+  h3 {
+    padding: 0.5rem;
+    box-shadow: v.$box-shadow;
+    text-shadow: v.$dark-shadow;
+
+    span { display: block; }
+  }
+
+  .genStats {
+    display: grid;
+    grid: 1fr / repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .other {
+    display: grid;
+    grid: 1fr / repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .baseStats {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
