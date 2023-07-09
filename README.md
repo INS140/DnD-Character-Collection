@@ -162,6 +162,8 @@ ODM/ORM libraries for working with databases.
 
 ### Team Collaboration
 
+[Trello](https://trello.com/b/xHnsLcJb/dnd-character-collection/)
+
 <img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/trello.png">
 
 ### Credits
