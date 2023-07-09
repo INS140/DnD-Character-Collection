@@ -73,22 +73,17 @@ export default function Inventory() {
   }
     
   return <div className="inventoryContainer">
-    <h1 className="inventoryTitle">Inventory</h1>
+    <h1>Inventory</h1>
     <hr />
-    <div>
-      <div>
-        <h2 className="inventoryText">Gold: {!character.gold ? 0 : character.gold}</h2>
-      </div>
-      <div>
-        <h2 className="inventoryText">Max Carry Weight: {character.str * 15}</h2>
-      </div>
-      <div>
-        <h2 className="inventoryText">Current Carry Weight: {items.length && items.reduce((s, item) => s + item.weight, 0)}</h2>
-      </div>
+    <div className="inventoryGrid">
+        <h2 className="secondary">Gold <span>{!character.gold ? 0 : character.gold}</span></h2>
+        <h2 className="secondary">Max Carry Weight <span>{character.str * 15}</span></h2>
+        <h2 className="secondary">Current Carry Weight <span>{items.length && items.reduce((s, item) => s + item.weight, 0)}</span></h2>
     </div>
-    <h2 className="inventoryTitle">Items</h2>
+    <h2 className="mt-3">Items</h2>
     <Modal
       modalId="addItem"
+      className="addItem"
       header="Add An Inventory Item"
       openModalText="Add Item"
       closeModalText="Add Item"

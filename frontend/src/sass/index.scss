@@ -291,8 +291,23 @@ a {
 
 .inventoryContainer {
     text-align: center;
+    text-shadow: v.$dark-shadow;
 
-    .inventoryText, .inventoryTitle { text-shadow: v.$dark-shadow; }
+    .inventoryGrid {
+        display: grid;
+        grid: 1fr / repeat(3, 1fr);
+        gap: 1.5rem;
+
+        span { display: block };
+
+        h2 {
+            padding: 0.5rem;
+            box-shadow: v.$box-shadow;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
 
     .items {
         display: grid;
@@ -446,6 +461,7 @@ a {
     gap: 1rem;
     width: 100%;
     align-items: center;
+    text-shadow: v.$light-shadow;
 
     .hr { grid-area: hr; }
 

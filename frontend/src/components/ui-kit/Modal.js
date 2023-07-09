@@ -1,11 +1,11 @@
 import Button from "./Button"
 
 export default function Modal(props) {
-  const { children, openModalClass, header, openModalText, onOpenClick, closeModalText, onCloseClick, disableSubmit, modalId } = props
+  const { children, className, openModalClass, header, openModalText, onOpenClick, closeModalText, onCloseClick, disableSubmit, modalId } = props
 
   const openClasses = !openModalClass ? 'secondary' : openModalClass 
 
-  return <div>
+  return <div className={className}>
     <Button
       className={openClasses + ' m-2'}
       data-bs-toggle="modal"

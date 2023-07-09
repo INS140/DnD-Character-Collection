@@ -451,9 +451,22 @@ a.active {
 
 .inventoryContainer {
   text-align: center;
-}
-.inventoryContainer .inventoryText, .inventoryContainer .inventoryTitle {
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.inventoryContainer .inventoryGrid {
+  display: grid;
+  grid: 1fr/repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.inventoryContainer .inventoryGrid span {
+  display: block;
+}
+.inventoryContainer .inventoryGrid h2 {
+  padding: 0.5rem;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .inventoryContainer .items {
   display: grid;
@@ -598,6 +611,7 @@ a.active {
   gap: 1rem;
   width: 100%;
   align-items: center;
+  text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
 }
 .aboutGrid .hr {
   grid-area: hr;
