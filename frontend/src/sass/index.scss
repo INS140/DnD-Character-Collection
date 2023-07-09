@@ -9,6 +9,7 @@
 @use 'overview';
 @use 'spells';
 @use 'stats';
+@use 'media-queries';
 
 .app {
   font-family: v.$font;
