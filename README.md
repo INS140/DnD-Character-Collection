@@ -254,6 +254,12 @@ CharGridItem, Combat, Home, Intro, Inventory, Item, Navbar, Note, NotesGallery, 
 
 <img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/diagramformsp3.png">
 
+### Team Collaboration
+
+[Trello](https://trello.com/b/xHnsLcJb/dnd-character-collection/)
+
+<img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/trello.png">
+
 ### Credits
 
 * [Reroll](https://reroll.co/)

@@ -32,9 +32,9 @@ export default function CharacterGrid() {
   return <div className="grid-container">
     <h1 className="text-center">Characters</h1>
     { !currentUser
-      ? <h2>
+      ? <h2 className="text-center">
         <Link className="secondary-color" to="/login">Login</Link>
-        &nbsp;to see your characters, or sign up &nbsp;
+        &nbsp;to see your characters, or sign up&nbsp;
         <Link className="secondary-color" to="/signup">here</Link>!
       </h2>
       : <>
@@ -43,7 +43,7 @@ export default function CharacterGrid() {
             <Link className="tertiary-color" to="/create-character">Create your first character now!</Link>
           </h2>
           : <div className="grid">
-            {characters.map(character => <CharGridItem key={character.id} character={character} handleDelete={handleDelete}/>)}
+            { characters.map(character => <CharGridItem key={character.id} character={character} handleDelete={handleDelete}/>)}
             <Link className="newCharItem" to="/create-character">
               <div className="charGridItem">
                 <h2 className="newCharItemText">+ Create New Character</h2>

@@ -64,7 +64,7 @@ export default function Inventory() {
 
     const updatedInventory = [...inventory.slice(0, index), ...inventory.slice(index+1, inventory.length)]
 
-    const data = await put(`/characters/${character.id}`, {
+    await put(`/characters/${character.id}`, {
       ...charData,
       inventory: updatedInventory
     })
@@ -118,7 +118,7 @@ export default function Inventory() {
     <hr />
     <div className="items">
       {!items.length
-        ? <>Loading ...</>
+        ? <h2>This character has no items</h2>
         : items.map((item, i) => {
           return <Item key={`${item.index}${i}`} item={item} handleDelete={() => handleDeleteItem(i)} />
         })

@@ -11,9 +11,7 @@
 .grid-container {
     padding: 1rem;
 
-    h1 {
-        text-shadow: v.$dark-shadow;
-    }
+    h1 { text-shadow: v.$dark-shadow; }
 }
 
 .grid {
@@ -28,9 +26,7 @@
     gap: 2rem;
     box-shadow: v.$box-shadow inset;
 
-    .newCharItem{
-        width: 100%;
-    }
+    .newCharItem{ width: 100%; }
 
     .charGridItem {
         display: flex;
@@ -52,6 +48,7 @@
 
         .itemLink{
             width: 100%;
+            text-align: center;
 
             .itemImage {
                 max-width: 100%;
