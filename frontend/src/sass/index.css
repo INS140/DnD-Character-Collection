@@ -414,6 +414,9 @@
 .overview h2 {
   margin: 1rem;
 }
+.overview img {
+  width: 100%;
+}
 .overview span {
   display: block;
 }
