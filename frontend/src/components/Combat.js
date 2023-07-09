@@ -22,7 +22,7 @@ export default function Combat() {
     })();
   }, []);
   
-  return <div >
+  return <div className='combat'>
     <h1 className='text-center'>Combat Stats</h1>
     <div className="combatStats">
       <h3 className="secondary">Armor Class<span>{character.ac}</span></h3>

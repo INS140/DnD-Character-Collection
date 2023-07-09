@@ -271,7 +271,6 @@ CharGridItem, Combat, Home, Intro, Inventory, Item, Navbar, Note, NotesGallery, 
 1. List of issues: 
     * Performance optimization.
     * Accesibility to users with different abilities. 
-    
 
 2. Future features:
     * Add dice roll.

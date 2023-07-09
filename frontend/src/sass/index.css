@@ -515,6 +515,10 @@ a.active {
   height: fit-content;
 }
 
+.combat {
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+
 .combatStats {
   display: grid;
   grid: repeat(2, 1fr)/repeat(3, 1fr);
