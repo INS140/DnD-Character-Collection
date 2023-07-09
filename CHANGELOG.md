@@ -1,0 +1,183 @@
+- added combat styling
+- Merge branch 'main' of https://github.com/INS140/DnD-Character-Collection
+- added more information to README
+- Update Trello
+- bug fix
+- small styles update
+- fix
+- Updated application, images & credits
+- Update README.md
+- Updated images, application, images and credits
+- Move images to front end and update the path
+- Move images from backend to frontend
+- Merge pull request #4 from INS140/readme
+- Merge branch 'main' of https://github.com/INS140/DnD-Character-Collection into readme
+- Updated readme file
+- Added styling to about page
+- Merge branch 'readme' of https://github.com/INS140/DnD-Character-Collection into readme
+- re added mongodb to local
+- functionality and styling
+- style inventory
+- Update README.md
+- Added images and links
+- Attached images
+- Added images
+- merge frontend
+- refactor and merge
+- ...
+- adding .env file
+- styling and Icons folder added
+- Merge pull request #3 from INS140/readme
+- Merge branch 'main' of https://github.com/INS140/DnD-Character-Collection into readme
+- added Stats styling
+- Merge branch 'main' of https://github.com/INS140/DnD-Character-Collection
+- text styling
+- Update URLsignup
+- Update URL
+- refactor css
+- bug fix and refatcor about
+- Merge branch 'main' of https://github.com/INS140/DnD-Character-Collection
+- merge notes
+- added spells styling
+- delete note
+- add note form
+- Merge branch 'main' of https://github.com/INS140/DnD-Character-Collection
+- modified about page with style
+- merge overview and cleanup css
+- small fix
+- assets to public
+- merged and added backend url
+- added deployed backend url
+- inventory style
+- delete button
+- updated styling on characters grid view
+- deployment setup
+- merge overview
+- refactor home
+- added styling to overview
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- validation error
+- Updated styling for Home page and about. Added correcrt logo source on navbar. Added a new route for about page.
+- Added links
+- Started
+- add notes form
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into homepage
+- Home page with Card
+- Update .hintrc
+- Added Home Css
+- inventory and bug fixes
+- Merge branch 'inventory' into frontend
+- refactor
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- fix erro in Search function
+- fix
+- Merge branch 'combat' into frontend
+- created note fetch and styled
+- replace the API endpoint
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- add the endpoint
+- character navbar
+- create weapon component
+- fix fetch
+- merge spells
+- fix
+- small refactor
+- finished spell functionality
+- attempted weapons from api logic
+- create combat component
+- create and style char nav
+- merge frontend
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- add mock data to character view
+- Merge branch 'modal' into spells
+- merge frontend and refactor
+- temp before merge modal
+- modal
+- Merge branch 'modal' of https://github.com/INS140/DnD-Character-Collection into modal
+- Updated Inventory using useState & useEffect
+- add the Spell and SpellPage
+- added package
+- adjust the branch
+- fixed some error
+- add Spells & SpellsPage
+- huge merge with refactor
+- refactor
+- create character
+- login/logout and signup
+- Updated Inventory
+- Merge branch 'backend' into context
+- refactor
+- user context and useFetch
+- nothing change but accidently press enter made one line down
+- create notes and overview components
+- upload portrait images
+- styled about and nav
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- small refactor
+- Rename NavBar.js to Navbar.js
+- Delete my-react-app directory
+- Delete .vscode directory
+- frontend merges
+- merged homepage and refactor
+- Added the code
+- merge stats with character
+- homepage
+- styling
+- add text display
+- publish stats branch with template values
+- publish navbar branch
+- refactor authetication
+- added context
+- shadow variable
+- styling character items
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- corrected the wrong path for loginForm
+- refactor
+- merged createCharatcreForm
+- Merge branch 'createCharacterForm' into frontend
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- responsive
+- route errors fix
+- Merge branch 'userinfo' into frontend
+- Merge branch 'characterComponents' into frontend
+- fixed some format
+- Merge branch 'frontend' of https://github.com/INS140/DnD-Character-Collection into frontend
+- item styling
+- form styling
+- corrected multiple backend files
+- form inputs complete
+- redo the sign up and login files
+- notes controller
+- middleware added
+- Merge branch 'model' of https://github.com/INS140/DnD-Character-Collection into models
+- add searchbar & searchpage
+- Updated App.js & gitignore
+- Added Header, About and Signup Login Buttons
+- styled character grid and items with sass
+- created stats model using mongoose schema
+- installed sass
+- installed sass
+- Added folders
+- finished signup % login both with forms and pages
+- notes model
+- chaarcter model
+- user model
+- fixed code in wrong file
+- select
+- added authentication controller
+- button
+- created character grid item view & character grid
+- fleshed out controllers
+- finished routes
+- created grid item template component
+- added grid item template component
+- added userController link to server file
+- filled template data in controllers
+- comments for file needs
+- created controller file
+- skeleton files for frontend
+- Add title
+- server.js
+- added barebones back-end skeleton
+- CRA
+- initial
