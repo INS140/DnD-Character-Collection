@@ -36,7 +36,7 @@ export default function Combat() {
     <hr />
     <div className="weapons">
       {!weapons.length
-        ? <h3>This character currently has no weapons.</h3>
+        ? <h3 className="text-center">This character currently has no weapons.</h3>
         : weapons.map((weapon, i) => {
           return <Weapon key={`${weapon.index}${i}`} weapon={weapon} />
         })}

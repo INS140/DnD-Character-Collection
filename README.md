@@ -109,8 +109,8 @@ Fetch API is a built-in JavaScript API that provides a simple and native way to 
 
 ### Backend
 
-[Node.js](https://nodejs.org/en)
-JavaScript runtime environment
+[Nodemon](https://www.npmjs.com/package/nodemon)
+Nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 [Express.js](https://expressjs.com/)
 Web application frameworks for Node.js.
@@ -121,11 +121,105 @@ Databases for storing character and campaign data.
 [Mongoose](https://mongoosejs.com/)
 ODM/ORM libraries for working with databases.
 
+[Bcrypt](https://www.npmjs.com/package/bcrypt)
+A library to help you hash passwords.
+
+[Cors](https://www.npmjs.com/package/cors)
+A node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+
+[dotenv](https://www.npmjs.com/package/dotenv)
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+
+[JSON-web-tokens](https://www.npmjs.com/package/jsonwebtoken)
+An implementation of JSON Web Tokens.
+
+
 <!-- Technical Information
     This is the place to list all installation and setup instructions. It is quite common to have separate directions for separate parts of a project (front end, back end, etc)
     Include information regarding the coding standards used in the project to ensure regularity between contributions.
     Include directions concerning how to contribute to the project. -->
 ## Technical Information
+
+### Database tables
+#### Character Schema
+
+| Field | Type |
+| --------- | -------------------- |
+| user | Schema.Types.Object |
+| classType | String |
+| level | Number |
+| spells | Array[String] | 
+| inventory | Array[String] |
+| name | String |
+| image | String |
+| race | String  |
+| description | String |
+| hp | Number |
+| ac | Number |
+| maxHP | Number |
+| hitDice | String |
+| speed | Number |
+| str | Number |
+| dex | Number |
+| con | Number |
+| int | Number |
+| wis | Number |
+| cha | Number |
+| skills | Object |
+| savingThrow | Object |
+
+#### Notes Schema
+
+| Field | Type |
+| --------- | -------------------- |
+| title | String |
+| description | String |
+| ref | Character |
+
+#### User Schema
+
+| Field | Type |
+| --------- | -------------------- |
+| username | String |
+| password | String |
+
+### Routes
+#### Character
+
+| Method | Path | Purpose |
+| ------ | ------------------------------------- | ----------------------------- |
+| GET | `/` | The character(s) home page |
+| GET | `/:id` | Find specific character(s) |
+| POST | `/` | Create a new character |
+| PUT | `/:id` | Update character(s) infomation |
+| DELETE | `/:id` | Delete (s) |character
+
+#### Users
+
+| Method | Path | Purpose |
+| ------ | ------------------------------------- | ----------------------------- |
+| GET | `/` | The login/signup home page |
+| GET | `/:id` | Find specific user(s) |
+| POST | `/` | Create a new user |
+| PUT | `/:id` | Update user(s) infomation |
+| DELETE | `/:id` | Delete user(s) |
+
+#### Notes
+
+| Method | Path | Purpose |
+| ------ | ------------------------------------- | ----------------------------- |
+| GET | `/` | The notes page |
+| GET | `/:id` | Find specific note(s) |
+| POST | `/` | Create a new note(s) |
+| PUT | `/:id` | Update notes(s) infomation |
+| DELETE | `/:id` | Delete notes(s) |
+
+### Views
+
+Views components being used to render the front end application: 
+
+About, CharacterGrid, CharacterNavBar, CharacterView,
+CharGridItem, Combat, Home, Intro, Inventory, Item, Navbar, Note, NotesGallery, Overview, Spell, SpellDisplay, SpellsPage, Stats, Weapons.
 
 ### Installation and Setup 
 
@@ -160,10 +254,6 @@ ODM/ORM libraries for working with databases.
 
 <img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/diagramformsp3.png">
 
-### Team Collaboration
-
-<img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/trello.png">
-
 ### Credits
 
 * [Reroll](https://reroll.co/)
@@ -174,7 +264,6 @@ ODM/ORM libraries for working with databases.
 
 1. List of issues: 
     * Performance optimization.
-    * Data integrity and validation.
     * Accesibility to users with different abilities. 
     
 
@@ -182,4 +271,5 @@ ODM/ORM libraries for working with databases.
     * Add dice roll.
     * Add parties and combat tracker.
     * Dark mode/light mode.
-    
+
+     

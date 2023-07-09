@@ -24,18 +24,6 @@ characters.get('/', async (req, res) => {
     }
 })
 
-//SEED DATA
-//will be removed for final implementation
-characters.get('/seed', async (req, res) => {
-    try {
-        await Character.insertMany(charSeedData)
-        res.status(201).json({ message: 'Seeded data successfully' })
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({ message: 'request failed' })
-    }
-})
-
 //FIND SPECIFIC CHARACTER
 characters.get('/:id', async (req, res) => {
     try {
