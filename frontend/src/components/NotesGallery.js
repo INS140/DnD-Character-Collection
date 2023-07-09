@@ -10,8 +10,8 @@ export default function NotesGallery() {
     <NoteForm />
     <hr />
     <div className="noteContainer">
-      {!character.notes.length
-        ? <h3>This character currently has no notes.</h3> 
+      { !character.notes.length
+        ? <h2>This character has no notes.</h2>
         : character.notes.map(note => {
           return <Note note={note} key={`${note._id}`} />
         })
