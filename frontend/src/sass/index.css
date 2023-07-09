@@ -426,20 +426,11 @@ a.active {
   height: 2.5rem;
 }
 
-.portraits {
-  width: 100%;
-  display: grid;
-  grid: repeat(3, 1fr)/repeat(3, 1fr);
-  gap: 1rem;
-}
-.portraits img {
-  width: 100%;
-}
-
 .home {
   display: grid;
   gap: 1rem;
   grid: "logo" "portraits" "text";
+  text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
 }
 .home-logo {
   grid-area: logo;
@@ -449,12 +440,13 @@ a.active {
 }
 .home .portraits {
   grid-area: portraits;
+  width: 100%;
+  display: grid;
+  grid: repeat(3, 1fr)/repeat(3, 1fr);
+  gap: 1rem;
 }
-
-.flex {
-  display: flex;
-  flex-direction: column;
-  text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
+.home .portraits img {
+  width: 100%;
 }
 
 .inventoryContainer {
@@ -600,6 +592,43 @@ a.active {
   height: fit-content;
 }
 
+.aboutGrid {
+  display: grid;
+  grid: "game logo" "hr hr" "portraits players" "about about";
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+.aboutGrid .hr {
+  grid-area: hr;
+}
+.aboutGrid .game {
+  grid-area: game;
+  width: 100%;
+}
+.aboutGrid .about-logo {
+  grid-area: logo;
+  margin: auto;
+  max-height: 15rem;
+  max-width: 100%;
+}
+.aboutGrid .portraits {
+  grid-area: portraits;
+  display: flex;
+  justify-content: space-between;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.aboutGrid .portraits img {
+  width: 30%;
+}
+.aboutGrid .players {
+  grid-area: players;
+}
+.aboutGrid .about {
+  grid-area: about;
+}
+
 @media screen and (min-width: 850px) {
   .home {
     grid: "logo logo" "text portraits" "text .";
@@ -627,5 +656,11 @@ a.active {
   }
   .stats hr {
     margin-top: 20px;
+  }
+  .aboutGrid {
+    grid: "logo" "game" "hr" "portraits" "players" "about";
+  }
+  .aboutGrid .about-logo {
+    height: 50px;
   }
 }/*# sourceMappingURL=index.css.map */

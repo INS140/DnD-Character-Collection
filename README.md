@@ -15,11 +15,11 @@ Our plan is to create a powerful tool specifically designed for both experienced
 
 #### Home
 
-A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/home.png">
+A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/home.png">
 
 #### About
 
-This provides information about DND Character Collection and the collaborators behind the web application.<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/about.png">
+This provides information about DND Character Collection and the collaborators behind the web application.<img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/about.png">
 
 ##### Collaborators
 
@@ -32,45 +32,45 @@ This provides information about DND Character Collection and the collaborators b
 #### Login
 
 A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. 
-<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/login.PNG">
+<img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/login.PNG">
 
 #### Signup
 
-A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/signup.png">
+A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/signup.png">
 
 #### Create Character
 
-You are creating your new adventure by providing the details in the form. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/createcharacter1.png">
+You are creating your new adventure by providing the details in the form. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/createcharacter1.png">
 
-<img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/createcharacter2.png">
+<img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/createcharacter2.png">
 
 #### Character Grid
 
-A structured layout that displays various stats, attibutes and information about a player's character. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/charactergrid.png">
+A structured layout that displays various stats, attibutes and information about a player's character. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/charactergrid.png">
 
 #### Character View
 
-It refers to the interface in a application where a player can see visuals of their characters. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterview.png">
+It refers to the interface in a application where a player can see visuals of their characters. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterview.png">
 
 #### Stats
 
-The character statistics hold immense significance in shaping a character's abilities and traits that serve as quantifiable indicators that encompass different facets of a character's proficiencies and prowess. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterstats.png">
+The character statistics hold immense significance in shaping a character's abilities and traits that serve as quantifiable indicators that encompass different facets of a character's proficiencies and prowess. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterstats.png">
 
 #### Combat
 
-It aims to simulate strategic and exciting battles. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/charactercombat.png">
+It aims to simulate strategic and exciting battles. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/charactercombat.png">
 
 #### Inventory
 
-The system allows players to manage and track the character's items, equipment and belongings. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterinventory.png">
+The system allows players to manage and track the character's items, equipment and belongings. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterinventory.png">
 
 #### Spells
 
-The spells feature allows players to manage and view character's magical abilities and spells available. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characterspells.png">
+The spells feature allows players to manage and view character's magical abilities and spells available. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterspells.png">
 
 #### Notes
 
-The feature provides a valuable tool for players to manage and keep additional information related to their characters and related significant data. <img src="https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/characternotes.png">
+The feature provides a valuable tool for players to manage and keep additional information related to their characters and related significant data. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characternotes.png">
 
 <!-- Demo
     Obviously, this is only possible if a working demo of the project is already hosted somewhere.
@@ -158,11 +158,11 @@ ODM/ORM libraries for working with databases.
 
 ### Diagram for the DND Character Collection Project
 
-<img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/diagramformsp3.png">
+<img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/diagramformsp3.png">
 
 ### Team Collaboration
 
-<img src= "https://github.com/INS140/DnD-Character-Collection/blob/main/frontend/public/readmeimages/trello.png">
+<img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/trello.png">
 
 ### Credits
 

@@ -18,7 +18,7 @@ export default function Intro() {
     <div className="home-logo">
 			<img
 				className="logo"
-				src="https://dnd-character-collection-backend.vercel.app/public/portraits/logo.png"
+				src="https://dnd-character-collection-backend.vercel.app/public/logo.png"
 				alt="logo"
 			/>
 			<h1>Character Collections</h1>

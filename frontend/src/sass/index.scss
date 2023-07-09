@@ -267,15 +267,6 @@ a {
     }
 }
 
-.portraits {
-    width: 100%;
-    display: grid;
-    grid: repeat(3, 1fr) / repeat(3, 1fr);
-    gap: 1rem;
-
-    img { width: 100%; }
-}
-
 .home {
     display: grid;
     gap: 1rem;
@@ -283,15 +274,19 @@ a {
     'portraits'
     'text';
 
+    text-shadow: v.$light-shadow;
+
     &-logo { grid-area: logo; }
     &-text { grid-area: text; }
-    .portraits { grid-area: portraits; }
-}
+    .portraits {
+        grid-area: portraits;
+        width: 100%;
+        display: grid;
+        grid: repeat(3, 1fr) / repeat(3, 1fr);
+        gap: 1rem;
 
-.flex {
-    display: flex;
-    flex-direction: column;
-    text-shadow: v.$light-shadow;
+        img { width: 100%; }
+    }
 }
 
 .inventoryContainer {
@@ -442,6 +437,44 @@ a {
     }
 }
 
+.aboutGrid {
+    display: grid;
+    grid: 'game logo'
+    'hr hr'
+    'portraits players'
+    'about about';
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+
+    .hr { grid-area: hr; }
+
+    .game {
+        grid-area: game;
+        width: 100%;
+    }
+
+    .about-logo {
+        grid-area: logo;
+        margin: auto;
+        max-height: 15rem;
+        max-width: 100%;
+    }
+
+    .portraits {
+        grid-area: portraits;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+
+        img { width: 30%; }
+    }
+
+    .players { grid-area: players; }
+
+    .about { grid-area: about; }
+}
+
 @media screen and (min-width: 850px) {
     .home {
         grid: 'logo logo'
@@ -481,5 +514,16 @@ a {
         hr {
             margin-top: 20px;
         }
+    }
+
+    .aboutGrid {
+        grid: 'logo'
+        'game'
+        'hr'
+        'portraits'
+        'players'
+        'about';
+
+        .about-logo { height: 50px; }
     }
 }

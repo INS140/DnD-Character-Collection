@@ -16,45 +16,36 @@ export default function About() {
 		'barbarian',
 		'dragon']
 
-  return <>
-    {/* <Link to="/">
-      <Button className="btn primary text-light">Home</Button>
-    </Link> */}
-    <div>
-
-<div class="container">
-  <div class="row">
-    <div class="col mt-5">    
+  return <div className="aboutGrid">
+    <div className="game">
       <h2>About the Game</h2>
       <p>Our vision is to develop a mighty tool tailored to the avid and new collectors of DND Characters, and to digitize many of the traditional DND components, such as character creation, stat and skills management, equipment inventory and notes. This tool has the potential to establish an online database with its fully implementation.</p>
     </div>
-    <div class="col mt-5">
-      <img src={"https://dnd-character-collection-backend.vercel.app/public/portraits/logo.png"} alt="logo" style={{width:"80%"}}/>
+    <img
+      className="about-logo"
+      src={"https://dnd-character-collection-backend.vercel.app/public/logo.png"}
+      alt="logo"
+    />
+    <hr className="hr" />
+    <div className="portraits">
+      { portraits.map((portrait, i) => {
+        return <img
+          key={`${portrait}${i}`}
+          src={`https://dnd-character-collection-backend.vercel.app/public/portraits/${portrait}.png`}
+          alt={portrait}
+        />
+      })}
     </div>
-    <div class="w-100"></div>
-    <div class="col mt-5">
-    <div className="portraits" style={{"grid-template-columns": "repeat(auto-fill, 30%", "grid-template-rows": "repeat(1, 1fr)"}}>
-			{portraits.map((portrait, i) => {
-				return <img
-					key={`${portrait}${i}`}
-					src={`https://dnd-character-collection-backend.vercel.app/public/portraits/${portrait}.png`}
-					alt={portrait}
-				/>
-			})}
-		</div>
-    </div>
-    <div class="col mt-5">
+    <div className="players">
       <h2>Players</h2>
       <p>Discover a suite of free tools designed to simplify the management of your DND adventures. Easily handle your Stats, Skills, Spells, Magic Items, Armor, Weapons, and more elements directly from the API. Explore the wide range of these powerful tools available for you here, making your DND experience even more enjoyable.</p>
     </div>
-    
-  </div>
-</div>
-<div classname="row mt-5" style={{"padding-top": "3rem"}}>
-<h2>About Us</h2>
+    <div className="about">
+      <hr />
+      <h2>About Us</h2>
       <p>We are a group of software developer UNLV students who have a passion for Dungeons & Dragons (DND) and believe that the experience of collecting DND characters can be significantly enhanced. In June 2023, we established DND Character Collection with the aim of realizing this vision. We are dedicated to improving the process of collecting and managing DND characters.
         To learn more about our vision and stay updated with our progress, we invite you to visit our blog. If you have any specific questions or require additional information, please feel free to ask. </p>
-    
+      <hr />
       <p>Thanks,</p>
       <p>The DND Character Collection Team</p>
       <p>Collaborators:</p>
@@ -69,16 +60,9 @@ export default function About() {
           </a>
         })}
       </p>
-    </div> 
-</div>
-
-
-  
-  </>
+      <Link to="/">
+        <Button className="btn primary text-light">Home</Button>
+      </Link>
+    </div>
+  </div>
 }
-
-{/* <style>
-  .gridPortrait .portraits{
-    grid: repeat(none);
-    }
-</style> */}
