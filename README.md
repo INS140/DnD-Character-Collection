@@ -11,17 +11,17 @@ Dungeons & Dragons (DND) is a tabletop role-playing game where players create an
 
 Our plan is to create a powerful tool specifically designed for both experienced and novice DND character collectors and to digitize various traditional DND elements, including character creation, stat and skills management, equipment inventory, and note-taking. By doing so, we aim to develop a comprehensive online database that provides users with a complete solution for managing and organizing their DND character collection from anywhere, at any time.
 
-### Application
+## Application
 
-#### Home
+### Home
 
 A webpage set as the start-up page or default on a browser directs with navigation menu for About, Login and Signup buttons to another page. <img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/home.png">
 
-#### About
+### About
 
 This provides information about DND Character Collection and the collaborators behind the web application.<img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/about.png">
 
-##### Collaborators
+### Collaborators
 
 * [Annie Lam](https://github.com/annielam0623/)
 * [Isaac Saettel](https://github.com/INS140/)
@@ -29,46 +29,46 @@ This provides information about DND Character Collection and the collaborators b
 * [Mal Martin](https://github.com/MalMWare/)
 * [Zane Matero](https://github.com/zanematero/)
 
-#### Login
+### Login
 
 A webpage that allows users to authenticate and gain access to a secure personalized features of the web application. 
 <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/login.PNG">
 
-#### Signup
+### Signup
 
 A process of creating a new account for web application to gain access to its features and functionalities. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/signup.png">
 
-#### Create Character
+### Create Character
 
 You are creating your new adventure by providing the details in the form. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/createcharacter1.png">
 
 <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/createcharacter2.png">
 
-#### Character Grid
+### Character Grid
 
 A structured layout that displays various stats, attibutes and information about a player's character. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/charactergrid.png">
 
-#### Character View
+### Character View
 
 It refers to the interface in a application where a player can see visuals of their characters. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterview.png">
 
-#### Stats
+### Stats
 
 The character statistics hold immense significance in shaping a character's abilities and traits that serve as quantifiable indicators that encompass different facets of a character's proficiencies and prowess. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterstats.png">
 
-#### Combat
+### Combat
 
 It aims to simulate strategic and exciting battles. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/charactercombat.png">
 
-#### Inventory
+### Inventory
 
 The system allows players to manage and track the character's items, equipment and belongings. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterinventory.png">
 
-#### Spells
+### Spells
 
 The spells feature allows players to manage and view character's magical abilities and spells available. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characterspells.png">
 
-#### Notes
+### Notes
 
 The feature provides a valuable tool for players to manage and keep additional information related to their characters and related significant data. <img src="https://dnd-character-collection-backend.vercel.app/public/readmeimages/characternotes.png">
 
@@ -86,6 +86,10 @@ To immerse yourself in the demonstration, kindly navigate to [DND Character Coll
 Should the DND Character Collection project captivate your interest, and you yearn to collaborate or contribute, we eagerly await your reach-out. Kindly contact [Isaac Saettel](https://github.com/INS140/). We warmly welcome collaborators who share our fervor for enhancing the DND experience and pushing the boundaries of character collection and campaign management.
 
 We extend our heartfelt gratitude for your keen interest in the DND Character Collection project. May the demo ignite your imagination and enthusiasm as we embark on a collaborative journey together.
+
+### How to use DND-Character-Collection
+
+DnD-Character-Collection website is simple to use! There is a home page that welcomes you to DND Character Collections and tells you about our goal! At the top of the page is a navbar where you can switch from Home, Characters, Login, and Signup. In order to view characters you have to login or create an account. After an account has been created you can either log out or create a new character. In order to create a new character you have to click "create new character". A character creation form will appear. Fill out all of the required information. Once the character has been submitted you can click on the character to view more information. The first page to render is the Overview page. It has all of the general information about your character. At the bottom of the page is another navbar. There are 6 tabs. Overview, Stats, Combat, Inventory, Spells, and Notes. When you click on those tabs information related to that tab will pull up. The overview includes name, image, class, level, general stats, ability scores, and a description. The stats page has general stats and ability scores. The combat page shows combat stats, weapons, and their properties. The inventory page lists the amount of gold you have, max carrying capacity, and current weight. It also includes a list of any items the character has. The spells page includes spell save dc, attack bonus, and a list of spells and information about the spells that you can add to your character. The last tab is notes. There is a button where you can add notes. Once one is added you can either update or delete the note. At any time in the navbar at the top you can still logout or look at Home and characters tab. 
 
 <!-- Technologies
     Be sure to include all dependencies when listing the stack. -->
@@ -106,6 +110,10 @@ CSS frameworks for styling.
 
 [Fetch API](https://www.javascripttutorial.net/javascript-fetch-api/)
 Fetch API is a built-in JavaScript API that provides a simple and native way to make HTTP requests. 
+
+[React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
+The react-router-dom package contains bindings for using React Router in web applications
+
 
 ### Backend
 
@@ -257,8 +265,6 @@ CharGridItem, Combat, Home, Intro, Inventory, Item, Navbar, Note, NotesGallery, 
 ### Team Collaboration
 
 [Trello](https://trello.com/b/xHnsLcJb/dnd-character-collection/)
-
-<img src= "https://dnd-character-collection-backend.vercel.app/public/readmeimages/trello.png">
 
 ### Credits
 
