@@ -558,6 +558,76 @@
   gap: 1.5rem;
 }
 
+@media screen and (min-width: 550px) {
+  .form .traits {
+    grid: repeat(4, 1fr)/repeat(12, 1fr);
+  }
+  .form .traits .name {
+    grid-column: 1/7;
+  }
+  .form .traits .race {
+    grid-column: 7/13;
+  }
+  .form .traits .level {
+    grid-column: 1/4;
+  }
+  .form .traits .class {
+    grid-column: 4/13;
+  }
+  .form .traits .ac {
+    grid-column: 3/6;
+  }
+  .form .traits .hp {
+    grid-column: 8/11;
+  }
+  .form .traits .speed {
+    grid-column: 3/6;
+  }
+  .form .traits .hit {
+    grid-column: 8/11;
+  }
+  .form .base-stats, .form .saving-throws {
+    grid: 1fr/1fr 1fr 1fr;
+  }
+  .form .skills {
+    grid: 1fr/1fr 1fr;
+  }
+}
+@media screen and (min-width: 850px) {
+  .home {
+    grid: "logo logo" "text portraits" "text .";
+  }
+}
+@media screen and (max-width: 550px) {
+  .overview .genStats {
+    grid: repeat(2, 1fr)/repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .overview .baseStats {
+    grid: repeat(3, 1fr)/repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .overview hr {
+    margin-top: 20px;
+  }
+  .stats .genStats {
+    grid: repeat(2, 1fr)/repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .stats .baseStats {
+    grid: repeat(3, 1fr)/repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .stats hr {
+    margin-top: 20px;
+  }
+  .aboutGrid {
+    grid: "logo" "game" "hr" "portraits" "players" "about";
+  }
+  .aboutGrid .about-logo {
+    height: 50px;
+  }
+}
 .app {
   font-family: "Luminari";
   background-color: #8B728E;
