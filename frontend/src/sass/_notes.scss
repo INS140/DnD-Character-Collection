@@ -1,0 +1,47 @@
+@use 'variables' as v;
+
+.noteGallery {
+  text-shadow: v.$dark-shadow;
+  text-align: center;
+}
+
+.noteContainer {
+  display: grid;
+  gap: 1.5rem;
+
+  .note {
+    display: grid;
+    grid: 'title . options'
+    'desc desc desc';
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: v.$box-shadow;
+    text-align: left;
+
+    hr { margin-top: 0; }
+
+    .title { grid-area: title; }
+    .desc {
+      grid-area: desc;
+
+      pre {
+        box-shadow: v.$box-shadow inset;
+        padding: 1rem;
+        font-family: v.$font;
+      }
+    }
+    .options {
+      grid-area: options;
+      display: grid;
+      grid: 1fr / repeat(2, 1fr);
+      align-items: center;
+
+      .button {
+        width: 5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use 'variables' as v;
+
+.home {
+  display: grid;
+  gap: 1rem;
+  grid: 'logo'
+  'portraits'
+  'text';
+  text-shadow: v.$light-shadow;
+
+  &-logo { grid-area: logo; }
+
+  &-text { grid-area: text; }
+
+  .portraits {
+    grid-area: portraits;
+    width: 100%;
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 1rem;
+
+    img { width: 100%; }
+  }
+}
+
+.aboutGrid {
+  display: grid;
+  grid: 'game logo'
+  'hr hr'
+  'portraits players'
+  'about about';
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  text-shadow: v.$light-shadow;
+
+  .hr { grid-area: hr; }
+
+  .game {
+    grid-area: game;
+    width: 100%;
+  }
+
+  .about-logo {
+    grid-area: logo;
+    margin: auto;
+    max-height: 15rem;
+    max-width: 100%;
+  }
+
+  .portraits {
+    grid-area: portraits;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+
+    img { width: 30%; }
+  }
+
+  .players { grid-area: players; }
+
+  .about { grid-area: about; }
+}

@@ -1,0 +1,95 @@
+@use 'variables' as v;
+
+.spells {
+  text-shadow: v.$dark-shadow;
+  text-align: center;
+
+  label {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    select {
+      width: 50%;
+      margin: auto;
+      text-align: center;
+    }
+  }
+
+  .saveAttack{
+    display: grid;
+    grid: 1fr / repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+
+    p {
+      font-size: 1.5rem;
+      box-shadow: v.$box-shadow;
+      text-shadow: v.$dark-shadow;
+    }
+
+    span { display: block; }
+  }
+
+  &Display {
+    display: grid;
+    grid: auto;
+    gap: 1.5rem;
+  }
+}
+
+.addSpellDisplay {
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+.spell {
+  display: grid;
+  grid: 'name . delete'
+    'info info info'
+    'desc desc desc';
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: v.$box-shadow;
+  align-items: center;
+
+  hr { margin-top: 0; }
+
+  .name { grid-area: name; }
+
+  .info {
+    grid-area: info;
+    
+    .text {
+      display: grid;
+      grid: repeat(2, 1fr) / repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    h4 {
+      padding: 1rem;
+      box-shadow: v.$box-shadow inset;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+  }
+
+  .desc {
+    grid-area: desc;
+
+    .text {
+      overflow-y: scroll;
+      max-height: 15rem;
+      padding: 1rem;
+      text-align: left;
+    }
+  }
+
+  .delete {
+    grid-area: delete;
+    width: 5rem;
+    height: fit-content;
+  }
+}

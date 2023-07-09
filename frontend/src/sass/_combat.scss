@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+.combat {
+  text-shadow: v.$dark-shadow;
+}
+
+.combatStats {
+  display: grid;
+  grid: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+
+  h3 {
+    padding: 0.5rem;
+    box-shadow: v.$box-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.weapons {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.weapon {
+  display: grid;
+  grid: 'name name . damage'
+  'props props props props';
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: v.$box-shadow;
+
+  .name { grid-area: name; }
+
+  .damage { grid-area: damage; }
+  
+  .props {
+    grid-area: props;
+
+    hr { margin-top: 0; }
+    
+    &Display {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+}

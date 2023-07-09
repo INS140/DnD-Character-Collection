@@ -106,6 +106,7 @@
   grid: repeat(2, 1fr) / repeat(6, 1fr);
 
   .username, .password { grid-column: span 3; }
+  
   .submit { grid-column: 2 / 6; }
 }
 
@@ -137,26 +138,5 @@
     height: fit-content;
     width: 5rem;
     margin: auto;
-  }
-}
-
-@media screen and (min-width: 550px) {
-  .form {
-    .traits {
-      grid: repeat(4, 1fr) / repeat(12, 1fr);
-  
-      .name { grid-column: 1 / 7; }
-      .race { grid-column: 7 / 13; }
-      .level { grid-column: 1 / 4; }
-      .class { grid-column: 4 / 13; }
-      .ac { grid-column: 3 / 6; }
-      .hp { grid-column: 8 / 11; }
-      .speed { grid-column: 3 / 6; }
-      .hit { grid-column: 8 / 11; }
-    }
-
-    .base-stats, .saving-throws { grid: 1fr / 1fr 1fr 1fr; }
-
-    .skills { grid: 1fr / 1fr 1fr; }
   }
 }

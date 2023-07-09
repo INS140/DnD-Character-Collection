@@ -1,0 +1,35 @@
+@use 'variables' as v;
+
+.overview {
+  text-shadow: v.$dark-shadow;
+  text-align: center;
+
+  h2 { margin: 1rem; }
+
+  span { display: block; }
+
+  .genStats {
+    display: grid;
+    grid: 1fr / repeat(4, 1fr);
+    gap: 2rem;
+
+    h3 {
+      padding: 0.5rem;
+      box-shadow: v.$box-shadow;
+      text-shadow: v.$dark-shadow;
+    }
+  }
+
+  .baseStats {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+
+    h3 {
+      padding: 0.5rem;
+      box-shadow: v.$box-shadow;
+      text-shadow: v.$dark-shadow;
+    }
+  }
+}
