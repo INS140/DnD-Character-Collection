@@ -9,6 +9,8 @@ The milestone project serves as a final project for the software development pro
 
 Dungeons & Dragons (DND) is a tabletop role-playing game where players create and control their own characters. DND character is the portal into gameplay. It was first published in 1974, originally designed by Gary Gygax and Dave Arneson. 
 
+### Our Goal
+
 Our plan is to create a powerful tool specifically designed for both experienced and novice DND character collectors and to digitize various traditional DND elements, including character creation, stat and skills management, equipment inventory, and note-taking. By doing so, we aim to develop a comprehensive online database that provides users with a complete solution for managing and organizing their DND character collection from anywhere, at any time.
 
 ## Application
