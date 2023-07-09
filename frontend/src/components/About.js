@@ -7,7 +7,7 @@ export default function About() {
     { github: 'annielam0623', name: 'Annie' },
     { github: 'INS140', name: 'Isaac' },
     { github: 'leslieportiz', name: 'Lorraine' },
-    { github: 'MalWare', name: 'Mal' },
+    { github: 'MalMWare', name: 'Mal' },
     { github: 'zanematero', name: 'Zane' }
   ]
 
@@ -56,7 +56,7 @@ export default function About() {
             href={`https://github.com/${c.github}`}
             target="_blank"
           >
-            {c.name}{i!==a.length-1 ? ', ' : ' '}
+            {c.name}{i!==a.length-1 ? ' | ' : ' '}
           </a>
         })}
       </p>
