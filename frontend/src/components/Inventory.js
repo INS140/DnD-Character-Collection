@@ -81,11 +81,16 @@ export default function Inventory() {
         <h2 className="secondary">Current Carry Weight <span>{items.length && items.reduce((s, item) => s + item.weight, 0)}</span></h2>
     </div>
     <h2 className="mt-3">Items</h2>
+    <Button
+      className="secondary"
+      data-bs-toggle="modal"
+      data-bs-target="#addItem"
+    >
+      Add Item
+    </Button>
     <Modal
       modalId="addItem"
-      className="addItem"
       header="Add An Inventory Item"
-      openModalText="Add Item"
       closeModalText="Add Item"
       disableSubmit={!foundItem}
       onCloseClick={handleAddItem}

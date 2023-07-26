@@ -21,14 +21,6 @@
   }
 }
 
-@media screen and (min-width: 850px) {
-  .home {
-    grid: 'logo logo'
-      'text portraits'
-      'text .';
-  }
-}
-
 @media screen and (max-width: 550px) {
   .overview {
     .genStats {
@@ -47,18 +39,8 @@
   
 
   .stats {
-    .genStats {
-      grid: repeat(2, 1fr) / repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .baseStats {
+    .abilityScores {
       grid: repeat(3, 1fr) / repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    hr {
-      margin-top: 20px;
     }
   }
 

@@ -11,6 +11,10 @@
 @use 'stats';
 @use 'media-queries';
 
+body {
+  background-color: v.$primary-color;
+}
+
 .app {
   font-family: v.$font;
   background-color: v.$primary-color;
@@ -24,15 +28,15 @@
   li { border-bottom: 1px solid v.$primary-color; }
 }
 
-.primary { background-color: v.$primary-color; }
+.primary { background-color: v.$primary-color !important; }
 
 .primary-color { color: v.$primary-color; }
 
-.secondary { background-color: v.$secondary-color; }
+.secondary { background-color: v.$secondary-color !important; }
 
 .secondary-color { color: v.$secondary-color; }
 
-.tertiary { background-color: v.$tertiary-color; }
+.tertiary { background-color: v.$tertiary-color !important; }
 
 .tertiary-color { color: v.$tertiary-color; }
 

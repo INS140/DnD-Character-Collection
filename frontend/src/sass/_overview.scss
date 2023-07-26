@@ -34,4 +34,9 @@
       text-shadow: v.$dark-shadow;
     }
   }
+
+  .description {
+    width: 100%;
+    overflow-wrap: break-word;
+  }
 }

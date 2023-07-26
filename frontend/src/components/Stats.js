@@ -1,31 +1,68 @@
 import { useOutletContext } from "react-router-dom"
-import { toTitleCase } from "../helper-functions"
+import Modal from './ui-kit/Modal'
+import Skills from "./Skills"
+import AbilityScores from "./AbilityScores"
 
 export default function Stats() {
   const { character } = useOutletContext()
 
   return <div className="stats">
-    <h1>General</h1>
+    <h1>Stats</h1>
+    <hr />
     <div className="genStats">
-      <h3 className="secondary">Health Points<span>{character.hp}</span></h3>
-      <h3 className="secondary">Armor Class<span>{character.ac}</span></h3>
-      <h3 className="secondary">Max HP<span>{character.maxHp}</span></h3>
-      <h3 className="secondary">Hit Dice<span>{character.hitDice}</span></h3>
+      <div className="secondary stat ac">
+        <h3>AC</h3>
+        <p>{character.ac}</p>
+      </div>
+      <div
+        className="secondary stat hp"
+        data-bs-toggle="modal"
+        data-bs-target="#updateHP"
+      >
+        <div className="current">
+          <h3>HP</h3>
+          <p>{character.hp}</p>
+        </div>
+        <hr />
+        <div className="max">
+          <h4>Max HP</h4>
+          <p>{character.maxHp}</p>
+        </div>
+      </div>
+      <Modal
+        modalId="updateHP"
+        header="Update HP"
+        closeModalText="Apply"
+      >
+        <h2>{character.hp}</h2>
+        <hr />
+        <h4>Max HP</h4>
+        <p>{character.maxHp}</p>
+      </Modal>
+      <div className="secondary stat hd">
+        <h3>Hit Dice</h3>
+        <p>{character.hitDice}</p>
+      </div>
     </div>
     <div className="other">
-      <h3 className="secondary">Speed<span>{character.speed}</span></h3>
-      <h3 className="secondary">Initiative<span>{character.init}</span></h3>
-      <h3 className="secondary">Proficiency<span>{character.prof}</span></h3>
+      <div className="secondary stat">
+        <h3>Speed</h3>
+        <p>{character.speed}</p>
+      </div>
+      <div className="secondary stat">
+        <h3>Initiative</h3>
+        <p>{character.init}</p>
+      </div>
+      <div className="secondary stat">
+        <h3>Proficiency</h3>
+        <p>+{character.prof}</p>
+      </div>
     </div>
+    <h2>Ability Scores</h2>
     <hr />
-    <h1>Ability Scores</h1>
-    <div className="baseStats">
-      <h3 className="secondary">Strength<span>{character.str}</span></h3>
-      <h3 className="secondary">Dexterity<span>{character.dex}</span></h3>
-      <h3 className="secondary">Constitution<span>{character.con}</span></h3>
-      <h3 className="secondary">Intelligence<span>{character.int}</span></h3>
-      <h3 className="secondary">Wisdom<span>{character.wis}</span></h3>
-      <h3 className="secondary">Charisma<span>{character.cha}</span></h3>
-    </div>
+    <AbilityScores character={character} />
+    <h2>Skills</h2>
+    <hr />
+    <Skills character={character} />
   </div>
 }

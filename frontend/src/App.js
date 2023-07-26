@@ -12,17 +12,12 @@ import Inventory from './components/Inventory'
 import SpellsPage from './components/SpellsPage'
 import Notes from './components/NotesGallery'
 import Navbar from './components/Navbar'
-import About from './components/About'
-import Intro from './components/Intro'
 
 export default function App() {
   return <div className='app text-light'>
     <Navbar /> 
     <Routes>
-      <Route path="/" element={<Home />}>
-        <Route path="/" element={<Intro />} />
-        <Route path="/about" element={<About />} />
-      </Route>
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/characters" element={<CharacterGrid />} />

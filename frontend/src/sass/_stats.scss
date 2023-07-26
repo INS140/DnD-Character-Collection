@@ -6,20 +6,84 @@
   text-shadow: v.$dark-shadow;
   text-align: center;
 
-  h1 { margin-bottom: 20px; }
+  h1 { font-size: 3rem; }
 
-  h3 {
-    padding: 0.5rem;
+  h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .stat {
+    padding: 1rem 0.5rem;
     box-shadow: v.$box-shadow;
     text-shadow: v.$dark-shadow;
 
-    span { display: block; }
+    h3 { margin: 0; }
+
+    h4 { font-size: 1rem; }
+
+    p, input {
+      background-color: v.$primary-color;
+      box-shadow: v.$box-shadow inset;
+      padding: 1rem;
+      color: white;
+      text-align: center;
+      border: none;
+      font-size: 1.5rem;
+      text-shadow: v.$dark-shadow;
+    }
   }
 
   .genStats {
-    display: grid;
-    grid: 1fr / repeat(4, 1fr);
-    gap: 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    align-items: center;
+
+    .ac {
+      p { font-size: 2rem; }
+    }
+
+    .hp {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .current p { font-size: 3rem; }
+
+      .max { 
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        gap: 0.5rem;
+
+        p {
+          font-size: 1rem;
+          padding: 0.75rem;
+        }
+      }
+    }
+
+    .ac, .hd {
+      height: 9rem;
+      width: 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .hd {
+      overflow: hidden;
+
+      p {
+        padding: 1rem 0.5rem;
+      }
+    }
   }
 
   .other {
@@ -29,9 +93,115 @@
     margin-top: 1rem;
   }
 
-  .baseStats {
+  .abilityScores {
     display: grid;
     grid: repeat(2, 1fr) / repeat(3, 1fr);
     gap: 1.5rem;
+
+    .values {
+      display: grid;
+      grid: 'score mod'
+      'save save';
+      gap: 1rem;
+
+      .score { grid-area: score; }
+      .mod { grid-area: mod; }
+      .save { grid-area: save; }
+    }
+  }
+
+  .skills {
+    display: grid;
+    grid: 1fr / repeat(2, 1fr);
+    gap: 1.5rem;
+
+    .skill {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h3 { font-size: 1.25rem; }
+
+      p {
+        width: 50%;
+        margin: auto;
+      }
+    }
+
+    .skill-modal {
+      display: grid;
+      grid: 1fr / repeat(2, 1fr);
+      gap: 1.5rem;
+
+      .info {
+        background-color: v.$secondary-color;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        h3 { font-size: 1.15rem; }
+
+        p, input[type="number"] {
+          margin: auto;
+          width: 75%;
+        }
+      }
+
+      .mod {
+        grid-column: span 2;
+        width: 5rem;
+        margin: auto;
+
+        h2 { margin: 0; }
+      }
+
+      .prof {
+        grid-column: span 2;
+        padding: 1rem;
+        align-items: flex-start;
+        gap: 1rem;
+        margin: auto;
+
+        label {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          
+
+          input[type="checkbox"] { visibility: hidden; }
+
+          .checkbox {
+            width: 2rem;
+            height: 2rem;
+            background-color: v.$primary-color;
+            box-shadow: v.$box-shadow inset;
+
+            &::after {
+              content: "";
+              display: none;
+              position: relative;
+              left: 0.75rem;
+              top: 0.5rem;
+              width: 0.5rem;
+              height: 0.875rem;
+              border: solid white;
+              border-width: 0 0.25rem 0.25rem 0;
+              -webkit-transform: rotate(40deg);
+              -ms-transform: rotate(40deg);
+              transform: rotate(40deg);
+            }
+          }
+
+          input:checked ~ .checkbox {
+            background-color: v.$tertiary-color;
+            box-shadow: v.$light-box-shadow;
+
+            &::after {
+              display: block;
+            }
+          }
+        }
+      }
+    }
   }
 }

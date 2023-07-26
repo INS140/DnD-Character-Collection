@@ -28,7 +28,7 @@ export default function Overview() {
       <h3 className="secondary">CHA<span>{character.cha}</span></h3>
     </div>
     <hr />
-    <div>
+    <div className="description">
       <h2>Description</h2>
       <p>{character.description}</p>
     </div>

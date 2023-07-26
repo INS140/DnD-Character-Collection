@@ -48,7 +48,7 @@
 }
 
 .characterView {
-  padding: 1rem 1rem 4.5rem;
+  padding: 1rem 1rem 5rem;
 }
 .characterView nav {
   background-color: #694873;
@@ -238,64 +238,22 @@
 }
 
 .home {
-  display: grid;
-  gap: 1rem;
-  grid: "logo" "portraits" "text";
+  display: flex;
+  flex-direction: column;
   text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
-}
-.home-logo {
-  grid-area: logo;
-}
-.home-text {
-  grid-area: text;
+  justify-content: center;
+  min-height: 91vh;
+  gap: 1rem;
 }
 .home .portraits {
-  grid-area: portraits;
-  width: 100%;
+  width: min(100%, 600px);
+  align-self: center;
   display: grid;
   grid: repeat(3, 1fr)/repeat(3, 1fr);
   gap: 1rem;
 }
 .home .portraits img {
   width: 100%;
-}
-
-.aboutGrid {
-  display: grid;
-  grid: "game logo" "hr hr" "portraits players" "about about";
-  gap: 1rem;
-  width: 100%;
-  align-items: center;
-  text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
-}
-.aboutGrid .hr {
-  grid-area: hr;
-}
-.aboutGrid .game {
-  grid-area: game;
-  width: 100%;
-}
-.aboutGrid .about-logo {
-  grid-area: logo;
-  margin: auto;
-  max-height: 15rem;
-  max-width: 100%;
-}
-.aboutGrid .portraits {
-  grid-area: portraits;
-  display: flex;
-  justify-content: space-between;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.aboutGrid .portraits img {
-  width: 30%;
-}
-.aboutGrid .players {
-  grid-area: players;
-}
-.aboutGrid .about {
-  grid-area: about;
 }
 
 .inventoryContainer {
@@ -394,7 +352,7 @@
 .noteContainer .note .desc pre {
   box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
   padding: 1rem;
-  font-family: "Luminari";
+  font-family: "Times New Roman", Times, serif;
 }
 .noteContainer .note .options {
   grid-area: options;
@@ -440,6 +398,10 @@
   padding: 0.5rem;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.overview .description {
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .spells {
@@ -534,20 +496,76 @@
   text-align: center;
 }
 .stats h1 {
-  margin-bottom: 20px;
+  font-size: 3rem;
 }
-.stats h3 {
-  padding: 0.5rem;
+.stats h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.stats p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.stats .stat {
+  padding: 1rem 0.5rem;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
-.stats h3 span {
-  display: block;
+.stats .stat h3 {
+  margin: 0;
+}
+.stats .stat h4 {
+  font-size: 1rem;
+}
+.stats .stat p, .stats .stat input {
+  background-color: #8B728E;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  border: none;
+  font-size: 1.5rem;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
 .stats .genStats {
-  display: grid;
-  grid: 1fr/repeat(4, 1fr);
-  gap: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  align-items: center;
+}
+.stats .genStats .ac p {
+  font-size: 2rem;
+}
+.stats .genStats .hp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stats .genStats .hp .current p {
+  font-size: 3rem;
+}
+.stats .genStats .hp .max {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.stats .genStats .hp .max p {
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+.stats .genStats .ac, .stats .genStats .hd {
+  height: 9rem;
+  width: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.stats .genStats .hd {
+  overflow: hidden;
+}
+.stats .genStats .hd p {
+  padding: 1rem 0.5rem;
 }
 .stats .other {
   display: grid;
@@ -555,10 +573,107 @@
   gap: 1.5rem;
   margin-top: 1rem;
 }
-.stats .baseStats {
+.stats .abilityScores {
   display: grid;
   grid: repeat(2, 1fr)/repeat(3, 1fr);
   gap: 1.5rem;
+}
+.stats .abilityScores .values {
+  display: grid;
+  grid: "score mod" "save save";
+  gap: 1rem;
+}
+.stats .abilityScores .values .score {
+  grid-area: score;
+}
+.stats .abilityScores .values .mod {
+  grid-area: mod;
+}
+.stats .abilityScores .values .save {
+  grid-area: save;
+}
+.stats .skills {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.stats .skills .skill {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.stats .skills .skill h3 {
+  font-size: 1.25rem;
+}
+.stats .skills .skill p {
+  width: 50%;
+  margin: auto;
+}
+.stats .skills .skill-modal {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.stats .skills .skill-modal .info {
+  background-color: #694873;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.stats .skills .skill-modal .info h3 {
+  font-size: 1.15rem;
+}
+.stats .skills .skill-modal .info p, .stats .skills .skill-modal .info input[type=number] {
+  margin: auto;
+  width: 75%;
+}
+.stats .skills .skill-modal .mod {
+  grid-column: span 2;
+  width: 5rem;
+  margin: auto;
+}
+.stats .skills .skill-modal .mod h2 {
+  margin: 0;
+}
+.stats .skills .skill-modal .prof {
+  grid-column: span 2;
+  padding: 1rem;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: auto;
+}
+.stats .skills .skill-modal .prof label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.stats .skills .skill-modal .prof label input[type=checkbox] {
+  visibility: hidden;
+}
+.stats .skills .skill-modal .prof label .checkbox {
+  width: 2rem;
+  height: 2rem;
+  background-color: #8B728E;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
+}
+.stats .skills .skill-modal .prof label .checkbox::after {
+  content: "";
+  display: none;
+  position: relative;
+  left: 0.75rem;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.875rem;
+  border: solid white;
+  border-width: 0 0.25rem 0.25rem 0;
+  transform: rotate(40deg);
+}
+.stats .skills .skill-modal .prof label input:checked ~ .checkbox {
+  background-color: #3a2540;
+  box-shadow: 0 0 0.5rem 0.5rem #8B728E;
+}
+.stats .skills .skill-modal .prof label input:checked ~ .checkbox::after {
+  display: block;
 }
 
 @media screen and (min-width: 550px) {
@@ -596,11 +711,6 @@
     grid: 1fr/1fr 1fr;
   }
 }
-@media screen and (min-width: 850px) {
-  .home {
-    grid: "logo logo" "text portraits" "text .";
-  }
-}
 @media screen and (max-width: 550px) {
   .overview .genStats {
     grid: repeat(2, 1fr)/repeat(2, 1fr);
@@ -613,16 +723,8 @@
   .overview hr {
     margin-top: 20px;
   }
-  .stats .genStats {
-    grid: repeat(2, 1fr)/repeat(2, 1fr);
-    gap: 1rem;
-  }
-  .stats .baseStats {
+  .stats .abilityScores {
     grid: repeat(3, 1fr)/repeat(2, 1fr);
-    gap: 1rem;
-  }
-  .stats hr {
-    margin-top: 20px;
   }
   .aboutGrid {
     grid: "logo" "game" "hr" "portraits" "players" "about";
@@ -631,8 +733,12 @@
     height: 50px;
   }
 }
+body {
+  background-color: #8B728E;
+}
+
 .app {
-  font-family: "Luminari";
+  font-family: "Times New Roman", Times, serif;
   background-color: #8B728E;
   min-height: 100vh;
   margin: 0;
@@ -647,7 +753,7 @@
 }
 
 .primary {
-  background-color: #8B728E;
+  background-color: #8B728E !important;
 }
 
 .primary-color {
@@ -655,7 +761,7 @@
 }
 
 .secondary {
-  background-color: #694873;
+  background-color: #694873 !important;
 }
 
 .secondary-color {
@@ -663,7 +769,7 @@
 }
 
 .tertiary {
-  background-color: #3a2540;
+  background-color: #3a2540 !important;
 }
 
 .tertiary-color {

@@ -17,5 +17,6 @@ export default function Input(props) {
       onChange={onChange}
       {...rest}
     />
+    { type === "checkbox" && <span className="checkbox"></span> }
   </label>
 }

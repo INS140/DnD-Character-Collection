@@ -15,7 +15,7 @@ export default function CreateCharacter() {
 
   const navigate = useNavigate()
 
-  const {inputs, handleChange, handleCheckboxChange} = useFormHandler({
+  const {inputs, handleChange, setInputs} = useFormHandler({
     name: '',
     race: '',
     classType: '',
@@ -39,28 +39,132 @@ export default function CreateCharacter() {
       cha: false
     },
     skills: {
-      acrobatics: false,
-      animalHandling: false,
-      arcana: false,
-      athletics: false,
-      deception: false,
-      history: false,
-      insight: false,
-      intimidation: false,
-      investigation: false,
-      medicine: false,
-      nature: false,
-      perception: false,
-      performance: false,
-      persuasion: false,
-      religion: false,
-      sleightOfHand: false,
-      stealth: false,
-      survival: false
+      acrobatics: {
+        score: 'dex',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      animalHandling: {
+        score: 'wis',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      arcana: {
+        score: 'int',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      athletics: {
+        score: 'str',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      deception: {
+        score: 'cha',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      history: {
+        score: 'int',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      insight: {
+        score: 'wis',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      intimidation: {
+        score: 'cha',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      investigation: {
+        score: 'int',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      medicine: {
+        score: 'wis',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      nature: {
+        score: 'int',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      perception: {
+        score: 'wis',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      performance: {
+        score: 'cha',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      persuasion: {
+        score: 'cha',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      religion: {
+        score: 'int',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      sleightOfHand: {
+        score: 'dex',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      stealth: {
+        score: 'dex',
+        prof: false,
+        expert: false,
+        misc: 0,
+      },
+      survival: {
+        score: 'wis',
+        prof: false,
+        expert: false,
+        misc: 0,
+      }
     },
     image: '',
     description: ''
   })
+
+  const handleSavingThrowChange = e => {
+    const { name } = e.target
+    const value = inputs.savingThrows[name]
+
+    setInputs({...inputs, savingThrows: {...inputs.savingThrows, [name]: !value }})
+  }
+
+  const handleSkillChange = e => {
+    const { name } = e.target
+    const value = inputs.skills[name].prof
+
+    setInputs({...inputs, skills: {...inputs.skills, [name]: {...inputs.skills[name], prof: !value}}})
+  }
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -153,7 +257,7 @@ export default function CreateCharacter() {
         />
       </div>
       <fieldset className='base-stats'>
-        <legend>Base Stats</legend>
+        <legend>Ability Scores</legend>
         <Input
           label='Strength'
           name='str'
@@ -221,10 +325,10 @@ export default function CreateCharacter() {
           return <Input
             key={`${stat}${i}`}
             label={stat.toUpperCase()}
-            name={`savingThrows ${stat}`}
+            name={stat}
             type='checkbox'
             value={inputs.savingThrows[stat]}
-            onChange={handleCheckboxChange}
+            onChange={handleSavingThrowChange}
           />
         })}
       </fieldset>
@@ -234,10 +338,10 @@ export default function CreateCharacter() {
           return <Input
             key={`${skill}${i}`}
             label={toTitleCase(skill)}
-            name={`skills ${skill}`}
+            name={skill}
             type='checkbox'
             value={inputs.skills[skill]}
-            onChange={handleCheckboxChange}
+            onChange={handleSkillChange}
           />
         })}
       </fieldset>

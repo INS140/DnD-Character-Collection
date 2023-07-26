@@ -43,8 +43,7 @@ export default function About() {
     <div className="about">
       <hr />
       <h2>About Us</h2>
-      <p>We are a group of software developer UNLV students who have a passion for Dungeons & Dragons (DND) and believe that the experience of collecting DND characters can be significantly enhanced. In June 2023, we established DND Character Collection with the aim of realizing this vision. We are dedicated to improving the process of collecting and managing DND characters.
-        To learn more about our vision and stay updated with our progress, we invite you to visit our blog. If you have any specific questions or require additional information, please feel free to ask. </p>
+      <p>We are a group of software developer UNLV students who have a passion for Dungeons & Dragons (D&D) and believe that the experience of collecting DND characters can be significantly enhanced. In June 2023, we established DND Character Collection with the aim of realizing this vision. We are dedicated to improving the process of collecting and managing DND characters.</p>
       <hr />
       <p>Thanks,</p>
       <p>The DND Character Collection Team</p>

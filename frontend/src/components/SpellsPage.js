@@ -8,6 +8,7 @@ import { scoreToMod, getTag } from "../helper-functions";
 import SpellDisplay from "./SpellDisplay";
 import Spell from "./Spell";
 import { useNavigate } from "react-router-dom";
+import Button from "./ui-kit/Button";
 
 export default function SpellsPage() {
   const { character } = useOutletContext();
@@ -122,10 +123,16 @@ export default function SpellsPage() {
             scoreToMod(character[spellDC.stat]) +
             Number(spellDC.misc)} </span>
         </p>
+        <Button
+          className="secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#spellSaveDC"
+        >
+          Edit
+        </Button>
         <Modal
           modalId="spellSaveDC"
           header="Spell Save DC"
-          openModalText="Edit"
           closeModalText="Save Changes"
         >
           <div>
@@ -167,10 +174,16 @@ export default function SpellsPage() {
             scoreToMod(character[attackBonus.stat]) +
             Number(attackBonus.misc)}</span>
         </p>
+        <Button
+          className="secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#atkBonus"
+        >
+          Edit
+        </Button>
         <Modal
           modalId="atkBonus"
           header="Attack Bonus"
-          openModalText="Edit"
           closeModalText="Save Changes"
         >
           <div>
@@ -226,6 +239,14 @@ export default function SpellsPage() {
         <option value="9">9th Level</option>
       </Select>
     </div>
+    <Button
+      className="secondary m-2"
+      data-bs-toggle="modal"
+      data-bs-target="#addSpell"
+      onClick={fetchSpells}
+    >
+      Add A Spell
+    </Button>
     <Modal
       modalId="addSpell"
       header={`Add A ${
@@ -233,10 +254,8 @@ export default function SpellsPage() {
           ? "Cantrip"
           : `${selectedLevel}${getTag(selectedLevel)} Level Spell`
       }`}
-      openModalText="Add A Spell"
       closeModalText="Add Spell"
       disableSubmit={selectedSpell === '-----'}
-      onOpenClick={fetchSpells}
       onCloseClick={handleAddSpell}
     >
       <div>
