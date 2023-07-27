@@ -1,5 +1,5 @@
 import { useOutletContext } from "react-router-dom"
-import Modal from './ui-kit/Modal'
+import HPDisplay from "./HPDisplay"
 import Skills from "./Skills"
 import AbilityScores from "./AbilityScores"
 
@@ -14,31 +14,7 @@ export default function Stats() {
         <h3>AC</h3>
         <p>{character.ac}</p>
       </div>
-      <div
-        className="secondary stat hp"
-        data-bs-toggle="modal"
-        data-bs-target="#updateHP"
-      >
-        <div className="current">
-          <h3>HP</h3>
-          <p>{character.hp}</p>
-        </div>
-        <hr />
-        <div className="max">
-          <h4>Max HP</h4>
-          <p>{character.maxHp}</p>
-        </div>
-      </div>
-      <Modal
-        modalId="updateHP"
-        header="Update HP"
-        closeModalText="Apply"
-      >
-        <h2>{character.hp}</h2>
-        <hr />
-        <h4>Max HP</h4>
-        <p>{character.maxHp}</p>
-      </Modal>
+      <HPDisplay character={character}/>
       <div className="secondary stat hd">
         <h3>Hit Dice</h3>
         <p>{character.hitDice}</p>

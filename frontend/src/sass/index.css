@@ -518,6 +518,10 @@
   font-size: 1rem;
 }
 .stats .stat p, .stats .stat input {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
   padding: 1rem;
@@ -526,6 +530,10 @@
   border: none;
   font-size: 1.5rem;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.stats .stat p:focus, .stats .stat input:focus {
+  outline: none;
+  caret-color: white;
 }
 .stats .genStats {
   display: flex;
@@ -612,6 +620,74 @@
 .stats .skills .skill p {
   width: 50%;
   margin: auto;
+}
+
+.hp-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+.hp-modal h2 {
+  margin: 0;
+}
+.hp-modal input {
+  width: 5rem;
+}
+.hp-modal .info {
+  background-color: #694873;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.hp-modal .hp {
+  padding: 2rem;
+}
+.hp-modal .options {
+  width: 100%;
+}
+.hp-modal .options .controls {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.hp-modal .options .controls button {
+  width: 100%;
+  background-color: #8B728E;
+  border-radius: 0;
+  border-left: 1px solid #694873;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+  transition: none;
+}
+.hp-modal .options .controls button:active {
+  border: inherit;
+}
+.hp-modal .options .controls .selected {
+  background-color: #3a2540;
+  text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
+}
+.hp-modal .options .input-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.hp-modal .options .input-display .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hp-modal .options .input-display .buttons button {
+  background-color: #8B728E;
+  width: 3.5rem;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.hp-modal .options .hidden {
+  display: none;
 }
 
 .stat-modal {
