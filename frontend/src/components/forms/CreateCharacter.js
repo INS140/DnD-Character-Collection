@@ -31,12 +31,30 @@ export default function CreateCharacter() {
     wis: 1,
     cha: 1,
     savingThrows: {
-      str: false,
-      dex: false,
-      con: false,
-      int: false,
-      wis: false,
-      cha: false
+      str: {
+        prof: false,
+        misc: 0
+      },
+      dex: {
+        prof: false,
+        misc: 0
+      },
+      con: {
+        prof: false,
+        misc: 0
+      },
+      int: {
+        prof: false,
+        misc: 0
+      },
+      wis: {
+        prof: false,
+        misc: 0
+      },
+      cha: {
+        prof: false,
+        misc: 0
+      }
     },
     skills: {
       acrobatics: {
@@ -152,18 +170,11 @@ export default function CreateCharacter() {
     description: ''
   })
 
-  const handleSavingThrowChange = e => {
+  const handleCheckboxChange = (e, field) => {
     const { name } = e.target
-    const value = inputs.savingThrows[name]
+    const value = inputs[field][name].prof
 
-    setInputs({...inputs, savingThrows: {...inputs.savingThrows, [name]: !value }})
-  }
-
-  const handleSkillChange = e => {
-    const { name } = e.target
-    const value = inputs.skills[name].prof
-
-    setInputs({...inputs, skills: {...inputs.skills, [name]: {...inputs.skills[name], prof: !value}}})
+    setInputs({...inputs, [field]: {...inputs[field], [name]: {...inputs[field][name], prof: !value}}})
   }
 
   const handleSubmit = async e => {
@@ -328,7 +339,7 @@ export default function CreateCharacter() {
             name={stat}
             type='checkbox'
             value={inputs.savingThrows[stat]}
-            onChange={handleSavingThrowChange}
+            onChange={e => handleCheckboxChange(e, 'savingThrows')}
           />
         })}
       </fieldset>
@@ -341,7 +352,7 @@ export default function CreateCharacter() {
             name={skill}
             type='checkbox'
             value={inputs.skills[skill]}
-            onChange={handleSkillChange}
+            onChange={e => handleCheckboxChange(e, 'skills')}
           />
         })}
       </fieldset>

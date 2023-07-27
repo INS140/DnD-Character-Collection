@@ -592,6 +592,10 @@
 .stats .abilityScores .values .save {
   grid-area: save;
 }
+.stats .abilityScores .score-modal {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
+}
 .stats .skills {
   display: grid;
   grid: 1fr/repeat(2, 1fr);
@@ -609,54 +613,62 @@
   width: 50%;
   margin: auto;
 }
-.stats .skills .skill-modal {
+
+.stat-modal {
   display: grid;
   grid: 1fr/repeat(2, 1fr);
   gap: 1.5rem;
 }
-.stats .skills .skill-modal .info {
+.stat-modal .info {
   background-color: #694873;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.stats .skills .skill-modal .info h3 {
+.stat-modal .info h3 {
   font-size: 1.15rem;
 }
-.stats .skills .skill-modal .info p, .stats .skills .skill-modal .info input[type=number] {
+.stat-modal .info p, .stat-modal .info input[type=number] {
   margin: auto;
   width: 75%;
 }
-.stats .skills .skill-modal .mod {
+.stat-modal .mod {
   grid-column: span 2;
   width: 5rem;
   margin: auto;
 }
-.stats .skills .skill-modal .mod h2 {
+.stat-modal .mod h2 {
   margin: 0;
 }
-.stats .skills .skill-modal .prof {
+.stat-modal .misc {
+  grid-column: span 2;
+  margin: auto;
+}
+.stat-modal .misc input[type=number] {
+  width: 5rem;
+}
+.stat-modal .prof {
   grid-column: span 2;
   padding: 1rem;
   align-items: flex-start;
   gap: 1rem;
   margin: auto;
 }
-.stats .skills .skill-modal .prof label {
+.stat-modal .prof label {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
 }
-.stats .skills .skill-modal .prof label input[type=checkbox] {
+.stat-modal .prof label input[type=checkbox] {
   visibility: hidden;
 }
-.stats .skills .skill-modal .prof label .checkbox {
+.stat-modal .prof label .checkbox {
   width: 2rem;
   height: 2rem;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
 }
-.stats .skills .skill-modal .prof label .checkbox::after {
+.stat-modal .prof label .checkbox::after {
   content: "";
   display: none;
   position: relative;
@@ -668,11 +680,11 @@
   border-width: 0 0.25rem 0.25rem 0;
   transform: rotate(40deg);
 }
-.stats .skills .skill-modal .prof label input:checked ~ .checkbox {
+.stat-modal .prof label input:checked ~ .checkbox {
   background-color: #3a2540;
   box-shadow: 0 0 0.5rem 0.5rem #8B728E;
 }
-.stats .skills .skill-modal .prof label input:checked ~ .checkbox::after {
+.stat-modal .prof label input:checked ~ .checkbox::after {
   display: block;
 }
 

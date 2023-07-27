@@ -21,7 +21,7 @@ export default function Skills({ character }) {
     if (name === 'misc') {
       const { value } = e.target
 
-      const bonus = value === '' ? '' : Number(value) > 20 ? 20 : Number(value)
+      const bonus = value === '' ? '' : Number(value) > 30 ? 30 : Number(value)
 
       setInputs(prev => {return {...prev, [skill]: {...prev[skill], misc: bonus}}})
     } else {
@@ -91,7 +91,7 @@ export default function Skills({ character }) {
         </div>
         <Modal
           modalId={`update${skill}`}
-          className="skill-modal"
+          className="stat-modal"
           header={toTitleCase(skill)}
           closeModalText="Save"
           onCloseClick={handleSave}

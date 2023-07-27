@@ -51,7 +51,7 @@ export default function Stats() {
       </div>
       <div className="secondary stat">
         <h3>Initiative</h3>
-        <p>{character.init}</p>
+        <p>{character.init > 0 && '+'}{character.init}</p>
       </div>
       <div className="secondary stat">
         <h3>Proficiency</h3>

@@ -108,6 +108,11 @@
       .mod { grid-area: mod; }
       .save { grid-area: save; }
     }
+
+    .score-modal {
+      display: grid;
+      grid: 1fr / repeat(2, 1fr);
+    }
   }
 
   .skills {
@@ -127,79 +132,88 @@
         margin: auto;
       }
     }
+  }
+}
 
-    .skill-modal {
-      display: grid;
-      grid: 1fr / repeat(2, 1fr);
-      gap: 1.5rem;
+.stat-modal {
+  display: grid;
+  grid: 1fr / repeat(2, 1fr);
+  gap: 1.5rem;
 
-      .info {
-        background-color: v.$secondary-color;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
+  .info {
+    background-color: v.$secondary-color;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
-        h3 { font-size: 1.15rem; }
+    h3 { font-size: 1.15rem; }
 
-        p, input[type="number"] {
-          margin: auto;
-          width: 75%;
+    p, input[type="number"] {
+      margin: auto;
+      width: 75%;
+    }
+  }
+
+  .mod {
+    grid-column: span 2;
+    width: 5rem;
+    margin: auto;
+
+    h2 { margin: 0; }
+  }
+
+  .misc {
+    grid-column: span 2;
+    margin: auto;
+
+    input[type="number"] {
+      width: 5rem;
+    }
+  }
+
+  .prof {
+    grid-column: span 2;
+    padding: 1rem;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: auto;
+
+    label {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      
+
+      input[type="checkbox"] { visibility: hidden; }
+
+      .checkbox {
+        width: 2rem;
+        height: 2rem;
+        background-color: v.$primary-color;
+        box-shadow: v.$box-shadow inset;
+
+        &::after {
+          content: "";
+          display: none;
+          position: relative;
+          left: 0.75rem;
+          top: 0.5rem;
+          width: 0.5rem;
+          height: 0.875rem;
+          border: solid white;
+          border-width: 0 0.25rem 0.25rem 0;
+          -webkit-transform: rotate(40deg);
+          -ms-transform: rotate(40deg);
+          transform: rotate(40deg);
         }
       }
 
-      .mod {
-        grid-column: span 2;
-        width: 5rem;
-        margin: auto;
+      input:checked ~ .checkbox {
+        background-color: v.$tertiary-color;
+        box-shadow: v.$light-box-shadow;
 
-        h2 { margin: 0; }
-      }
-
-      .prof {
-        grid-column: span 2;
-        padding: 1rem;
-        align-items: flex-start;
-        gap: 1rem;
-        margin: auto;
-
-        label {
-          display: flex;
-          flex-direction: row-reverse;
-          align-items: center;
-          
-
-          input[type="checkbox"] { visibility: hidden; }
-
-          .checkbox {
-            width: 2rem;
-            height: 2rem;
-            background-color: v.$primary-color;
-            box-shadow: v.$box-shadow inset;
-
-            &::after {
-              content: "";
-              display: none;
-              position: relative;
-              left: 0.75rem;
-              top: 0.5rem;
-              width: 0.5rem;
-              height: 0.875rem;
-              border: solid white;
-              border-width: 0 0.25rem 0.25rem 0;
-              -webkit-transform: rotate(40deg);
-              -ms-transform: rotate(40deg);
-              transform: rotate(40deg);
-            }
-          }
-
-          input:checked ~ .checkbox {
-            background-color: v.$tertiary-color;
-            box-shadow: v.$light-box-shadow;
-
-            &::after {
-              display: block;
-            }
-          }
+        &::after {
+          display: block;
         }
       }
     }
