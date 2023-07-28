@@ -388,16 +388,24 @@
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
-.overview .baseStats {
+.overview .baseOverStats {
   display: grid;
-  grid: repeat(2, 1fr)/repeat(3, 1fr);
-  gap: 1.5rem;
-  text-align: center;
+  grid: 1fr/repeat(6, 1fr);
+  gap: 1rem;
 }
-.overview .baseStats h3 {
-  padding: 0.5rem;
+.overview .baseOverStats .abSc {
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.overview .baseOverStats h3 {
+  font-size: 1.25rem;
+  padding: 0rem;
+}
+.overview .baseOverStats p {
+  background-color: #8B728E;
+  box-shadow: 0.2rem 0.2rem 0.25rem #3a2540 inset;
+  margin: auto;
+  width: 75%;
 }
 .overview .description {
   width: 100%;
