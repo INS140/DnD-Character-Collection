@@ -79,12 +79,12 @@ export default function AbilityScores({ character }) {
     }
   }
 
-  return <div className="abilityScores">
+  return <div className="abilityScores stat">
     { stats.map(stat => {
       const mod = scoreToMod(character[stat])
-      const saveMod = character.savingThrows[stat]
+      const saveMod = (character.savingThrows[stat].prof
         ? mod + character.prof
-        : mod
+        : mod) + character.savingThrows[stat].misc
 
       const tempScoreMod = scoreToMod(inputs[stat])
       const tempProfMod = inputs.savingThrows[stat].prof ? character.prof : 0
@@ -92,8 +92,7 @@ export default function AbilityScores({ character }) {
 
       return <Fragment key={stat}>
         <div
-          key={stat}
-          className="secondary stat"
+          className="score-display"
           data-bs-toggle="modal"
           data-bs-target={`#update${stat}`}
         >
@@ -126,6 +125,7 @@ export default function AbilityScores({ character }) {
               name="score"
               value={inputs[stat]}
               onChange={e => handleChange(e, stat)}
+              pattern="\d*"
             />
           </div>
           <div className="stat info">
@@ -139,6 +139,7 @@ export default function AbilityScores({ character }) {
               name="misc"
               value={inputs.savingThrows[stat].misc}
               onChange={e => handleChange(e, stat)}
+              pattern="\d*"
             />
           </div>
           <div className="stat info prof">

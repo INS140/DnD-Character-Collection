@@ -20,18 +20,22 @@ export default function Stats() {
         <p>{character.hitDice}</p>
       </div>
     </div>
-    <div className="other">
-      <div className="secondary stat">
+    <div className="other secondary stat">
+      <div>
         <h3>Speed</h3>
         <p>{character.speed}</p>
       </div>
-      <div className="secondary stat">
+      <div>
         <h3>Initiative</h3>
         <p>{character.init > 0 && '+'}{character.init}</p>
       </div>
-      <div className="secondary stat">
+      <div>
         <h3>Proficiency</h3>
         <p>+{character.prof}</p>
+      </div>
+      <div>
+        <h3>Passive WIS</h3>
+        <p>0</p>
       </div>
     </div>
     <h2>Ability Scores</h2>
