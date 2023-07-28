@@ -373,31 +373,28 @@
   margin: 1rem;
 }
 .overview img {
-  width: 100%;
+  width: auto;
+  max-height: 18rem;
+  max-width: 100%;
 }
-.overview span {
-  display: block;
-}
-.overview .genStats {
+.overview .baseOverStats {
   display: grid;
-  grid: 1fr/repeat(4, 1fr);
-  gap: 2rem;
+  grid: 1fr/repeat(6, 1fr);
+  gap: 1rem;
 }
-.overview .genStats h3 {
-  padding: 0.5rem;
+.overview .baseOverStats .abSc {
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
-.overview .baseStats {
-  display: grid;
-  grid: repeat(2, 1fr)/repeat(3, 1fr);
-  gap: 1.5rem;
-  text-align: center;
+.overview .baseOverStats h3 {
+  font-size: 1.25rem;
+  padding: 0rem;
 }
-.overview .baseStats h3 {
-  padding: 0.5rem;
-  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
-  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+.overview .baseOverStats p {
+  background-color: #8B728E;
+  box-shadow: 0.2rem 0.2rem 0.25rem #3a2540 inset;
+  margin: auto;
+  width: 75%;
 }
 .overview .description {
   width: 100%;
