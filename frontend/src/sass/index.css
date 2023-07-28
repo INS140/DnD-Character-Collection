@@ -373,20 +373,9 @@
   margin: 1rem;
 }
 .overview img {
-  width: 100%;
-}
-.overview span {
-  display: block;
-}
-.overview .genStats {
-  display: grid;
-  grid: 1fr/repeat(4, 1fr);
-  gap: 2rem;
-}
-.overview .genStats h3 {
-  padding: 0.5rem;
-  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
-  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+  width: auto;
+  max-height: 18rem;
+  max-width: 100%;
 }
 .overview .baseOverStats {
   display: grid;

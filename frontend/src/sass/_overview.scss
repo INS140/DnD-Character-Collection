@@ -6,20 +6,10 @@
 
   h2 { margin: 1rem; }
 
-  img { width: 100%; }
-
-  span { display: block; }
-
-  .genStats {
-    display: grid;
-    grid: 1fr / repeat(4, 1fr);
-    gap: 2rem;
-
-    h3 {
-      padding: 0.5rem;
-      box-shadow: v.$box-shadow;
-      text-shadow: v.$dark-shadow;
-    }
+  img {
+    width: auto;
+    max-height: 18rem; 
+    max-width: 100%;
   }
 
   .baseOverStats {
