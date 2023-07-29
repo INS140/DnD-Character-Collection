@@ -166,6 +166,11 @@ export default function CreateCharacter() {
         misc: 0,
       }
     },
+    passiveMod: {
+      score: 'wis',
+      skill: 'perception',
+      misc: 0
+    },
     image: '',
     description: ''
   })

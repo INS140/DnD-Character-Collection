@@ -1,12 +1,11 @@
 import { Fragment } from "react"
 import Modal from "./ui-kit/Modal"
 import Input from "./ui-kit/Input"
-import { scoreToMod } from "../helper-functions"
+import { getFullScore, toTitleCase, scoreToMod } from "../helper-functions"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
-import { useNavigate } from "react-router-dom"
 
-export default function AbilityScores({ character }) {
+export default function AbilityScores({ character, setCharacter }) {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const { inputs, setInputs } = useFormHandler({
@@ -18,8 +17,6 @@ export default function AbilityScores({ character }) {
     cha: character.cha,
     savingThrows: character.savingThrows
   })
-
-  const navigate = useNavigate()
 
   const stats = ['str', 'dex', 'con', 'int', 'wis', 'cha']
 
@@ -33,7 +30,13 @@ export default function AbilityScores({ character }) {
     } else {
       const { value } = e.target
 
-      const num = value === '' ? '' : Number(value) > 30 ? 30 : Number(value)
+      const num = value === ''
+      ? ''
+      : Number(value) > 30
+        ? 30
+        : Number(value) < -30
+          ? -30
+          : Number(value)
 
       name === 'misc'
         ? setInputs({...inputs, savingThrows: {...inputs.savingThrows, [stat]: {...inputs.savingThrows[stat], misc: num}}})
@@ -68,12 +71,16 @@ export default function AbilityScores({ character }) {
         updatedScores.savingThrows[stat] = {...save, misc: misc === '' ? 0 : misc}
       })
 
-      await put(`/characters/${character.id}`, {
+      const updatedCharacter = {
         ...charData,
         ...updatedScores
-      })
+      }
 
-      navigate(0)
+      await put(`/characters/${character.id}`, updatedCharacter)
+
+      setCharacter({...updatedCharacter, prof, init})
+
+      setInputs(updatedScores)
     } catch (err) {
       console.log('save error', err)
     }
@@ -109,7 +116,7 @@ export default function AbilityScores({ character }) {
         </div>
         <Modal
           modalId={`update${stat}`}
-          header={stat.toUpperCase()}
+          header={toTitleCase(getFullScore(stat))}
           className="stat-modal"
           closeModalText="Save"
           onCancelClick={handleCancel}

@@ -6,7 +6,7 @@ import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
 import { useNavigate } from "react-router-dom"
 
-export default function HPDisplay({ character }) {
+export default function HPDisplay({ character, setCharacter }) {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const [ controls, setControls ] = useState({
@@ -41,12 +41,18 @@ export default function HPDisplay({ character }) {
   const handleChange = e => {
     const { name, value } = e.target
 
-    const num = value === '' ? '' : Number(value) > 1000 ? 1000 : Number(value)
+    const num = value === ''
+      ? ''
+      : Number(value) > 1000
+        ? 1000
+        : Number(value) < 0
+          ? 0
+          : Number(value)
 
     setInputs({...inputs, [name]: num})
   }
 
-  const handleCancel = () => {
+  const handleReset = (maxHp) => {
     setControls({
       damage: true,
       heal: false,
@@ -56,7 +62,7 @@ export default function HPDisplay({ character }) {
       damage: 0,
       heal: 0,
       temp: 0,
-      maxHp: character.maxHp
+      maxHp: maxHp ? maxHp : character.maxHp
     })
   }
 
@@ -68,13 +74,17 @@ export default function HPDisplay({ character }) {
     const { prof, init, ...charData } = character
 
     try {
-      await put(`/characters/${character.id}`, {
+      const updatedCharacter = {
         ...charData,
         hp: Math.min(character.hp - Number(inputs.damage) + Number(inputs.heal), inputs.maxHp) + Number(inputs.temp),
         maxHp: inputs.maxHp
-      })
+      }
 
-      navigate(0)
+      await put(`/characters/${character.id}`, updatedCharacter)
+
+      setCharacter({...updatedCharacter, prof, init})
+
+      handleReset(updatedCharacter.maxHp)
     } catch (err) {
       console.log('save error', err)
     }
@@ -101,7 +111,7 @@ export default function HPDisplay({ character }) {
       header="Update HP"
       className="hp-modal"
       closeModalText="Apply"
-      onCancelClick={handleCancel}
+      onCancelClick={() => handleReset()}
       onCloseClick={handleSave}
     >
       <div className="stat info hp">

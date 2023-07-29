@@ -581,7 +581,7 @@
   margin-top: 1rem;
 }
 .stats .other h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .stats .other p {
   width: 3.5rem;
@@ -722,6 +722,64 @@
   display: none;
 }
 
+.passive-modal {
+  display: grid;
+  gap: 1.5rem;
+}
+.passive-modal h2 {
+  margin: 0;
+}
+.passive-modal .mod {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem;
+  margin: auto;
+}
+.passive-modal .options {
+  display: grid;
+  grid: 1fr/1fr 2fr;
+  gap: 0.5rem;
+  justify-items: center;
+}
+.passive-modal .options h3 {
+  font-size: 1.25rem;
+}
+.passive-modal .options select {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background-color: #8B728E;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+.passive-modal .options .score select {
+  width: 7rem;
+}
+.passive-modal .options .skill select {
+  width: 9.5rem;
+}
+.passive-modal .add-up {
+  display: grid;
+  grid: 1fr/repeat(4, 1fr);
+  align-items: last baseline;
+  gap: 0.25rem;
+  font-size: 1.5rem;
+}
+.passive-modal .add-up h3 {
+  width: 4.5rem;
+  font-size: 0.825rem;
+}
+.passive-modal .add-up input {
+  width: 3.5rem;
+  margin-top: 0.5rem;
+}
+
 .stat-modal {
   display: grid;
   grid: 1fr/repeat(2, 1fr);
@@ -766,6 +824,7 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  gap: 0.5rem;
 }
 .stat-modal .prof label input[type=checkbox] {
   visibility: hidden;
@@ -897,8 +956,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) !important;
-  min-width: 75%;
+  transform: translate(-52.5%, -50%) !important;
+  width: 90%;
 }
 
 a {

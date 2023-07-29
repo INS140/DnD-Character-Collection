@@ -1,19 +1,16 @@
 import { Fragment, useEffect } from "react"
 import Modal from "./ui-kit/Modal"
 import Input from "./ui-kit/Input"
-import { scoreToMod, toTitleCase } from "../helper-functions"
+import { scoreToMod, toTitleCase, getFullScore } from "../helper-functions"
 import useFetch from "./custom-hooks/useFetch"
 import useFormHandler from "./custom-hooks/useFormHandler"
-import { useNavigate } from "react-router-dom"
 
-export default function Skills({ character }) {
+export default function Skills({ character, setCharacter }) {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const { inputs, setInputs } = useFormHandler({
     ...character.skills
   })
-
-  const navigate = useNavigate()
 
   const handleChange = (e, skill) => {
     const { name } = e.target
@@ -21,7 +18,13 @@ export default function Skills({ character }) {
     if (name === 'misc') {
       const { value } = e.target
 
-      const bonus = value === '' ? '' : Number(value) > 30 ? 30 : Number(value)
+      const bonus = value === ''
+      ? ''
+      : Number(value) > 30
+        ? 30
+        : Number(value) < -30
+          ? -30
+          : Number(value)
 
       setInputs(prev => {return {...prev, [skill]: {...prev[skill], misc: bonus}}})
     } else {
@@ -49,16 +52,18 @@ export default function Skills({ character }) {
         updatedSkills[skill] = { ...updatedSkills[skill], misc: misc === '' ? 0 : misc}
       })
 
-      console.log('update', updatedSkills)
-
-      await put(`/characters/${character.id}`, {
+      const updatedCharacter = {
         ...charData,
         skills: {
           ...updatedSkills
         }
-      })
+      }
 
-      navigate(0)
+      await put(`/characters/${character.id}`, updatedCharacter)
+
+      setCharacter({...updatedCharacter, prof, init})
+
+      setInputs(updatedSkills)
     } catch (err) {
       console.log('save error', err)
     }
@@ -102,7 +107,7 @@ export default function Skills({ character }) {
             <h2>{tempMod > 0 && '+'}{tempMod}</h2>
           </div>
           <div className="stat info">
-            <h3>{score.toUpperCase()}</h3>
+            <h3>{toTitleCase(getFullScore(score))}</h3>
             <p>{scoreMod > 0 && '+'}{scoreMod}</p>
           </div>
           <div className="stat info">

@@ -2,9 +2,10 @@ import { useOutletContext } from "react-router-dom"
 import HPDisplay from "./HPDisplay"
 import Skills from "./Skills"
 import AbilityScores from "./AbilityScores"
+import PassiveStat from "./PassiveStat"
 
 export default function Stats() {
-  const { character } = useOutletContext()
+  const { character, setCharacter } = useOutletContext()
 
   return <div className="stats">
     <h1>Stats</h1>
@@ -14,7 +15,7 @@ export default function Stats() {
         <h3>AC</h3>
         <p>{character.ac}</p>
       </div>
-      <HPDisplay character={character}/>
+      <HPDisplay character={character} setCharacter={setCharacter} />
       <div className="secondary stat hd">
         <h3>Hit Dice</h3>
         <p>{character.hitDice}</p>
@@ -33,16 +34,13 @@ export default function Stats() {
         <h3>Proficiency</h3>
         <p>+{character.prof}</p>
       </div>
-      <div>
-        <h3>Passive WIS</h3>
-        <p>0</p>
-      </div>
+      <PassiveStat character={character} setCharacter={setCharacter} />
     </div>
     <h2>Ability Scores</h2>
     <hr />
-    <AbilityScores character={character} />
+    <AbilityScores character={character} setCharacter={setCharacter} />
     <h2>Skills</h2>
     <hr />
-    <Skills character={character} />
+    <Skills character={character} setCharacter={setCharacter} />
   </div>
 }
