@@ -539,7 +539,7 @@
   align-items: center;
   gap: 0.5rem;
 }
-.stats .genStats .ac p {
+.stats .genStats .ac input {
   font-size: 2rem;
 }
 .stats .genStats .hp {
@@ -568,11 +568,10 @@
   display: flex;
   flex-direction: column;
 }
-.stats .genStats .ac p, .stats .genStats .hd p {
+.stats .genStats .ac input, .stats .genStats .hd input {
   margin-top: 0.5rem;
   height: 4rem;
-  line-height: 4rem;
-  padding: 0;
+  width: 5rem;
 }
 .stats .other {
   display: grid;
@@ -583,7 +582,7 @@
 .stats .other h3 {
   font-size: 0.85rem;
 }
-.stats .other p {
+.stats .other p, .stats .other input {
   width: 3.5rem;
   margin: 0.5rem auto;
 }

@@ -56,7 +56,7 @@
     gap: 0.5rem;
 
     .ac {
-      p { font-size: 2rem; }
+      input { font-size: 2rem; }
     }
 
     .hp {
@@ -86,11 +86,10 @@
       display: flex;
       flex-direction: column;
 
-      p {
+      input {
         margin-top: 0.5rem;
         height: 4rem;
-        line-height: 4rem;
-        padding: 0;
+        width: 5rem;
       }
     }
   }
@@ -103,7 +102,7 @@
 
     h3 { font-size: 0.85rem; }
 
-    p {
+    p, input {
       width: 3.5rem;
       margin: 0.5rem auto;
     }
