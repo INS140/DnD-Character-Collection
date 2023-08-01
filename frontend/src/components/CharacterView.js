@@ -30,7 +30,7 @@ export default function CharacterView() {
       ? <>Loading ...</>
       : <>
         <div className="view">
-          <Outlet context={{character: character}} />
+          <Outlet context={{character, setCharacter}} />
         </div>
         <CharacterNavbar charId={character.id} />
       </>

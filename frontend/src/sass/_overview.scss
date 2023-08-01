@@ -6,32 +6,32 @@
 
   h2 { margin: 1rem; }
 
-  img { width: 100%; }
+  img {
+    width: auto;
+    max-height: 18rem; 
+    max-width: 100%;
+  }
 
-  span { display: block; }
-
-  .genStats {
+  .baseOverStats {
     display: grid;
-    grid: 1fr / repeat(4, 1fr);
-    gap: 2rem;
+    grid: 1fr / repeat(6, 1fr);
+    gap: 1rem;
 
-    h3 {
-      padding: 0.5rem;
+    .abSc {
       box-shadow: v.$box-shadow;
       text-shadow: v.$dark-shadow;
     }
-  }
-
-  .baseStats {
-    display: grid;
-    grid: repeat(2, 1fr) / repeat(3, 1fr);
-    gap: 1.5rem;
-    text-align: center;
-
+  
     h3 {
-      padding: 0.5rem;
-      box-shadow: v.$box-shadow;
-      text-shadow: v.$dark-shadow;
+      font-size: 1.25rem;
+      padding: 0rem;
+    }
+
+    p {
+      background-color: v.$primary-color;
+      box-shadow: v.$dark-shadow inset;
+      margin: auto;
+      width: 75%;
     }
   }
 

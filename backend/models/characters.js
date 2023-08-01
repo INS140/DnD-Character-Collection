@@ -5,7 +5,8 @@ const { Schema } = mongoose;
 
 // schema
 const characterSchema = new Schema({
-    user: {type: Schema.Types.ObjectId,
+    user: {
+        type: Schema.Types.ObjectId,
         required: true,
         ref: 'User'
     },

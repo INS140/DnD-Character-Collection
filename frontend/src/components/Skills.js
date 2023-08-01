@@ -1,19 +1,16 @@
 import { Fragment, useEffect } from "react"
 import Modal from "./ui-kit/Modal"
 import Input from "./ui-kit/Input"
-import { scoreToMod, toTitleCase } from "../helper-functions"
+import { scoreToMod, toTitleCase, getFullScore } from "../helper-functions"
 import useFetch from "./custom-hooks/useFetch"
 import useFormHandler from "./custom-hooks/useFormHandler"
-import { useNavigate } from "react-router-dom"
 
-export default function Skills({ character }) {
+export default function Skills({ character, setCharacter }) {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')
 
   const { inputs, setInputs } = useFormHandler({
     ...character.skills
   })
-
-  const navigate = useNavigate()
 
   const handleChange = (e, skill) => {
     const { name } = e.target
@@ -21,7 +18,13 @@ export default function Skills({ character }) {
     if (name === 'misc') {
       const { value } = e.target
 
-      const bonus = value === '' ? '' : Number(value) > 20 ? 20 : Number(value)
+      const bonus = value === ''
+      ? ''
+      : Number(value) > 30
+        ? 30
+        : Number(value) < -30
+          ? -30
+          : Number(value)
 
       setInputs(prev => {return {...prev, [skill]: {...prev[skill], misc: bonus}}})
     } else {
@@ -49,16 +52,18 @@ export default function Skills({ character }) {
         updatedSkills[skill] = { ...updatedSkills[skill], misc: misc === '' ? 0 : misc}
       })
 
-      console.log('update', updatedSkills)
-
-      await put(`/characters/${character.id}`, {
+      const updatedCharacter = {
         ...charData,
         skills: {
           ...updatedSkills
         }
-      })
+      }
 
-      navigate(0)
+      await put(`/characters/${character.id}`, updatedCharacter)
+
+      setCharacter({...updatedCharacter, prof, init})
+
+      setInputs(updatedSkills)
     } catch (err) {
       console.log('save error', err)
     }
@@ -68,7 +73,7 @@ export default function Skills({ character }) {
     setInputs({...character.skills})
   }
 
-  return <div className="skills">
+  return <div className="secondary skills stat">
     { Object.keys(character.skills).map(skill => {
       const { score, prof, expert, misc } = character.skills[skill]
       const profMod = expert ? character.prof * 2 : prof ? character.prof : 0
@@ -82,16 +87,17 @@ export default function Skills({ character }) {
 
       return <Fragment key={skill}>
         <div
-          className="secondary stat skill"
+          className="skill"
           data-bs-toggle="modal"
           data-bs-target={`#update${skill}`}
         >
-          <h3>{toTitleCase(skill)} {spanText && <span>{spanText}</span>}</h3>
+          <h3>{toTitleCase(skill)}</h3>
+          {spanText && <span>{spanText}</span>}
           <p>{mod > 0 && '+'}{mod}</p>
         </div>
         <Modal
           modalId={`update${skill}`}
-          className="skill-modal"
+          className="stat-modal"
           header={toTitleCase(skill)}
           closeModalText="Save"
           onCloseClick={handleSave}
@@ -101,7 +107,7 @@ export default function Skills({ character }) {
             <h2>{tempMod > 0 && '+'}{tempMod}</h2>
           </div>
           <div className="stat info">
-            <h3>{score.toUpperCase()}</h3>
+            <h3>{toTitleCase(getFullScore(score))}</h3>
             <p>{scoreMod > 0 && '+'}{scoreMod}</p>
           </div>
           <div className="stat info">

@@ -27,3 +27,16 @@ export function ScrollToTop() {
 
   return
 }
+
+export function getFullScore(score) {
+  const convert = {
+    str: "strength",
+    dex: "dexterity",
+    con: "constitution",
+    int: "intelligence",
+    wis: "wisdom",
+    cha: "charisma"
+  }
+
+  return convert[score]
+}

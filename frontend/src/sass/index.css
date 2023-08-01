@@ -48,7 +48,7 @@
 }
 
 .characterView {
-  padding: 1rem 1rem 5rem;
+  padding: 1rem 0.55rem 5rem;
 }
 .characterView nav {
   background-color: #694873;
@@ -373,31 +373,28 @@
   margin: 1rem;
 }
 .overview img {
-  width: 100%;
+  width: auto;
+  max-height: 18rem;
+  max-width: 100%;
 }
-.overview span {
-  display: block;
-}
-.overview .genStats {
+.overview .baseOverStats {
   display: grid;
-  grid: 1fr/repeat(4, 1fr);
-  gap: 2rem;
+  grid: 1fr/repeat(6, 1fr);
+  gap: 1rem;
 }
-.overview .genStats h3 {
-  padding: 0.5rem;
+.overview .baseOverStats .abSc {
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
-.overview .baseStats {
-  display: grid;
-  grid: repeat(2, 1fr)/repeat(3, 1fr);
-  gap: 1.5rem;
-  text-align: center;
+.overview .baseOverStats h3 {
+  font-size: 1.25rem;
+  padding: 0rem;
 }
-.overview .baseStats h3 {
-  padding: 0.5rem;
-  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
-  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+.overview .baseOverStats p {
+  background-color: #8B728E;
+  box-shadow: 0.2rem 0.2rem 0.25rem #3a2540 inset;
+  margin: auto;
+  width: 75%;
 }
 .overview .description {
   width: 100%;
@@ -507,7 +504,7 @@
   margin: 0;
 }
 .stats .stat {
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
@@ -518,22 +515,31 @@
   font-size: 1rem;
 }
 .stats .stat p, .stats .stat input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
-  padding: 1rem;
+  padding: 0.5rem 0;
   color: white;
   text-align: center;
   border: none;
   font-size: 1.5rem;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
+.stats .stat p:focus, .stats .stat input:focus {
+  outline: none;
+  caret-color: white;
+}
 .stats .genStats {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 0.5rem;
   align-items: center;
+  gap: 0.5rem;
 }
-.stats .genStats .ac p {
+.stats .genStats .ac input {
   font-size: 2rem;
 }
 .stats .genStats .hp {
@@ -541,8 +547,11 @@
   flex-direction: column;
   justify-content: center;
 }
+.stats .genStats .hp hr {
+  margin: 0.5rem 0;
+}
 .stats .genStats .hp .current p {
-  font-size: 3rem;
+  font-size: 2.75rem;
 }
 .stats .genStats .hp .max {
   display: flex;
@@ -552,36 +561,58 @@
 }
 .stats .genStats .hp .max p {
   font-size: 1rem;
-  padding: 0.75rem;
+  width: 2.5rem;
 }
 .stats .genStats .ac, .stats .genStats .hd {
-  height: 9rem;
   width: 6rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
-.stats .genStats .hd {
-  overflow: hidden;
-}
-.stats .genStats .hd p {
-  padding: 1rem 0.5rem;
+.stats .genStats .ac input, .stats .genStats .hd input {
+  margin-top: 0.5rem;
+  height: 4rem;
+  width: 5rem;
 }
 .stats .other {
   display: grid;
-  grid: 1fr/repeat(3, 1fr);
-  gap: 1.5rem;
+  grid: 1fr/repeat(4, 1fr);
+  gap: 0.5rem;
   margin-top: 1rem;
+}
+.stats .other h3 {
+  font-size: 0.85rem;
+}
+.stats .other p, .stats .other input {
+  width: 3.5rem;
+  margin: 0.5rem auto;
 }
 .stats .abilityScores {
   display: grid;
   grid: repeat(2, 1fr)/repeat(3, 1fr);
-  gap: 1.5rem;
+  background-color: #694873;
+  gap: 0.75rem;
+}
+.stats .abilityScores h3 {
+  margin: 0;
+}
+.stats .abilityScores hr {
+  margin: 0.5rem 0;
+}
+.stats .abilityScores p {
+  font-size: 1.25rem;
+}
+.stats .abilityScores .score-display {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
 }
 .stats .abilityScores .values {
   display: grid;
   grid: "score mod" "save save";
-  gap: 1rem;
+  gap: 0.25rem;
+}
+.stats .abilityScores .values .score, .stats .abilityScores .values .mod {
+  width: 3rem;
 }
 .stats .abilityScores .values .score {
   grid-area: score;
@@ -591,72 +622,248 @@
 }
 .stats .abilityScores .values .save {
   grid-area: save;
+  width: 6.25rem;
+}
+.stats .abilityScores .score-modal {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
 }
 .stats .skills {
   display: grid;
   grid: 1fr/repeat(2, 1fr);
-  gap: 1.5rem;
+  padding: 0;
 }
 .stats .skills .skill {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.15rem solid #3a2540;
+  padding: 0.5rem;
 }
 .stats .skills .skill h3 {
-  font-size: 1.25rem;
+  font-size: 0.8rem;
+  width: 4.15rem;
+  text-align: left;
 }
 .stats .skills .skill p {
-  width: 50%;
-  margin: auto;
+  font-size: 1.25rem;
+  width: 3rem;
 }
-.stats .skills .skill-modal {
-  display: grid;
-  grid: 1fr/repeat(2, 1fr);
+
+.hp-modal {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
+  align-items: center;
 }
-.stats .skills .skill-modal .info {
+.hp-modal h2 {
+  margin: 0;
+}
+.hp-modal hr {
+  margin: 0.25rem 0;
+}
+.hp-modal input {
+  width: 5rem;
+}
+.hp-modal .info {
   background-color: #694873;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.stats .skills .skill-modal .info h3 {
+.hp-modal .hp {
+  padding: 1rem;
+}
+.hp-modal .options {
+  width: 100%;
+}
+.hp-modal .options .controls {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.hp-modal .options .controls button {
+  width: 100%;
+  background-color: #8B728E;
+  border-radius: 0;
+  border-left: 1px solid #694873;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+  transition: none;
+}
+.hp-modal .options .controls button:active {
+  border: inherit;
+}
+.hp-modal .options .controls .selected {
+  background-color: #3a2540;
+  text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
+}
+.hp-modal .options .input-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.hp-modal .options .input-display .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hp-modal .options .input-display .buttons button {
+  background-color: #8B728E;
+  width: 3.5rem;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.hp-modal .options .hidden {
+  display: none;
+}
+
+.init-modal {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+.init-modal h2 {
+  margin: 0;
+}
+.init-modal .mod {
+  width: 5.5rem;
+  padding: 1rem;
+  margin: auto;
+}
+.init-modal .add-up {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 1rem;
+  padding: 1rem;
+}
+.init-modal .add-up h3 {
+  font-size: 1rem;
+}
+.init-modal .add-up input {
+  width: 3.5rem;
+  margin-top: 0.5rem;
+}
+
+.passive-modal {
+  display: grid;
+  gap: 1.5rem;
+}
+.passive-modal h2 {
+  margin: 0;
+}
+.passive-modal .mod {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem;
+  margin: auto;
+}
+.passive-modal .options {
+  display: grid;
+  grid: 1fr/1fr 2fr;
+  gap: 0.5rem;
+  justify-items: center;
+}
+.passive-modal .options h3 {
+  font-size: 1.25rem;
+}
+.passive-modal .options select {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background-color: #8B728E;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+.passive-modal .options .score select {
+  width: 7rem;
+}
+.passive-modal .options .skill select {
+  width: 9.5rem;
+}
+.passive-modal .add-up {
+  display: grid;
+  grid: 1fr/repeat(4, 1fr);
+  align-items: last baseline;
+  gap: 0.25rem;
+  font-size: 1.5rem;
+}
+.passive-modal .add-up h3 {
+  width: 4.5rem;
+  font-size: 0.825rem;
+}
+.passive-modal .add-up input {
+  width: 3.5rem;
+  margin-top: 0.5rem;
+}
+
+.stat-modal {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.stat-modal .info {
+  background-color: #694873;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.stat-modal .info h3 {
   font-size: 1.15rem;
 }
-.stats .skills .skill-modal .info p, .stats .skills .skill-modal .info input[type=number] {
+.stat-modal .info p, .stat-modal .info input[type=number] {
   margin: auto;
   width: 75%;
 }
-.stats .skills .skill-modal .mod {
+.stat-modal .mod {
   grid-column: span 2;
   width: 5rem;
   margin: auto;
 }
-.stats .skills .skill-modal .mod h2 {
+.stat-modal .mod h2 {
   margin: 0;
 }
-.stats .skills .skill-modal .prof {
+.stat-modal .misc {
+  grid-column: span 2;
+  margin: auto;
+}
+.stat-modal .misc input[type=number] {
+  width: 5rem;
+}
+.stat-modal .prof {
   grid-column: span 2;
   padding: 1rem;
   align-items: flex-start;
   gap: 1rem;
   margin: auto;
 }
-.stats .skills .skill-modal .prof label {
+.stat-modal .prof label {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  gap: 0.5rem;
 }
-.stats .skills .skill-modal .prof label input[type=checkbox] {
+.stat-modal .prof label input[type=checkbox] {
   visibility: hidden;
 }
-.stats .skills .skill-modal .prof label .checkbox {
+.stat-modal .prof label .checkbox {
   width: 2rem;
   height: 2rem;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
 }
-.stats .skills .skill-modal .prof label .checkbox::after {
+.stat-modal .prof label .checkbox::after {
   content: "";
   display: none;
   position: relative;
@@ -668,11 +875,11 @@
   border-width: 0 0.25rem 0.25rem 0;
   transform: rotate(40deg);
 }
-.stats .skills .skill-modal .prof label input:checked ~ .checkbox {
+.stat-modal .prof label input:checked ~ .checkbox {
   background-color: #3a2540;
   box-shadow: 0 0 0.5rem 0.5rem #8B728E;
 }
-.stats .skills .skill-modal .prof label input:checked ~ .checkbox::after {
+.stat-modal .prof label input:checked ~ .checkbox::after {
   display: block;
 }
 
@@ -723,9 +930,6 @@
   .overview hr {
     margin-top: 20px;
   }
-  .stats .abilityScores {
-    grid: repeat(3, 1fr)/repeat(2, 1fr);
-  }
   .aboutGrid {
     grid: "logo" "game" "hr" "portraits" "players" "about";
   }
@@ -734,7 +938,7 @@
   }
 }
 body {
-  background-color: #8B728E;
+  background-color: #694873;
 }
 
 .app {
@@ -780,8 +984,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) !important;
-  min-width: 75%;
+  transform: translate(-52.5%, -50%) !important;
+  width: 90%;
 }
 
 a {
