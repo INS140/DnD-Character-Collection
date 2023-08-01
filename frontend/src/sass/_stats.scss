@@ -253,6 +253,35 @@
   }
 }
 
+.init-modal {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+
+  h2 { margin: 0; }
+
+  .mod {
+    width: 5.5rem;
+    padding: 1rem;
+    margin: auto;
+  }
+
+  .add-up {
+    display: grid;
+    grid: 1fr / repeat(2, 1fr);
+    width: fit-content;
+    gap: 1rem;
+    padding: 1rem;
+
+    h3 { font-size: 1rem; }
+
+    input {
+      width: 3.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
 .passive-modal {
   display: grid;
   gap: 1.5rem;

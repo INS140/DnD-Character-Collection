@@ -4,7 +4,7 @@ import Input from "./ui-kit/Input"
 import { scoreToMod, toTitleCase, getFullScore } from "../helper-functions"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 export default function PassiveStat({ character, setCharacter }) {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')
@@ -84,8 +84,6 @@ export default function PassiveStat({ character, setCharacter }) {
   const tempSkillBonus = character.skills[inputs.skill].expert ? character.prof * 2 : character.skills[inputs.skill].prof ? character.prof : 0
   const scoreMod = scoreToMod(character[inputs.score])
   const tempMod = 10 + scoreMod + tempSkillBonus + inputs.misc
-
-  useEffect(()=>{console.log(inputs)},[inputs])
 
   return <>
     <div

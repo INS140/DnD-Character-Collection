@@ -35,7 +35,8 @@ const characterSchema = new Schema({
     cha: { type: Number, required: true },
     skills: { type: Object, required: true },
     savingThrows: { type: Object, required: true },
-    passiveMod: { type: Object, required: true }
+    passiveMod: { type: Object, required: true },
+    miscInit: { type: Number, required: true }
     }, {toJSON: { virtuals: true }})
 
     characterSchema.virtual('stats', {

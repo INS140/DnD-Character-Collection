@@ -722,6 +722,35 @@
   display: none;
 }
 
+.init-modal {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+.init-modal h2 {
+  margin: 0;
+}
+.init-modal .mod {
+  width: 5.5rem;
+  padding: 1rem;
+  margin: auto;
+}
+.init-modal .add-up {
+  display: grid;
+  grid: 1fr/repeat(2, 1fr);
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 1rem;
+  padding: 1rem;
+}
+.init-modal .add-up h3 {
+  font-size: 1rem;
+}
+.init-modal .add-up input {
+  width: 3.5rem;
+  margin-top: 0.5rem;
+}
+
 .passive-modal {
   display: grid;
   gap: 1.5rem;

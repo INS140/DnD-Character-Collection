@@ -3,6 +3,7 @@ import HPDisplay from "./HPDisplay"
 import Skills from "./Skills"
 import AbilityScores from "./AbilityScores"
 import PassiveStat from "./PassiveStat"
+import Initiative from "./Init"
 
 export default function Stats() {
   const { character, setCharacter } = useOutletContext()
@@ -26,10 +27,7 @@ export default function Stats() {
         <h3>Speed</h3>
         <p>{character.speed}</p>
       </div>
-      <div>
-        <h3>Initiative</h3>
-        <p>{character.init > 0 && '+'}{character.init}</p>
-      </div>
+      <Initiative character={character} setCharacter={setCharacter} />
       <div>
         <h3>Proficiency</h3>
         <p>+{character.prof}</p>
