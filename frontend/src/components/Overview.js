@@ -13,11 +13,11 @@ export default function Overview() {
     <h2>Level: {character.level}</h2>
     <hr />
     <h2>Ability Scores</h2>
-    <div className="baseOverStats" >
+    <div className="ability-scores" >
       {stats.map(stat => {
-        return <div key={stat} className="secondary abSc">
+        return <div key={stat} className="secondary scores">
           <h3>{stat.toUpperCase()}</h3>
-          <p>{character[stat]}</p>
+          <p className="score">{character[stat]}</p>
           <p className="mod">{scoreToMod(character[stat])}</p>
         </div>
       })}

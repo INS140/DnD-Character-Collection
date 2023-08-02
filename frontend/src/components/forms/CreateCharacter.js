@@ -171,6 +171,7 @@ export default function CreateCharacter() {
       skill: 'perception',
       misc: 0
     },
+    miscInit: 0,
     image: '',
     description: ''
   })

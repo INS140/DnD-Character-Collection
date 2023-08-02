@@ -12,26 +12,32 @@
     max-width: 100%;
   }
 
-  .baseOverStats {
+  .ability-scores {
     display: grid;
     grid: 1fr / repeat(6, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
 
-    .abSc {
+    .scores {
       box-shadow: v.$box-shadow;
       text-shadow: v.$dark-shadow;
     }
   
     h3 {
-      font-size: 1.25rem;
-      padding: 0rem;
+      font-size: 1rem;
     }
 
-    p {
+    .score {
       background-color: v.$primary-color;
       box-shadow: v.$dark-shadow inset;
       margin: auto;
+      height: 2rem;
+      line-height: 2rem;
       width: 75%;
+    }
+
+    .mod {
+      position: relative;
+      
     }
   }
 
