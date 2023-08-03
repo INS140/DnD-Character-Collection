@@ -50,6 +50,7 @@ export default function Initiative({ character, setCharacter }) {
   const tempMod = dexMod + misc
   return <>
   <div
+    className="secondary other-stat"
     data-bs-toggle="modal"
     data-bs-target="#updateInit"
   >

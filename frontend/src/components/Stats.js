@@ -86,8 +86,8 @@ export default function Stats() {
         />
       </div>
     </div>
-    <div className="other secondary stat">
-      <div>
+    <div className="other stat">
+      <div className="secondary other-stat">
         <h3>Speed</h3>
         <Input
           type="number"
@@ -99,7 +99,7 @@ export default function Stats() {
         />
       </div>
       <Initiative character={character} setCharacter={setCharacter} />
-      <div>
+      <div className="secondary other-stat">
         <h3>Proficiency</h3>
         <p>+{character.prof}</p>
       </div>

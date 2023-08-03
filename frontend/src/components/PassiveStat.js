@@ -87,11 +87,12 @@ export default function PassiveStat({ character, setCharacter }) {
 
   return <>
     <div
+      className="secondary other-stat"
       data-bs-toggle="modal"
       data-bs-target="#updatePassive"
     >
       <h3>Passive {passiveMod.score.toUpperCase()}</h3>
-      <p>{mod > 0 && '+'}{mod}</p>
+      <p>{mod}</p>
     </div>
     <Modal
       modalId="updatePassive"
@@ -102,7 +103,7 @@ export default function PassiveStat({ character, setCharacter }) {
       onCloseClick={handleSave}
     >
       <div className="secondary stat mod">
-        <h2>{tempMod > 0 && '+'}{tempMod}</h2>
+        <h2>{tempMod}</h2>
       </div>
       <div className="secondary stat options">
         <div className="score">

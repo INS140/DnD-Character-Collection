@@ -73,9 +73,10 @@ export default function Skills({ character, setCharacter }) {
     setInputs({...character.skills})
   }
 
-  return <div className="secondary skills stat">
+  return <div className="tertiary skills stat">
     { Object.keys(character.skills).map(skill => {
       const { score, prof, expert, misc } = character.skills[skill]
+
       const profMod = expert ? character.prof * 2 : prof ? character.prof : 0
       const scoreMod = scoreToMod(character[score])
       const mod = scoreMod + profMod + misc
@@ -87,7 +88,7 @@ export default function Skills({ character, setCharacter }) {
 
       return <Fragment key={skill}>
         <div
-          className="skill"
+          className="secondary skill"
           data-bs-toggle="modal"
           data-bs-target={`#update${skill}`}
         >

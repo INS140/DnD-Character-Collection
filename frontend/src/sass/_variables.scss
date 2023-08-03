@@ -5,5 +5,6 @@ $error: #8f5260;
 $light-shadow: 0.20rem 0.20rem 0.25rem $primary-color;
 $dark-shadow: 0.20rem 0.20rem 0.25rem $tertiary-color;
 $box-shadow: 0 0 0.5rem 0.5rem $tertiary-color;
+$inset-box-shadow: 0 0 0.5rem 0.35rem $tertiary-color inset;
 $light-box-shadow: 0 0 0.5rem 0.5rem $primary-color;
 $font: 'Times New Roman', Times, serif;
