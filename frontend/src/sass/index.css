@@ -380,9 +380,6 @@
   display: grid;
   gap: 1.5rem;
 }
-.overview h1 {
-  font-size: 3rem;
-}
 .overview h2 {
   font-size: 2rem;
 }
@@ -401,10 +398,17 @@
 .overview .info {
   position: relative;
 }
+.overview .info .name {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0 4rem;
+  text-align: center;
+  word-break: break-all;
+}
 .overview .edit-char {
   position: absolute;
   right: 0;
-  top: 0.75rem;
+  top: 0.65rem;
 }
 .overview .ability-scores {
   display: flex;

@@ -6,11 +6,7 @@
   display: grid;
   gap: 1.5rem;
 
-  h1 { font-size: 3rem; }
-
-  h2 {
-    font-size: 2rem;
-  }
+  h2 { font-size: 2rem; }
 
   img {
     width: auto;
@@ -25,12 +21,22 @@
     hr { margin: 0.5rem 0; }
   }
 
-  .info { position: relative; }
+  .info {
+    position: relative;
+
+    .name {
+      font-size: 3rem;
+      margin: 0;
+      padding: 0 4rem;
+      text-align: center;
+      word-break: break-all;
+    }
+  }
 
   .edit-char {
     position: absolute;
     right: 0;
-    top: 0.75rem;
+    top: 0.65rem;
   }
 
   .ability-scores {

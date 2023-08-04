@@ -97,7 +97,7 @@ export default function UpdateCharacter({ character, setCharacter }) {
       disableSubmit={handleDisable()}
     >
       <ImagePreview image={inputs.image} />
-      <form>
+      <form autoComplete="off">
         <Input
           label="Image"
           name="image"
@@ -138,6 +138,7 @@ export default function UpdateCharacter({ character, setCharacter }) {
           value={inputs.classType}
           onChange={handleChange}
           required
+          autoComplete="off"
         />
         <TextArea
           label="Description"

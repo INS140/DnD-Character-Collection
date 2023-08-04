@@ -14,8 +14,12 @@ export function getTag(num) {
   return tags[num]
 }
 
-export function toTitleCase(str) {
+export function getSkillTitle(str) {
   return str.split(/(?=[A-Z])/).map(w => w.split('').map((c, i) => i === 0 ? c.toUpperCase() : c.toLowerCase()).join('')).join(' ')
+}
+
+export function toTitleCase(str) {
+  return str.split(' ').map(w => w.split('').map((c, i) => i === 0 ? c.toUpperCase() : c.toLowerCase()).join('')).join(' ')
 }
 
 export function ScrollToTop() {
@@ -38,5 +42,5 @@ export function getFullScore(score) {
     cha: "charisma"
   }
 
-  return convert[score]
+  return toTitleCase(convert[score])
 }

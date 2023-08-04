@@ -1,7 +1,7 @@
-import { Fragment, useEffect } from "react"
+import { Fragment } from "react"
 import Modal from "./ui-kit/Modal"
 import Input from "./ui-kit/Input"
-import { scoreToMod, toTitleCase, getFullScore } from "../helper-functions"
+import { scoreToMod, getSkillTitle, getFullScore } from "../helper-functions"
 import useFetch from "./custom-hooks/useFetch"
 import useFormHandler from "./custom-hooks/useFormHandler"
 
@@ -92,14 +92,14 @@ export default function Skills({ character, setCharacter }) {
           data-bs-toggle="modal"
           data-bs-target={`#update${skill}`}
         >
-          <h3>{toTitleCase(skill)}</h3>
+          <h3>{getSkillTitle(skill)}</h3>
           {spanText && <span>{spanText}</span>}
           <p>{mod > 0 && '+'}{mod}</p>
         </div>
         <Modal
           modalId={`update${skill}`}
           className="stat-modal"
-          header={toTitleCase(skill)}
+          header={getSkillTitle(skill)}
           closeModalText="Save"
           onCloseClick={handleSave}
           onCancelClick={handleCancel}
@@ -108,7 +108,7 @@ export default function Skills({ character, setCharacter }) {
             <h2>{tempMod > 0 && '+'}{tempMod}</h2>
           </div>
           <div className="stat info">
-            <h3>{toTitleCase(getFullScore(score))}</h3>
+            <h3>{getFullScore(score)}</h3>
             <p>{scoreMod > 0 && '+'}{scoreMod}</p>
           </div>
           <div className="stat info">

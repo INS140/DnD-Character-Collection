@@ -9,7 +9,7 @@ export default function Overview() {
 
   return <div className="overview">
     <div className="info">
-      <h1>{toTitleCase(character.name)}</h1>
+      <h1 className="name">{character.name}</h1>
       <UpdateCharacter character={character} setCharacter={setCharacter} />
       <hr />
       {character.image && <>

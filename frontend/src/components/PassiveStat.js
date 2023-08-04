@@ -1,7 +1,7 @@
 import Modal from "./ui-kit/Modal"
 import Select from "./ui-kit/Select"
 import Input from "./ui-kit/Input"
-import { scoreToMod, toTitleCase, getFullScore } from "../helper-functions"
+import { scoreToMod, getSkillTitle, getFullScore } from "../helper-functions"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
 import { useState } from "react"
@@ -118,7 +118,7 @@ export default function PassiveStat({ character, setCharacter }) {
                 key={stat}
                 value={stat}
               >
-                {toTitleCase(getFullScore(stat))}
+                {getFullScore(stat)}
               </option>
             })}
           </Select>
@@ -135,7 +135,7 @@ export default function PassiveStat({ character, setCharacter }) {
                 key={skill}
                 value={skill}
               >
-                {toTitleCase(skill)}
+                {getSkillTitle(skill)}
               </option>
             })}
           </Select>
@@ -144,11 +144,11 @@ export default function PassiveStat({ character, setCharacter }) {
       <div className="secondary stat add-up">
         10 +
         <div>
-          <h3>{toTitleCase(inputs.skill)}</h3>
+          <h3>{getSkillTitle(inputs.skill)}</h3>
           <p>{tempSkillBonus > 0 && '+'}{tempSkillBonus}</p>
         </div>
         <div>
-          <h3>{toTitleCase(getFullScore(inputs.score))}</h3>
+          <h3>{getFullScore(inputs.score)}</h3>
           <p>{scoreMod > 0 && '+'}{scoreMod}</p>
         </div>
         <div>
