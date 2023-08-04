@@ -48,15 +48,24 @@
 }
 
 .characterView {
-  padding: 1rem 0.55rem 5rem;
+  padding: 1rem 0.55rem 5.5rem;
 }
 .characterView nav {
   background-color: #694873;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  padding: 0 0 2rem;
+}
+.characterView a {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  border-top: 1px solid #8B728E;
+  font-size: 0.9rem;
 }
 
-.charNav {
-  border-top: 1px solid #8B728E;
+.active {
+  border-top: 1px solid #694873 !important;
 }
 
 .combat {
@@ -371,6 +380,9 @@
   display: grid;
   gap: 1.5rem;
 }
+.overview h1 {
+  font-size: 3rem;
+}
 .overview h2 {
   font-size: 2rem;
 }
@@ -378,6 +390,7 @@
   width: auto;
   max-height: 18rem;
   max-width: 100%;
+  margin: auto;
 }
 .overview .header {
   width: 100%;
@@ -385,13 +398,21 @@
 .overview .header hr {
   margin: 0.5rem 0;
 }
+.overview .info {
+  position: relative;
+}
+.overview .edit-char {
+  position: absolute;
+  right: 0;
+  top: 0.75rem;
+}
 .overview .ability-scores {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   background-color: #694873;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0;
 }
 .overview .ability-scores .scores {
   display: flex;
@@ -443,6 +464,64 @@
   box-shadow: 0 0 0.5rem 0.35rem #3a2540 inset;
   padding: 0.5rem;
   font-size: 1.25rem;
+}
+.overview .update-char-modal {
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+.overview .update-char-modal img {
+  max-height: 15rem;
+}
+.overview .update-char-modal form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.overview .update-char-modal form label {
+  display: flex;
+  flex-direction: column;
+  background-color: #694873;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+.overview .update-char-modal form label input, .overview .update-char-modal form label textarea {
+  width: 100%;
+  background-color: #8B728E;
+  box-shadow: 0 0 0.5rem 0.35rem #3a2540 inset;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0.35rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+}
+.overview .update-char-modal form label input:focus, .overview .update-char-modal form label textarea:focus {
+  outline: none;
+  caret-color: white;
+}
+.overview .update-char-modal form label input::-webkit-outer-spin-button, .overview .update-char-modal form label input::-webkit-inner-spin-button, .overview .update-char-modal form label textarea::-webkit-outer-spin-button, .overview .update-char-modal form label textarea::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.overview .update-char-modal form label textarea {
+  height: 12rem;
+  resize: none;
+}
+.overview .update-char-modal form .sm-inputs {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.overview .update-char-modal form .sm-inputs .level {
+  width: 3.5rem;
+}
+.overview .update-char-modal form .sm-inputs .race {
+  width: 100%;
 }
 
 .spells {
@@ -1040,8 +1119,9 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-52.5%, -50%) !important;
+  transform: translate(-50%, -50%) !important;
   width: 90%;
+  margin: 0;
 }
 
 a {

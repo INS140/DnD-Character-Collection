@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 export default function CharacterNavbar({ charId }) {
   const getClassName = ({ isActive }) => {
-    return `nav-link text-light px-3 ${isActive ? 'primary active' : ''}`
+    return `nav-link text-light ${isActive ? 'primary active' : ''}`
   }
 
   return <nav className="charNav navbar fixed-bottom d-flex">

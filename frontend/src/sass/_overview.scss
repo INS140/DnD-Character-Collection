@@ -6,6 +6,8 @@
   display: grid;
   gap: 1.5rem;
 
+  h1 { font-size: 3rem; }
+
   h2 {
     font-size: 2rem;
   }
@@ -14,6 +16,7 @@
     width: auto;
     max-height: 18rem; 
     max-width: 100%;
+    margin: auto;
   }
 
   .header {
@@ -22,13 +25,21 @@
     hr { margin: 0.5rem 0; }
   }
 
+  .info { position: relative; }
+
+  .edit-char {
+    position: absolute;
+    right: 0;
+    top: 0.75rem;
+  }
+
   .ability-scores {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     box-shadow: v.$box-shadow;
     background-color: v.$secondary-color;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0;
 
     .scores {
       display: flex;
@@ -81,6 +92,72 @@
       box-shadow: v.$inset-box-shadow;
       padding: 0.5rem;
       font-size: 1.25rem;
+    }
+  }
+
+  .update-char-modal {
+    max-height: 70vh;
+    overflow-y: scroll;
+
+    img {
+      max-height: 15rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        background-color: v.$secondary-color;
+        box-shadow: v.$box-shadow;
+        padding: 0.5rem;
+        font-size: 1.25rem;
+        
+        input, textarea {
+          width: 100%;
+          background-color: v.$primary-color;
+          box-shadow: v.$inset-box-shadow;
+          text-shadow: v.$dark-shadow;
+          text-align: center;
+          border: none;
+          outline: none;
+          color: white;
+          padding: 0.35rem;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          border-radius: 0;
+
+          &:focus {
+            outline: none;
+            caret-color: white;
+          }
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+
+        textarea {
+          height: 12rem;
+          resize: none;
+        }
+      }
+
+      .sm-inputs {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+
+        .level { width: 3.5rem; }
+
+        .race { width: 100%; }
+      }
     }
   }
 }

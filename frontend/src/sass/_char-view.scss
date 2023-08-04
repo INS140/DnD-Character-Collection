@@ -1,14 +1,24 @@
 @use 'variables' as v;
 
 .characterView  {
-  padding: 1rem 0.55rem 5rem;
+  padding: 1rem 0.55rem 5.5rem;
 
   nav {
     background-color: v.$secondary-color;
-    justify-content : space-around;
+    justify-content : space-evenly;
+    flex-wrap: nowrap;
+    padding: 0 0 2rem;
+  }
+
+  a {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    border-top: 1px solid v.$primary-color;
+    font-size: 0.9rem;
   }
 }
 
-.charNav {
-  border-top: 1px solid v.$primary-color;
+.active {
+  border-top: 1px solid v.$secondary-color !important;
 }
