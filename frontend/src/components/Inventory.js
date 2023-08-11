@@ -1,31 +1,23 @@
 import { useState, useEffect } from "react";
-import Input from "./ui-kit/Input";
-import Button from "./ui-kit/Button";
-import Modal from "./ui-kit/Modal";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import useFetch from "./custom-hooks/useFetch";
-import useFormHandler from "./custom-hooks/useFormHandler"
 import Item from "./Item";
+import AddItem from "./AddItem";
+import Currency from "./Currency";
 
 export default function Inventory() {
   const { get } = useFetch("https://www.dnd5eapi.co/api")
   const { put } = useFetch("https://dnd-character-collection-backend.vercel.app")
 
-  const { character } = useOutletContext()
-
-  const {inputs, handleChange} = useFormHandler({
-    item: ''
-  })
-
-  const navigate = useNavigate()
+  const { character, setCharacter } = useOutletContext()
 
   const [items, setItems] = useState([])
-  const [foundItem, setFoundItem] = useState(null)
-  const [error, setError] = useState(null)
 
   useEffect(() => {
     (async () => {
       if (character.inventory.length !== 0) {
+        setItems([])
+
         for (const item of character.inventory) {
           const data = await get(`/equipment/${item}`)
           
@@ -35,91 +27,37 @@ export default function Inventory() {
     })()
   }, [character.inventory])
 
-  const handleSearchItems = async e => {
-    e.preventDefault()
-    
-    setError(null)
-    setFoundItem(null)
-
-    const data = await get(`/equipment/${inputs.item}`)
-    
-    data.error ? setError(data) : setFoundItem(data)
-  }
-
-  const handleAddItem = async () => {
-    if (foundItem !== null) {
-      const { prof, init, ...charData } = character;
-
-      await put(`/characters/${character.id}`, {
-        ...charData,
-        inventory: [...character.inventory, foundItem.index],
-      });
-
-      navigate(0);
-    }
-  }
-
   const handleDeleteItem = async (index) => {
     const { prof, init, inventory, ...charData } = character
 
     const updatedInventory = [...inventory.slice(0, index), ...inventory.slice(index+1, inventory.length)]
 
-    await put(`/characters/${character.id}`, {
+    const updatedCharacter = {
       ...charData,
       inventory: updatedInventory
-    })
+    }
 
-    navigate(0)
+    await put(`/characters/${character.id}`, updatedCharacter)
+
+    setCharacter({...updatedCharacter, prof, init})
   }
     
   return <div className="inventoryContainer">
     <h1>Inventory</h1>
     <hr />
-    <div className="inventoryGrid">
-        <h2 className="secondary">Gold <span>{!character.gold ? 0 : character.gold}</span></h2>
-        <h2 className="secondary">Max Carry Weight <span>{character.str * 15}</span></h2>
-        <h2 className="secondary">Current Carry Weight <span>{items.length && items.reduce((s, item) => s + item.weight, 0)}</span></h2>
+    <div className="carry-weight">
+      <div className="secondary info">
+        <h3>Carry Weight</h3>
+        <p>{items.length && items.reduce((s, item) => s + item.weight, 0)}</p>
+      </div>
+      <div className="secondary info">
+        <h3>Max Carry Weight</h3>
+        <p>{character.str * 15}</p>
+      </div>
     </div>
+    <Currency character={character} setCharacter={setCharacter} />
     <h2 className="mt-3">Items</h2>
-    <Button
-      className="secondary"
-      data-bs-toggle="modal"
-      data-bs-target="#addItem"
-    >
-      Add Item
-    </Button>
-    <Modal
-      modalId="addItem"
-      header="Add An Inventory Item"
-      closeModalText="Add Item"
-      disableSubmit={!foundItem}
-      onCloseClick={handleAddItem}
-    >
-      <form className="modal-form" onSubmit={handleSearchItems}>
-        <Input
-          label="Search for an Item"
-          labelClass="secondary"
-          name="item"
-          value={inputs.item}
-          onChange={handleChange}
-        />
-        <Button
-          className="secondary"
-          type="submit"
-          disabled={inputs.item === ''}
-        >Search</Button>
-      </form>
-      { error !== null
-        ? <>
-          <hr />
-          <h2>{error.error}</h2>
-        </>
-        : foundItem && <>
-          <hr />
-          <Item item={foundItem} />
-        </>
-      }
-    </Modal>
+    <AddItem character={character} fetch={{ get, put }} setItems={setItems} />
     <hr />
     <div className="items">
       {!items.length

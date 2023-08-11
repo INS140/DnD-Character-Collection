@@ -4,19 +4,30 @@
   text-align: center;
   text-shadow: v.$dark-shadow;
 
-  .inventoryGrid {
+  .carry-weight {
     display: grid;
-    grid: 1fr / repeat(3, 1fr);
+    grid: 1fr / repeat(2, 1fr);
     gap: 1.5rem;
 
-    span { display: block };
-
-    h2 {
+    .info {
       padding: 0.5rem;
       box-shadow: v.$box-shadow;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 2rem;
+        background-color: v.$primary-color;
+        box-shadow: v.$inset-box-shadow;
+        padding: 0.5rem 0;
+        width: 5rem;
+        margin: auto;
+      }
     }
   }
 
@@ -24,6 +35,53 @@
     display: grid;
     grid: 1fr / 1fr;
     gap: 1.5rem;
+  }
+}
+
+.currencies {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: v.$box-shadow;
+  background-color: v.$tertiary-color;
+
+  .currency {
+    padding: 0.5rem 0.25rem;
+    width: 100%;
+
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    input {
+      width: 100%;
+      margin: 0.5rem 0 0 0;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border-radius: 0;
+      background-color: v.$primary-color;
+      box-shadow: v.$inset-box-shadow;
+      padding: 0.5rem 0;
+      color: white;
+      text-align: center;
+      border: none;
+      text-shadow: v.$dark-shadow;
+
+      &:focus {
+        outline: none;
+        caret-color: white;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
   }
 }
 
