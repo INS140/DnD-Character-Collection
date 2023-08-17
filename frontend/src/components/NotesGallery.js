@@ -6,8 +6,10 @@ export default function NotesGallery() {
   const { character } = useOutletContext()
 
   return <div className="noteGallery">
-    <h1 className="noteTitle">Notes</h1>
-    <NoteForm />
+    <div className="notes-header">
+      <h1>Notes</h1>
+      <NoteForm />
+    </div>
     <hr />
     <div className="noteContainer">
       { !character.notes.length

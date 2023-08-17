@@ -124,29 +124,7 @@
         
         input, textarea {
           width: 100%;
-          background-color: v.$primary-color;
-          box-shadow: v.$inset-box-shadow;
-          text-shadow: v.$dark-shadow;
-          text-align: center;
-          border: none;
-          outline: none;
-          color: white;
           padding: 0.35rem;
-          appearance: none;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          border-radius: 0;
-
-          &:focus {
-            outline: none;
-            caret-color: white;
-          }
-
-          &::-webkit-outer-spin-button,
-          &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
         }
 
         textarea {

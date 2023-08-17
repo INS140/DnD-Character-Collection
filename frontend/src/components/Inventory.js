@@ -16,7 +16,7 @@ export default function Inventory() {
   useEffect(() => {
     (async () => {
       if (character.inventory.length !== 0) {
-        setItems([])
+        setItems([]) //prevents duplicates when coding
 
         for (const item of character.inventory) {
           const data = await get(`/equipment/${item}`)
@@ -40,6 +40,8 @@ export default function Inventory() {
     await put(`/characters/${character.id}`, updatedCharacter)
 
     setCharacter({...updatedCharacter, prof, init})
+
+    setItems(updatedInventory)
   }
     
   return <div className="inventoryContainer">
@@ -56,8 +58,10 @@ export default function Inventory() {
       </div>
     </div>
     <Currency character={character} setCharacter={setCharacter} />
-    <h2 className="mt-3">Items</h2>
-    <AddItem character={character} fetch={{ get, put }} setItems={setItems} />
+    <div className="items-header">
+      <h2 className="mt-3">Items</h2>
+      <AddItem character={character} fetch={{ get, put }} setItems={setItems} />
+    </div>
     <hr />
     <div className="items">
       {!items.length

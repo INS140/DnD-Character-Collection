@@ -144,28 +144,20 @@
   padding: 1rem;
 }
 .form label {
-  display: grid;
-  grid: 1fr/1fr;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   box-sizing: border-box;
   background-color: #694873;
   font-size: 1.5rem;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
-.form label input::-webkit-outer-spin-button,
-.form label input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 .form label .input {
-  display: block;
   height: 2.5rem;
   width: 75%;
   font-size: 1.5rem;
-  text-align: center;
   padding: 0;
   margin: auto;
 }
@@ -186,7 +178,6 @@
   height: 1rem;
 }
 .form .saving-throws label, .form .skills label {
-  grid: 1fr/2fr 1fr;
   text-align: center;
 }
 .form .skills {
@@ -244,6 +235,59 @@
   height: fit-content;
   width: 5rem;
   margin: auto;
+}
+
+.label input[type=checkbox] {
+  visibility: hidden;
+}
+.label .checkbox {
+  width: 2rem;
+  height: 2rem;
+  background-color: #8B728E;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
+}
+.label .checkbox::after {
+  content: "";
+  display: none;
+  position: relative;
+  left: 0.75rem;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.875rem;
+  border: solid white;
+  border-width: 0 0.25rem 0.25rem 0;
+  transform: rotate(40deg);
+}
+.label input:checked ~ .checkbox {
+  background-color: #3a2540;
+  box-shadow: 0 0 0.5rem 0.5rem #8B728E;
+}
+.label input:checked ~ .checkbox::after {
+  display: block;
+}
+.label input[type=number]::-webkit-outer-spin-button,
+.label input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.input, .textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  background-color: #8B728E;
+  box-shadow: 0 0 0.5rem 0.35rem #3a2540 inset;
+  color: white;
+  text-align: center;
+  border: none;
+  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+}
+.input:focus, .textarea:focus {
+  outline: none;
+  caret-color: white;
 }
 
 .home {
@@ -339,6 +383,16 @@
   margin: 0;
 }
 
+.items-header {
+  margin: 1.5rem 0;
+  position: relative;
+}
+.items-header .add-item {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .item {
   display: grid;
   grid: "name . delete" "desc desc desc";
@@ -382,6 +436,15 @@
 .noteGallery {
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
   text-align: center;
+}
+
+.notes-header {
+  position: relative;
+}
+.notes-header .add-note {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .noteContainer {
@@ -540,26 +603,7 @@
 }
 .overview .update-char-modal form label input, .overview .update-char-modal form label textarea {
   width: 100%;
-  background-color: #8B728E;
-  box-shadow: 0 0 0.5rem 0.35rem #3a2540 inset;
-  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
-  text-align: center;
-  border: none;
-  outline: none;
-  color: white;
   padding: 0.35rem;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 0;
-}
-.overview .update-char-modal form label input:focus, .overview .update-char-modal form label textarea:focus {
-  outline: none;
-  caret-color: white;
-}
-.overview .update-char-modal form label input::-webkit-outer-spin-button, .overview .update-char-modal form label input::-webkit-inner-spin-button, .overview .update-char-modal form label textarea::-webkit-outer-spin-button, .overview .update-char-modal form label textarea::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 .overview .update-char-modal form label textarea {
   height: 12rem;
@@ -676,7 +720,6 @@
   margin-top: 2rem;
 }
 .stats p {
-  font-size: 1.5rem;
   margin: 0;
 }
 .stats .stat {
@@ -690,23 +733,16 @@
 .stats .stat h4 {
   font-size: 1rem;
 }
-.stats .stat p, .stats .stat input {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+.stats .stat p {
   border-radius: 0;
   background-color: #8B728E;
   box-shadow: 0 0 0.5rem 0.35rem #3a2540 inset;
-  padding: 0.5rem 0;
   color: white;
   text-align: center;
-  border: none;
-  font-size: 1.5rem;
-  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
-.stats .stat p:focus, .stats .stat input:focus {
-  outline: none;
-  caret-color: white;
+.stats .stat p, .stats .stat input {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
 }
 .stats .genStats {
   display: flex;
@@ -1041,34 +1077,6 @@
   flex-direction: row-reverse;
   align-items: center;
   gap: 0.5rem;
-}
-.stat-modal .prof label input[type=checkbox] {
-  visibility: hidden;
-}
-.stat-modal .prof label .checkbox {
-  width: 2rem;
-  height: 2rem;
-  background-color: #8B728E;
-  box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
-}
-.stat-modal .prof label .checkbox::after {
-  content: "";
-  display: none;
-  position: relative;
-  left: 0.75rem;
-  top: 0.5rem;
-  width: 0.5rem;
-  height: 0.875rem;
-  border: solid white;
-  border-width: 0 0.25rem 0.25rem 0;
-  transform: rotate(40deg);
-}
-.stat-modal .prof label input:checked ~ .checkbox {
-  background-color: #3a2540;
-  box-shadow: 0 0 0.5rem 0.5rem #8B728E;
-}
-.stat-modal .prof label input:checked ~ .checkbox::after {
-  display: block;
 }
 
 @media screen and (min-width: 550px) {

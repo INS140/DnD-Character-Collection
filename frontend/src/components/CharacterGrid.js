@@ -43,7 +43,13 @@ export default function CharacterGrid() {
             <Link className="tertiary-color" to="/create-character">Create your first character now!</Link>
           </h2>
           : <div className="grid">
-            { characters.map(character => <CharGridItem key={character.id} character={character} handleDelete={handleDelete}/>)}
+            { characters.map(character => {
+              return <CharGridItem
+                key={character.id}
+                character={character}
+                handleDelete={handleDelete}
+              />
+            })}
             <Link className="newCharItem" to="/create-character">
               <div className="charGridItem">
                 <h2 className="newCharItemText">+ Create New Character</h2>

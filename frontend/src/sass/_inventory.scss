@@ -85,6 +85,17 @@
   }
 }
 
+.items-header {
+  margin: 1.5rem 0;
+  position: relative;
+
+  .add-item {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
 .item {
   display: grid;
   grid: 'name . delete'

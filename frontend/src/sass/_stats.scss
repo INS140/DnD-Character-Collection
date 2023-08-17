@@ -13,10 +13,7 @@
     margin-top: 2rem;
   }
 
-  p {
-    font-size: 1.5rem;
-    margin: 0;
-  }
+  p { margin: 0; }
 
   .stat {
     padding: 0.5rem;
@@ -27,24 +24,17 @@
 
     h4 { font-size: 1rem; }
 
-    p, input {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
+    p {
       border-radius: 0;
       background-color: v.$primary-color;
       box-shadow: v.$inset-box-shadow;
-      padding: 0.5rem 0;
       color: white;
       text-align: center;
-      border: none;
-      font-size: 1.5rem;
-      text-shadow: v.$dark-shadow;
+    }
 
-      &:focus {
-        outline: none;
-        caret-color: white;
-      }
+    p, input {
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
     }
   }
 
@@ -406,40 +396,6 @@
       flex-direction: row-reverse;
       align-items: center;
       gap: 0.5rem;
-      
-
-      input[type="checkbox"] { visibility: hidden; }
-
-      .checkbox {
-        width: 2rem;
-        height: 2rem;
-        background-color: v.$primary-color;
-        box-shadow: v.$box-shadow inset;
-
-        &::after {
-          content: "";
-          display: none;
-          position: relative;
-          left: 0.75rem;
-          top: 0.5rem;
-          width: 0.5rem;
-          height: 0.875rem;
-          border: solid white;
-          border-width: 0 0.25rem 0.25rem 0;
-          -webkit-transform: rotate(40deg);
-          -ms-transform: rotate(40deg);
-          transform: rotate(40deg);
-        }
-      }
-
-      input:checked ~ .checkbox {
-        background-color: v.$tertiary-color;
-        box-shadow: v.$light-box-shadow;
-
-        &::after {
-          display: block;
-        }
-      }
     }
   }
 }

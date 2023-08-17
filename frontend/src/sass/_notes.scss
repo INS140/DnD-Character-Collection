@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+.notes-header {
+  position: relative;
+
+  .add-note {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
 .noteContainer {
   display: grid;
   gap: 1.5rem;

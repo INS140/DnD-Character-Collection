@@ -60,15 +60,15 @@ export default function NoteForm({ note }) {
   const params = !note
     ? {
       modalId: 'newNote',
-      className: 'secondary',
+      className: 'secondary add-note',
       header: 'Add A New Character Note',
-      openModalText: 'Add New Note',
+      openModalText: 'New Note',
       closeModalText: 'Add Note',
       onCloseClick: handleSubmitPOST
     }
     : {
       modalId: `updateNote${note._id}`,
-      className: 'primary button',
+      className: 'primary button m-2',
       header: 'Update Character Note',
       openModalText: 'Update',
       closeModalText: 'Update Note',
@@ -77,7 +77,7 @@ export default function NoteForm({ note }) {
 
   return <>
     <Button
-      className={params.className + ' m-2'}
+      className={params.className}
       data-bs-toggle="modal"
       data-bs-target={`#${params.modalId}`}
     >

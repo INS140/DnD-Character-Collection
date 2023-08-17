@@ -200,7 +200,7 @@ export default function CreateCharacter() {
 
   return <div className='form-container'>
     <h1>Create Your Character</h1>
-    <form className='form' onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit} autoComplete='off'>
       <div className='traits'>
         <Input
           label='Name'
@@ -376,6 +376,7 @@ export default function CreateCharacter() {
           rows='5'
           value={inputs.description}
           onChange={handleChange}
+          maxLength={250}
         />
       </fieldset>
       <Button className="secondary" type='submit'>Create Character</Button>

@@ -49,7 +49,7 @@ export default function AddItem({ character, fetch, setItems }) {
 
   return <>
     <Button
-      className="secondary"
+      className="secondary add-item"
       data-bs-toggle="modal"
       data-bs-target="#addItem"
     >
