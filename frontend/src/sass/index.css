@@ -119,7 +119,6 @@
 
 .form-container {
   text-align: center;
-  padding: 1rem;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
 
@@ -153,13 +152,6 @@
   background-color: #694873;
   font-size: 1.5rem;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
-}
-.form label .input {
-  height: 2.5rem;
-  width: 75%;
-  font-size: 1.5rem;
-  padding: 0;
-  margin: auto;
 }
 .form input[type=number] {
   width: 2.5rem;
@@ -284,10 +276,15 @@
   text-align: center;
   border: none;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
+  width: 100%;
 }
 .input:focus, .textarea:focus {
   outline: none;
   caret-color: white;
+}
+
+.textarea {
+  resize: none;
 }
 
 .home {
@@ -446,6 +443,14 @@
   top: 0;
   right: 0;
 }
+.notes-header .add-note-btn {
+  font-size: 1.5rem;
+  padding: 0 0.75rem;
+  background-color: #8B728E;
+}
+.notes-header .add-note-btn:hover {
+  background-color: #694873;
+}
 
 .noteContainer {
   display: grid;
@@ -453,37 +458,60 @@
 }
 .noteContainer .note {
   display: grid;
-  grid: "title . options" "desc desc desc";
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
+  grid: 1fr/auto auto 1fr;
+  justify-items: right;
   padding: 1rem;
+  gap: 1rem;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   text-align: left;
+  width: 100%;
 }
 .noteContainer .note hr {
   margin-top: 0;
 }
 .noteContainer .note .title {
-  grid-area: title;
+  grid-column: span 2;
+  word-break: break-all;
+  margin: 0;
 }
 .noteContainer .note .desc {
-  grid-area: desc;
+  grid-row: 2;
+  grid-column: span 3;
+  width: 100%;
 }
 .noteContainer .note .desc pre {
   box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
   padding: 1rem;
+  margin: 0;
   font-family: "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 .noteContainer .note .options {
-  grid-area: options;
-  display: grid;
-  grid: 1fr/repeat(2, 1fr);
-  align-items: center;
+  grid-row: 1;
+  grid-column: 3;
+  width: -moz-min-content;
+  width: min-content;
 }
 .noteContainer .note .options .button {
   width: 5rem;
   height: 2.5rem;
+}
+
+.noteOptions {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.note-form input, .note-form textarea {
+  padding: 0.5rem;
+  text-align: left;
 }
 
 .overview {
@@ -1191,4 +1219,17 @@ a {
 }
 a.active {
   text-shadow: 0.2rem 0.2rem 0.25rem #8B728E;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  background-color: #8B728E;
+  border-radius: 0;
+}
+.dropdown-menu:active, .dropdown-menu:focus {
+  outline: none;
+  border: none;
 }/*# sourceMappingURL=index.css.map */

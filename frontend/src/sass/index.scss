@@ -55,3 +55,17 @@ a {
 
   &.active { text-shadow: v.$light-shadow; }
 }
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  background-color: v.$primary-color;
+  border-radius: 0;
+
+  &:active, &:focus {
+    outline: none;
+    border: none;
+  }
+}

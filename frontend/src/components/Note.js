@@ -2,6 +2,7 @@ import Button from "./ui-kit/Button";
 import useFetch from "./custom-hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import NoteForm from "./forms/NoteForm";
+import Dropdown from "./ui-kit/Dropdown";
 
 export default function Note({ note }) {
   const { remove } = useFetch('https://dnd-character-collection-backend.vercel.app')
@@ -24,9 +25,26 @@ export default function Note({ note }) {
       <hr />
       <pre className="primary">{note.description}</pre>
     </div>
-    <div className="options">
-      <NoteForm note={note} openClass='primary button' />
-      <Button className="tertiary button" onClick={handleDelete}>Delete</Button>
-    </div>
+    <Dropdown
+      toggleId={`deleteNote${note._id}`}
+      className="options"
+    >
+      <div className="noteOptions">
+        <Button
+          className="secondary button"
+          data-bs-toggle="modal"
+          data-bs-target={`#updateNote${note._id}`}
+        >
+          Update
+        </Button>
+        <Button
+          className="tertiary button"
+          onClick={handleDelete}
+        >
+          Delete
+        </Button>
+      </div>
+    </Dropdown>
+    <NoteForm note={note} />
   </div>
 }

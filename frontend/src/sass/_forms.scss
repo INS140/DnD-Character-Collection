@@ -2,7 +2,6 @@
 
 .form-container {
   text-align: center;
-  padding: 1rem;
   text-shadow: v.$dark-shadow;
 }
 
@@ -38,14 +37,6 @@
     background-color: v.$secondary-color;
     font-size: 1.5rem;
     text-shadow: v.$dark-shadow;
-
-    .input {
-      height: 2.5rem;
-      width: 75%;
-      font-size: 1.5rem;
-      padding: 0;
-      margin: auto;
-    }
   }
 
   input[type='number'] { width: 2.5rem; }
@@ -185,9 +176,14 @@
   text-align: center;
   border: none;
   text-shadow: v.$dark-shadow;
+  width: 100%;
 
   &:focus {
     outline: none;
     caret-color: white;
   }
+}
+
+.textarea {
+  resize: none;
 }

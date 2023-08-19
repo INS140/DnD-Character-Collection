@@ -60,55 +60,44 @@ export default function NoteForm({ note }) {
   const params = !note
     ? {
       modalId: 'newNote',
-      className: 'secondary add-note',
-      header: 'Add A New Character Note',
-      openModalText: 'New Note',
+      header: 'New Note',
       closeModalText: 'Add Note',
       onCloseClick: handleSubmitPOST
     }
     : {
       modalId: `updateNote${note._id}`,
-      className: 'primary button m-2',
-      header: 'Update Character Note',
-      openModalText: 'Update',
+      header: 'Update Note',
       closeModalText: 'Update Note',
       onCloseClick: handleSubmitPUT
     }
 
-  return <>
-    <Button
-      className={params.className}
-      data-bs-toggle="modal"
-      data-bs-target={`#${params.modalId}`}
-    >
-      {params.openModalText}
-    </Button>
-    <Modal
-      modalId={params.modalId}
-      header={params.header}
-      closeModalText={params.closeModalText}
-      disableSubmit={handleDisable()}
-      onCloseClick={params.onCloseClick}
-    >
-      <div className="form-container">
-        <form className="form">
-          <Input
-            label="Title"
-            name="title"
-            value={inputs.title}
-            onChange={handleChange}
-            required
-          />
-          <TextArea
-            label="Description"
-            name="description"
-            rows="5"
-            value={inputs.description}
-            onChange={handleChange}
-            required
-          />
-        </form>
-      </div>
-    </Modal>
-  </>
+  return <Modal
+    modalId={params.modalId}
+    header={params.header}
+    closeModalText={params.closeModalText}
+    disableSubmit={handleDisable()}
+    onCloseClick={params.onCloseClick}
+  >
+    <div className="form-container">
+      <form className="note-form form">
+        <Input
+          label="Title"
+          name="title"
+          value={inputs.title}
+          onChange={handleChange}
+          required
+          maxLength={50}
+        />
+        <TextArea
+          label="Description"
+          name="description"
+          rows="5"
+          value={inputs.description}
+          onChange={handleChange}
+          required
+          maxLength={1000}
+        />
+      </form>
+    </div>
+  </Modal>
 }

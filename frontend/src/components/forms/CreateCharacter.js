@@ -198,7 +198,7 @@ export default function CreateCharacter() {
     }
   }
 
-  return <div className='form-container'>
+  return <div className='form-container p-3'>
     <h1>Create Your Character</h1>
     <form className='form' onSubmit={handleSubmit} autoComplete='off'>
       <div className='traits'>

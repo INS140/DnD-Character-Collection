@@ -12,6 +12,16 @@
     position: absolute;
     top: 0;
     right: 0;
+
+    &-btn {
+      font-size: 1.5rem;
+      padding: 0 0.75rem;
+      background-color: v.$primary-color;
+
+      &:hover {
+        background-color: v.$secondary-color;
+      }
+    }
   }
 }
 
@@ -21,37 +31,64 @@
 
   .note {
     display: grid;
-    grid: 'title . options'
-    'desc desc desc';
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
+    grid: 1fr / auto auto 1fr;
+    justify-items: right;
     padding: 1rem;
+    gap: 1rem;
     box-shadow: v.$box-shadow;
     text-align: left;
+    width: 100%;
 
     hr { margin-top: 0; }
 
-    .title { grid-area: title; }
+    .title { 
+      grid-column: span 2;
+      word-break: break-all;
+      margin: 0;
+    }
+
     .desc {
-      grid-area: desc;
+      grid-row: 2;
+      grid-column: span 3;
+      width: 100%;
 
       pre {
         box-shadow: v.$box-shadow inset;
         padding: 1rem;
+        margin: 0;
         font-family: v.$font;
+        font-size: 1.25rem;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
       }
     }
+
     .options {
-      grid-area: options;
-      display: grid;
-      grid: 1fr / repeat(2, 1fr);
-      align-items: center;
+      grid-row: 1;
+      grid-column: 3;
+      width: min-content;
 
       .button {
         width: 5rem;
         height: 2.5rem;
       }
     }
+  }
+}
+
+.noteOptions {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.note-form {
+  input, textarea {
+    padding: 0.5rem;
+    text-align: left;
   }
 }
