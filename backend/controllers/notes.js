@@ -40,31 +40,33 @@ notes.post('/', async (req, res) => {
     }
 })
 
-notes.put('/all', async (req, res) => {
-    try {
-        const allNotes = await Notes.find()
+// USE TO UPDATE ALL NOTES DURING DEVELOPMENT
 
-        for (const note of allNotes) {
-            const { _id, title, description, character } = note
+// notes.put('/all', async (req, res) => {
+//     try {
+//         const allNotes = await Notes.find()
 
-            await Notes.create({
-                title,
-                description,
-                character,
-                fullDisplay: true
-            })
+//         for (const note of allNotes) {
+//             const { _id, title, description, character } = note
 
-            await Notes.findByIdAndDelete(_id)
-        }
+//             await Notes.create({
+//                 title,
+//                 description,
+//                 character,
+//                 fullDisplay: true
+//             })
 
-        const updatedNotes = await Notes.find()
+//             await Notes.findByIdAndDelete(_id)
+//         }
 
-        res.status(200).send({message: 'successfully updated all notes', data: updatedNotes})
-    } catch (err) {
-        console.log(err)
-        res.status(500).send({ message: 'server error' })
-    }
-})
+//         const updatedNotes = await Notes.find()
+
+//         res.status(200).send({message: 'successfully updated all notes', data: updatedNotes})
+//     } catch (err) {
+//         console.log(err)
+//         res.status(500).send({ message: 'server error' })
+//     }
+// })
 
 //UPDATE NOTES INFORMATION
 notes.put('/:id', async (req, res) => {
