@@ -1,17 +1,14 @@
 import Input from "../ui-kit/Input";
 import TextArea from "../ui-kit/TextArea";
-import Button from "../ui-kit/Button";
 import Modal from "../ui-kit/Modal"
 import useFetch from "../custom-hooks/useFetch";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import useFormHandler from "../custom-hooks/useFormHandler";
 
-export default function NoteForm({ note }) {
+export default function NoteForm({ note, setNotes }) {
   const { post, put } = useFetch("https://dnd-character-collection-backend.vercel.app");
 
   const { character } = useOutletContext()
-
-  const navigate = useNavigate();
 
   const formInputs = !note
     ? {
@@ -27,12 +24,14 @@ export default function NoteForm({ note }) {
 
   const handleSubmitPOST = async () => {
     try {
-      await post("/notes", {
+      const newNote = {
         ...inputs,
         character: character.id,
-      });
+      }
 
-      navigate(0);
+      const res = await post("/notes", newNote);
+
+      setNotes(prev => [...prev, res.data])
     } catch (err) {
       console.log(err);
     }
@@ -40,14 +39,14 @@ export default function NoteForm({ note }) {
 
   const handleSubmitPUT = async () => {
     try {
-      const data = await put(`/notes/${note._id}`, {
+      const updatedNote = {
         ...inputs,
         character: character.id,
-      });
+      }
 
-      console.log(data)
+      await put(`/notes/${note._id}`, updatedNote);
 
-      navigate(0);
+      setNotes(prev => prev.map(n => n._id === note._id ? {...note, ...updatedNote} : n))
     } catch (err) {
       console.log(err);
     }

@@ -23,7 +23,7 @@ export default function CharacterView() {
         init: scoreToMod(data.dex)
       })
     })()
-  }, [])
+  }, [id, get])
 
   return <div className="characterView">
     { !character

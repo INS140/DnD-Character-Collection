@@ -7,6 +7,7 @@ const { Schema } = mongoose;
 const noteSchema = new Schema({
     title: { type: String, required: true },   
     description: { type: String, required: true },
+    fullDisplay: { type: Boolean, required: true},
     character: {type: Schema.Types.ObjectId,
         required: true,
         ref: 'Character'

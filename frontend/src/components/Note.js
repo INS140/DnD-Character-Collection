@@ -1,19 +1,16 @@
 import Button from "./ui-kit/Button";
 import useFetch from "./custom-hooks/useFetch";
-import { useNavigate } from "react-router-dom";
 import NoteForm from "./forms/NoteForm";
 import Dropdown from "./ui-kit/Dropdown";
 
-export default function Note({ note }) {
+export default function Note({ note, setNotes }) {
   const { remove } = useFetch('https://dnd-character-collection-backend.vercel.app')
-
-  const navigate = useNavigate()
 
   const handleDelete = async () => {
     try {
       await remove(`/notes/${note._id}`)
-
-      navigate(0)
+      
+      setNotes(prev => prev.filter(n => n._id !== note._id))
     } catch (err) {
       console.log(err)
     }
@@ -21,10 +18,6 @@ export default function Note({ note }) {
 
   return <div className="note secondary">
     <h1 className="title">{note.title}</h1>
-    <div className="desc">
-      <hr />
-      <pre className="primary">{note.description}</pre>
-    </div>
     <Dropdown
       toggleId={`deleteNote${note._id}`}
       className="options"
@@ -45,6 +38,9 @@ export default function Note({ note }) {
         </Button>
       </div>
     </Dropdown>
-    <NoteForm note={note} />
+    <NoteForm note={note} setNotes={setNotes} />
+    <div className="desc">
+      <pre className="primary">{note.description}</pre>
+    </div>
   </div>
 }

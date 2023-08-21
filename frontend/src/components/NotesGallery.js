@@ -2,9 +2,12 @@ import Note from "./Note"
 import NoteForm from "./forms/NoteForm"
 import { useOutletContext } from "react-router-dom"
 import Button from "./ui-kit/Button"
+import { useState } from "react"
 
 export default function NotesGallery() {
   const { character } = useOutletContext()
+
+  const [notes, setNotes] = useState([...character.notes])
 
   return <div className="noteGallery">
     <div className="notes-header">
@@ -17,15 +20,15 @@ export default function NotesGallery() {
         >
           +
         </Button>
-        <NoteForm />
+        <NoteForm setNotes={setNotes} />
       </div>
     </div>
     <hr />
     <div className="noteContainer">
-      { !character.notes.length
+      { !notes.length
         ? <h2>This character has no notes.</h2>
-        : character.notes.map(note => {
-          return <Note note={note} key={`${note._id}`} />
+        : notes.map(note => {
+          return <Note note={note} setNotes={setNotes} key={`${note._id}`} />
         })
       }
     </div>
