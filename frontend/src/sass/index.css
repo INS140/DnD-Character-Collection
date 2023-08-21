@@ -458,7 +458,7 @@
 }
 .noteContainer .note {
   display: grid;
-  grid: 1fr/auto auto 1fr;
+  grid: 1fr/auto 1fr auto;
   justify-items: right;
   padding: 1rem;
   gap: 1rem;
@@ -470,7 +470,7 @@
   margin-top: 0;
 }
 .noteContainer .note .title {
-  grid-column: span 2;
+  grid-column: 1;
   word-break: break-all;
   margin: 0;
 }
@@ -494,9 +494,16 @@
 }
 .noteContainer .note .options {
   grid-row: 1;
-  grid-column: 3;
+  grid-column: 2;
   width: -moz-min-content;
   width: min-content;
+}
+.noteContainer .note .options .dropdown-toggle {
+  padding: 0;
+  margin: 0.25rem 0 0;
+}
+.noteContainer .note .options .dropdown-menu {
+  z-index: 1031;
 }
 .noteContainer .note .options .button {
   width: 5rem;
@@ -512,6 +519,16 @@
 .note-form input, .note-form textarea {
   padding: 0.5rem;
   text-align: left;
+}
+
+.display-arrow {
+  grid-row: 1;
+  grid-column: 3;
+  height: 0;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  margin: 0.75rem 0 0;
 }
 
 .overview {

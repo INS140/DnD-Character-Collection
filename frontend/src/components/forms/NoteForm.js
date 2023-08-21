@@ -20,12 +20,13 @@ export default function NoteForm({ note, setNotes }) {
       description: note.description
     }
 
-  const { inputs, handleChange } = useFormHandler(formInputs);
+  const { inputs, handleChange, setInputs } = useFormHandler(formInputs);
 
   const handleSubmitPOST = async () => {
     try {
       const newNote = {
         ...inputs,
+        fullDisplay: true,
         character: character.id,
       }
 
@@ -41,6 +42,7 @@ export default function NoteForm({ note, setNotes }) {
     try {
       const updatedNote = {
         ...inputs,
+        fullDisplay: true,
         character: character.id,
       }
 
@@ -51,6 +53,10 @@ export default function NoteForm({ note, setNotes }) {
       console.log(err);
     }
   };
+
+  const handleCancel = () => {
+    setInputs(formInputs)
+  }
 
   const handleDisable = () => {
     return !inputs.title || !inputs.description ? true : false
@@ -76,6 +82,7 @@ export default function NoteForm({ note, setNotes }) {
     closeModalText={params.closeModalText}
     disableSubmit={handleDisable()}
     onCloseClick={params.onCloseClick}
+    onCancelClick={handleCancel}
   >
     <div className="form-container">
       <form className="note-form form">

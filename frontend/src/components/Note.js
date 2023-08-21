@@ -1,10 +1,32 @@
+import { useEffect, useState } from "react";
 import Button from "./ui-kit/Button";
 import useFetch from "./custom-hooks/useFetch";
 import NoteForm from "./forms/NoteForm";
 import Dropdown from "./ui-kit/Dropdown";
 
 export default function Note({ note, setNotes }) {
-  const { remove } = useFetch('https://dnd-character-collection-backend.vercel.app')
+  const { remove, put } = useFetch('https://dnd-character-collection-backend.vercel.app')
+
+  const [fullDisplay, setFullDisplay] = useState(note.fullDisplay)
+
+  useEffect(() => {
+    setFullDisplay(note.fullDisplay)
+  }, [note])
+
+  const styles = !fullDisplay
+    ? { borderTop: '10px solid white'}
+    : { borderBottom: '10px solid white' }
+
+    const handleChangeFullDisplay = async () => {
+      const display = !fullDisplay
+
+      setFullDisplay(display)
+
+      await put(`/notes/${note._id}`, {
+        ...note,
+        fullDisplay: display
+      })
+    }
 
   const handleDelete = async () => {
     try {
@@ -39,8 +61,13 @@ export default function Note({ note, setNotes }) {
       </div>
     </Dropdown>
     <NoteForm note={note} setNotes={setNotes} />
-    <div className="desc">
+    <span
+      className="display-arrow"
+      style={styles}
+      onClick={handleChangeFullDisplay}
+    />
+    {fullDisplay && <div className="desc">
       <pre className="primary">{note.description}</pre>
-    </div>
+    </div>}
   </div>
 }
