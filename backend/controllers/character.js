@@ -20,7 +20,7 @@ characters.get('/', async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.status(500).json({ message: 'Server error'})
+        res.status(500).json({ message: 'Server error', error: err})
     }
 })
 
@@ -33,7 +33,7 @@ characters.get('/:id', async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.status(500).json({ message: 'Server error'})
+        res.status(500).json({ message: 'Server error', error: err})
     }
 })
 
@@ -50,7 +50,7 @@ characters.post('/', async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.status(500).json({ message: 'Server error'})
+        res.status(500).json({ message: 'Server error', error: err})
     }
 })
 
@@ -67,7 +67,7 @@ characters.put('/:id', async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.status(500).json({ message: 'Server error'})
+        res.status(500).json({ message: 'Server error', error: err})
     }
 })
 
@@ -82,7 +82,7 @@ characters.delete('/:id', async (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.status(500).json({ message: 'Server error'})
+        res.status(500).json({ message: 'Server error', error: err})
     }
 })
 

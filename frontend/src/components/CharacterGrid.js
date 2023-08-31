@@ -19,15 +19,17 @@ export default function CharacterGrid() {
   }
 
   useEffect(() => {
-    (async () => {
-      try {
-        const data = await get('/characters', localStorage.getItem('token'))
-        setCharacters(data)
-      } catch (err) {
-        console.log(err)
-      }
-    })()
-  }, [])
+    if (currentUser !== null) {
+      (async () => {
+        try {
+          const data = await get('/characters', localStorage.getItem('token'))
+          setCharacters(data)
+        } catch (err) {
+          console.log(err)
+        }
+      })()
+    }
+  }, [currentUser])
 
   return <div className="grid-container">
     <h1 className="text-center">Characters</h1>

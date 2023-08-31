@@ -1,52 +1,49 @@
 @use 'variables' as v;
 
 .grid-container {
-  padding: 1rem;
-
-  h1 { text-shadow: v.$dark-shadow; }
+  padding: 0.5rem;
+  text-shadow: v.$dark-shadow;
 }
 
 .grid {
-  margin: auto;
-  background-color: v.$secondary-color;
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-  padding: 2rem;
-  width: 90%;
-  height: 100%;
-  gap: 2rem;
-  box-shadow: v.$box-shadow inset;
-
-  .newCharItem{ width: 100%; }
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
 
   .charGridItem {
     display: flex;
     justify-content: center;
     width: 100%;
-    min-height: 25rem;
-    max-height: 25rem;
-    padding: 1rem;
-    background-color: v.$primary-color;
+    height: 7rem;
+    padding: 0.5rem;
+    background-color: v.$secondary-color;
     box-shadow: v.$box-shadow;
-    text-shadow: v.$dark-shadow;
-    font-size: 2rem;
 
     .newCharItemText {
       text-align: center;
       margin: auto;
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
 
     .itemLink{
       width: 100%;
-      text-align: center;
+      display: flex;
+      gap: 0.5rem;
+    }
 
-      .itemImage {
-        max-width: 100%;
-        max-height: 50%;
-        min-height: 25%;
-      }
+    .itemImage {
+      max-width: 100%;
+      max-height: 100%;
     }
   }
+}
+
+.char-options {
+  margin: auto;
+  width: min-content;
+}
+
+.dropdown-menu {
+  min-width: auto;
+  padding: 0.5rem;
 }

@@ -1,7 +1,7 @@
 export default function TextArea(props) {
     const { label, className, value, onChange, required, ...rest } = props
   
-    const classes = `textarea ${className}`
+    const classes = `textarea ${className ? className : ''}`
   
     return <label className='label'>
       {label}

@@ -3,7 +3,7 @@ export default function Input(props) {
 
   const labelClasses = `label ${labelClass}`
 
-  const classes = `input ${className}`
+  const classes = `input ${className ? className : ''}`
 
   const inputType = type ? type : 'text'
 

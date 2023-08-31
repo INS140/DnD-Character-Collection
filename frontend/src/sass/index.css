@@ -1,50 +1,46 @@
 .grid-container {
-  padding: 1rem;
-}
-.grid-container h1 {
+  padding: 0.5rem;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
 }
 
 .grid {
-  margin: auto;
-  background-color: #694873;
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-  padding: 2rem;
-  width: 90%;
-  height: 100%;
-  gap: 2rem;
-  box-shadow: 0 0 0.5rem 0.5rem #3a2540 inset;
-}
-.grid .newCharItem {
+  display: grid;
+  gap: 1.5rem;
   width: 100%;
 }
 .grid .charGridItem {
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 25rem;
-  max-height: 25rem;
-  padding: 1rem;
-  background-color: #8B728E;
+  height: 7rem;
+  padding: 0.5rem;
+  background-color: #694873;
   box-shadow: 0 0 0.5rem 0.5rem #3a2540;
-  text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
-  font-size: 2rem;
 }
 .grid .charGridItem .newCharItemText {
   text-align: center;
   margin: auto;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 .grid .charGridItem .itemLink {
   width: 100%;
-  text-align: center;
+  display: flex;
+  gap: 0.5rem;
 }
-.grid .charGridItem .itemLink .itemImage {
+.grid .charGridItem .itemImage {
   max-width: 100%;
-  max-height: 50%;
-  min-height: 25%;
+  max-height: 100%;
+}
+
+.char-options {
+  margin: auto;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.dropdown-menu {
+  min-width: auto;
+  padding: 0.5rem;
 }
 
 .characterView {

@@ -171,6 +171,13 @@ export default function CreateCharacter() {
       skill: 'perception',
       misc: 0
     },
+    currencies: {
+      cp: 0,
+      sp: 0,
+      gp: 0,
+      ep: 0,
+      pp: 0
+    },
     miscInit: 0,
     image: '',
     description: ''

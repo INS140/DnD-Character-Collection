@@ -19,7 +19,7 @@ export default function Modal(props) {
           <h1 className="modal-title fs-5" id="exampleModalLabel">{header}</h1>
           <Button className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" onClick={onCancelClick}></Button>
         </div>
-        <div className={`modal-body ${className}`}>
+        <div className={`modal-body ${className ? className : ''}`}>
           {children}
         </div>
         <div className="modal-footer secondary">

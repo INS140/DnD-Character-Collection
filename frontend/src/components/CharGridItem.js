@@ -1,18 +1,37 @@
 import { Link } from "react-router-dom";
 import Button from "./ui-kit/Button";
+import Dropdown from "./ui-kit/Dropdown"
+import Modal from "./ui-kit/Modal"
+import { toTitleCase } from "../helper-functions"
 
 export default function CharGridItem({ character, handleDelete }) {
+  const { id, name, image, level, race, classType } = character
 
   return <div className="charGridItem">
-    <Link className="itemLink" to={`/characters/${character.id}/`}>
-      <img className="itemImage" src={character.image} alt="" />
-      <div className="text-light text-center">
-        <h2>{character.name}</h2>
+    <Link className="itemLink" to={`/characters/${id}/`}>
+      <img className="itemImage" src={image} alt="" />
+      <div>
+        <h2>{name}</h2>
         <p>
-          {character.level} - {character.classType}
+          Lv {level} - {race} {toTitleCase(classType)}
         </p>
-        <Button className="tertiary" onClick={() => handleDelete(character.id)}>Delete</Button>
       </div>
     </Link>
+    <Dropdown>
+      <div className="char-options">
+        <Button
+          className="tertiary"
+          data-bs-toggle="modal"
+          data-bs-target={`#delete${id}`}
+          onClick={() => handleDelete(id)}
+        >
+          Delete
+        </Button>
+      </div>
+    </Dropdown>
+    <Modal
+      modalId={`delete${id}`}
+      
+    ></Modal>
   </div>
 }
