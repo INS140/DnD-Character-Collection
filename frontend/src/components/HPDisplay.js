@@ -1,7 +1,5 @@
 import { useState } from "react"
-import Button from "./ui-kit/Button"
-import Input from "./ui-kit/Input"
-import Modal from "./ui-kit/Modal"
+import { Button, Input, Modal } from "./ui-kit"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
 import { useNavigate } from "react-router-dom"

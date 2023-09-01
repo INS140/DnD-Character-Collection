@@ -1,10 +1,8 @@
-import Modal from "./ui-kit/Modal"
-import Select from "./ui-kit/Select"
-import Input from "./ui-kit/Input"
+import { useState } from "react"
+import { Input, Modal, Select } from "./ui-kit"
 import { scoreToMod, getSkillTitle, getFullScore } from "../helper-functions"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
-import { useState } from "react"
 
 export default function PassiveStat({ character, setCharacter }) {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')

@@ -1,4 +1,4 @@
-import Input from "./ui-kit/Input"
+import { Input } from "./ui-kit"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
 

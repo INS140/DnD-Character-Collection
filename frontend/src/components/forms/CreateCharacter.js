@@ -1,11 +1,9 @@
 import { useContext } from 'react'
-import Input from '../ui-kit/Input'
-import TextArea from '../ui-kit/TextArea'
-import Button from '../ui-kit/Button'
+import { useNavigate } from 'react-router-dom'
+import { Button, Input, TextArea } from "../ui-kit"
 import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from '../custom-hooks/useFormHandler'
 import { CurrentUser } from '../context/currentUser'
-import { useNavigate } from 'react-router-dom'
 import { toTitleCase } from '../../helper-functions'
 
 export default function CreateCharacter() {

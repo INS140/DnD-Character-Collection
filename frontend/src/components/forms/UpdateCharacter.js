@@ -1,9 +1,6 @@
-import Modal from "../ui-kit/Modal";
-import Input from "../ui-kit/Input";
+import { Button, Input, Modal, TextArea } from "../ui-kit";
 import useFormHandler from "../custom-hooks/useFormHandler";
 import useFetch from "../custom-hooks/useFetch";
-import Button from "../ui-kit/Button";
-import TextArea from "../ui-kit/TextArea"
 import { toTitleCase } from "../../helper-functions"
 import ImagePreview from "../ImagePreview";
 

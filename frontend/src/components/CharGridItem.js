@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "./ui-kit/Button";
-import Dropdown from "./ui-kit/Dropdown"
-import Modal from "./ui-kit/Modal"
-import Input from "./ui-kit/Input"
+import { Button, Dropdown, Input, Modal } from "./ui-kit"
 import { toTitleCase } from "../helper-functions"
 import useFormHandler from "./custom-hooks/useFormHandler"
 

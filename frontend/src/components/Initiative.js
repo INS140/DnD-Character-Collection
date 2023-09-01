@@ -1,7 +1,6 @@
-import Modal from "./ui-kit/Modal"
-import Input from "./ui-kit/Input"
-import useFetch from "./custom-hooks/useFetch"
 import { useState } from "react"
+import { Input, Modal } from "./ui-kit"
+import useFetch from "./custom-hooks/useFetch"
 import { scoreToMod } from '../helper-functions'
 
 export default function Initiative({ character, setCharacter }) {

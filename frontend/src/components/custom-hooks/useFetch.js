@@ -1,5 +1,4 @@
 export default function useFetch(baseUrl) {
-  // this hook now requires that a baseurl be input as an arguemnet when called
   return {
     get: async (endpoint, token) => {
       try {

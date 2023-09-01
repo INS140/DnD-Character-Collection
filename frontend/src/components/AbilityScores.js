@@ -1,6 +1,5 @@
 import { Fragment } from "react"
-import Modal from "./ui-kit/Modal"
-import Input from "./ui-kit/Input"
+import { Modal, Input } from "./ui-kit"
 import { getFullScore, scoreToMod } from "../helper-functions"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"

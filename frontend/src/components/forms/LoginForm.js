@@ -1,10 +1,9 @@
-import Input from "../ui-kit/Input";
-import Button from '../ui-kit/Button'
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom"
+import { Button, Input } from "../ui-kit"
 import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from "../custom-hooks/useFormHandler";
 import { CurrentUser } from "../context/currentUser";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom"
 
 export default function LoginForm({ setError }) {
   const { post } = useFetch('https://dnd-character-collection-backend.vercel.app')

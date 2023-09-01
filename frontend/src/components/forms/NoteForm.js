@@ -1,8 +1,6 @@
-import Input from "../ui-kit/Input";
-import TextArea from "../ui-kit/TextArea";
-import Modal from "../ui-kit/Modal"
-import useFetch from "../custom-hooks/useFetch";
 import { useOutletContext } from "react-router-dom";
+import { Input, Modal, TextArea } from "../ui-kit";
+import useFetch from "../custom-hooks/useFetch";
 import useFormHandler from "../custom-hooks/useFormHandler";
 
 export default function NoteForm({ note, setNotes }) {

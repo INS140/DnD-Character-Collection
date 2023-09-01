@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Button from "./ui-kit/Button"
+import { Button } from "./ui-kit"
 
 
 export default function About() {

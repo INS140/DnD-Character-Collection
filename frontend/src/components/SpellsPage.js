@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
+import { Button, Input, Modal, Select } from "./ui-kit";
 import useFetch from "./custom-hooks/useFetch";
-import Input from "./ui-kit/Input";
-import Select from "./ui-kit/Select";
-import Modal from "./ui-kit/Modal";
 import { scoreToMod, getTag } from "../helper-functions";
 import SpellDisplay from "./SpellDisplay";
 import Spell from "./Spell";
 import { useNavigate } from "react-router-dom";
-import Button from "./ui-kit/Button";
 
 export default function SpellsPage() {
   const { character } = useOutletContext();

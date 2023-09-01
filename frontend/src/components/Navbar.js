@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react"
 import { NavLink, Link } from "react-router-dom"
-import Button from './ui-kit/Button'
+import { Button } from "./ui-kit"
 import { CurrentUser } from "./context/currentUser"
 import { useNavigate } from "react-router-dom"
 

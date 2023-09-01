@@ -1,10 +1,10 @@
 import { useOutletContext } from "react-router-dom"
+import { Input } from "./ui-kit"
 import HPDisplay from "./HPDisplay"
 import Skills from "./Skills"
 import AbilityScores from "./AbilityScores"
 import PassiveStat from "./PassiveStat"
 import Initiative from "./Initiative"
-import Input from "./ui-kit/Input"
 import useFormHandler from "./custom-hooks/useFormHandler"
 import useFetch from "./custom-hooks/useFetch"
 

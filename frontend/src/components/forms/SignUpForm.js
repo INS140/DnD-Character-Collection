@@ -1,13 +1,9 @@
-// Inputfor email and password
-// submit button
-// container for form
-import Input from "../ui-kit/Input";
-import Button from "../ui-kit/Button";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button, Input } from "../ui-kit"
 import useFormHandler from "../custom-hooks/useFormHandler";
 import useFetch from "../custom-hooks/useFetch"
 import { CurrentUser } from "../context/currentUser";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function SignUpForm() {
   const { post } = useFetch('https://dnd-character-collection-backend.vercel.app')
