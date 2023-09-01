@@ -38,9 +38,17 @@
   width: min-content;
 }
 
-.dropdown-menu {
-  min-width: auto;
+.delete-char-modal {
+  text-align: center;
+}
+.delete-char-modal .label {
+  background-color: #694873;
+  box-shadow: 0 0 0.5rem 0.5rem #3a2540;
   padding: 0.5rem;
+}
+.delete-char-modal .input {
+  font-size: 1.5rem;
+  width: 10rem;
 }
 
 .characterView {
@@ -272,7 +280,6 @@
   text-align: center;
   border: none;
   text-shadow: 0.2rem 0.2rem 0.25rem #3a2540;
-  width: 100%;
 }
 .input:focus, .textarea:focus {
   outline: none;
@@ -494,6 +501,9 @@
   width: -moz-min-content;
   width: min-content;
 }
+.noteContainer .note .options .btn {
+  border: none;
+}
 .noteContainer .note .options .dropdown-toggle {
   padding: 0;
   margin: 0.25rem 0 0;
@@ -509,7 +519,7 @@
 .noteOptions {
   display: flex;
   gap: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
 }
 
 .note-form input, .note-form textarea {
@@ -1241,8 +1251,14 @@ a.active {
 .dropdown-menu {
   background-color: #8B728E;
   border-radius: 0;
+  min-width: auto;
+  padding: 0.5rem;
 }
 .dropdown-menu:active, .dropdown-menu:focus {
   outline: none;
   border: none;
+}
+
+.modal-footer {
+  justify-content: center;
 }/*# sourceMappingURL=index.css.map */

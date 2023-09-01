@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 import Button from "./ui-kit/Button";
 import Dropdown from "./ui-kit/Dropdown"
 import Modal from "./ui-kit/Modal"
+import Input from "./ui-kit/Input"
 import { toTitleCase } from "../helper-functions"
+import useFormHandler from "./custom-hooks/useFormHandler"
 
 export default function CharGridItem({ character, handleDelete }) {
   const { id, name, image, level, race, classType } = character
+
+  const {inputs, handleChange} = useFormHandler({
+    entry: ''
+  })
 
   return <div className="charGridItem">
     <Link className="itemLink" to={`/characters/${id}/`}>
@@ -23,7 +29,6 @@ export default function CharGridItem({ character, handleDelete }) {
           className="tertiary"
           data-bs-toggle="modal"
           data-bs-target={`#delete${id}`}
-          onClick={() => handleDelete(id)}
         >
           Delete
         </Button>
@@ -31,7 +36,19 @@ export default function CharGridItem({ character, handleDelete }) {
     </Dropdown>
     <Modal
       modalId={`delete${id}`}
-      
-    ></Modal>
+      header={`Delete ${name}?`}
+      className="delete-char-modal"
+      closeModalText="Delete"
+      disableSubmit={inputs.entry !== 'DELETE'}
+      onCloseClick={() => handleDelete(id)}
+    >
+      <h2>Are you sure you want to delete {name}?</h2>
+      <Input
+        label='Please enter "DELETE" to continue'
+        name="entry"
+        value={inputs.entry}
+        onChange={handleChange}
+      />
+    </Modal>
   </div>
 }

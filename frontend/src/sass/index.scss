@@ -63,9 +63,15 @@ a {
 .dropdown-menu {
   background-color: v.$primary-color;
   border-radius: 0;
+  min-width: auto;
+  padding: 0.5rem;
 
   &:active, &:focus {
     outline: none;
     border: none;
   }
+}
+
+.modal-footer {
+  justify-content: center;
 }

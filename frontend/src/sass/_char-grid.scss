@@ -43,7 +43,17 @@
   width: min-content;
 }
 
-.dropdown-menu {
-  min-width: auto;
-  padding: 0.5rem;
+.delete-char-modal {
+  text-align: center;
+
+  .label {
+    background-color: v.$secondary-color;
+    box-shadow: v.$box-shadow;
+    padding: 0.5rem;
+  }
+  
+  .input {
+    font-size: 1.5rem;
+    width: 10rem;
+  }
 }

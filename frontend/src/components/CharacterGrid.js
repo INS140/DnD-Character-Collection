@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import CharGridItem from "./CharGridItem";
 import useFetch from "./custom-hooks/useFetch";
 import { CurrentUser } from "./context/currentUser";
@@ -11,11 +11,10 @@ export default function CharacterGrid() {
 
   const [characters, setCharacters] = useState([])
 
-  const navigate = useNavigate()
-
   const handleDelete = async (id) => {
+    setCharacters(characters.filter(c => c.id !== id))
+
     await remove(`/characters/${id}`)
-    navigate('/characters')
   }
 
   useEffect(() => {
