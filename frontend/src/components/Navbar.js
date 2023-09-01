@@ -76,7 +76,7 @@ export default function Navbar() {
                     <Link className="text-decoration-none" to="/login" onClick={hideNav}>
                         <Button className="btn btn-md primary px-5 text-light">Login</Button>
                     </Link>
-                    <Link className="text-decoration-none" to='/signup' onClick={hideNav}>
+                    <Link className="text-decoration-none" to='/sign-up' onClick={hideNav}>
                         <Button className="btn btn-md tertiary px-5 text-light">Signup</Button>
                     </Link>
                 </>
