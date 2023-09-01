@@ -9,9 +9,15 @@ import useFormHandler from "./custom-hooks/useFormHandler"
 export default function CharGridItem({ character, handleDelete }) {
   const { id, name, image, level, race, classType } = character
 
-  const {inputs, handleChange} = useFormHandler({
+  const {inputs, handleChange, setInputs} = useFormHandler({
     entry: ''
   })
+
+  const handleCancel = () => {
+    setInputs({
+      entry: ''
+    })
+  }
 
   return <div className="charGridItem">
     <Link className="itemLink" to={`/characters/${id}/`}>
@@ -41,6 +47,7 @@ export default function CharGridItem({ character, handleDelete }) {
       closeModalText="Delete"
       disableSubmit={inputs.entry !== 'DELETE'}
       onCloseClick={() => handleDelete(id)}
+      onCancelClick={handleCancel}
     >
       <h2>Are you sure you want to delete {name}?</h2>
       <Input

@@ -525,6 +525,7 @@
 .note-form input, .note-form textarea {
   padding: 0.5rem;
   text-align: left;
+  width: 100%;
 }
 
 .display-arrow {
