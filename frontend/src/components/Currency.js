@@ -1,6 +1,6 @@
 import { Input } from "./ui-kit"
-import useFormHandler from "./custom-hooks/useFormHandler"
-import useFetch from "./custom-hooks/useFetch"
+import useFormHandler from "../custom-hooks/useFormHandler"
+import useFetch from "../custom-hooks/useFetch"
 
 export default function Currency({ character, setCharacter }) {
   const {currencies} = character

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import CharGridItem from "./CharGridItem";
-import useFetch from "./custom-hooks/useFetch";
-import { CurrentUser } from "./context/currentUser";
+import useFetch from "../custom-hooks/useFetch";
+import { CurrentUser } from "../context/currentUser";
 
 export default function CharacterGrid() {
   const { get, remove } = useFetch('https://dnd-character-collection-backend.vercel.app')

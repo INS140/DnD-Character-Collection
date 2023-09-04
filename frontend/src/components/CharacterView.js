@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
-import useFetch from "./custom-hooks/useFetch";
+import useFetch from "../custom-hooks/useFetch";
 import { getProficiency, scoreToMod } from "../helper-functions";
 import CharacterNavbar from "./CharacterNavbar";
 
@@ -10,6 +10,10 @@ export default function CharacterView() {
   const [character, setCharacter] = useState(null);
 
   const { id } = useParams();
+
+  useEffect(() => {
+    console.log(character)
+  }, [character])
 
   useEffect(() => {
     (async () => {
@@ -23,7 +27,8 @@ export default function CharacterView() {
         init: scoreToMod(data.dex)
       })
     })()
-  }, [id, get])
+    // eslint-disable-next-line
+  }, [id])
 
   return <div className="characterView">
     { !character

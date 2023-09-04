@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom"
 import { scoreToMod, toTitleCase } from "../helper-functions"
-import UpdateCharacter from "./forms/UpdateCharacter"
+import UpdateCharacter from "../forms/UpdateCharacter"
 
 export default function Overview() {
   const { character, setCharacter } = useOutletContext()

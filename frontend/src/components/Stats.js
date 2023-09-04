@@ -5,8 +5,8 @@ import Skills from "./Skills"
 import AbilityScores from "./AbilityScores"
 import PassiveStat from "./PassiveStat"
 import Initiative from "./Initiative"
-import useFormHandler from "./custom-hooks/useFormHandler"
-import useFetch from "./custom-hooks/useFetch"
+import useFormHandler from "../custom-hooks/useFormHandler"
+import useFetch from "../custom-hooks/useFetch"
 
 export default function Stats() {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')

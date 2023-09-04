@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import CurrentUserProvider from './components/context/currentUser'
+import CurrentUserProvider from './context/currentUser'
 import { ScrollToTop } from './helper-functions'
 import Navbar from './components/Navbar'
 

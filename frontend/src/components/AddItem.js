@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Input, Modal } from "./ui-kit"
 import Item from "./Item";
-import useFormHandler from "./custom-hooks/useFormHandler"
+import useFormHandler from "../custom-hooks/useFormHandler"
 
 export default function AddItem({ character, fetch, setItems }) {
   const { get, put } = fetch

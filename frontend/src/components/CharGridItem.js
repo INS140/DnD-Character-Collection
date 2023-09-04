@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button, Dropdown, Input, Modal } from "./ui-kit"
 import { toTitleCase } from "../helper-functions"
-import useFormHandler from "./custom-hooks/useFormHandler"
+import useFormHandler from "../custom-hooks/useFormHandler"
 
 export default function CharGridItem({ character, handleDelete }) {
   const { id, name, image, level, race, classType } = character

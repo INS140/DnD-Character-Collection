@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Dropdown } from "./ui-kit"
-import useFetch from "./custom-hooks/useFetch";
-import NoteForm from "./forms/NoteForm";
+import useFetch from "../custom-hooks/useFetch";
+import NoteForm from "../forms/NoteForm";
 
 export default function Note({ note, setNotes }) {
   const { remove, put } = useFetch('https://dnd-character-collection-backend.vercel.app')

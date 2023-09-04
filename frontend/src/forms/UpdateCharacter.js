@@ -1,8 +1,8 @@
 import { Button, Input, Modal, TextArea } from "../ui-kit";
 import useFormHandler from "../custom-hooks/useFormHandler";
 import useFetch from "../custom-hooks/useFetch";
-import { toTitleCase } from "../../helper-functions"
-import ImagePreview from "../ImagePreview";
+import { toTitleCase } from "../helper-functions"
+import ImagePreview from "../components/ImagePreview";
 
 export default function UpdateCharacter({ character, setCharacter }) {
   const { put } = useFetch('https://dnd-character-collection-backend.vercel.app')

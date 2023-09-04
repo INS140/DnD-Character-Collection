@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './sass/index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import reportWebVitals from './reportWebVitals'
+import App from './App'
+import ErrorPage from './components/ErrorPage'
 import Home from './components/Home'
-import LoginPage from './components/pages/LoginPage'
-import SignUpPage from './components/pages/SignUpPage'
+import LoginPage from './pages/LoginPage'
+import SignUpPage from './pages/SignUpPage'
 import CharacterGrid from './components/CharacterGrid'
-import CreateCharacter from './components/forms/CreateCharacter'
+import CreateCharacter from './forms/CreateCharacter'
 import CharacterView from './components/CharacterView'
 import Overview from './components/Overview'
 import Stats from './components/Stats'
@@ -16,12 +16,13 @@ import Combat from './components/Combat'
 import Inventory from './components/Inventory'
 import SpellsPage from './components/SpellsPage'
 import Notes from './components/NotesGallery'
+import './sass/index.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <>Oops! Page Not Found</>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "",
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
       {
         path: "characters/:id/",
         element: <CharacterView />,
+        loader: ()=>null,
         children: [
           {
             path: "",

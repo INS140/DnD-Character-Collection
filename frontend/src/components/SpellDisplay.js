@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import useFetch from "./custom-hooks/useFetch"
+import useFetch from "../custom-hooks/useFetch"
 import Spell from "./Spell"
 
 export default function SpellDisplay({ spell }) {

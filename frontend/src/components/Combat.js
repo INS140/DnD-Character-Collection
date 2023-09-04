@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import useFetch from "./custom-hooks/useFetch";
+import useFetch from "../custom-hooks/useFetch";
 import Weapon from './Weapon';
 
 export default function Combat() {

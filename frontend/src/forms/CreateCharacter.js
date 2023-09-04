@@ -4,7 +4,7 @@ import { Button, Input, TextArea } from "../ui-kit"
 import useFetch from '../custom-hooks/useFetch'
 import useFormHandler from '../custom-hooks/useFormHandler'
 import { CurrentUser } from '../context/currentUser'
-import { toTitleCase } from '../../helper-functions'
+import { toTitleCase } from '../helper-functions'
 
 export default function CreateCharacter() {
   const { post } = useFetch('https://dnd-character-collection-backend.vercel.app')

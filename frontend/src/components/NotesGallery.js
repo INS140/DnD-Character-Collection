@@ -1,8 +1,8 @@
-import Note from "./Note"
-import NoteForm from "./forms/NoteForm"
+import { useState } from "react"
 import { useOutletContext } from "react-router-dom"
 import { Button } from "./ui-kit"
-import { useState } from "react"
+import Note from "./Note"
+import NoteForm from "../forms/NoteForm"
 
 export default function NotesGallery() {
   const { character } = useOutletContext()
