@@ -1,5 +1,5 @@
 import { useOutletContext } from "react-router-dom"
-import { Input } from "./ui-kit"
+import { Input } from "../ui-kit"
 import HPDisplay from "./HPDisplay"
 import Skills from "./Skills"
 import AbilityScores from "./AbilityScores"

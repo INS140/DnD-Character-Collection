@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react"
 import { NavLink, Link, useNavigate } from "react-router-dom"
-import { Button } from "./ui-kit"
+import { Button } from "../ui-kit"
 import { CurrentUser } from "../context/currentUser"
 
 export default function Navbar() {

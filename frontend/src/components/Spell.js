@@ -1,4 +1,4 @@
-import { Button } from "./ui-kit"
+import { Button } from "../ui-kit"
 
 export default function Spell({ spell, handleDelete }) {
   return <div className="spell secondary">

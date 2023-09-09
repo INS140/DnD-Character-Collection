@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useOutletContext } from "react-router-dom"
-import { Button } from "./ui-kit"
+import { Button } from "../ui-kit"
 import Note from "./Note"
 import NoteForm from "../forms/NoteForm"
 

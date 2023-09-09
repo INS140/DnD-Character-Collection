@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Input, Modal } from "./ui-kit"
+import { Button, Input, Modal } from "../ui-kit"
 import Item from "./Item";
 import useFormHandler from "../custom-hooks/useFormHandler"
 

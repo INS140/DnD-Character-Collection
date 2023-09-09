@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Dropdown } from "./ui-kit"
+import { Button, Dropdown } from "../ui-kit"
 import useFetch from "../custom-hooks/useFetch";
 import NoteForm from "../forms/NoteForm";
 

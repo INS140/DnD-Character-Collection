@@ -1,4 +1,4 @@
-import { Button } from "./ui-kit";
+import { Button } from "../ui-kit";
 
 export default function Item({ item, handleDelete }) {
   return <div className="item">

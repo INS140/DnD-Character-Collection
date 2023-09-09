@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import { Button, Input, Modal, Select } from "./ui-kit";
+import { Button, Input, Modal, Select } from "../ui-kit";
 import useFetch from "../custom-hooks/useFetch";
 import { scoreToMod, getTag } from "../helper-functions";
 import SpellDisplay from "./SpellDisplay";
