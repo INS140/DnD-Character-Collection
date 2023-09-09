@@ -75,3 +75,9 @@ a {
 .modal-footer {
   justify-content: center;
 }
+
+.loading {
+  opacity: 0.25;
+  transition: opacity 200ms;
+  transition-delay: 200ms;
+}

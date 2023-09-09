@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import CharGridItem from "./CharGridItem";
 import useFetch from "../custom-hooks/useFetch";
 import { CurrentUser } from "../context/currentUser";
@@ -9,7 +9,9 @@ export default function CharacterGrid() {
 
   const { currentUser } = useContext(CurrentUser)
 
-  const [characters, setCharacters] = useState([])
+  const { data, error } = useLoaderData()
+
+  const [characters, setCharacters] = useState(data)
 
   const handleDelete = async (id) => {
     setCharacters(characters.filter(c => c.id !== id))
@@ -17,18 +19,18 @@ export default function CharacterGrid() {
     await remove(`/characters/${id}`)
   }
 
-  useEffect(() => {
-    if (currentUser !== null) {
-      (async () => {
-        try {
-          const data = await get('/characters', localStorage.getItem('token'))
-          setCharacters(data)
-        } catch (err) {
-          console.log(err)
-        }
-      })()
-    }
-  }, [currentUser])
+  // useEffect(() => {
+  //   if (currentUser !== null) {
+  //     (async () => {
+  //       try {
+  //         const data = await get('/characters', localStorage.getItem('token'))
+  //         setCharacters(data)
+  //       } catch (err) {
+  //         console.log(err)
+  //       }
+  //     })()
+  //   }
+  // }, [currentUser])
 
   return <div className="grid-container">
     <h1 className="text-center">Characters</h1>

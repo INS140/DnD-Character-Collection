@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { GetCharacters } from './loaders'
 import reportWebVitals from './reportWebVitals'
 import App from './App'
 import ErrorPage from './components/ErrorPage'
@@ -42,12 +43,12 @@ const router = createBrowserRouter([
       },
       {
         path: "characters",
-        element: <CharacterGrid />
+        element: <CharacterGrid />,
+        loader: GetCharacters,
       },
       {
         path: "characters/:id/",
         element: <CharacterView />,
-        loader: ()=>null,
         children: [
           {
             path: "",
